@@ -1,0 +1,146 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}Практическая работа: Текстурирование и создание материалов в Blender{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="requirements-list1">
+            <!-- Header Section -->
+            <header class="text-center mb-4">
+                <h1>Практическая работа: Текстурирование и создание материалов в Blender</h1>
+                <p class="lead">Изучить базовые принципы создания и настройки материалов, а также наложения текстур на объекты в Blender.</p>
+            </header>
+        </div>
+
+        <div class="requirements-list">
+            <!-- Objective Section -->
+            <div class="section">
+                <h2>Цель работы</h2>
+                <p>Научиться создавать материалы, настраивать их свойства и применять текстуры к 3D-объектам в Blender.</p>
+            </div>
+
+            <!-- Task Section -->
+            <div class="section">
+                <h2>Задание</h2>
+                <p>Выполните следующие действия в среде Blender:</p>
+
+                <div class="student-table-wrapper">
+                    <table class="student-table blender-style-table">
+                        <thead>
+                            <tr>
+                                <th>№</th>
+                                <th>Действие</th>
+                                <th>Метод выполнения</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Добавить объект (например, плоскость или куб)</td>
+                                <td><strong>Shift + A</strong> → выбрать нужный объект.</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Перейти в шейдерный редактор</td>
+                                <td>В нижнем окне выбрать <strong>Shader Editor</strong>.</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Создать новый материал</td>
+                                <td>Во вкладке <strong>Materials</strong> нажать <strong>New</strong>.</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Настроить базовый цвет</td>
+                                <td>В ноде <strong>Principled BSDF</strong> задать <strong>Base Color</strong>.</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Добавить текстуру изображения</td>
+                                <td><strong>Add → Texture → Image Texture</strong> → подключить к <strong>Base Color</strong>.</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Загрузить изображение</td>
+                                <td>В ноде <strong>Image Texture</strong> нажать <strong>Open</strong> и выбрать файл.</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Переключиться в режим UV Editing</td>
+                                <td>Выбрать <strong>UV Editing</strong> сверху в интерфейсе.</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Развернуть UV-развертку</td>
+                                <td>В режиме редактирования выделить объект → нажать <strong>U</strong> → выбрать <strong>Unwrap</strong>.</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>Настроить UV-развертку</td>
+                                <td>Переместить/масштабировать координаты на изображении в UV-редакторе.</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>Изменить параметр Roughness</td>
+                                <td>В ноде <strong>Principled BSDF</strong> уменьшить значение Roughness для глянцевости.</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>Добавить карту нормалей</td>
+                                <td><strong>Add → Vector → Normal Map</strong> → подключить к Normal входу BSDF.</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>Подключить изображение нормалей</td>
+                                <td>Image Texture → Normal Map → BSDF (Normal).</td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>Просмотреть результат в режиме Material Preview</td>
+                                <td>В правом верхнем углу 3D-вида выбрать режим <strong>Material Preview</strong>.</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>Настроить освещение сцены</td>
+                                <td>Добавить источник света <strong>Shift + A → Light</strong>.</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>Выполнить финальный рендер</td>
+                                <td>Нажать <strong>F12</strong>.</td>
+                            </tr>
+                            <tr>
+                                <td>16</td>
+                                <td>Сохранить итоговое изображение</td>
+                                <td>В рендер-окне нажать <strong>F3</strong> → выбрать путь и формат.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Report Section -->
+            <div class="section">
+                <h2><br>Отчёт по работе</h2>
+                <p>В отчёте учащийся должен:</p>
+                <ul>
+                    <li>Указать, какой объект использовался.</li>
+                    <li>Какие материалы и текстуры были применены.</li>
+                    <li>Как были настроены параметры материала (цвет, roughness и пр.).</li>
+                    <li>Приложить скриншот финального рендера.</li>
+                </ul>
+            </div>
+
+            <!-- Additional Recommendations Section -->
+            <div class="section">
+                <h2>Дополнительно (по желанию)</h2>
+                <ul>
+                    <li>Используйте ноду <strong>Mix Shader</strong> для создания смешанных материалов.</li>
+                    <li>Попробуйте подключить карту отражений (Metallic Map или Roughness Map).</li>
+                    <li>Примените текстуру к нестандартной 3D-модели (например, импортированной).</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

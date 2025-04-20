@@ -1,0 +1,454 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+
+
+{% block title %}Контент первого урока{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="requirements-list1">
+            <h1 class="text-center mb-2">Интерфейс Blender</h1>
+        </div>
+        <div class="requirements-list" id="1" data-type="lesson">
+            <p> Blender — это мощный и бесплатный графический редактор для 3D моделирования, анимации, рендеринга и
+                композитинга. Он используется как профессионалами, так и любителями для создания фильмов, игр,
+                визуальных эффектов и многого другого. В этом уроке мы рассмотрим основные элементы интерфейса Blender.<br>
+                Blender обладает широкими возможностями, которые делают его универсальным инструментом для различных
+                задач. Независимо от того, хотите ли вы создать простую 3D модель или сложную анимацию, Blender
+                предоставляет все необходимые инструменты. Программа поддерживает множество форматов файлов, что
+                позволяет легко интегрировать её в любой рабочий процесс. Кроме того, Blender имеет активное сообщество
+                пользователей, которые постоянно создают новые плагины и расширения, делая программу ещё более
+                функциональной.</p>
+            <a href="{% static 'main/img/interfaceBlender.png' %}" data-lightbox="gallery">
+                <img class="image1" src="{% static 'main/img/interfaceBlender.png' %}">
+            </a>
+
+            <h3>1 Верхняя панель меню Topbar</h3>
+
+            <div class="section">
+                <h4>Файл (File / Файл)</h4>
+                <p>Основные действия:</p>
+                <ul>
+                    <li><strong>Create(New) / Создать(Новый):</strong> Создание нового проекта.</li>
+                    <li><strong>Open / Открыть:</strong> Открытие существующего проекта.</li>
+                    <li><strong>Save / Сохранить:</strong> Сохранение текущего проекта.</li>
+                    <li><strong>Save As / Сохранить как:</strong> Сохранение проекта с новым именем.</li>
+                    <li><strong>Import / Импортировать:</strong> Загрузка объектов из других файлов (например, FBX, OBJ, STL).
+                    </li>
+                    <li><strong>Export / Экспортировать:</strong> Сохранение объектов в других форматах.</li>
+                    <li><strong>Exit / Выход:</strong> Закрыть все окна Blender.</li>
+                </ul>
+                <a href="{% static 'main/img/file.png' %}" data-lightbox="gallery">
+                    <img class="image1" src="{% static 'main/img/file.png' %}">
+                </a>
+            </div>
+
+            <div class="section">
+
+                <h2>2. Правка (Edit / Правка)</h2>
+                <p>Инструменты для редактирования и настройки:</p>
+                <ul>
+                    <li><strong>Undo / Отменить:</strong> Отмена последнего действия.</li>
+                    <li><strong>Redo / Повторить:</strong> Повтор последнего действия.</li>
+                    <li><strong>Adjust Last Operation / Настроить последнюю операцию:</strong> Изменение параметров
+                        последнего действия в программе.
+                    </li>
+                    <li><strong>Preferences / Настройки:</strong> Доступ к параметрам интерфейса, горячих клавиш и
+                        аддонов.
+                    </li>
+                </ul>
+                <a href="{% static 'main/img/pravka.png' %}" data-lightbox="gallery">
+                    <img class="image1" src="{% static 'main/img/pravka.png' %}">
+                </a>
+            </div>
+
+            <div class="section">
+
+                <h2>3. Рендеринг (Render / Рендеринг)</h2>
+                <p>Управление процессом визуализации:</p>
+                <ul>
+                    <li><strong>Render Image / Рендеринг изображения:</strong> Рендеринг текущего кадра.</li>
+                    <li><strong>Render Animation / Рендеринг анимации:</strong> Запуск рендеринга всей анимации.</li>
+                    <li><strong>View Render / Показать рендер:</strong> Открытие последнего рендера в отдельном окне.
+                    </li>
+                </ul>
+                <a href="{% static 'main/img/rendering.png' %}" data-lightbox="gallery">
+                    <img class="image1" src="{% static 'main/img/rendering.png' %}">
+                </a>
+            </div>
+
+            <div class="section">
+                <h2>4. Окно (Window / Окно)</h2>
+                <p>Настройка окон интерфейса:</p>
+                <ul>
+                    <li><strong>New Window / Новое окно:</strong> Открытие дополнительного окна.</li>
+                    <li><strong>Toggle Fullscreen / Полноэкранный режим:</strong> Переключение интерфейса в
+                        полноэкранный
+                        режим.
+                    </li>
+                    <li><strong>Next Workspace, Previous Workspace / Следующее рабочее пространство, Предыдущее рабочее пространство</strong> Переключение между несколькими рабочими
+                        областями.
+                    </li>
+                </ul>
+                <a href="{% static 'main/img/window.png' %}" data-lightbox="gallery">
+                    <img class="image1" src="{% static 'main/img/window.png' %}">
+                </a>
+            </div>
+
+            <div class="section">
+                <h2>5. Справка (Help / Справка)</h2>
+                <p>Справочные материалы и поддержка:</p>
+                <ul>
+                    <li><strong>Manual / Руководство:</strong> Ссылка на официальное руководство Blender.</li>
+                    <li><strong>Tutorials / Обучающие материалы:</strong> Доступ к обучающим материалам.</li>
+                    <li><strong>Report a Bug / Сообщить о проблеме:</strong> Отправка отчёта о проблемах.</li>
+                    <li><strong>System Info / Информация о системе:</strong> Просмотр сведений о текущей системе и
+                        настройках Blender.
+                    </li>
+                </ul>
+                <a href="{% static 'main/img/spravka.png' %}" data-lightbox="gallery">
+                    <img class="image1" src="{% static 'main/img/spravka.png' %}">
+                </a>
+            </div>
+        </div>
+
+        <div class="requirements-list">
+            <div class="section">
+                <h3 class="text-center mb-2">2. Рабочие пространства в Blender</h3>
+                <p>Рабочие пространства (Workspaces) в Blender позволяют настроить интерфейс в зависимости от типа
+                    работы, которую вы выполняете. Это могут быть пространства для моделирования, анимации,
+                    текстурирования или рендеринга.</p>
+                <a href="{% static 'main/img/bar5.png' %}" data-lightbox="gallery">
+                    <img class="image1" src="{% static 'main/img/bar5.png' %}">
+                </a>
+
+                <p>Основные рабочие пространства в Blender:</p>
+                <ul>
+                    <li><strong>Layout</strong> — стандартное рабочее пространство для моделирования и просмотра сцены.
+                    </li>
+                    <a href="{% static 'main/img/planning.png' %}" data-lightbox="gallery">
+                        <img class="image1" src="{% static 'main/img/planning.png' %}">
+                    </a>
+
+                    <li><strong>Modeling</strong> — пространство для работы с 3D-моделями, содержит дополнительные
+                        панели и инструменты для моделирования.
+                    </li>
+                    <a href="{% static 'main/img/modeling.png' %}" data-lightbox="gallery">
+                        <img class="image1" src="{% static 'main/img/modeling.png' %}">
+                    </a>
+
+                    <li><strong>Sculpting</strong> — рабочее пространство для скульптинга, включающее специализированные
+                        инструменты для детальной работы с объектами.
+                    </li>
+                    <a href="{% static 'main/img/skulpting.png' %}" data-lightbox="gallery">
+                        <img class="image1" src="{% static 'main/img/skulpting.png' %}">
+                    </a>
+
+                    <li><strong>UV Editing</strong> — пространство для работы с UV-развёртками и текстурами объектов.
+                    </li>
+                    <a href="{% static 'main/img/uv.png' %}" data-lightbox="gallery">
+                        <img class="image1" src="{% static 'main/img/uv.png' %}">
+                    </a>
+
+                    <li><strong>Shading</strong> — для работы с материалами и шейдерами объектов.</li>
+                    <a href="{% static 'main/img/shading1.png' %}" data-lightbox="gallery">
+                        <img class="image1" src="{% static 'main/img/shading1.png' %}">
+                    </a>
+
+                    <li><strong>Animation</strong> — пространство для анимации, с таймлайном и инструментами для
+                        создания и редактирования анимаций.
+                    </li>
+                    <a href="{% static 'main/img/animation.png' %}" data-lightbox="gallery">
+                        <img class="image1" src="{% static 'main/img/animation.png' %}">
+                    </a>
+                </ul>
+            </div>
+        </div>
+
+        <div class="requirements-list">
+
+            <h3 class="text-center mb-2"> 3. Операции с объектами в Blender</h3>
+
+            <a href="{% static 'main/img/barr.png' %}" data-lightbox="gallery">
+                <img class="image1" src="{% static 'main/img/barr.png' %}">
+            </a>
+
+            <div class="section">
+                <h2>1. Объекты (Object Mode)</h2>
+                <p>Основные операции с объектами:</p>
+                <ul>
+                    <li><strong>Object Mode (Режим объекта) — </strong>для работы с объектами на уровне всей сцены (перемещение, масштабирование, вращение).</li>
+                    <li><strong>Edit Mode (Режим редактирования) — </strong>для редактирования геометрии объектов (работа с вершинами, рёбрами, гранями).</li>
+                    <li><strong>Sculpt Mode (Режим скульптинга) — </strong>для цифровой лепки объектов с помощью кистей, используется для создания органических форм.</li>
+                    <li><strong>Vertex Paint (Покраска вершин) — </strong>для покраски вершин объекта, применяется для создания простых текстур.
+                    </li>
+                    <li><strong>Weight Paint (Покраска веса) — </strong>для настройки веса вершин в риггинге, чтобы контролировать влияние костей на объект.
+                    </li>
+                    <li><strong>Texture Paint (Покраска текстуры) — </strong>для рисования текстур на поверхности объекта.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>2. Вид (View)</h2>
+                <p>Настройка камеры и отображение элементов сцены:</p>
+                <ul>
+                    <li><strong>Перемещение камеры:</strong> Настройка позиции и ориентации камеры.</li>
+                    <li><strong>Отображение (Display):</strong> Включение/выключение отображения сетки, осей и других
+                        элементов сцены.
+                    </li>
+                    <li><strong>Переключение в перспективу/ортографический вид:</strong> Переключение между различными
+                        видами камеры.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>3. Выделение (Select)</h2>
+                <p>Выделение объектов:</p>
+                <ul>
+                    <li><strong>Выделение объектов:</strong> Выделение одного или нескольких объектов.</li>
+                    <li><strong>Выделение по типу:</strong> Выбор объектов по типу (например, только вершины, рёбра или
+                        грани в режиме редактирования).
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>4. Добавить (Add)</h2>
+                <p>Меню для добавления новых объектов в сцену:</p>
+                <ul>
+                    <li><strong>Добавление объектов:</strong> Меню для добавления примитивов: кубов, сфер, конусов и
+                        т.д.
+                    </li>
+                    <li><strong>Пример:</strong> Shift + A — вызов меню добавления объектов.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>5. Объект (Object)</h2>
+                <p>Основные операции с объектами:</p>
+                <ul>
+                    <li><strong>Перемещение (G):</strong> Перемещение объектов по сцене.</li>
+                    <li><strong>Масштабирование (S):</strong> Изменение размера объекта.</li>
+                    <li><strong>Вращение (R):</strong> Вращение объекта вокруг оси.</li>
+                    <li><strong>Редактирование (Tab):</strong> Переключение между режимом объектов (Object Mode) и
+                        редактирования (Edit Mode).
+                    </li>
+                    <li><strong>Копирование (Duplicate):</strong> Копирование объектов.</li>
+                    <li><strong>Удаление (Delete):</strong> Удаление объектов.</li>
+                    <li><strong>Применение трансформаций (Apply):</strong> Применение трансформаций объекта (масштаб,
+                        вращение и позиция).
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="requirements-list">
+
+            <h3 class="text-center mb-2">4. 3D Viewport Toolbar</h3>
+            <a href="{% static 'main/img/leftbar.png' %}" data-lightbox="gallery">
+                <img class="image2" src="{% static 'main/img/leftbar.png' %}">
+            </a>
+            <p> Панель "3D Viewport Toolbar" содержит в себе основные инструменты для редактирования и выделения 3Д обьектов, инструменты меняются в зависимости от режима работы с обьектом</p>
+            <ul>
+                <li><strong>Select box / Выделить рамкой </strong> Инструмент для работы с выделением. С помощью кнопок выше можно переключить режим выделения, например:
+                    <ul>
+                        <li>Set a New Selection: Для установки нового выделения. Используется для выбора объектов или
+                            элементов сцены.
+                        </li>
+                        <li>Extend Existing Selection: Для расширения уже сделанного выделения, например, добавления
+                            новых объектов или элементов в выделение и т.д.
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Move (Переместить):</strong> Инструмент для перемещения объектов в 3D пространстве. <strong>Горячая
+                    клавиша:</strong> G
+                </li>
+                <li><strong>Rotate (Повернуть):</strong> Инструмент для вращения объектов в 3D пространстве. <strong>Горячая
+                    клавиша:</strong> R
+                </li>
+                <li><strong>Scale (Масштабировать):</strong> Инструмент для изменения размера объектов. <strong>Горячая
+                    клавиша:</strong> S
+                </li>
+                <li><strong>Transform (Трансформировать):</strong> Инструмент, который объединяет перемещение, вращение и
+                    масштабирование, позволяя работать с объектом в любой из этих манипуляций одновременно.
+                </li>
+                <li><strong>Annotate (Аннотация):</strong> Инструмент для рисования на 3D-окне, используемый для
+                    добавления заметок или маркеров в сцену.
+                </li>
+                <li><strong>Measure (Измерить):</strong> Инструмент для измерения расстояний между объектами или
+                    элементами сцены, что помогает в точной настройке размеров и позиций.
+                </li>
+                <li><strong>Add Cube (Добавить куб):</strong> Быстрое добавление примитива в сцену, в данном случае
+                    куба, для дальнейшего моделирования. <strong>Примечание:</strong> Для добавления других объектов
+                    можно использовать меню Shift + A.
+                </li>
+            </ul>
+        </div>
+
+        <div class="requirements-list">
+
+            <h3 class="text-center mb-2">5. 3D Viewport в Blender</h3>
+
+            <a href="{% static 'main/img/Viewport.png' %}" data-lightbox="gallery">
+                <img class="image1" src="{% static 'main/img/Viewport.png' %}">
+            </a>
+
+            <p>
+                3D Viewport в Blender — это основное рабочее окно для взаимодействия с 3D-сценой.
+            </p>
+            <div class="section">
+                <h2>Основные области в 3D Viewport:</h2>
+                <ul>
+                    <li><strong>Графическое окно (3D-сцена):</strong> В центре находится пространство, где отображаются
+                        все объекты сцены, такие как кубы, камеры, источники света и другие элементы. Это окно
+                        предоставляет визуальный интерфейс для работы с 3D-объектами.
+                    </li>
+                    <li><strong>Куб по умолчанию:</strong> Когда вы создаете новый проект в Blender, в сцене появляется
+                        куб, который является объектом по умолчанию. Он расположен в центре сцены, и его можно
+                        редактировать, перемещать, вращать и масштабировать.
+                    </li>
+                    <li><strong>Сетки и оси (Grid and Axes):</strong> В 3D Viewport отображается сетка и оси
+                        координат (XY, XZ, YZ), для ориентации в пространстве. Оси координат показывают
+                        направления X, Y и Z в 3D-пространстве.
+                    </li>
+                    <li><strong>Обозначение активного объекта:</strong> Когда объект выбран, он подсвечивается
+                        цветом (по умолчанию синий). Активный объект можно
+                        перемещать, вращать или изменять.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="requirements-list">
+            <h3 class="text-center mb-2">6. Toggle X-Ray и Viewport Shading</h3>
+
+            <a href="{% static 'main/img/3DViewport_bar.png' %}" data-lightbox="gallery">
+                <img class="image1" src="{% static 'main/img/3DViewport_bar.png' %}">
+            </a>
+
+            <div class="section">
+                <h2>1. Toggle X-Ray</h2>
+                <ul>
+                    <li>Включает или выключает эффект X-ray (рентгеновский режим).
+                        Когда активен X-ray, объекты становятся полупрозрачными, что позволяет видеть объекты,
+                        расположенные за ними. Полезно при работе с сложными моделями.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>2. Viewport Shading</h2>
+                <ul>
+                    <li>Панель `Viewport Shading` в правом верхнем углу 3D Viewport или
+                        через горячую клавишу <code>Alt + Z</code>.
+                        <ul>
+                            <li><strong>Wireframe</strong> — Каркасный вид. Объекты отображаются как каркасные линии.</li>
+                            <li><strong>Solid</strong> — Твёрдый вид. Объекты отображаются с базовыми материалами, без текстур.</li>
+                            <li><strong>Material Preview</strong> — Предпросмотр материалов. Показ материалов и текстур как в рендере.</li>
+                            <li><strong>Rendered</strong> — Рендерный вид. Визуализация сцены с рендерингом в реальном времени.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="requirements-list">
+            <h3 class="text-center mb-2">7. N-panel / Right Sidebar</h3>
+
+            <a href="{% static 'main/img/ViewportLeftBar.png' %}" data-lightbox="gallery">
+                <img class="image2" src="{% static 'main/img/ViewportLeftBar.png' %}">
+            </a>
+
+            <p> Панель, которая расположена справа в главном экране 3D Viewport и предоставляет доступ к различным инструментам управления видом и навигацией, называется <code>N-panel (Properties Region)</code> или просто Right Sidebar.</p>
+
+            <ul>
+                <li><strong>Transform</strong> — изменяет позицию, вращение и масштаб объектов.</li>
+                <li><strong>View</strong> — переключает виды (перспективный, от лица камеры, угол обзора).
+                </li>
+                <li><strong>Viewport Overlays</strong> — настраивает отображение сетки, осей и теней.
+                </li>
+                <li><strong>Viewport Shading</strong> — меняет стиль отображения объектов (каркас, твердый, материал,
+                    рендеринг).
+                </li>
+                <li><strong>Clip</strong> — регулирует видимость объектов по расстоянию от камеры.
+                </li>
+            </ul>
+        </div>
+
+        <div class="requirements-list">
+            <h3 class="text-center mb-2">8. Outliner</h3>
+
+            <a href="{% static 'main/img/outliner.png' %}" data-lightbox="gallery">
+                <img class="image1" src="{% static 'main/img/outliner.png' %}">
+            </a>
+
+            <p>Панель справа сверху, в которой отображаются объекты, свет и камера, называется <code>Outliner.</code></p>
+
+            <p>Outliner предоставляет структуру сцены, отображая все объекты (модели, свет, камеры и другие элементы) в
+                виде иерархического списка.</p>
+            <p>Основные функции:</p>
+            <ul>
+                <li>Быстрое нахождение и выбор объектов.</li>
+                <li>Скрытие или отображение объектов.</li>
+                <li>Перемещение объектов по сцене.</li>
+                <li>Управление видимостью или активностью объектов.</li>
+                <li>Организация сцен, добавление или удаление объектов.</li>
+            </ul>
+        </div>
+
+        <div class="requirements-list">
+            <h3 class="text-center mb-2">9. Properties Panel (Панель свойств)</h3>
+            <a href="{% static 'main/img/properties.png' %}" data-lightbox="gallery">
+                <img class="image2" src="{% static 'main/img/properties.png' %}">
+            </a>
+
+            <div class="section">
+                <p>Properties Panel предоставляет доступ к настройкам для выбранных объектов, сцены, материалов,
+                    модификаторов, рендеринга и других элементов.</p>
+
+                <h2>Вкладки Properties Panel:</h2>
+                <ul>
+                    <li><strong>Scene:</strong> Настройки сцены (гравитация, время и другие параметры).</li>
+                    <li><strong>Object:</strong> Параметры выбранного объекта (позиция, вращение, масштаб).</li>
+                    <li><strong>Modifiers:</strong> Модификаторы, применяемые к объектам (например, Subdivision
+                        Surface).
+                    </li>
+                    <li><strong>Materials:</strong> Создание и настройка материалов для объектов.</li>
+                    <li><strong>Render:</strong> Параметры рендеринга сцены (тип рендерера, разрешение и другие
+                        параметры).
+                    </li>
+                    <li><strong>World:</strong> Настройки окружающей среды (освещение, фон).</li>
+                </ul>
+
+                <p>Properties Panel позволяет детально настроить каждый аспект сцены и объектов</p>
+            </div>
+        </div>
+
+        <div class="requirements-list">
+            <h3 class="text-center mb-2">10. Timeline (Временная шкала)</h3>
+            <a href="{% static 'main/img/timeline.png' %}" data-lightbox="gallery">
+                <img class="image1" src="{% static 'main/img/timeline.png' %}">
+            </a>
+
+            <div class="section">
+                <h2>Описание</h2>
+                <p><strong>Timeline (Таймлайн)</strong> — это панель для работы с анимацией.</p>
+
+                <h3>Основные функции Timeline:</h3>
+                <ul>
+                    <li>Просмотр и управление временной шкалой анимации.</li>
+                    <li>Добавление, редактирование и удаление ключевых кадров.</li>
+                    <li>Управление воспроизведением анимации (воспроизведение, пауза).</li>
+                    <li>Настройка диапазона кадров для анимации.</li>
+                </ul>
+            </div>
+            <div class="text-center">
+                <button id="markLessonComplete" class="btn btn-success">Урок пройден</button>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

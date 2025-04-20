@@ -1,0 +1,72 @@
+from django.urls import path, include
+from django.contrib import admin
+from . import views
+from django.contrib.auth import views as auth_views
+from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LogoutView
+from .views import CustomLoginView, profile_edit
+
+
+
+urlpatterns = [
+    path('', views.index, name='home'),
+    path('about', views.about),
+    path('admin/', admin.site.urls),
+    path('login/', CustomLoginView.as_view(template_name='accounts/login.html'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(template_name='accounts/logout.html'), name='logout'),
+    path('send_email/', views.send_email_view, name='send_email'),
+    path('teacher_dashboard/', views.teacher_dashboard, name='teacher_dashboard'),
+    path('profile/', views.profile, name='profile'),
+    path('profile/edit/', profile_edit, name='profile_edit'),
+	path('register/', views.register, name='register'),
+    path('submit_result/', views.submit_result, name='submit_result'),
+    path('lesson1', views.lesson1, name='lesson1'),
+    path('lesson2', views.lesson2, name='lesson2'),
+    path('lesson3', views.lesson3, name='lesson3'),
+    path('lesson4', views.lesson4, name='lesson4'),
+    path('lesson5', views.lesson5, name='lesson5'),
+    path('lesson6', views.lesson6, name='lesson6'),
+    path('lesson7', views.lesson7, name='lesson7'),
+    path('lesson8', views.lesson8, name='lesson8'),
+    path('lesson9', views.lesson9, name='lesson9'),
+    path('lesson10', views.lesson10, name='lesson10'),
+    path('lesson11', views.lesson11, name='lesson11'),
+    path('lesson12', views.lesson12, name='lesson12'),
+    path('lesson13', views.lesson13, name='lesson13'),
+    path('lesson14', views.lesson14, name='lesson14'),
+    path('lesson15', views.lesson15, name='lesson15'),
+
+    path('practice1', views.practice1, name='practice1'),
+    path('practice2', views.practice2, name='practice2'),
+    path('practice3', views.practice3, name='practice3'),
+    path('practice4', views.practice4, name='practice4'),
+    path('practice5', views.practice5, name='practice5'),
+    path('practice6', views.practice6, name='practice6'),
+    path('practice7', views.practice7, name='practice7'),
+    path('practice8', views.practice8, name='practice8'),
+    path('practice9', views.practice9, name='practice9'),
+    path('practice10', views.practice10, name='practice10'),
+    path('practice11', views.practice11, name='practice11'),
+    path('practice12', views.practice12, name='practice12'),
+    path('practice13', views.practice13, name='practice13'),
+    path('practice14', views.practice14, name='practice14'),
+    path('practice15', views.practice15, name='practice15'),
+
+    path('test1', views.test1, name='test1'),
+    path('test2', views.test2, name='test2'),
+    path('test3', views.test3, name='test3'),
+    path('test4', views.test4, name='test4'),
+    path('test5', views.test5, name='test5'),
+    path('test6', views.test6, name='test6'),
+    path('test7', views.test7, name='test7'),
+    path('test8', views.test8, name='test8'),
+    path('test9', views.test9, name='test9'),
+    path('test10', views.test10, name='test10'),
+    path('test11', views.test11, name='test11'),
+    path('test12', views.test12, name='test12'),
+    path('test13', views.test13, name='test13'),
+    path('test14', views.test14, name='test14'),
+    path('test15', views.test15, name='test15'),
+    path('system', views.system, name='system'),
+    path('splashscreen', views.splashscreen, name='splashscreen'),
+]

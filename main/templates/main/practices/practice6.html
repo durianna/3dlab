@@ -1,0 +1,81 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}Практическая работа: Моделирование с использованием Extrude в Blender{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="requirements-list1">
+            <!-- Header Section -->
+            <header class="text-center mb-4">
+                <h1>Практическая работа: Моделирование простого объекта с использованием инструмента Extrude</h1>
+                <p class="lead">Освоение инструмента выдавливания (Extrude) для моделирования сложной геометрии из примитивов.</p>
+            </header>
+        </div>
+
+        <div class="requirements-list">
+            <!-- Objective Section -->
+            <div class="section">
+                <h2>Цель работы</h2>
+                <p>Научиться использовать инструмент Extrude для создания новых геометрических форм на основе примитивов.</p>
+            </div>
+            <div class="video-container">
+                <iframe width="560" height="315"
+                        src="https://www.youtube-nocookie.com/embed/60e-U_iA64M?si=pq6lqjK8iK_Qr7mP"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+
+
+            <!-- Task Section -->
+            <div class="section">
+                <h2>Задание</h2>
+                <p>Выполните следующие действия в Blender:</p>
+
+                <div class="student-table-wrapper">
+                    <table class="student-table blender-style-table">
+                        <thead>
+                            <tr>
+                                <th>№</th>
+                                <th>Действие</th>
+                                <th>Метод выполнения</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td>Создание простого 3D-объекта (сферы или куба)</td><td>Откройте Blender.Создайте новый проект. Удалите стандартный куб (если он есть). Добавьте
+                                сферу или куб через меню "Add" → "Mesh" → "Sphere" или "Cube".</td></tr>
+                            <tr><td>2</td><td>Добавление материала к объекту</td><td>Выберите ваш объект (сферу или куб). Перейдите на вкладку "Material Properties" (с иконкой шара). Нажмите "New", чтобы создать новый материал. Настройте цвет материала, изменив параметр "Base Color".</td></tr>
+                            <tr><td>3</td><td>Добавление текстуры</td><td>В той же вкладке "Material Properties", найдите раздел "Surface". Нажмите на маленькую иконку рядом с "Base Color", чтобы открыть меню текстур. Выберите "Image Texture" из выпадающего списка. В появившемся окне выберите изображение текстуры (например, текстуру кирпичной стены или дерева). Примените текстуру к объекту.</td></tr>
+                            <tr><td>4</td><td>Настройка координат текстуры</td><td>Перейдите в окно "UV Editing", чтобы развернуть объект и корректно наложить текстуру. Выберите объект, нажмите "U" для развёртки, затем выберите "Unwrap". Перейдите обратно в "Shading" для работы с текстурами.</td></tr>
+                            <tr><td>5</td><td>Настройка свойств текстуры</td><td>Вернитесь в "Material Properties" и подкорректируйте параметры текстуры (например, "Specular" для отражений или "Roughness" для матовости).</td></tr>
+                            <tr><td>6</td><td>Рендеринг сцены</td><td>Когда все настроено, перейдите в окно "Render Properties". Выберите тип рендера (например, "Cycles" для более качественного изображения). Нажмите "F12" для рендеринга сцены.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Report Section -->
+            <div class="section">
+                <h2><br>Отчёт по работе</h2>
+                <p>В отчёте учащийся должен:</p>
+                <ul>
+                    <li>Приложить изображение готового рендера сцены</li>
+                    <li>Описать шаги, которые были выполнены при текстурировании</li>
+                    <li>Отметить, какие текстуры или настройки использовались</li>
+                    <li>Кратко описать, что удалось создать с помощью текстурирования.</li>
+                </ul>
+            </div>
+
+            <!-- Additional Recommendations Section -->
+            <div class="section">
+                <h2>Дополнительно (по желанию)</h2>
+                <ul>
+                    <li>Экспериментируйте с различными типами текстур (например, с нормальными картами или с картами отражений).</li>
+                    <li>Попробуйте изменить материалы объектов, чтобы увидеть, как влияет изменение различных настроек (например, металлическость или прозрачность).</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

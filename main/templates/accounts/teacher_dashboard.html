@@ -1,0 +1,117 @@
+{% extends 'main/layout.html' %}
+{% load custom_tags %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'main/css/profile.css' %}">
+
+<div class="teacher-dashboard">
+    <h2 class="text-center mb-4"><br>Журнал</h2>
+
+    <div class="filters">
+        <input type="text" id="studentSearch" placeholder="Поиск по имени...">
+        <select id="lessonFilter">
+            <option value="all">Все уроки</option>
+            {% for i in 1|to:15 %}
+                <option value="lesson{{ i }}">Урок {{ i }}</option>
+            {% endfor %}
+        </select>
+        <select id="testFilter">
+            <option value="all">Все тесты</option>
+            {% for i in 1|to:15 %}
+                <option value="test{{ i }}">Тест {{ i }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="students-container">
+        {% for entry in data %}
+            <div class="student-block"  data-name="{{ entry.student.surname }} {{ entry.student.first_name }}">
+                <h3>{{ entry.student.surname }} {{ entry.student.first_name }}</h3>
+
+                <div class="student-table-wrapper">
+                    <table class="student-table">
+                        <thead>
+                            <tr id="tableHeader">
+                                {% for i in 1|to:15 %}
+                                    <th class="lesson-col lesson{{ i }}">Ур. {{ i }}</th>
+                                {% endfor %}
+                                {% for i in 1|to:15 %}
+                                    <th class="test-col test{{ i }}">Тест {{ i }}</th>
+                                {% endfor %}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                {% for i in 1|to:15 %}
+                                    <td class="lesson-col lesson{{ i }}">
+                                        {% if entry.lessons %}
+                                            {% with "lesson"|concat:i as attr_name %}
+                                                {% if entry.lessons|getattr_dynamic:attr_name %}
+                                                    <span class="passed">✅</span>
+                                                {% else %}
+                                                    <span class="failed">❌</span>
+                                                {% endif %}
+                                            {% endwith %}
+                                        {% else %}
+                                            <span class="not-available">—</span>
+                                        {% endif %}
+                                    </td>
+                                {% endfor %}
+
+                                {% for i in 1|to:15 %}
+                                    <td class="test-col test{{ i }}">
+                                        {% if entry.tests %}
+                                            {% with "test"|concat:i as attr_name %}
+                                                {% if entry.tests|getattr_dynamic:attr_name %}
+                                                    {{ entry.tests|getattr_dynamic:attr_name }}
+                                                {% else %}
+                                                    <span class="not-available">—</span>
+                                                {% endif %}
+                                            {% endwith %}
+                                        {% else %}
+                                            <span class="not-available">—</span>
+                                        {% endif %}
+                                    </td>
+                                {% endfor %}
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    // Поиск по имени
+    document.getElementById('studentSearch').addEventListener('keyup', function () {
+        const searchText = this.value.toLowerCase();
+        const blocks = document.querySelectorAll('.student-block');
+
+        blocks.forEach(block => {
+            const name = block.getAttribute('data-name').toLowerCase();
+            block.classList.toggle('hidden', !name.includes(searchText));
+        });
+    });
+
+    // Фильтр по урокам
+    document.getElementById('lessonFilter').addEventListener('change', function () {
+        const value = this.value;
+        const columns = document.querySelectorAll('.lesson-col');
+
+        columns.forEach(col => {
+            col.style.display = (value === 'all' || col.classList.contains(value)) ? '' : 'none';
+        });
+    });
+
+    // Фильтр по тестам
+    document.getElementById('testFilter').addEventListener('change', function () {
+        const value = this.value;
+        const columns = document.querySelectorAll('.test-col');
+
+        columns.forEach(col => {
+            col.style.display = (value === 'all' || col.classList.contains(value)) ? '' : 'none';
+        });
+    });
+</script>
+{% endblock %}

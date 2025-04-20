@@ -1,0 +1,323 @@
+*{
+    margin: 0;
+}
+
+body {
+    background: #2c2c2c;
+    color: #fff
+    display: flex;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+aside {
+    float: left;
+    position: relative;
+    background: #181818;
+    width: 20%; /* ширина родительского контейнера */
+    padding: 2.5%;
+    height: 100vh;
+    color: white;
+    border-right: 5px solid #4d4d4d;
+    overflow-y: auto;
+    overflow-x: auto;
+    box-sizing: border-box;
+}
+
+
+
+aside::-webkit-scrollbar {
+    width: 0px;
+
+}
+
+
+aside img {
+    width: 80px;
+    float: left;
+}
+
+aside .logo {
+    font-size: 34px;
+    margin-left: 30px;
+    font-weight: bold;
+    position: relative;
+    top: 20px;
+}
+
+aside h3 {
+    margin-top: 50px;
+    font-size: 28px;
+}
+
+.aside_ul {
+    list-style: none;
+    }
+
+.aside_ul_a {
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.aside_ul_li {
+    color: white;
+    display: block;
+    margin-top: 20px;
+    transition: transform .6s ease;
+    padding: 10px;
+    list-style-type: none;
+}
+
+.aside_ul_li:hover, .aside_ul_a:hover {
+    color: #eb5959;
+    text-decoration: none;
+    transform: scale(1.05);
+
+}
+
+main {
+    flex-grow: 1; /* Контент занимает оставшееся пространство */
+    overflow-y: auto; /* Включаем вертикальную прокрутку для содержимого */
+    height: 100vh; /* Высота содержимого на всю высоту окна */
+    margin: 0 auto;
+    width: 80%;
+}
+
+main::-webkit-scrollbar {
+    width: 5px;
+}
+
+main::-webkit-scrollbar-track {
+    background: #191919;
+}
+
+main::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 5px;
+}
+
+main::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #ea2e7b, #f5a743);/* Цвет ползунка при наведении */
+}
+
+/* Основной стиль списка */
+.aside_ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.aside_ul_li {
+    position: relative;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.aside_ul_a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+}
+
+.aside_ul_a1 {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    list-style: none;
+    padding-left: 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out; /* Плавное раскрытие */
+}
+
+.dropdown.open .dropdown-content {
+    display: block;
+    max-height: 500px; /* Максимальная высота для анимации */
+}
+
+/* Стиль для иконок и доп. элементов */
+.fa-cube, .fa-house {
+    margin-right: 10px;
+}
+
+.btn-warning {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+
+
+
+
+
+@media (max-width: 1200px) {
+    .logo {
+        font-size: 1.8rem;
+    }
+    h3 {
+        font-size: 1.3rem;
+    }
+    .aside_ul_a {
+        font-size: 1.1rem;
+    }
+    .aside_ul_a1 {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .logo {
+        font-size: 1.6rem;
+    }
+    h3 {
+        font-size: 1.2rem;
+    }
+    .aside_ul_a {
+        font-size: 1rem;
+    }
+    .aside_ul_a1 {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo {
+        font-size: 1.4rem;
+    }
+    h3 {
+        font-size: 1rem;
+    }
+    .aside_ul_a {
+        font-size: 0.9rem;
+    }
+    .aside_ul_a1 {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo {
+        font-size: 1.2rem;
+    }
+    h3 {
+        font-size: 1rem;
+    }
+    .aside_ul_a {
+        font-size: 0.9rem;
+    }
+    .aside_ul_a1 {
+        font-size: 0.75rem;
+    }
+}
+
+
+
+.btn-outline-info {
+    display: inline-block; /* Делает кнопку блочным элементом */
+    padding: 10px 20px; /* Внутренние отступы */
+    background-color: #ff6347; /* Цвет фона (например, томатный) */
+    color: #fff; /* Цвет текста (белый) */
+    border: none; /* Убираем границу */
+    border-radius: 5px; /* Скругленные углы */
+    font-size: 1rem; /* Размер шрифта */
+    font-weight: bold; /* Жирный текст */
+    text-align: center; /* Центрирование текста */
+    text-decoration: none; /* Убираем подчеркивание */
+    cursor: pointer; /* Указатель при наведении */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Анимация */
+    margin: 10px;
+}
+
+.btn-outline-info:hover {
+    background-color: #ff4500; /* Более яркий цвет при наведении */
+    transform: scale(1.05); /* Легкое увеличение при наведении */
+    color: #fff;
+}
+
+.btn-outline-info:active {
+    background-color: #c63d24; /* Цвет при нажатии */
+    transform: scale(0.95); /* Легкое уменьшение при нажатии */
+    color: #fff;
+}
+
+.navbar {
+    display: flex; /* Горизонтальное расположение */
+    justify-content: flex-end; /* Разделение кнопок по краям */
+    align-items: center; /* Выравнивание по центру */
+    background-color: #333; /* Темный фон */
+    color: #fff; /* Белый текст */
+    padding: 10px 20px; /* Внутренние отступы */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Легкая тень */
+}
+
+.navbar a {
+    color: #fff; /* Белый текст для ссылок */
+    text-decoration: none; /* Убираем подчеркивание */
+    padding: 8px 15px; /* Отступы внутри кнопок */
+    border-radius: 5px; /* Скругленные углы */
+    transition: background-color 0.3s ease; /* Плавный переход фона */
+}
+
+.navbar a:hover {
+    background-color: #575757; /* Светло-серый фон при наведении */
+}
+
+.navbar button:hover {
+    background-color: #575757; /* Светло-серый фон при наведении */
+}
+
+.navbar button {
+    all: unset;
+    color: #fff; /* Белый текст для ссылок */
+    text-decoration: none; /* Убираем подчеркивание */
+    padding: 8px 15px; /* Отступы внутри кнопок */
+    border-radius: 5px; /* Скругленные углы */
+    transition: background-color 0.3s ease; /* Плавный переход фона */
+}
+.navbar .navbar-buttons {
+    display: flex; /* Расположение кнопок в строку */
+    gap: 10px; /* Расстояние между кнопками */
+}
+
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+/* Стили для изображения профиля */
+.account-img {
+    width: 100px;  /* Размер изображения */
+    height: 100px;
+    object-fit: cover;  /* Сохраняет пропорции изображения */
+    border: 4px solid #ddd;  /* Граница вокруг изображения */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* Легкая тень для изображения */
+}
+
+/* Стили для заголовка и текста */
+.account-heading {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.text-secondary {
+    color: #777;
+}
+
+.small-help-text {
+    font-size: 0.8em; /* Уменьшаем размер шрифта */
+    color: #6c757d; /* Более светлый цвет для текста подсказки */
+}

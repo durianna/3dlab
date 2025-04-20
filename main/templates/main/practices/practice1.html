@@ -1,0 +1,147 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}Практическая работа: Навигация и работа с интерфейсом Blender{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="requirements-list1">
+        <!-- Header Section -->
+        <header class="text-center mb-4">
+            <h1>Практическая работа: Навигация и работа с интерфейсом Blender</h1>
+            <p class="lead">Научиться ориентироваться в интерфейсе Blender, выполнять базовые операции с объектами и использовать основные инструменты.</p>
+        </header>
+    </div>
+
+    <div class="requirements-list">
+        <!-- Objective Section -->
+        <div class="section">
+            <h2>Цель работы</h2>
+            <p>Научиться ориентироваться в интерфейсе Blender, выполнять базовые операции с объектами и использовать основные инструменты.</p>
+        </div>
+
+        <!-- Task Section -->
+        <div class="section">
+            <h2>Задание</h2>
+            <p>Выполните следующие действия в среде Blender:</p>
+
+            <div class="student-table-wrapper">
+                <table class="student-table blender-style-table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Действие</th>
+                            <th>Метод выполнения</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Развернуть окно 3D-вида на весь экран</td>
+                            <td>Навести курсор на 3D-вьюпорт, нажать <strong>Shift + Пробел</strong>.</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Переместить 3D-курсор</td>
+                            <td>ЛКМ по нужной точке в 3D-пространстве.</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Выделить камеру, свет и куб поочерёдно</td>
+                            <td>ПКМ по каждому объекту.</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Множественное выделение</td>
+                            <td>Удерживать <strong>Shift</strong> и ПКМ по объектам.</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Вид спереди, сбоку и из камеры</td>
+                            <td>Нажать <strong>1</strong>, <strong>3</strong>, <strong>0</strong> на NumPad.</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Выделить куб</td>
+                            <td>ПКМ по кубу.</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Переместить по X на -2</td>
+                            <td>Перетянуть по красной оси с <strong>Ctrl</strong>.</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Переместить по Y на 3</td>
+                            <td>Перетянуть по зелёной оси вправо.</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Переместить по Z на -1</td>
+                            <td>Перетянуть по синей оси вниз.</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Масштаб по X в 3 раза</td>
+                            <td><strong>S → X</strong>, <strong>Ctrl</strong> + перемещение до 3.0.</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>Масштаб по Y в 1.3 раза</td>
+                            <td><strong>S → Y</strong>, довести до 1.3.</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>Масштаб по Z в 0.5 раза</td>
+                            <td><strong>S → Z</strong>, уменьшить до 0.5.</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>Повернуть по X на -15°</td>
+                            <td><strong>N</strong> → ввести <strong>-15</strong> в поле Rotation X.</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>Повернуть по Y на -10°</td>
+                            <td>Ввести <strong>-10</strong> в поле Rotation Y.</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>Выполнить рендер сцены</td>
+                            <td>Нажать <strong>F12</strong>.</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>Сохранить итоговое изображение</td>
+                            <td>В рендер-окне нажать <strong>F3</strong> → выбрать путь и формат.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+        <!-- Report Section -->
+        <div class="section">
+            <h2><br>Отчёт по работе</h2>
+            <p>В отчёте учащийся должен:</p>
+            <ul>
+                <li>Указать, какие объекты он добавил.</li>
+                <li>Какие трансформации применил.</li>
+                <li>В каком режиме рендеринга работал.</li>
+                <li>Приложить скриншот финального рендера.</li>
+            </ul>
+        </div>
+
+        <!-- Additional Recommendations Section -->
+        <div class="section">
+            <h2>Дополнительно (по желанию)</h2>
+            <ul>
+                <li>Примените к одному из объектов модификатор Subdivision Surface.</li>
+                <li>Попробуйте изменить цвет объектов во вкладке Materials.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

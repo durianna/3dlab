@@ -1,0 +1,88 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}Практическая работа: Настройки трансформаций, структура меша и параметры объекта в Blender{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="requirements-list1">
+            <!-- Header Section -->
+            <header class="text-center mb-4">
+                <h1>Практическая работа: Настройки трансформаций, структура меша и параметры объекта в Blender</h1>
+                <p class="lead">Изучение базовых трансформаций, структуры меша и свойств объектов в Blender.</p>
+            </header>
+        </div>
+
+        <div class="requirements-list">
+            <!-- Objective Section -->
+            <div class="section">
+                <h2>Цель работы</h2>
+                <p>Научиться выполнять базовые трансформации (перемещение, вращение, масштабирование), исследовать структуру меша, работать с режимами редактирования и изменять параметры объекта.</p>
+            </div>
+
+            <div class="video-container">
+                 <iframe width="560" height="315"
+                         src="https://www.youtube-nocookie.com/embed/60e-U_iA64M?si=pq6lqjK8iK_Qr7mP"
+                         title="YouTube video player" frameborder="0"
+                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+             </div>
+
+            <!-- Task Section -->
+            <div class="section">
+                <h2>Задание</h2>
+                <p>Выполните следующие действия в Blender:</p>
+
+                <div class="student-table-wrapper">
+                    <table class="student-table blender-style-table">
+                        <thead>
+                            <tr>
+                                <th>№</th>
+                                <th>Действие</th>
+                                <th>Метод выполнения</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td>Добавьте объект Cube</td><td>Shift + A → Mesh → Cube</td></tr>
+                            <tr><td>2</td><td>Переместите объект</td><td>Нажмите G и переместите объект мышкой или по осям (X, Y, Z)</td></tr>
+                            <tr><td>3</td><td>Поверните объект</td><td>Нажмите R → вращение вокруг выбранной оси</td></tr>
+                            <tr><td>4</td><td>Измените масштаб</td><td>Нажмите S → масштабирование объекта</td></tr>
+                            <tr><td>5</td><td>Перейдите в режим редактирования</td><td>Tab → Edit Mode</td></tr>
+                            <tr><td>6</td><td>Выделите вершины, рёбра и грани</td><td>Используйте клавиши 1 (Vertex), 2 (Edge), 3 (Face)</td></tr>
+                            <tr><td>7</td><td>Измените форму объекта</td><td>Выделите и переместите/масштабируйте элементы меша</td></tr>
+                            <tr><td>8</td><td>Посмотрите статистику объекта</td><td>Включите "Statistics" в Overlay → отобразится количество вершин и полигонов</td></tr>
+                            <tr><td>9</td><td>Откройте панель "Item"</td><td>Нажмите клавишу N → вкладка "Item" → изучите параметры Transform</td></tr>
+                            <tr><td>10</td><td>Сбросьте трансформации</td><td>Ctrl + A → Apply → Location/Rotation/Scale</td></tr>
+                            <tr><td>11</td><td>Измените имя объекта</td><td>В панели Properties → Object → поле Name</td></tr>
+                            <tr><td>12</td><td>Проверьте координаты объекта</td><td>Панель "Item" → Location, Rotation, Scale</td></tr>
+                            <tr><td>13</td><td>Переключитесь в локальную/глобальную систему координат</td><td>Меню вверху 3D-вида или клавиша "," и "."</td></tr>
+                            <tr><td>14</td><td>Установите точку вращения на центр массы</td><td>Pivot Point → Median Point / Individual Origins</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Report Section -->
+            <div class="section">
+                <h2><br>Отчёт по работе</h2>
+                <p>В отчёте учащийся должен:</p>
+                <ul>
+                    <li>Привести скриншоты трансформированных объектов до и после применения трансформаций.</li>
+                    <li>Описание использованных режимов редактирования и что было изменено в структуре меша.</li>
+                    <li>Указать параметры, отображённые в панели "Item" (координаты, масштаб и т.д.).</li>
+                    <li>Рассказать, как он применял трансформации и зачем выполнялся сброс (Apply).</li>
+                </ul>
+            </div>
+
+            <!-- Additional Recommendations Section -->
+            <div class="section">
+                <h2>Дополнительно (по желанию)</h2>
+                <ul>
+                    <li>Создайте несколько объектов и сгруппируйте их.</li>
+                    <li>Попробуйте использовать snapping для точного позиционирования (включается кнопкой с магнитом).</li>
+                    <li>Изучите вкладку Object Data Properties (зелёный треугольник) и найдите информацию о геометрии объекта.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

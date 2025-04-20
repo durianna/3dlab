@@ -1,0 +1,32 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+
+{% block title %}Контент первого урока{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="text-center mb-4">Задание на соответствие</h1>
+        <div class="requirements-list">
+            <div class="container_test">
+                <div class="list" id="left-list">
+                    <div data-id="1">Слон</div>
+                    <div data-id="2">Кошка</div>
+                    <div data-id="3">Собака</div>
+                    <div data-id="4">Собака</div>
+                </div>
+                <svg id="svg-lines"></svg>
+                <div class="list" id="right-list">
+                    <div data-id="1">Elephant</div>
+                    <div data-id="3">Dog</div>
+                    <div data-id="2">Cat</div>
+                    <div data-id="4">Dog</div>
+                </div>
+            </div>
+            <div class="container_result">
+                <button class="submit-btn" id="submit-btn">Проверить</button>
+                <div class="result" id="result"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,418 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/lessons.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/media.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/tests.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/profile.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/css/lightbox.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <aside id="menu">
+        <img src="{% static 'main/img/logo.png' %}" alt="logo" >
+        <span class="logo" >3DLab</span>
+        <h3>Содержание</h3>
+        <ul class="aside_ul">
+            <li class="aside_ul_li">
+                <a class="aside_ul_a" href="{% url 'home' %}">
+                    <i class="fa-solid fa-house"></i> Главная
+                </a>
+            </li>
+            <li class="aside_ul_li dropdown" data-id="1">
+                <a class="aside_ul_a">
+                    <i class="fa-solid fa-cube"></i> Введение
+                </a>
+                <ul class="dropdown-content">
+                        <li class="aside_ul_li">
+                            <a class="aside_ul_a1" href="{% url 'system' %}">
+                                <i class="fa-solid fa-cube" ></i>Установка программы Blender. Системные требования.
+                            </a>
+                        </li>
+                </ul>
+            </li>
+
+            <li class="aside_ul_li dropdown" data-id="2">
+                <a class="aside_ul_a">
+                    <i class="fa-solid fa-cube"></i> Урок 1. Интерфейс программы Blender.
+                </a>
+                <ul class="dropdown-content">
+                        <li class="aside_ul_li">
+                            <a class="aside_ul_a1" href="{% url 'lesson1' %}">
+                                <i class="fa-solid fa-cube" ></i> Теория
+                            </a>
+                        </li>
+                        <li class="aside_ul_li">
+                            <a class="aside_ul_a1" href="{% url 'practice1' %}">
+                                <i class="fa-solid fa-cube"></i> Практическая
+                            </a>
+                        </li>
+                        <li class="aside_ul_li">
+                            <a class="aside_ul_a1" href="{% url 'test1' %}">
+                                <i class="fa-solid fa-cube"></i> Тестирование
+                            </a>
+                        </li>
+                </ul>
+            </li>
+            <li class="aside_ul_li dropdown" data-id="3">
+                <a class="aside_ul_a">
+                    <i class="fa-solid fa-cube"></i> Урок 2. Навигация и работа с интерфейсом Blender
+                </a>
+                <ul class="dropdown-content">
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'lesson2' %}">
+                            <i class="fa-solid fa-cube"></i> Теория
+                        </a>
+                    </li>
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'practice2' %}">
+                            <i class="fa-solid fa-cube"></i> Практическая
+                        </a>
+                    </li>
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'test2' %}">
+                            <i class="fa-solid fa-cube"></i> Тестирование
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="aside_ul_li dropdown" data-id="4">
+                <a class="aside_ul_a">
+                    <i class="fa-solid fa-cube"></i> Урок 3. Настройки Blender: трансформации, структура меша и параметры объекта.
+                </a>
+                <ul class="dropdown-content">
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'lesson3' %}">
+                            <i class="fa-solid fa-cube"></i> Теория
+                        </a>
+                    </li>
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'practice3' %}">
+                            <i class="fa-solid fa-cube"></i> Практическая
+                        </a>
+                    </li>
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'test3' %}">
+                            <i class="fa-solid fa-cube"></i> Тестирование
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="aside_ul_li dropdown" data-id="5">
+                <a class="aside_ul_a">
+                    <i class="fa-solid fa-cube"></i> Урок 4. Использование модификаторов для создания сложных форм.
+                </a>
+                <ul class="dropdown-content">
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'lesson4' %}">
+                            <i class="fa-solid fa-cube"></i> Теория
+                        </a>
+                    </li>
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'practice4' %}">
+                            <i class="fa-solid fa-cube"></i> Практическая
+                        </a>
+                    </li>
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'test4' %}">
+                            <i class="fa-solid fa-cube"></i> Тестирование
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="aside_ul_li dropdown" data-id="6">
+                <a class="aside_ul_a">
+                    <i class="fa-solid fa-cube"></i> Урок 5. Моделирование объектов в Blender.
+                </a>
+                <ul class="dropdown-content">
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'lesson5' %}">
+                            <i class="fa-solid fa-cube"></i> Теория
+                        </a>
+                    </li>
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'practice5' %}">
+                            <i class="fa-solid fa-cube"></i> Практическая
+                        </a>
+                    </li>
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'test5' %}">
+                            <i class="fa-solid fa-cube"></i> Тестирование
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="aside_ul_li dropdown" data-id="7">
+                <a class="aside_ul_a">
+                    <i class="fa-solid fa-cube"></i> Урок 6. Основы формирования и структурирования форм.
+                </a>
+                <ul class="dropdown-content">
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'lesson6' %}">
+                            <i class="fa-solid fa-cube"></i> Теория
+                        </a>
+                    </li>
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'practice6' %}">
+                            <i class="fa-solid fa-cube"></i> Практическая
+                        </a>
+                    </li>
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'test6' %}">
+                            <i class="fa-solid fa-cube"></i> Тестирование
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="aside_ul_li dropdown" data-id="8">
+                <a class="aside_ul_a">
+                    <i class="fa-solid fa-cube"></i> Урок 7. Текстурирование и создание материалов. Применение текстур и шейдеров.
+                </a>
+                <ul class="dropdown-content">
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'lesson7' %}">
+                            <i class="fa-solid fa-cube"></i> Теория
+                        </a>
+                    </li>
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'practice7' %}">
+                            <i class="fa-solid fa-cube"></i> Практическая
+                        </a>
+                    </li>
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'test7' %}">
+                            <i class="fa-solid fa-cube"></i> Тестирование
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="aside_ul_li dropdown" data-id="9">
+                <a class="aside_ul_a">
+                    <i class="fa-solid fa-cube"></i> Урок 8. Освещение в 3D-сценах. Типы источников света
+                </a>
+                <ul class="dropdown-content">
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'lesson8' %}">
+                            <i class="fa-solid fa-cube"></i> Теория
+                        </a>
+                    </li>
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'practice8' %}">
+                            <i class="fa-solid fa-cube"></i> Практическая
+                        </a>
+                    </li>
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'test8' %}">
+                            <i class="fa-solid fa-cube"></i> Тестирование
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="aside_ul_li dropdown" data-id="10">
+                <a class="aside_ul_a">
+                    <i class="fa-solid fa-cube"></i> Урок 9. Основы анимации в 3D-пространстве. Работа с ключевыми кадрами и временной шкалой.
+                </a>
+                <ul class="dropdown-content">
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'lesson9' %}">
+                            <i class="fa-solid fa-cube"></i> Теория
+                        </a>
+                    </li>
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'practice9' %}">
+                            <i class="fa-solid fa-cube"></i> Практическая
+                        </a>
+                    </li>
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'test9' %}">
+                            <i class="fa-solid fa-cube"></i> Тестирование
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="aside_ul_li dropdown" data-id="11">
+                <a class="aside_ul_a">
+                    <i class="fa-solid fa-cube"></i> Урок 10. Blender. Риггинг и анимация персонажей.
+                </a>
+                <ul class="dropdown-content">
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'lesson10' %}">
+                            <i class="fa-solid fa-cube"></i> Теория
+                        </a>
+                    </li>
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'practice10' %}">
+                            <i class="fa-solid fa-cube"></i> Практическая
+                        </a>
+                    </li>
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'test10' %}">
+                            <i class="fa-solid fa-cube"></i> Тестирование
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="aside_ul_li dropdown" data-id="12">
+                <a class="aside_ul_a">
+                    <i class="fa-solid fa-cube"></i> Урок 11. Деформация объектов и создание поз. Работа с персонажами и моделями
+                </a>
+                <ul class="dropdown-content">
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'lesson11' %}">
+                            <i class="fa-solid fa-cube"></i> Теория
+                        </a>
+                    </li>
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'practice11' %}">
+                            <i class="fa-solid fa-cube"></i> Практическая
+                        </a>
+                    </li>
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'test11' %}">
+                            <i class="fa-solid fa-cube"></i> Тестирование
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="aside_ul_li dropdown" data-id="13">
+                <a class="aside_ul_a">
+                    <i class="fa-solid fa-cube"></i> Урок 12. Моделирование объектов для анимации. Создание окружения и декораций
+                </a>
+                <ul class="dropdown-content">
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'lesson12' %}">
+                            <i class="fa-solid fa-cube"></i> Теория
+                        </a>
+                    </li>
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'practice12' %}">
+                            <i class="fa-solid fa-cube"></i> Практическая
+                        </a>
+                    </li>
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'test12' %}">
+                            <i class="fa-solid fa-cube"></i> Тестирование
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="aside_ul_li dropdown" data-id="14">
+                <a class="aside_ul_a">
+                    <i class="fa-solid fa-cube"></i> Урок 13. Динамика и эффекты в 3D-анимированных сценах: Частицы, жидкости и ткани
+                </a>
+                <ul class="dropdown-content">
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'lesson13' %}">
+                            <i class="fa-solid fa-cube"></i> Теория
+                        </a>
+                    </li>
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'practice13' %}">
+                            <i class="fa-solid fa-cube"></i> Практическая
+                        </a>
+                    </li>
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'test13' %}">
+                            <i class="fa-solid fa-cube"></i> Тестирование
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="aside_ul_li dropdown" data-id="15">
+                <a class="aside_ul_a">
+                    <i class="fa-solid fa-cube"></i> Урок 14. Рендеринг и вывод 3D-анимированного контента: Подготовка сцены для рендеринга
+                </a>
+                <ul class="dropdown-content">
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'lesson14' %}">
+                            <i class="fa-solid fa-cube"></i> Теория
+                        </a>
+                    </li>
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'practice14' %}">
+                            <i class="fa-solid fa-cube"></i> Практическая
+                        </a>
+                    </li>
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'test14' %}">
+                            <i class="fa-solid fa-cube"></i> Тестирование
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="aside_ul_li dropdown" data-id="16">
+                <a class="aside_ul_a">
+                    <i class="fa-solid fa-cube"></i> Урок 15. Итоговый проект: Создание 3D-объекта и анимации
+                </a>
+                <ul class="dropdown-content">
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'lesson15' %}">
+                            <i class="fa-solid fa-cube"></i> Теория
+                        </a>
+                    </li>
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'practice15' %}">
+                            <i class="fa-solid fa-cube"></i> Практическая
+                        </a>
+                    </li>
+                    <li class="aside_ul_li">
+                        <a class="aside_ul_a1" href="{% url 'test15' %}">
+                            <i class="fa-solid fa-cube"></i> Тестирование
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!-- Остальные элементы -->
+        </ul>
+
+    </aside>
+
+    <main id="body">
+    <div class="navbar">
+        <div class="navbar-buttons">
+            {% if user.is_authenticated %}
+                <a href="{% url 'profile' %}">Мой аккаунт</a>
+                <form method="post" action="{% url 'logout' %}" id="logout-form">
+                    {% csrf_token %}
+                    <button type="submit" onclick="confirmLogout(event)">
+                        Выйти
+                    </button>
+                </form>
+            {% else %}
+                <a class="ml-2" href="{% url 'login' %}">Войти</a>
+            {% endif %}
+        </div>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+    </main>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script type="module" src="{% static 'main/js/script.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/js/lightbox-plus-jquery.min.js"></script>
+</body>
+</html>
