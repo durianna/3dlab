@@ -85,7 +85,7 @@ DATABASES = {
         'USER': 'admin',
         'PASSWORD': 'Aa12345',
         'HOST': 'localhost',
-        'PORT': '5435',
+        'PORT': '5432',
         'OPTIONS': {
             'client_encoding': 'utf8',
         },
