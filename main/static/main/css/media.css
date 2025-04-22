@@ -1,6 +1,6 @@
 .image1 {
     display: block;
-    width: 35%;
+    width: 45%;
     border: 5px solid #4d4d4d;
     margin: auto;
     height: auto;
@@ -17,7 +17,15 @@
     margin-top: 20px;
     margin-bottom: 20px;
 }
-
+.image3 {
+    display: block;
+    width: 50%;
+    border: 5px solid #4d4d4d;
+    margin: auto;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 .imagemain {
     display: block;
     width: 70%;

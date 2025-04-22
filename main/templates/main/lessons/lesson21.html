@@ -1,0 +1,232 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+
+
+{% block title %}Навигация и работа с интерфейсом Blender{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="requirements-list1">
+            <h1 class="text-center mb-2">Навигация и работа с интерфейсом Blender</h1>
+        </div>
+        <div class="requirements-list" id="21" data-type="lesson">
+            <h1 class="text-center mb-4">Работа с окнами в Blender</h1>
+            <p>В этом уроке мы рассмотрим, как эффективно работать с окнами, заголовками окон, меню и рабочими
+                пространствами в
+                Blender. Эти инструменты являются основой интерфейса программы и позволяют быстро и удобно организовывать
+                рабочее пространство для различных задач.</p>
+
+            <a href="{% static 'main/img/3D-projection.png' %}" data-lightbox="gallery">
+                <img class="image1" src="{% static 'main/img/3D-projection.png' %}">
+            </a>
+
+            <div class="section">
+                <h2>1. Окна в Blender</h2>
+                <p>Blender использует гибкую оконную систему, которая позволяет пользователю разделять рабочее
+                    пространство на несколько окон, в которых могут быть отображены различные элементы интерфейса.
+                    Каждый из этих окон может быть настроен в зависимости от текущей задачи, будь то 3D-просмотр,
+                    текстурирование, моделирование или анимация.</p>
+
+                <a href="{% static 'main/img/window.png' %}" data-lightbox="gallery">
+                    <img class="image1" src="{% static 'main/img/window.png' %}">
+                </a>
+
+                <h2>Основные типы окон в Blender:</h2>
+                <ul>
+                    <li><strong>3D-вид</strong> — основное окно для работы с трехмерными объектами.</li>
+                    <li><strong>Список свойств (Properties)</strong> — окно для редактирования свойств объектов,
+                        материалов, света и камеры.
+                    </li>
+                    <li><strong>Таймлайн (Timeline)</strong> — окно для работы с анимацией и ключевыми кадрами.</li>
+                    <li><strong>Графический редактор (UV/Image Editor)</strong> — для работы с текстурами и
+                        изображениями.
+                    </li>
+                    <li><strong>Редактор текста (Text Editor)</strong> — для написания скриптов на Python.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Манипуляции с окнами:</h2>
+                <ul>
+                    <li><strong>Разделение окон:</strong> Для разделения окна на два или более, можно подвести курсор к
+                        краю окна и перетащить его, создавая дополнительное окно.
+                    </li>
+                    <li><strong>Объединение окон:</strong> Чтобы объединить окна, просто перетащите один край окна к
+                        другому.
+                    </li>
+                    <li><strong>Изменение размеров:</strong> Перетаскивайте границы окна, чтобы настроить его размер.
+                    </li>
+                </ul>
+            </div>
+
+            <a href="{% static 'main/img/twowindow.png' %}" data-lightbox="gallery">
+                <img class="image1" src="{% static 'main/img/twowindow.png' %}">
+            </a>
+
+        </div>
+
+        <div class="requirements-list">
+            <h1 class="text-center mb-2">Навигация в Blender</h1>
+            <div class="section">
+                <h2>1. Навигация с помощью Gizmo</h2>
+                <a href="{% static 'main/img/gizmo.jpg' %}" data-lightbox="gallery">
+                    <img class="image1" src="{% static 'main/img/gizmo.jpg' %}">
+                </a>
+                <p>Gizmo — это удобный инструмент в Blender для управления объектами и навигации:</p>
+                <ul>
+                    <li><strong>Перемещение (Move):</strong> стрелки на оси позволяют перемещать объект вдоль выбранной
+                        оси.
+                    </li>
+                    <li><strong>Поворот (Rotate):</strong> кольца Gizmo позволяют вращать объект вокруг соответствующей
+                        оси.
+                    </li>
+                    <li><strong>Масштабирование (Scale):</strong> квадраты на осях позволяют изменять размер объекта по
+                        выбранной оси.
+                    </li>
+                </ul>
+                <p>Чтобы включить Gizmo:</p>
+                <ol>
+                    <li>Откройте вкладку <em>View Gizmos</em> в правом верхнем углу окна 3D Viewport.</li>
+                    <li>Отметьте нужные параметры (перемещение, вращение, масштаб).</li>
+                </ol>
+            </div>
+
+            <div class="section">
+                <h2>2. Центры вращения (Pivot Point)</h2>
+                <a href="{% static 'main/img/pivot.gif' %}" data-lightbox="gallery">
+                    <img class="image1" src="{% static 'main/img/pivot.gif' %}">
+                </a>
+                <p>Центр вращения определяет, вокруг какой точки вращается объект:</p>
+                <ul>
+                    <li><strong>Active Element:</strong> вращение вокруг активного элемента (последнего выбранного
+                        объекта).
+                    </li>
+                    <li><strong>Median Point:</strong> вращение вокруг среднего значения координат всех выделенных
+                        объектов.
+                    </li>
+                    <li><strong>3D Cursor:</strong> вращение вокруг положения 3D курсора.</li>
+                    <li><strong>Individual Origins:</strong> каждый объект вращается вокруг своей локальной оси.</li>
+                    <li><strong>Bounding Box Center:</strong> вращение вокруг центра ограничивающего прямоугольника
+                        выделенных объектов.
+                    </li>
+                </ul>
+                <p>Чтобы сменить Pivot Point:</p>
+                <ol>
+                    <li>Выберите объекты.</li>
+                    <li>В верхнем меню 3D Viewport найдите меню <em>Pivot Point</em> (или нажмите <code>.</code> (точка)
+                        на клавиатуре).
+                    </li>
+                    <li>Выберите нужный режим.</li>
+                </ol>
+            </div>
+
+            <div class="section">
+                <h2>3. Использование NumPad для навигации</h2>
+                <a href="{% static 'main/img/views.png' %}" data-lightbox="gallery">
+                    <img class="image1" src="{% static 'main/img/views.png' %}">
+                </a>
+                <p>NumPad обеспечивает удобный доступ к различным видам и управлению:</p>
+                <ul>
+                    <li><code>1</code> — вид спереди (Front View).</li>
+                    <li><code>3</code> — вид справа (Right View).</li>
+                    <li><code>7</code> — вид сверху (Top View).</li>
+                    <li><code>Ctrl + 1/3/7</code> — противоположные виды.</li>
+                    <li><code>5</code> — переключение между перспективным и ортографическим видом.</li>
+                    <li><code>0</code> — вид из камеры.</li>
+                    <li><code>2/4/6/8</code> — вращение вокруг объекта по оси.</li>
+                    <li><code>.</code> (точка) — центрирование вида на выделенном объекте.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>4. Навигация по меню и способы ввода</h2>
+                <div class="section">
+
+                    <p>Blender предоставляет несколько типов меню для работы:</p>
+                    <ul>
+                        <li><strong>Главное меню:</strong> располагается в верхней части интерфейса (File, Edit, Render
+                            и т. д.). Используется для управления проектом, настройки параметров и выполнения
+                            рендеринга.
+                        </li>
+                        <li><strong>Контекстное меню:</strong> вызывается правой кнопкой мыши или горячей клавишей
+                            <code>W</code>. Содержит команды, специфичные для выделенного объекта или текущего режима
+                            работы.
+                        </li>
+                        <li><strong>Круговое меню:</strong> вызывается с помощью клавиш <code>Tab</code>, <code>Z</code>
+                            или <code>~</code>. Это удобный способ быстрого доступа к ключевым функциям, например,
+                            переключению между режимами.
+                        </li>
+                        <li><strong>Панель инструментов:</strong> слева от Viewport отображает доступные инструменты,
+                            изменяющиеся в зависимости от текущего режима работы.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Способы ввода</h2>
+                    <p>В Blender поддерживаются различные методы ввода для управления объектами и сценой:</p>
+                    <ul>
+                        <li><strong>Клавиатура:</strong> Используется для ввода команд и горячих клавиш, что ускоряет
+                            процесс работы.
+                        </li>
+                        <li><strong>Мышь:</strong>
+                            <ul>
+                                <li><strong>Левая кнопка:</strong> выбор объектов.</li>
+                                <li><strong>Средняя кнопка:</strong> вращение камеры вокруг сцены.</li>
+                                <li><strong>Колесо мыши:</strong> масштабирование (Zoom).</li>
+                            </ul>
+                        </li>
+                        <li><strong>Графический планшет:</strong> полезен для точной работы с кривыми, текстурами и
+                            скульптурированием.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Горячие клавиши</h2>
+                    <p>Основные горячие клавиши Blender для быстрого доступа к функциям:</p>
+                    <ul>
+                        <li><strong>Общие команды:</strong>
+                            <ul>
+                                <li><code>G</code> — перемещение (Grab).</li>
+                                <li><code>R</code> — вращение (Rotate).</li>
+                                <li><code>S</code> — масштабирование (Scale).</li>
+                                <li><code>Ctrl + Z</code> — отмена действия.</li>
+                                <li><code>Shift + D</code> — дублирование объекта.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Навигация по виду:</strong>
+                            <ul>
+                                <li><code>1</code> — вид спереди (Front View).</li>
+                                <li><code>3</code> — вид справа (Right View).</li>
+                                <li><code>7</code> — вид сверху (Top View).</li>
+                                <li><code>5</code> — переключение между перспективным и ортографическим видом.</li>
+                                <li><code>.</code> — центрирование вида на выделенном объекте.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Работа с объектами:</strong>
+                            <ul>
+                                <li><code>Tab</code> — переключение между режимом редактирования (Edit Mode) и объектным
+                                    режимом (Object Mode).
+                                </li>
+                                <li><code>Ctrl + A</code> — применение трансформации (Scale, Rotation, Location).</li>
+                                <li><code>X</code> или <code>Delete</code> — удаление объекта.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Рендеринг:</strong>
+                            <ul>
+                                <li><code>F12</code> — рендеринг текущего кадра.</li>
+                                <li><code>Ctrl + F12</code> — рендеринг всей анимации.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="text-center">
+                    <button id="markLessonComplete" class="btn btn-success">Урок пройден</button>
+                    <div id="lessonMessage" style="margin-top: 10px; color: lightgreen;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

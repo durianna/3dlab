@@ -3,100 +3,134 @@
 
 
 
-{% block title %}Навигация и работа с интерфейсом Blender{% endblock %}
+{% block title %}Выделение объектов и работа с 3D-курсором в сцене Blender{% endblock %}
 
 {% block content %}
     <div class="container">
         <div class="requirements-list1">
-            <h1 class="text-center mb-2">Навигация и работа с интерфейсом Blender</h1>
+            <h1 class="text-center mb-2">Выделение объектов и работа с 3D-курсором в сцене Blender</h1>
         </div>
         <div class="requirements-list" id="2" data-type="lesson">
-            <h1 class="text-center mb-4">Работа с окнами в Blender</h1>
-            <p>В этом уроке мы рассмотрим, как эффективно работать с окнами, заголовками окон, меню и рабочими
-                пространствами в
-                Blender. Эти инструменты являются основой интерфейса программы и позволяют быстро и удобно организовывать
-                рабочее пространство для различных задач.</p>
+            <p>Blender предоставляет пользователям мощные инструменты для точного взаимодействия с 3D-объектами,
+                а также удобные средства позиционирования — такие как 3D-курсор. Умение правильно выделять элементы сцены
+                и управлять 3D-курcором является одной из базовых и важнейших составляющих в освоении Blender.</p>
+            <h2 class="text-center mb-2"><br>Выделение объектов</h2>
+            <p><strong>Выделение объектов</strong> — это основной способ взаимодействия со сценой. Любая трансформация (перемещение,
+                масштабирование, вращение), применение модификаторов, работа в различных режимах начинается с выбора
+                нужного объекта.</p>
 
-            <a href="{% static 'main/img/3D-projection.png' %}" data-lightbox="gallery">
-                <img class="image1" src="{% static 'main/img/3D-projection.png' %}">
-            </a>
-
-            <div class="section">
-                <h2>1. Окна в Blender</h2>
-                <p>Blender использует гибкую оконную систему, которая позволяет пользователю разделять рабочее
-                    пространство на несколько окон, в которых могут быть отображены различные элементы интерфейса.
-                    Каждый из этих окон может быть настроен в зависимости от текущей задачи, будь то 3D-просмотр,
-                    текстурирование, моделирование или анимация.</p>
-
-                <a href="{% static 'main/img/window.png' %}" data-lightbox="gallery">
-                    <img class="image1" src="{% static 'main/img/window.png' %}">
-                </a>
-
-                <h2>Основные типы окон в Blender:</h2>
-                <ul>
-                    <li><strong>3D-вид</strong> — основное окно для работы с трехмерными объектами.</li>
-                    <li><strong>Список свойств (Properties)</strong> — окно для редактирования свойств объектов,
-                        материалов, света и камеры.
-                    </li>
-                    <li><strong>Таймлайн (Timeline)</strong> — окно для работы с анимацией и ключевыми кадрами.</li>
-                    <li><strong>Графический редактор (UV/Image Editor)</strong> — для работы с текстурами и
-                        изображениями.
-                    </li>
-                    <li><strong>Редактор текста (Text Editor)</strong> — для написания скриптов на Python.</li>
-                </ul>
+            <h4> Основные способы выделения:</h4>
+            <div class="student-table-wrapper">
+                <table class="student-table blender-style-table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Способ выделения</th>
+                            <th>Описание</th>
+                            <th>Изображение</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>ЛКМ (левая кнопка мыши)</td>
+                            <td>Выбор объекта одним щелчком.В Blender для выделения объектов по умолчанию используется левая кнопка мыши. Когда пользователь щёлкает по объекту, тот подсвечивается оранжевой рамкой, а также становится активным — его центр отображается в виде маленькой точки, а гизмо трансформации позволяет выполнять дальнейшие действия. Если ранее был выделен другой объект, он автоматически теряет выделение.</td>
+                            <td><a href="{% static 'main/img/lesson2tab1_1.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/lesson2tab1_1.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Shift + ЛКМ</td>
+                            <td>Для выделения нескольких объектов одновременно используется комбинация Shift и левой кнопки мыши. Это позволяет поочерёдно добавлять объекты к текущей группе выделения или, наоборот, снимать выделение с ранее выделенного объекта.</td>
+                            <td><a href="{% static 'main/img/lesson2tab1_2.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/lesson2tab1_2.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Выделение рамкой (Box Select)</td>
+                            <td>Если нужно выделить сразу несколько объектов в области сцены, удобно использовать рамочное выделение, которое вызывается клавишей B. После её нажатия появляется рамка, и, протянув её по сцене, можно захватить все объекты, попавшие внутрь. </td>
+                            <td><a href="{% static 'main/img/lesson2tab1_3.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/lesson2tab1_3.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Круговое выделение (Circle Select)</td>
+                            <td>Для более точного управления подойдёт круговое выделение, активируемое клавишей C. На экране появляется круг, радиус которого регулируется колесиком мыши. Пользователь может выделять объекты, просто кликая по ним внутри круга. Выход из режима кругового выделения происходит нажатием правой кнопки мыши или клавиши Esc.</td>
+                            <td><a href="{% static 'main/img/lesson2tab1_4.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/lesson2tab1_4.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Лассо-выделение (Lasso Select)</td>
+                            <td>Также в Blender предусмотрено лассо-выделение. Оно активируется комбинацией Ctrl и правой кнопки мыши. В этом режиме пользователь может нарисовать произвольную фигуру, ограничивающую область выделения.</td>
+                            <td><a href="{% static 'main/img/lesson2tab1_5.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/lesson2tab1_5.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
-            <div class="section">
-                <h2>Манипуляции с окнами:</h2>
-                <ul>
-                    <li><strong>Разделение окон:</strong> Для разделения окна на два или более, можно подвести курсор к
-                        краю окна и перетащить его, создавая дополнительное окно.
-                    </li>
-                    <li><strong>Объединение окон:</strong> Чтобы объединить окна, просто перетащите один край окна к
-                        другому.
-                    </li>
-                    <li><strong>Изменение размеров:</strong> Перетаскивайте границы окна, чтобы настроить его размер.
-                    </li>
-                </ul>
-            </div>
+            <p>После выделения объект становится активным, и именно с ним будут производиться все действия по умолчанию.
+                Активный объект отображается жёлтой рамкой (если выделено несколько).</p>
 
-            <a href="{% static 'main/img/twowindow.png' %}" data-lightbox="gallery">
-                <img class="image1" src="{% static 'main/img/twowindow.png' %}">
+            <p>Объекты можно выделять и в редакторе Outliner | Аутлайнер. Здесь же их можно переименовывать, скрывать видимость, сортировать по коллекциям и др.</p>
+            <a href="{% static 'main/img/outliner.gif' %}" data-lightbox="gallery">
+                <img class="image1" src="{% static 'main/img/outliner.gif' %}">
             </a>
-
         </div>
 
-        <div class="requirements-list">
-            <h1 class="text-center mb-2">Навигация в Blender</h1>
-            <div class="section">
-                <h2>1. Навигация с помощью Gizmo</h2>
-                <a href="{% static 'main/img/gizmo.jpg' %}" data-lightbox="gallery">
-                    <img class="image1" src="{% static 'main/img/gizmo.jpg' %}">
-                </a>
-                <p>Gizmo — это удобный инструмент в Blender для управления объектами и навигации:</p>
-                <ul>
-                    <li><strong>Перемещение (Move):</strong> стрелки на оси позволяют перемещать объект вдоль выбранной
-                        оси.
-                    </li>
-                    <li><strong>Поворот (Rotate):</strong> кольца Gizmo позволяют вращать объект вокруг соответствующей
-                        оси.
-                    </li>
-                    <li><strong>Масштабирование (Scale):</strong> квадраты на осях позволяют изменять размер объекта по
-                        выбранной оси.
-                    </li>
-                </ul>
-                <p>Чтобы включить Gizmo:</p>
-                <ol>
-                    <li>Откройте вкладку <em>View Gizmos</em> в правом верхнем углу окна 3D Viewport.</li>
-                    <li>Отметьте нужные параметры (перемещение, вращение, масштаб).</li>
-                </ol>
-            </div>
+        <div class="requirements-list" data-type="lesson">
+            <h2 class="text-center mb-2">Работа с 3D-курcором</h2>
+            <p><strong> 3D-курсор</strong> — это вспомогательный инструмент, предназначенный для точного позиционирования объектов, начала трансформаций, добавления новых объектов и установки точки вращения.
+            <br> По умолчанию, при добавлении нового объекта в сцену, он появляется в позиции 3D-курсора.</p>
+            <a href="{% static 'main/img/3dcursor.gif' %}" data-lightbox="gallery">
+                <img class="image1" src="{% static 'main/img/3dcursor.gif' %}">
+            </a>
+            <p><strong>Как установить 3D-курсор:</strong></p>
+            <ul>
+                <li>Shift + Правая кнопка мыши (ПКМ) — установить курсор в любое место сцены.</li>
+                <li>В последних версиях Blender используется Shift + ЛКМ.</li>
+                <li>очно задать координаты можно во вкладке View → 3D Cursor (в N-панели).</li>
+            </ul>
+            <p><strong>Назначение 3D-курсора:</strong></p>
+            <ol>
+                <li>Добавление нового объекта в сцену (он появится в позиции курсора).</li>
+                <li>Поворот объектов вокруг курсора, если выбран режим поворота 3D Cursor в верхней панели Pivot Point.</li>
+                <li>Упрощение точного выравнивания и позиционирования объектов.</li>
+                <li>Быстрое смещение объектов на позицию курсора с помощью команды Snap → Selection to Cursor (Shift + S).</li>
+            </ol>
+        </div>
 
+        <div class="requirements-list" data-type="lesson">
+            <h2 class="text-center mb-2">Gizmo трансформации</h2>
+            <a href="{% static 'main/img/gizmo.jpg' %}" data-lightbox="gallery">
+                <img class="image1" src="{% static 'main/img/gizmo.jpg' %}">
+            </a>
+            <p>После выделения объекта в сцене Blender автоматически отображает гизмо трансформации — это визуальные стрелки, дуги и квадраты, расположенные на объекте, которые позволяют:</p>
+            <ol>
+                <li>Перемещать (Move) — стрелки направлены по осям X, Y, Z.</li>
+                <li>Вращать (Rotate) — дуги вокруг объекта позволяют вращать по выбранной оси.</li>
+                <li>Масштабировать (Scale) объект — кубики на концах направлений позволяют увеличивать или уменьшать объект.</li>
+            </ol>
+            <p>! Если по умолчанию Гизмо не появляется при выделении обьекта вы можете включить вручную эту настройку в правом верхнем углу окна 3D Viewport:</p>
+            <a href="{% static 'main/img/gizmoblender.png' %}" data-lightbox="gallery">
+                <img class="image1" src="{% static 'main/img/gizmoblender.png' %}">
+            </a>
+        </div>
+
+        <div class="requirements-list" data-type="lesson">
             <div class="section">
-                <h2>2. Центры вращения (Pivot Point)</h2>
-                <a href="{% static 'main/img/pivot.gif' %}" data-lightbox="gallery">
-                    <img class="image1" src="{% static 'main/img/pivot.gif' %}">
-                </a>
+                <h2 class="text-center mb-2">Центры вращения (Pivot Point)</h2>
                 <p>Центр вращения определяет, вокруг какой точки вращается объект:</p>
                 <ul>
                     <li><strong>Active Element:</strong> вращение вокруг активного элемента (последнего выбранного
@@ -119,113 +153,14 @@
                     </li>
                     <li>Выберите нужный режим.</li>
                 </ol>
-            </div>
-
-            <div class="section">
-                <h2>3. Использование NumPad для навигации</h2>
-                <a href="{% static 'main/img/views.png' %}" data-lightbox="gallery">
-                    <img class="image1" src="{% static 'main/img/views.png' %}">
+                <a href="{% static 'main/img/pivot.gif' %}" data-lightbox="gallery">
+                    <img class="image1" src="{% static 'main/img/pivot.gif' %}">
                 </a>
-                <p>NumPad обеспечивает удобный доступ к различным видам и управлению:</p>
-                <ul>
-                    <li><code>1</code> — вид спереди (Front View).</li>
-                    <li><code>3</code> — вид справа (Right View).</li>
-                    <li><code>7</code> — вид сверху (Top View).</li>
-                    <li><code>Ctrl + 1/3/7</code> — противоположные виды.</li>
-                    <li><code>5</code> — переключение между перспективным и ортографическим видом.</li>
-                    <li><code>0</code> — вид из камеры.</li>
-                    <li><code>2/4/6/8</code> — вращение вокруг объекта по оси.</li>
-                    <li><code>.</code> (точка) — центрирование вида на выделенном объекте.</li>
-                </ul>
             </div>
 
-            <div class="section">
-                <h2>4. Навигация по меню и способы ввода</h2>
-                <div class="section">
-
-                    <p>Blender предоставляет несколько типов меню для работы:</p>
-                    <ul>
-                        <li><strong>Главное меню:</strong> располагается в верхней части интерфейса (File, Edit, Render
-                            и т. д.). Используется для управления проектом, настройки параметров и выполнения
-                            рендеринга.
-                        </li>
-                        <li><strong>Контекстное меню:</strong> вызывается правой кнопкой мыши или горячей клавишей
-                            <code>W</code>. Содержит команды, специфичные для выделенного объекта или текущего режима
-                            работы.
-                        </li>
-                        <li><strong>Круговое меню:</strong> вызывается с помощью клавиш <code>Tab</code>, <code>Z</code>
-                            или <code>~</code>. Это удобный способ быстрого доступа к ключевым функциям, например,
-                            переключению между режимами.
-                        </li>
-                        <li><strong>Панель инструментов:</strong> слева от Viewport отображает доступные инструменты,
-                            изменяющиеся в зависимости от текущего режима работы.
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="section">
-                    <h2>Способы ввода</h2>
-                    <p>В Blender поддерживаются различные методы ввода для управления объектами и сценой:</p>
-                    <ul>
-                        <li><strong>Клавиатура:</strong> Используется для ввода команд и горячих клавиш, что ускоряет
-                            процесс работы.
-                        </li>
-                        <li><strong>Мышь:</strong>
-                            <ul>
-                                <li><strong>Левая кнопка:</strong> выбор объектов.</li>
-                                <li><strong>Средняя кнопка:</strong> вращение камеры вокруг сцены.</li>
-                                <li><strong>Колесо мыши:</strong> масштабирование (Zoom).</li>
-                            </ul>
-                        </li>
-                        <li><strong>Графический планшет:</strong> полезен для точной работы с кривыми, текстурами и
-                            скульптурированием.
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="section">
-                    <h2>Горячие клавиши</h2>
-                    <p>Основные горячие клавиши Blender для быстрого доступа к функциям:</p>
-                    <ul>
-                        <li><strong>Общие команды:</strong>
-                            <ul>
-                                <li><code>G</code> — перемещение (Grab).</li>
-                                <li><code>R</code> — вращение (Rotate).</li>
-                                <li><code>S</code> — масштабирование (Scale).</li>
-                                <li><code>Ctrl + Z</code> — отмена действия.</li>
-                                <li><code>Shift + D</code> — дублирование объекта.</li>
-                            </ul>
-                        </li>
-                        <li><strong>Навигация по виду:</strong>
-                            <ul>
-                                <li><code>1</code> — вид спереди (Front View).</li>
-                                <li><code>3</code> — вид справа (Right View).</li>
-                                <li><code>7</code> — вид сверху (Top View).</li>
-                                <li><code>5</code> — переключение между перспективным и ортографическим видом.</li>
-                                <li><code>.</code> — центрирование вида на выделенном объекте.</li>
-                            </ul>
-                        </li>
-                        <li><strong>Работа с объектами:</strong>
-                            <ul>
-                                <li><code>Tab</code> — переключение между режимом редактирования (Edit Mode) и объектным
-                                    режимом (Object Mode).
-                                </li>
-                                <li><code>Ctrl + A</code> — применение трансформации (Scale, Rotation, Location).</li>
-                                <li><code>X</code> или <code>Delete</code> — удаление объекта.</li>
-                            </ul>
-                        </li>
-                        <li><strong>Рендеринг:</strong>
-                            <ul>
-                                <li><code>F12</code> — рендеринг текущего кадра.</li>
-                                <li><code>Ctrl + F12</code> — рендеринг всей анимации.</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <div class="text-center">
-                    <button id="markLessonComplete" class="btn btn-success">Урок пройден</button>
-                    <div id="lessonMessage" style="margin-top: 10px; color: lightgreen;"></div>
-                </div>
+            <div class="text-center">
+                <button id="markLessonComplete" class="btn btn-success">Урок пройден</button>
+                <div id="lessonMessage" style="margin-top: 10px; color: lightgreen;"></div>
             </div>
         </div>
     </div>
