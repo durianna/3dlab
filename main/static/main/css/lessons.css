@@ -140,12 +140,12 @@ ol, ul {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 400px;
-    background-color: #333;  /* Более темный фон */
+    background-color: white;  /* Более темный фон */
     border: 2px solid #d6d6d6;
     border-radius: 10px;
-    color: #fff;
+    color: orange;
     font-family: 'Arial', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     text-align: center;
     padding: 20px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);

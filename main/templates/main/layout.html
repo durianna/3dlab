@@ -393,6 +393,11 @@
     <main id="body">
     <div class="navbar">
         <div class="navbar-buttons">
+            {% if user.role == "teacher" %}
+                <div class="text-center">
+                        <a class="btn btn-secondary" href="{% url 'teacher_dashboard' %}">Дашборд учителя</a>
+                </div>
+            {% endif %}
             {% if user.is_authenticated %}
                 <a href="{% url 'profile' %}">Мой аккаунт</a>
                 <form method="post" action="{% url 'logout' %}" id="logout-form">

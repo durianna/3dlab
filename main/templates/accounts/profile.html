@@ -11,9 +11,6 @@
                 <h1 class="text-center mb-2">Личный кабинет студента</h1>
             {% endif %}
         </div>
-        <div class="text-center">
-                <a class="btn btn-primary" href="{% url 'teacher_dashboard' %}">Дашборд учителя</a>
-        </div>
         <div class="media profile-container">
             <img class="rounded-circle account-img" src="{% static 'main/img/avatar_icon.jpg' %}" alt="Profile Image">
             <div class="media-body">
@@ -21,6 +18,11 @@
                 <p class="text-secondary">Электронная почта: {{ user.email }}</p>
                 <p class="text-secondary">ФИО: {{ user.surname }} {{ user.first_name }} {{ user.last_name }}</p>
             </div>
+            {% if user.role == "teacher" %}
+                <div class="text-center">
+                        <a class="btn btn-secondary" href="{% url 'teacher_dashboard' %}">Дашборд учителя</a>
+                </div>
+            {% endif %}
         </div>
         <div class="edit-profile-link">
             <h2><a class="profile-edit-link" href="{% url 'profile_edit' %}">Редактировать профиль</a></h2>

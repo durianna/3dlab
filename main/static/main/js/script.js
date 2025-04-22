@@ -434,9 +434,12 @@ document.addEventListener('DOMContentLoaded', function() {
                             .then(response => response.json())
                             .then(data => {
                                 console.log('Тест отправлен:', data.message);
+                                document.getElementById('submitMessage').textContent = 'Ответ отправлен!';
                             })
                             .catch(error => {
                                 console.error('Ошибка отправки теста:', error);
+                                document.getElementById('submitMessage').textContent = 'Ошибка при отправке!';
+                                document.getElementById('submitMessage').style.color = 'red';
                             });
                         });
                     }
@@ -465,9 +468,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 .then(response => response.json())
                 .then(data => {
                     console.log('Урок отмечен:', data.message);
+                    document.getElementById('lessonMessage').textContent = 'Урок отмечен!';
                 })
                 .catch(error => {
                     console.error('Ошибка отправки урока:', error);
+                    document.getElementById('lessonMessage').textContent = 'Ошибка при отправке!';
+                    document.getElementById('lessonMessage').style.color = 'red';
                 });
             });
         }
