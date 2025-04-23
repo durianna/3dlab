@@ -73,6 +73,32 @@
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
+
+            <div class="section">
+                <h2 class="text-center mb-2"><br>Loop Cut and Slide (Ctrl + R) — Кольцевой разрез</h2>
+                <p>Чтобы внести дополнительные детали в модель или просто получить больше контрольных точек,
+                    используется Loop Cut. Он добавляет один или несколько разрезов вдоль "кольца" рёбер (edge loop),
+                    позволяя равномерно разделить часть модели. Этот инструмент незаменим при создании объектов, которые
+                    потом будут сглажены (например, с помощью Subdivision Surface), потому что он помогает
+                    контролировать форму, добавляя жесткость в нужных местах</p>
+                <p>После нажатия <code> Ctrl + R</code>, Blender сам найдёт возможные направления разреза и отобразит жёлтую линию.
+                    Первый клик — это подтверждение самого разреза, а следующий — позволяет сдвинуть его ближе к одному
+                    из краёв.</p>
+                <a href="{% static 'main/img/loopcut.gif' %}" data-lightbox="gallery">
+                    <img class="image1" src="{% static 'main/img/loopcut.gif' %}">
+                </a>
+
+                <ul>
+                    <li><strong>Горячая клавиша:</strong> Ctrl + R</li>
+                    <li><strong>Назначение:</strong> Добавляет разрезы по кольцу граней.</li>
+                    <li><strong>Применение:</strong> Добавление деталей, контроль сглаживания, подготовка к деформации.</li>
+                    <li><strong>Пример:</strong> Наведите на объект — появится жёлтая линия. Клик — разрез, второй клик —
+                        сдвиг.
+                    </li>
+                </ul>
+            </div>
+
+
             <div class="text-center">
                 <button id="markLessonComplete" class="btn btn-success">Урок пройден</button>
                 <div id="lessonMessage" style="margin-top: 10px; color: lightgreen;"></div>
