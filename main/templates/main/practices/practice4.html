@@ -38,45 +38,147 @@
                                 <th>№</th>
                                 <th>Действие</th>
                                 <th>Метод выполнения</th>
+                                <th>Изображение</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td>1</td><td>Добавить объект "Куб"</td><td>Нажмите Shift + A в 3D-виде → выберите Mesh → Cube. Новый куб появится в центре сцены.</td></tr>
-                            <tr><td>2</td><td>Применить модификатор Subdivision Surface</td><td>Перейдите в Properties (справа) → вкладка Modifiers (иконка гаечного ключа) → нажмите Add Modifier → выберите Subdivision Surface. Этот модификатор сглаживает форму объекта.</td></tr>
-                            <tr><td>3</td><td>Увеличить уровни: Viewport = 2, Render = 3</td><td>В параметрах модификатора Subdivision Surface измените значения Levels Viewport на 2 и Render на 3 — это увеличит детализацию при редактировании и при рендеринге.</td></tr>
-                            <tr><td>4</td><td>Включить сглаживание</td><td>Выделите куб → нажмите правую кнопку мыши → выберите Shade Smooth. Это визуально сгладит поверхности без изменения геометрии.</td></tr>
-                            <tr><td>5</td><td>Применить модификатор Subdivision Surface</td><td>В панели модификатора нажмите кнопку Apply — это применит эффект сглаживания к геометрии объекта.</td></tr>
-                            <tr><td>6</td><td>Добавить модификатор Mirror</td><td>В той же вкладке Modifiers нажмите Add Modifier → выберите Mirror. Он отразит модель по выбранной оси.</td></tr>
-                            <tr><td>7</td><td>Отразить объект по оси X и применить модификатор</td><td>Убедитесь, что ось X выбрана в настройках модификатора (обычно включена по умолчанию). Нажмите Apply, чтобы применить отражение.</td></tr>
-                            <tr><td>8</td><td>Добавить модификатор Array</td><td>Add Modifier → Array</td></tr>
-                            <tr><td>9</td><td>Создать 5 копий вдоль оси X</td><td>Count = 5, Relative Offset X = 1.5</td></tr>
-                            <tr><td>10</td><td>Добавить модификатор Boolean</td><td>Add Modifier → Boolean</td></tr>
-                            <tr><td>11</td><td>Создать второй объект (например, UV Sphere)</td><td>Shift + A → Mesh → UV Sphere</td></tr>
-                            <tr><td>12</td><td>Настроить Boolean: операция Difference, объект — Sphere</td><td>В поле Object выбрать сферу</td></tr>
-                            <tr><td>13</td><td>Применить модификатор Boolean</td><td>Кнопка Apply</td></tr>
-                            <tr><td>14</td><td>Добавить модификатор Solidify</td><td>Add Modifier → Solidify</td></tr>
-                            <tr><td>15</td><td>Установить толщину 0.2</td><td>Thickness = 0.2</td></tr>
-                            <tr><td>16</td><td>Применить модификатор Solidify</td><td>Apply</td></tr>
-                            <tr><td>17</td><td>Добавить модификатор Decimate</td><td>Add Modifier → Decimate</td></tr>
-                            <tr><td>18</td><td>Уменьшить количество полигонов до 0.5</td><td>Ratio = 0.5</td></tr>
-                            <tr><td>19</td><td>Применить модификатор Decimate</td><td>Apply</td></tr>
-                            <tr><td>20</td><td>Выполнить рендер сцены</td><td>F12</td></tr>
-                            <tr><td>21</td><td>Сохранить изображение</td><td>В окне рендера нажать F3 → выбрать путь и формат</td></tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Удалить куб из стартовой сцены</td>
+                                <td>Выделите стандартный куб (по умолчанию уже выделен) → нажмите X → выберите Delete.</td>
+                                <td><a href="{% static 'main/img/Pr4/step1.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr5/step1.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Добавить объект "обезьяна" (Suzanne)</td>
+                                <td>Нажмите Shift + A → Mesh → Monkey → объект "Suzanne" появится в центре сцены.</td>
+                                <td><a href="{% static 'main/img/Pr4/step2.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr4/step2.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Перейти в режим сглаживания для модели обезьяны</td>
+                                <td>Выделите объект Suzanne → правый клик мышью → выберите Shade Smooth.</td>
+                                <td><a href="{% static 'main/img/Pr4/step3.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr4/step3.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Перейти в рендерный вид сцены</td>
+                                <td>В правом верхнем углу 3D Viewport нажмите иконку Rendered View (или клавиша Z → Rendered).</td>
+                                <td><a href="{% static 'main/img/Pr4/step4.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr4/step4.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Установить рендер-движок на Cycles</td>
+                                <td>Перейдите во вкладку Render Properties (значок камеры справа) → в поле Render Engine выберите Cycles (или Eevee для более быстрого рендера).</td>
+                                <td><a href="{% static 'main/img/Pr4/step5.1.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr4/step5.1.png' %}">
+                                    </a>
+                                    <a href="{% static 'main/img/Pr4/step5.2.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr4/step5.2.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Добавить источник света</td>
+                                <td>Light → переместите (G) и приподнимите свет над объектом (G → Z).</td>
+                                <td><a href="{% static 'main/img/Pr4/step6.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr4/step6.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Установить первую камеру перед объектом</td>
+                                <td>Выделите камеру → нажмите Ctrl + Alt + Numpad 0, чтобы переместить её на текущий вид → G и R для точной настройки позиции и угла.</td>
+                                <td><a href="{% static 'main/img/Pr4/step7.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr4/step7.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Сделать рендер первого ракурса</td>
+                                <td>Нажмите F12 для рендеринга изображения. После завершения → Image → Save As, чтобы сохранить рендер.</td>
+                                <td><a href="{% static 'main/img/Pr4/step8.1.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr4/step8.1.png' %}">
+                                    </a>
+                                    <a href="{% static 'main/img/Pr4/step8.2.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr4/step8.2.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>Переустановить камеру для второго ракурса (сбоку)</td>
+                                <td>Переместите камеру сбоку от головы обезьяны (G → X или Y) → отрегулируйте угол обзора (R) → снова нажмите F12 для рендера второго изображения.</td>
+                                <td><a href="{% static 'main/img/Pr4/step9.1.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr4/step9.1.png' %}">
+                                    </a>
+                                    <a href="{% static 'main/img/Pr4/step9.2.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr4/step9.2.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>Изменить освещение для третьего кадра</td>
+                                <td>Переместите свет вбок или сзади объекта.</td>
+                                <td><a href="{% static 'main/img/Pr4/step10.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr4/step10.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>Установить камеру для третьего ракурса (вид сверху или диагональный)</td>
+                                <td>Переместите камеру в нужную позицию (например, под углом сверху) → скорректируйте вид → F12.</td>
+                                <td><a href="{% static 'main/img/Pr4/step11.1.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr4/step11.1.png' %}">
+                                    </a>
+                                    <a href="{% static 'main/img/Pr4/step11.2.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr4/step11.2.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
+
+                    <div class="pr4_final">
+                        <a href="{% static 'main/img/Pr4/Img1.png' %}" data-lightbox="gallery">
+                            <img class="image3" src="{% static 'main/img/Pr4/Img1.png' %}">
+                        </a>
+                        <a href="{% static 'main/img/Pr4/Img2.png' %}" data-lightbox="gallery">
+                            <img class="image3" src="{% static 'main/img/Pr4/Img2.png' %}">
+                        </a>
+                        <a href="{% static 'main/img/Pr4/Img3.png' %}" data-lightbox="gallery">
+                            <img class="image3" src="{% static 'main/img/Pr4/Img3.png' %}">
+                        </a>
+                    </div>
                 </div>
             </div>
 
             <!-- Report Section -->
             <div class="section">
-                <h2><br>Отчёт по работе</h2>
-                <p>В отчёте учащийся должен:</p>
+                <h2><br>Вопросы для самоконтроля</h2>
                 <ul>
-                    <li>Указать, какие объекты он использовал (куб, сфера и т. д.).</li>
-                    <li>Какие модификаторы были применены и с какими параметрами.</li>
-                    <li>В каком порядке применялись модификаторы.</li>
-                    <li>В каком режиме рендеринга выполнялась визуализация.</li>
-                    <li>Приложить скриншот финального рендера.</li>
+                    <li>Что такое рендеринг в 3D-графике?</li>
+                    <li>Какие основные задачи выполняет процесс рендеринга? Назовите не менее четырёх.</li>
+                    <li>Чем отличаются движки рендеринга Eevee и Cycles в Blender?</li>
+                    <li>В каком разделе Blender можно выбрать движок рендеринга?</li>
+                    <li>Какие элементы сцены влияют на итоговое качество рендеринга?</li>
                 </ul>
             </div>
 

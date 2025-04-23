@@ -41,21 +41,127 @@
                                 <th>№</th>
                                 <th>Действие</th>
                                 <th>Метод выполнения</th>
+                                <th>Изображение</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td>1</td><td>Добавьте объект "Куб"</td><td>Shift + A → Mesh → Cube</td></tr>
-                            <tr><td>2</td><td>Перейдите в режим редактирования</td><td>Выделите объект → Tab</td></tr>
-                            <tr><td>3</td><td>Выберите грань</td><td>Режим выделения Face (клавиша 3 или в панели сверху)</td></tr>
-                            <tr><td>4</td><td>Активируйте инструмент Extrude</td><td>Нажмите E → переместите мышь → ЛКМ</td></tr>
-                            <tr><td>5</td><td>Выдавите грань вверх</td><td>E → Z → 2 → Enter</td></tr>
-                            <tr><td>6</td><td>Повторите выдавливание на другую грань</td><td>Выделите другую грань → E → ось</td></tr>
-                            <tr><td>7</td><td>Выполните Extrude + Scale</td><td>Выделите грань → E → S → ЛКМ</td></tr>
-                            <tr><td>8</td><td>Создайте объект с несколькими выступами</td><td>Повторите Extrude на разных гранях</td></tr>
-                            <tr><td>9</td><td>Добавьте детали (ступеньки, выступы)</td><td>Комбинации Extrude и Scale</td></tr>
-                            <tr><td>10</td><td>Просмотрите результат в режиме Solid</td><td>Z → Solid или клавиша 6 на цифровой клавиатуре</td></tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Удалить все объекты из сцены</td>
+                                <td>Нажмите A, чтобы выделить все объекты → нажмите X → выберите Delete.</td>
+                                <td><a href="{% static 'main/img/Pr5/step1.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr5/step1.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Добавить цилиндр в сцену</td>
+                                <td>Нажмите Shift + A → Mesh → Cylinder.</td>
+                                <td><a href="{% static 'main/img/Pr5/step2.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr5/step2.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Перейти в режим редактирования и выделить верхние вершины</td>
+                                <td>Выделите цилиндр → нажмите Tab для перехода в Edit Mode → нажмите Z или кликните по иконке Viewport Shading: Wireframe → включите режим выделения вершин (Vertex Select или клавиша 1) → выделите верхние вершины цилиндра рамкой.</td>
+                                <td><a href="{% static 'main/img/Pr5/step3.1.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr5/step3.1.png' %}">
+                                    </a>
+                                    <a href="{% static 'main/img/Pr5/step3.2.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr5/step3.2.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Вставить (Inset) верхнюю часть цилиндра</td>
+                                <td>После выделения верхних вершин нажмите I (Inset) → переместите мышку, чтобы немного сместить вершины к центру → нажмите ЛКМ для подтверждения.</td>
+                                <td><a href="{% static 'main/img/Pr5/step4.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr5/step4.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Вытянуть внутрь для создания полости</td>
+                                <td>С выделенной вставкой нажмите E (Extrude) → потяните мышку вниз по оси Z (или зажмите Z для ограничения по оси) → нажмите ЛКМ для завершения.</td>
+                                <td><a href="{% static 'main/img/Pr5/step5.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr5/step5.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Расширить верхние вершины цилиндра</td>
+                                <td>Выделите все верхние вершины (рамкой или клавиша A в режиме вершинок) → нажмите S (Scale) → переместите мышку наружу для увеличения ширины верхней части цилиндра → ЛКМ для подтверждения.</td>
+                                <td><a href="{% static 'main/img/Pr5/step6.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr5/step6.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Добавить тор и повернуть его по оси Y</td>
+                                <td>Нажмите Shift + A → Mesh → Torus → нажмите R, затем Y, затем введите 90 → нажмите Enter для поворота тора на 90° по оси Y.</td>
+                                <td><a href="{% static 'main/img/Pr5/step7.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr5/step7.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Повернуть тор по оси Z на 90</td>
+                                <td>С выделенным тором нажмите R, затем Z, затем введите 90 → нажмите Enter для подтверждения поворота.</td>
+                                <td><a href="{% static 'main/img/Pr5/step8.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr5/step8.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>Уменьшить тор и разместить его как ручку</td>
+                                <td>С выделенным тором нажмите S → уменьшите его размер → G для перемещения → переместите тор сбоку цилиндра, так чтобы он выглядел как ручка чашки → ЛКМ для фиксации.</td>
+                                <td><a href="{% static 'main/img/Pr5/step9.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr5/step9.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>Удалить лишние вершины ручки, выступающие за пределы чашки</td>
+                                <td>Перейдите в Edit Mode у тора → включите Wireframe View (Z → Wireframe) → выделите все вершины ручки, которые находятся за пределами чашки, с помощью рамки (B) → нажмите X → выберите Vertices для удаления.</td>
+                                <td><a href="{% static 'main/img/Pr5/step10.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr5/step10.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>Удалить лишние грани ручки, выступающие за пределы чашки</td>
+                                <td>В Edit Mode тора включите Wireframe View (Z → Wireframe) → выделите ненужные грани снаружи цилиндра → нажмите Delete (X) → выберите Faces для удаления выбранных граней.</td>
+                                <td><a href="{% static 'main/img/Pr5/step11.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr5/step11.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>Применить сглаживание к модели</td>
+                                <td>Перейдите в Object Mode (Tab) → нажмите A, чтобы выделить все объекты → правый клик мышью → выберите Shade Smooth.</td>
+                                <td><a href="{% static 'main/img/Pr5/step12.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr5/step12.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
+
+                    <a href="{% static 'main/img/Pr5/step9.png' %}" data-lightbox="gallery">
+                        <img class="image3" src="{% static 'main/img/Pr5/fnl.png' %}">
+                    </a>
                 </div>
             </div>
 

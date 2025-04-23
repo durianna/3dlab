@@ -26,6 +26,10 @@
     margin-top: 20px;
     margin-bottom: 20px;
 }
+.pr4_final
+{
+    display: flex;
+}
 .imagemain {
     display: block;
     width: 70%;
