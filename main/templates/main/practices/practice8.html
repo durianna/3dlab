@@ -6,140 +6,137 @@
 {% block content %}
     <div class="container">
         <div class="requirements-list1">
-            <!-- Header Section -->
             <header class="text-center mb-4">
-                <h1>Практическая работа: Освещение в 3D-сценах</h1>
-                <p class="lead">Изучение различных типов источников света в Blender и их влияние на визуализацию сцены.</p>
+                <h1>Практическая работа: Инструмент Subdivide в Blender</h1>
             </header>
         </div>
 
         <div class="requirements-list">
-            <!-- Objective Section -->
             <div class="section">
-                <h2>Цель работы</h2>
-                <p>Изучить основные типы источников света в Blender и научиться применять их для создания различных визуальных эффектов.</p>
-            </div>
-
-            <!-- Task Section -->
-            <div class="section">
-                <h2>Задание</h2>
+                <h2 class="text-center mb-2">Практическая работа №13</h2>
+                <h3>Цель работы</h3>
+                <p class="lead">Научиться создавать органическую форму объекта с помощью инструментов Subdivide, Extrude, Inset, Bevel и пропорционального редактирования. Углубить понимание структуры меша и преобразования базовых примитивов.</p>
+                <h2 class="text-center mb-2">Задание</h2>
                 <p>Выполните следующие действия в среде Blender:</p>
-
-                <div class="student-table-wrapper">
-                    <table class="student-table blender-style-table">
-                        <thead>
-                            <tr>
-                                <th>№</th>
-                                <th>Действие</th>
-                                <th>Метод выполнения</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Удалить все источники света из сцены</td>
-                                <td>Выделить источник и нажать <strong>X</strong>.</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Включить режим просмотра с затенением "Rendered"</td>
-                                <td>Нажать <strong>Z</strong> → <strong>8</strong> или выбрать через меню в правом верхнем углу вьюпорта.</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Добавить точечный источник света (Point Light)</td>
-                                <td><strong>Shift + A</strong> → Light → Point.</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Настроить радиус и мощность Point Light</td>
-                                <td>Выделить источник → панель <strong>Light</strong> → задать <strong>Radius</strong> и <strong>Power</strong>.</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Добавить солнечный свет (Sun Light)</td>
-                                <td><strong>Shift + A</strong> → Light → Sun.</td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>Изменить направление солнечного света</td>
-                                <td>Повернуть объект <strong>Sun</strong> с помощью <strong>R</strong>.</td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>Добавить прожектор (Spot Light)</td>
-                                <td><strong>Shift + A</strong> → Light → Spot.</td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-                                <td>Настроить угол рассеивания Spot Light</td>
-                                <td>В панели <strong>Light</strong> изменить параметры <strong>Spot Size</strong> и <strong>Blend</strong>.</td>
-                            </tr>
-                            <tr>
-                                <td>9</td>
-                                <td>Добавить плоскостной источник света (Area Light)</td>
-                                <td><strong>Shift + A</strong> → Light → Area.</td>
-                            </tr>
-                            <tr>
-                                <td>10</td>
-                                <td>Изменить форму и размер Area Light</td>
-                                <td>В панели <strong>Light</strong> выбрать <strong>Shape</strong> и задать <strong>Size</strong>.</td>
-                            </tr>
-                            <tr>
-                                <td>11</td>
-                                <td>Установить HDRI для глобального освещения</td>
-                                <td>Перейти во вкладку <strong>World</strong> → <strong>Color</strong> → <strong>Environment Texture</strong> → загрузить HDRI-файл.</td>
-                            </tr>
-                            <tr>
-                                <td>12</td>
-                                <td>Создать эмиссивный материал</td>
-                                <td>Создать новый материал → выбрать <strong>Emission</strong> → применить к объекту.</td>
-                            </tr>
-                            <tr>
-                                <td>13</td>
-                                <td>Настроить цвет и силу эмиссии</td>
-                                <td>Изменить параметры <strong>Color</strong> и <strong>Strength</strong> в Emission Shader.</td>
-                            </tr>
-                            <tr>
-                                <td>14</td>
-                                <td>Разместить источники света для сбалансированного освещения сцены</td>
-                                <td>Комбинировать различные типы света и изменить их положение.</td>
-                            </tr>
-                            <tr>
-                                <td>15</td>
-                                <td>Выполнить рендер сцены</td>
-                                <td>Нажать <strong>F12</strong>.</td>
-                            </tr>
-                            <tr>
-                                <td>16</td>
-                                <td>Сохранить итоговое изображение</td>
-                                <td>В окне рендера нажать <strong>F3</strong> → выбрать путь и формат файла.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
             </div>
 
-            <!-- Report Section -->
+            <div class="student-table-wrapper">
+                <table class="student-table blender-style-table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Действие</th>
+                            <th>Метод выполнения (инструкционная карта)</th>
+                            <th>Изображение</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Добавить сферу</td>
+                            <td>Создайте новый проект с помощью File - New - General. Удалите куб. Добавьте сферу с помощью  Shift + A → Mesh → UV Sphere</td>
+                            <td><a href="{% static 'main/img/Pr8/step1.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr8/step1.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Перейти в режим редактирования</td>
+                            <td>Выделите сферу → нажмите Tab чтобы перейти в режим редактирования обьектов</td>
+                            <td><a href="{% static 'main/img/Pr8/step2.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr8/step2.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Применить Subdivide</td>
+                            <td>Выделите всю сферу (A) → ПКМ → Subdivide → в панели настроек увеличьте число разрезов (Number of Cuts) до 2–3</td>
+                            <td><a href="{% static 'main/img/Pr8/step3.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr8/step3.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr8/step3_1.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr8/step3_1.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Сформировать углубление под черенок</td>
+                            <td>Для того, чтобы сделать углубление мы не будем вручную передвигать вершины, вместо этого воспользуемся инструментом <code>Proportional Editing</code>.Выделите верхнюю вершину → включите пропорциональное редактирование (английская буква O). После активации для удобства перейдите в вид спереди(1 на Numpud) и включите Toggle X-Ray. Чтобы переместить вершину вниз ровно нажмите G, а затем Z(чтобы зафиксировать перемещение по одной координате). Утопите вершину вниз с плавным переходом.</td>
+                            <td><a href="{% static 'main/img/Pr8/step4.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr8/step4.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr8/step4_1.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr8/step4_1.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Сделать основание яблока</td>
+                            <td>Аналогично шагу 4: выделите нижнюю вершину → пропорциональное редактирование → утопите вверх</td>
+                            <td><a href="{% static 'main/img/Pr8/step5.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr8/step5.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Добавить отверстие для черенка</td>
+                            <td>Выделите вершины в центре верхней части, и откорректировав область пропорционального редактирования(сделав ее меньше) сформируйте углубление под черенок(G → Z)</td>
+                            <td><a href="{% static 'main/img/Pr8/step6.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr8/step6.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Добавить черенок</td>
+                            <td>Черенок сформируем из цилиндра. На этом этапе отключим пропорциональное редактирование повторным нажатием чтобы не задевать яблоко. Shift + A → Mesh → Cylinder. Включите Toggle X-ray или каркасный вид чтобы отредактировать размер и положение цилиндра.</td>
+                            <td><a href="{% static 'main/img/Pr8/step7.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr8/step7.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr8/step7_1.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr8/step7_1.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Моделируем черенок</td>
+                            <td>Выделите верхние грани черенка, экстудируйте их так, чтобы получить изогнутую форму(E). Используя Scale измените толщину черенка чтобы он выглядел естесственно.</td>
+                            <td><a href="{% static 'main/img/Pr8/step8.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr8/step8.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Моделируем черенок</td>
+                            <td>Выделите верхние грани черенка, экстудируйте их так, чтобы получить изогнутую форму(E). Используя Scale измените толщину черенка чтобы он выглядел естесственно.</td>
+                            <td><a href="{% static 'main/img/Pr8/step9.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr8/step9.png' %}">
+                            </a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
             <div class="section">
-                <h2>Отчёт по работе</h2>
-                <p>В отчёте учащийся должен:</p>
+                <p><br><br>Ожидаемый результат:</p>
                 <ul>
-                    <li>Указать, какие источники света были добавлены в сцену.</li>
-                    <li>Какие параметры были изменены (мощность, радиус, направление и т.д.).</li>
-                    <li>Какой тип освещения дал лучший визуальный результат и почему.</li>
-                    <li>Приложить скриншот финального рендера сцены.</li>
+                    <li>Органическая модель яблока с углублениями и черенком.</li>
+                    <li>Применение Subdivide для детализации меша.</li>
+                    <li>Использование пропорционального редактирования для плавных деформаций.</li>
                 </ul>
             </div>
 
-            <!-- Additional Recommendations Section -->
             <div class="section">
-                <h2>Дополнительно (по желанию)</h2>
-                <ul>
-                    <li>Используйте комбинацию HDRI и эмиссивных материалов для создания более реалистичной сцены.</li>
-                    <li>Экспериментируйте с цветными источниками света и их влиянием на материалы объектов.</li>
-                </ul>
+                <h3>Вопросы для самоконтроля:</h3>
+                <ol>
+                    <li>Чем отличается Subdivide от Loop Cut?</li>
+                    <li>Для чего используется пропорциональное редактирование?</li>
+                    <li>Как добавить углубление на поверхности объекта?</li>
+                </ol>
             </div>
         </div>
+
     </div>
 {% endblock %}

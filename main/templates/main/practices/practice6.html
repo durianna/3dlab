@@ -14,9 +14,114 @@
         </div>
 
         <div class="requirements-list">
-
             <div class="section">
                 <h2 class="text-center mb-2">Практическая работа №8</h2>
+                <h3>Цель работы</h3>
+                <p class="lead">Научиться моделировать простой контейнер с внутренним пространством и крышкой, используя выдавливание внутрь и точное позиционирование объектов.</p>
+                <h2 class="text-center mb-2">Задание</h2>
+                <p>Выполните следующие действия в среде Blender:</p>
+            </div>
+
+            <div class="student-table-wrapper">
+                <table class="student-table blender-style-table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Действие</th>
+                            <th>Метод выполнения (инструкционная карта)</th>
+                            <th>Изображение</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Создать новый проект</td>
+                            <td>File → <strong>New</strong>.</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Масштабировать куб(основа ящика</td>
+                            <td>Если куба на сцене нет - Shift + A → Mesh → Cube. Масштабируйте куб по оси Z на 0.5 единиц (S → Z → 0.5).</td>
+                            <td><a href="{% static 'main/img/Pr7.3/step2.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr7.3/step2.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Войти в режим редактирования</td>
+                            <td>Выделите куб и перейдите в режим редактирования → Tab → Edit Mode → в режиме граней выберите верхнюю грань (Face Select → 3).</td>
+                            <td><a href="{% static 'main/img/Pr7.3/step3.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr7.3/step3.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Inset верхней грани</td>
+                            <td>Нажмите <code>I</code>(Inset) → переместите мышь внутрь, чтобы создать внутреннюю грань.</td>
+                            <td><a href="{% static 'main/img/Pr7.3/step4.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr7.3/step4.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Extrude внутрь</td>
+                            <td>Нажмите E и потяните вниз, чтобы создать полость внутри куба. Для удобства перейдите в вид сбоку(1 на Numpad) и включите Toogle X-Ray</td>
+                            <td><a href="{% static 'main/img/Pr7.3/step5.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr7.3/step5.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Сгладить края ящика</td>
+                            <td>Выделите все рёбра верхнего периметра → Ctrl + B → фаска (Bevel).</td>
+                            <td><a href="{% static 'main/img/Pr7.3/step6.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr7.3/step6.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Создать крышку</td>
+                            <td>Shift + A → Cube → S по X и Y, Z → масштаб до толщины крышки → G → Z → разместите над ящиком. Поверните крышку в виде сверху(7 на Numpad) .</td>
+                            <td><a href="{% static 'main/img/Pr7.3/step7.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr7.3/step7.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Добавить ручку</td>
+                            <td>Shift + A → Cylinder → масштаб по Z и X → переместить на центр крышки.</td>
+                            <td><a href="{% static 'main/img/Pr7.3/step8.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr7.3/step8.png' %}">
+                            </a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <p><br><br>Ожидаемый результат:</p>
+                <ul>
+                    <li>Модель ящика с полостью и отдельной крышкой.</li>
+                    <li>Аккуратные фаски по краям, ручка на крышке.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3>Вопросы для самоконтроля:</h3>
+                <ol>
+                    <li>Чем отличается Inset от Extrude?</li>
+                    <li>Какие шаги нужны, чтобы создать полость в модели?</li>
+                    <li>Какие модификаторы или инструменты позволяют сделать сглаживание краёв?</li>
+                </ol>
+            </div>
+        </div>
+
+
+        <div class="requirements-list">
+
+            <div class="section">
+                <h2 class="text-center mb-2">Практическая работа №9</h2>
                 <h3>Цель работы</h3>
                 <p class="lead">Научиться переходить в режим редактирования (Edit Mode), понимать строение меша и взаимодействовать с его базовыми компонентами: вершинами, рёбрами и полигонами.</p>
                 <h2 class="text-center mb-2">Задание</h2>
@@ -146,13 +251,13 @@
                             <td>12</td>
                             <td>Отредактировать форму дымохода</td>
                             <td>Перейдите в <strong>Edit Mode</strong> для дымохода → выделите верхнюю грань → нажмите <strong>E</strong> и вытяните вверх.</td>
-                            <td><a href="{% static 'main/img/Pr6/step12.png' %}" data-lightbox="gallery">
+                            <td><a href="{% static 'main/img/Pr6/step12.1.png' %}" data-lightbox="gallery">
                                     <img class="image3" src="{% static 'main/img/Pr6/step12.1.png' %}">
                                 </a>
-                                <a href="{% static 'main/img/Pr6/step12.png' %}" data-lightbox="gallery">
+                                <a href="{% static 'main/img/Pr6/step12.1.png' %}" data-lightbox="gallery">
                                     <img class="image3" src="{% static 'main/img/Pr6/step12.2.png' %}">
                                 </a>
-                                <a href="{% static 'main/img/Pr6/step12.png' %}" data-lightbox="gallery">
+                                <a href="{% static 'main/img/Pr6/step12.1.png' %}" data-lightbox="gallery">
                                     <img class="image3" src="{% static 'main/img/Pr6/step12.3.png' %}">
                                 </a>
                             </td>
@@ -188,7 +293,6 @@
                     <li>Какие еще инструменты для моделирования обьекта вы знаете?</li>
                 </ol>
             </div>
-
         </div>
     </div>
 {% endblock %}
