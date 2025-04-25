@@ -66,6 +66,30 @@
             <a href="{% static 'main/img/render1.png' %}" data-lightbox="gallery">
                 <img class="image1" src="{% static 'main/img/render1.png' %}">
             </a>
+
+            <h2 class="text-center mb-2"><br>Rendered Viewport shading</h2>
+
+            <p>Viewport Shading — это система, отвечающая за то, как отображаются объекты в окне 3D Viewport. Она позволяет переключаться между разными режимами визуализации, от простого каркаса до полного фотореалистичного рендеринга. Один из таких режимов позволяет заранее узнать, как будет выглядеть обьект на рендере и называется он - Rendered Viewport shading</p>
+            <h3>Что такое Rendered Viewport Shading?</h3>
+            <p><strong>Rendered Viewport Shading</strong> — это режим, в котором Blender отображает сцену так, как она будет выглядеть при финальном рендере. Он учитывает: </p>
+            <ul>
+                <li>Источники света;</li>
+                <li>Материалы и текстуры;</li>
+                <li>Тени;</li>
+                <li>Отражения и преломления;</li>
+                <li>Рендер-движок (Cycles или Eevee).</li>
+            </ul>
+
+            <h3>Как включить Rendered View?</h3>
+            <ol>
+                <li>Перейдите в окно 3D Viewport.</li>
+                <li>В правом верхнем углу нажмите иконку Rendered Viewport Shading — она выглядит как сфера с чекерным (шахматным) узором и бликами.</li>
+                <li>Либо нажмите клавишу Z → Rendered (вызов всплывающего меню навигации).</li>
+            </ol>
+            <a href="{% static 'main/img/rendered.png' %}" data-lightbox="gallery">
+                <img class="image1" src="{% static 'main/img/rendered.png' %}">
+            </a>
+
             <div class="text-center">
                 <button id="markLessonComplete" class="btn btn-success">Урок пройден</button>
                 <div id="lessonMessage" style="margin-top: 10px; color: lightgreen;"></div>

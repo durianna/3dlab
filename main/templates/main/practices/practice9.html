@@ -4,9 +4,261 @@
 {% block title %}Практическая работа{% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="requirements-list1">
-        <p>Будет добавлено позже</p>
+    <div class="container">
+
+        <div class="requirements-list1">
+            <header class="text-center mb-4">
+                <h1>Практическая работа: Использование модификаторов для моделирования обьектов. Boolean</h1>
+            </header>
+        </div>
+
+        <div class="requirements-list">
+            <div class="section">
+                <h2 class="text-center mb-2">Практическая работа №14</h2>
+                <h3>Цель работы</h3>
+                <p class="lead">Создать объёмный треугольный кусок сыра с помощью базовых примитивов и вырезать в нём отверстия с помощью сфер и модификатора Boolean.</p>
+                <h2 class="text-center mb-2">Задание</h2>
+                <p>Выполните следующие действия в среде Blender:</p>
+            </div>
+
+            <div class="student-table-wrapper">
+                <table class="student-table blender-style-table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Действие</th>
+                            <th>Метод выполнения (инструкционная карта)</th>
+                            <th>Изображение</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Добавить плоскость</td>
+                            <td>Создать новый проект, удалить стартовый куб и добавить плоскость. Shift + A → Mesh → Plane</td>
+                            <td><a href="{% static 'main/img/Pr9/step1.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr9/step1.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Создать треугольник</td>
+                            <td>Перейти в Edit Mode(Tab) → выделите 1 вершину в режиме редактирования вершин → нажмите X → Delete Vertices чтобы удалить одну вершину.  Выделите две смежных вершины и обьекдините их с помощью Edge (F), чтобы получить треугольник. </td>
+                            <td><a href="{% static 'main/img/Pr9/step2.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr9/step2.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr9/step2_1.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr9/step2_1.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Придать объём</td>
+                            <td>Выделите все 3 точки, нажмите правой кнопкой мыши → New Edge/ Face from Vertices для того чтобы создать треугольную грань, затем вытяните ее чтобы сделать похожей по форме на кусочек сыра. Выделите грань → нажмите E → вытяните вверх (создаётся объём)</td>
+                            <td><a href="{% static 'main/img/Pr9/step3.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr9/step3.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr9/step3_1.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr9/step3_1.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr9/step3_2.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr9/step3_2.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Придать объём</td>
+                            <td>Добавим фаски чтобы сыр выглядел более обьемно. В режиме редактирования выделите все вершины кнопкой A, затем нажмите CTRL + B чтобы активировать инструмент Bevel(колесиком добавьте 2-3 уровня), создайте небольшой скос на гранях</td>
+                            <td><a href="{% static 'main/img/Pr9/step3_4.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr9/step3_3.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Добавить сферу для будущего отверстия</td>
+                            <td>Теперь нам необходимо добавить сферу, которой будем "вырезать" дырки для сыра. <strong>Сначала нам нужно перейти обратно в обьектный режим(Tab)</strong>. Добавляем сферу:  Shift + A → Mesh → UV Sphere → уменьшите масштаб → разместите частично внутри "сыра"</td>
+                            <td><a href="{% static 'main/img/Pr9/step4.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr9/step4.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Скопировать сферу</td>
+                            <td>Выделите кусок сыра → в панели справа нажмите на иконку гаечного ключа и добавьте модификатор Boolean(Add modifier → Generate → Boolean). В настройках выберите Difference(разница) → В поле для второго обьекта выберите сферу → нажмите Apply или CTRL+A</td>
+                            <td><a href="{% static 'main/img/Pr9/step5.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr9/step5.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Применить модификатор Boolean</td>
+                            <td>Переместите сферу на другое место, где хотите добавить отверстие и выполните аналогичные действия. Меняя положение и размер сферы добавьте несколько отверстий. Не забывайте, что модификатор Boolean в этом случае мы добавляем к модели сыра а не сферы.</td>
+                            <td><a href="{% static 'main/img/Pr9/step6.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr9/step6.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Удалить сферы</td>
+                            <td>После применения Boolean удалите сферу (X → Delete)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Сгладить объект</td>
+                            <td>ПКМ по модели → Shade Smooth или Shade Auto Smooth. </td>
+                            <td><a href="{% static 'main/img/Pr9/step7.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr9/step7.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Финальный рендер</td>
+                            <td>Откорректируйте положение камеры и света. Нажмите F12 и сохраните результат рендера.</td>
+                            <td><a href="{% static 'main/img/Pr9/step8.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr9/step8.png' %}">
+                            </a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <p><br><br>Ожидаемый результат:</p>
+                <ul>
+                    <li>Объёмный треугольный кусок сыра с вырезанными отверстиями.</li>
+                    <li>Использование Boolean Difference для вырезания с помощью сфер.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3>Вопросы для самоконтроля:</h3>
+                <ol>
+                    <li>Что делает модификатор Boolean в режиме Difference?</li>
+                    <li>Можно ли применить Boolean к нескольким объектам сразу?</li>
+                </ol>
+            </div>
+        </div>
+
+
+        <div class="requirements-list">
+            <div class="section">
+                <h2 class="text-center mb-2">Практическая работа №10</h2>
+                <h3>Цель работы</h3>
+                <p class="lead">Научиться моделировать полую лабораторную колбу с горлышком и носиком, используя редактирование меша, трансформации и модификатор Boolean.</p>
+                <h2 class="text-center mb-2">Задание</h2>
+                <p>Выполните следующие действия в Blender шаг за шагом:</p>
+            </div>
+
+            <div class="student-table-wrapper">
+                <table class="student-table blender-style-table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Действие</th>
+                            <th>Метод выполнения (инструкционная карта)</th>
+                            <th>Изображение</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Удалить стартовый куб</td>
+                            <td>Выделите куб → нажмите <strong>X</strong> → <strong>Delete</strong>. Добавьте конус с помощью Shift + A → Mesh → Cone.</td>
+                            <td><a href="{% static 'main/img/Pr9.1/step0.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr9.1/step0.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Редактировать конус (основание колбы)</td>
+                            <td> В левом нижнем углу нажмите на всплывающее меню "Add Cone". Установите:
+                                <ul>
+                                    <li>Vertices: 64</li>
+                                    <li>Radius1: 1.2</li>
+                                    <li>Radius2: 0.3</li>
+                                    <li>Depth: 2.0</li>
+                                </ul>
+                                Затем нажмите <strong>S → Z → 0.7</strong> для вертикального сжатия формы.
+                            </td>
+                            <td><a href="{% static 'main/img/Pr9.1/step1.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr9.1/step1.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Сделать форму полой</td>
+                            <td>Перейдите в <strong>Edit Mode (Tab)</strong> → выберите режим граней (Face Select) → кликните по нижней грани колбы → нажмите <strong>I</strong> (Inset) → немного сузьте → нажмите <strong>E</strong> (Extrude) и потяните вверх внутрь колбы. Это создаст внутреннюю стенку.</td>
+                            <td><a href="{% static 'main/img/Pr9.1/step2.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr9.1/step2.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Добавить цилиндр (горлышко)</td>
+                            <td>Shift + A → Mesh → Cylinder → <strong>S</strong> (масштаб) → <strong>0.3</strong> → <strong>S → Z → 2</strong> → <strong>G → Z</strong> → разместите сверху колбы. Конец должен частично входить в верхнюю часть колбы.</td>
+                            <td><a href="{% static 'main/img/Pr9.1/step3.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr9.1/step3.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Сделать горлышко полым</td>
+                            <td>Перейдите в Edit Mode → выделите верхнюю и нижнюю грань цилиндра → нажмите <strong>I</strong> (Inset) → <strong>E</strong> → выдавите внутрь, создавая внутреннюю стенку.</td>
+                            <td><a href="{% static 'main/img/Pr9.1/step4.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr9.1/step4.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Объединить части</td>
+                            <td>Выделите основание колбы → добавьте модификатор Boolean → выберите тип <strong>Union</strong> → в поле Object выберите цилиндр → нажмите <strong>Apply</strong>.</td>
+                            <td><a href="{% static 'main/img/Pr9.1/step5.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr9.1/step5.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Удалить объект-горлышко</td>
+                            <td>Выделите цилиндр → нажмите <strong>X</strong> → <strong>Delete</strong>. Останется объединённая полая форма.</td>
+                            <td><a href="{% static 'main/img/Pr9.1/step6.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr9.1/step6.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Сгладить колбу</td>
+                            <td>Перейдите в Object Mode → ПКМ по объекту → <strong>Shade Smooth</strong>. При желании добавьте модификатор <strong>Bevel</strong> для закругления краёв.</td>
+                            <td><a href="{% static 'main/img/Pr9.1/step7.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr9.1/step7.png' %}">
+                            </a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <p><br><br>Ожидаемый результат:</p>
+                <ul>
+                    <li>Полая лабораторная колба, объединённая из конуса и цилиндра.</li>
+                    <li>Внутренние стенки созданы с помощью Inset + Extrude.</li>
+                    <li>Финальная форма сглажена и готова для дальнейшего оформления.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3>Вопросы для самопроверки:</h3>
+                <ol>
+                    <li>Как сделать объект полым?</li>
+                    <li>Какие операции выполнялись для объединения объектов?</li>
+                    <li>Для чего используется модификатор Bevel?</li>
+                </ol>
+            </div>
+        </div>
+
     </div>
-</div>
+
 {% endblock %}
