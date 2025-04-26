@@ -2,6 +2,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -21,8 +22,14 @@
 </head>
 <body>
     <aside id="menu">
-        <img src="{% static 'main/img/logo.png' %}" alt="logo" >
-        <span class="logo" >3DLab</span>
+        {% if is_mobile %}
+            <button id="closeMenu" class="sidebarClose"> ❮ </button>
+        {% endif %}
+
+        <div class="logo-container">
+            <img src="{% static 'main/img/logo.png' %}" alt="logo" >
+            <span class="logo" >3DLab</span>
+        </div>
         <h3>Содержание</h3>
         <ul class="aside_ul">
             <li class="aside_ul_li">
@@ -390,26 +397,34 @@
     </aside>
 
     <main id="body">
-    <div class="navbar">
-        <div class="navbar-buttons">
-            {% if user.role == "teacher" %}
-                <div class="text-center">
-                        <a class="btn btn-secondary" href="{% url 'teacher_dashboard' %}">Дашборд учителя</a>
-                </div>
-            {% endif %}
-            {% if user.is_authenticated %}
-                <a href="{% url 'profile' %}">Мой аккаунт</a>
-                <form method="post" action="{% url 'logout' %}" id="logout-form">
-                    {% csrf_token %}
-                    <button type="submit" onclick="confirmLogout(event)">
-                        Выйти
-                    </button>
-                </form>
-            {% else %}
-                <a class="ml-2" href="{% url 'login' %}">Войти</a>
-            {% endif %}
+        {% if is_mobile %}
+
+        <div id="sidebarStrip" class="sidebar-strip"></div>
+
+        <button id="toggleMenu" class="sidebarToggle"> ❯ </button>
+
+        {% endif %}
+
+        <div class="navbar">
+            <div class="navbar-buttons">
+                {% if user.role == "teacher" %}
+                    <div class="text-center">
+                            <a class="btn btn-secondary" href="{% url 'teacher_dashboard' %}">Дашборд учителя</a>
+                    </div>
+                {% endif %}
+                {% if user.is_authenticated %}
+                    <a href="{% url 'profile' %}">Мой аккаунт</a>
+                    <form method="post" action="{% url 'logout' %}" id="logout-form">
+                        {% csrf_token %}
+                        <button type="submit" onclick="confirmLogout(event)">
+                            Выйти
+                        </button>
+                    </form>
+                {% else %}
+                    <a class="ml-2" href="{% url 'login' %}">Войти</a>
+                {% endif %}
+            </div>
         </div>
-    </div>
 
     {% block content %}
     {% endblock %}

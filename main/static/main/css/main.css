@@ -1,10 +1,11 @@
 *{
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
     background: #2c2c2c;
-    color: #fff
+    color: #fff;
     display: flex;
     overflow: hidden;
     font-family: Arial, sans-serif;
@@ -13,8 +14,11 @@ body {
 aside {
     float: left;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    left: -100px;
     background: #181818;
-    width: 20%; /* ширина родительского контейнера */
+    width: 0%;
     padding: 2.5%;
     height: 100vh;
     color: white;
@@ -23,8 +27,6 @@ aside {
     overflow-x: auto;
     box-sizing: border-box;
 }
-
-
 
 aside::-webkit-scrollbar {
     width: 0px;
@@ -52,7 +54,7 @@ aside h3 {
 
 .aside_ul {
     list-style: none;
-    }
+}
 
 .aside_ul_a {
     text-decoration: none;
@@ -73,15 +75,50 @@ aside h3 {
     color: #eb5959;
     text-decoration: none;
     transform: scale(1.05);
-
 }
 
 main {
-    flex-grow: 1; /* Контент занимает оставшееся пространство */
+    flex-grow: 1;
     overflow-y: auto; /* Включаем вертикальную прокрутку для содержимого */
     height: 100vh; /* Высота содержимого на всю высоту окна */
     margin: 0 auto;
-    width: 80%;
+    width: 100%;
+}
+
+#menu.active {
+    width: 70%;
+    padding-left: 15px;
+    left: 0;
+}
+
+@media (max-width: 800px) {
+    aside {
+        position: fixed;
+        z-index: 1001;
+
+        width: 0;
+        padding: 0;
+        border: none;
+        transition: left 0.3s ease, width 0.3s ease;
+        background: rgba(24, 24, 24, 0.97);
+    }
+
+    .container
+    {
+        padding-left: 35px;
+        padding-right: 5px;
+    }
+}
+
+@media (min-width: 801px) {
+    aside {
+        width: 20%;
+        left: 0;
+    }
+
+    main {
+        width: 80%;
+    }
 }
 
 main::-webkit-scrollbar {
@@ -246,14 +283,58 @@ main::-webkit-scrollbar-thumb:hover {
 }
 
 .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+
     display: flex; /* Горизонтальное расположение */
     justify-content: flex-end; /* Разделение кнопок по краям */
     align-items: center; /* Выравнивание по центру */
     background-color: #333; /* Темный фон */
     color: #fff; /* Белый текст */
     padding: 10px 20px; /* Внутренние отступы */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Легкая тень */
 }
+
+.sidebarToggle {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 9999;
+    background-color: #161616;
+    color: white;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    padding: 15px 8px;
+    cursor: pointer;
+}
+
+.sidebarClose {
+    position: sticky;
+    top: 50%;
+    align-self: flex-end; /* чтобы прижать к правому краю, если flex применяется */
+    background-color: #161616;
+    color: white;
+    border: none;
+    border-radius: 10px 0px 0px 10px;
+    padding: 15px 8px;
+    margin-left: auto; /* помогает в некоторых случаях */
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.sidebar-strip {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 2%;
+    height: 100vh;
+    background-color: #161616;
+    z-index: 1002;
+}
+
 
 .navbar a {
     color: #fff; /* Белый текст для ссылок */

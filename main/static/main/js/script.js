@@ -573,6 +573,33 @@ function confirmLogout(event) {
     }
 }
 
+const toggleBtn = document.getElementById('toggleMenu');
+const closeBtn = document.getElementById('closeMenu');
+
+const sidebarStrip = document.getElementById('sidebarStrip');
+const menu = document.getElementById('menu');
+
+toggleBtn.addEventListener('click', () => {
+    menu.classList.toggle('active');
+
+    toggleBtn.style.visibility = 'hidden';
+    sidebarStrip.style.visibility = 'hidden';
+
+    setTimeout(() => {
+        toggleBtn.classList.remove('visible');
+        sidebarStrip.classList.remove('visible');
+    }, 0);
+});
+
+closeBtn.addEventListener('click', () => {
+    menu.classList.toggle('active');
+
+    setTimeout(() => {
+        toggleBtn.classList.add('visible');
+        sidebarStrip.classList.add('visible');
+    }, 150);
+});
+
 
 const leftList = document.getElementById('left-list');
 const rightList = document.getElementById('right-list');

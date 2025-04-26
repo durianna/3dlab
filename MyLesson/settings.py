@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure--c7=t9!bbnz_x@&w+o-i3z@wglejbxy&9(q_@4xck*gbk6-^nk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['45.136.57.53']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -67,6 +67,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'main.context_processors.detect_device',
             ],
         },
     },
@@ -81,9 +82,9 @@ WSGI_APPLICATION = 'MyLesson.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mysite_database',
-        'USER': 'admin',
-        'PASSWORD': 'Aa12345',
+        'NAME': 'di',
+        'USER': 'postgres',
+        'PASSWORD': '852456159753',
         'HOST': 'localhost',
         'PORT': '5432',
         'OPTIONS': {
