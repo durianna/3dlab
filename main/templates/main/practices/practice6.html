@@ -14,67 +14,284 @@
         </div>
 
         <div class="requirements-list">
-            <!-- Objective Section -->
             <div class="section">
-                <h2>Цель работы</h2>
-                <p>Научиться использовать инструмент Extrude для создания новых геометрических форм на основе примитивов.</p>
-            </div>
-            <div class="video-container">
-                <iframe width="560" height="315"
-                        src="https://www.youtube-nocookie.com/embed/60e-U_iA64M?si=pq6lqjK8iK_Qr7mP"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <h2 class="text-center mb-2">Практическая работа №8</h2>
+                <h3>Цель работы</h3>
+                <p class="lead">Научиться моделировать простой контейнер с внутренним пространством и крышкой, используя выдавливание внутрь и точное позиционирование объектов.</p>
+                <h2 class="text-center mb-2">Задание</h2>
+                <p>Выполните следующие действия в среде Blender:</p>
             </div>
 
-
-
-            <!-- Task Section -->
-            <div class="section">
-                <h2>Задание</h2>
-                <p>Выполните следующие действия в Blender:</p>
-
-                <div class="student-table-wrapper">
-                    <table class="student-table blender-style-table">
-                        <thead>
-                            <tr>
-                                <th>№</th>
-                                <th>Действие</th>
-                                <th>Метод выполнения</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>1</td><td>Создание простого 3D-объекта (сферы или куба)</td><td>Откройте Blender.Создайте новый проект. Удалите стандартный куб (если он есть). Добавьте
-                                сферу или куб через меню "Add" → "Mesh" → "Sphere" или "Cube".</td></tr>
-                            <tr><td>2</td><td>Добавление материала к объекту</td><td>Выберите ваш объект (сферу или куб). Перейдите на вкладку "Material Properties" (с иконкой шара). Нажмите "New", чтобы создать новый материал. Настройте цвет материала, изменив параметр "Base Color".</td></tr>
-                            <tr><td>3</td><td>Добавление текстуры</td><td>В той же вкладке "Material Properties", найдите раздел "Surface". Нажмите на маленькую иконку рядом с "Base Color", чтобы открыть меню текстур. Выберите "Image Texture" из выпадающего списка. В появившемся окне выберите изображение текстуры (например, текстуру кирпичной стены или дерева). Примените текстуру к объекту.</td></tr>
-                            <tr><td>4</td><td>Настройка координат текстуры</td><td>Перейдите в окно "UV Editing", чтобы развернуть объект и корректно наложить текстуру. Выберите объект, нажмите "U" для развёртки, затем выберите "Unwrap". Перейдите обратно в "Shading" для работы с текстурами.</td></tr>
-                            <tr><td>5</td><td>Настройка свойств текстуры</td><td>Вернитесь в "Material Properties" и подкорректируйте параметры текстуры (например, "Specular" для отражений или "Roughness" для матовости).</td></tr>
-                            <tr><td>6</td><td>Рендеринг сцены</td><td>Когда все настроено, перейдите в окно "Render Properties". Выберите тип рендера (например, "Cycles" для более качественного изображения). Нажмите "F12" для рендеринга сцены.</td></tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="student-table-wrapper">
+                <table class="student-table blender-style-table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Действие</th>
+                            <th>Метод выполнения (инструкционная карта)</th>
+                            <th>Изображение</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Создать новый проект</td>
+                            <td>File → <strong>New</strong>.</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Масштабировать куб(основа ящика</td>
+                            <td>Если куба на сцене нет - Shift + A → Mesh → Cube. Масштабируйте куб по оси Z на 0.5 единиц (S → Z → 0.5).</td>
+                            <td><a href="{% static 'main/img/Pr7.3/step2.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr7.3/step2.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Войти в режим редактирования</td>
+                            <td>Выделите куб и перейдите в режим редактирования → Tab → Edit Mode → в режиме граней выберите верхнюю грань (Face Select → 3).</td>
+                            <td><a href="{% static 'main/img/Pr7.3/step3.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr7.3/step3.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Inset верхней грани</td>
+                            <td>Нажмите <code>I</code>(Inset) → переместите мышь внутрь, чтобы создать внутреннюю грань.</td>
+                            <td><a href="{% static 'main/img/Pr7.3/step4.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr7.3/step4.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Extrude внутрь</td>
+                            <td>Нажмите E и потяните вниз, чтобы создать полость внутри куба. Для удобства перейдите в вид сбоку(1 на Numpad) и включите Toogle X-Ray</td>
+                            <td><a href="{% static 'main/img/Pr7.3/step5.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr7.3/step5.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Сгладить края ящика</td>
+                            <td>Выделите все рёбра верхнего периметра → Ctrl + B → фаска (Bevel).</td>
+                            <td><a href="{% static 'main/img/Pr7.3/step6.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr7.3/step6.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Создать крышку</td>
+                            <td>Shift + A → Cube → S по X и Y, Z → масштаб до толщины крышки → G → Z → разместите над ящиком. Поверните крышку в виде сверху(7 на Numpad) .</td>
+                            <td><a href="{% static 'main/img/Pr7.3/step7.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr7.3/step7.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Добавить ручку</td>
+                            <td>Shift + A → Cylinder → масштаб по Z и X → переместить на центр крышки.</td>
+                            <td><a href="{% static 'main/img/Pr7.3/step8.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr7.3/step8.png' %}">
+                            </a></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
-            <!-- Report Section -->
             <div class="section">
-                <h2><br>Отчёт по работе</h2>
-                <p>В отчёте учащийся должен:</p>
+                <p><br><br>Ожидаемый результат:</p>
                 <ul>
-                    <li>Приложить изображение готового рендера сцены</li>
-                    <li>Описать шаги, которые были выполнены при текстурировании</li>
-                    <li>Отметить, какие текстуры или настройки использовались</li>
-                    <li>Кратко описать, что удалось создать с помощью текстурирования.</li>
+                    <li>Модель ящика с полостью и отдельной крышкой.</li>
+                    <li>Аккуратные фаски по краям, ручка на крышке.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3>Вопросы для самоконтроля:</h3>
+                <ol>
+                    <li>Чем отличается Inset от Extrude?</li>
+                    <li>Какие шаги нужны, чтобы создать полость в модели?</li>
+                    <li>Какие модификаторы или инструменты позволяют сделать сглаживание краёв?</li>
+                </ol>
+            </div>
+        </div>
+
+
+        <div class="requirements-list">
+
+            <div class="section">
+                <h2 class="text-center mb-2">Практическая работа №9</h2>
+                <h3>Цель работы</h3>
+                <p class="lead">Научиться переходить в режим редактирования (Edit Mode), понимать строение меша и взаимодействовать с его базовыми компонентами: вершинами, рёбрами и полигонами.</p>
+                <h2 class="text-center mb-2">Задание</h2>
+                <p>Выполните следующие действия в среде Blender:</p>
+            </div>
+
+            <div class="student-table-wrapper">
+                <table class="student-table blender-style-table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Действие</th>
+                            <th>Метод выполнения (инструкционная карта)</th>
+                            <th>Изображение</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Удалить стандартный куб</td>
+                            <td>При запуске Blender в сцене находится стандартный куб. Кликните по нему ЛКМ для выделения → нажмите клавишу <strong>X</strong> → выберите <strong>Delete</strong>.</td>
+                            <td><a href="{% static 'main/img/Pr6/step1.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr6/step1.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Добавить новый куб (основание дома)</td>
+                            <td>Нажмите <strong>Shift + A → Mesh → Cube</strong>. Новый куб появится в центре сцены.</td>
+                            <td><a href="{% static 'main/img/Pr6/step2.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr6/step2.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Растянуть куб по оси Z (высота дома)</td>
+                            <td>Выделите куб → нажмите <strong>S</strong> для масштабирования → затем <strong>Z</strong>, чтобы масштабировать только по вертикали → потяните мышь вверх (например, увеличьте в 2 раза) → щелкните ЛКМ для подтверждения.</td>
+                            <td><a href="{% static 'main/img/Pr6/step3.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr6/step3.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Войти в режим редактирования</td>
+                            <td>Убедитесь, что куб (дом) выделен → нажмите <strong>Tab</strong> → выберите <strong>Edit Mode</strong>.</td>
+                            <td><a href="{% static 'main/img/Pr6/step4.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr6/step4.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Включить режим выделения граней</td>
+                            <td>Вверху окна 3D Viewport нажмите значок с квадратом (<strong>Face Select</strong>) или нажмите клавишу <strong>3</strong> на клавиатуре.</td>
+                            <td><a href="{% static 'main/img/Pr6/step5.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr6/step5.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Выделить верхнюю грань</td>
+                            <td>Кликните по верхней грани дома ЛКМ, чтобы выделить её.</td>
+                            <td><a href="{% static 'main/img/Pr6/step6.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr6/step6.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Вытянуть крышу (Extrude)</td>
+                            <td>Нажмите <strong>E</strong>, потяните вверх для создания новой геометрии → затем нажмите <strong>S</strong> для масштабирования и уменьшите масштаб, создавая зауженную крышу → ЛКМ для подтверждения.</td>
+                            <td><a href="{% static 'main/img/Pr6/step7.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr6/step7.1.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr6/step7.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr6/step7.2.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Сделать крышу треугольной (Merge)</td>
+                            <td>Переключитесь в режим выделения вершин (<strong>1</strong>) → выделите две противоположные вершины по длинной стороне крыши → нажмите <strong>M</strong> → выберите <strong>At Center</strong>. Повторите с другой стороны, чтобы получить треугольную форму.</td>
+                            <td><a href="{% static 'main/img/Pr6/step8.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr6/step8.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Создать дверь</td>
+                            <td>Перейдите в режим <strong>Face Select</strong> → выделите переднюю грань дома → нажмите <strong>Ctrl + R</strong>, прокрутите колесо мыши, чтобы сделать 2 loop cut'а (горизонтальный и вертикальный) → выделите одну из центральных граней, которая станет дверью → нажмите <strong>E</strong> → немного вытолкните грань внутрь.</td>
+                            <td><a href="{% static 'main/img/Pr6/step9.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr6/step9.1.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr6/step9.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr6/step9.2.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Создать окно</td>
+                            <td>Аналогично шагу 9: выберите грань выше двери → создайте разделения с помощью <strong>Ctrl + R</strong> → выберите нужную часть → <strong>E</strong> → вытолкните внутрь для создания окна.</td>
+                            <td><a href="{% static 'main/img/Pr6/step10.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr6/step10.1.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr6/step10.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr6/step10.2.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>Создать дымоход</td>
+                            <td>Выйдите в <strong>Object Mode</strong> (Tab) → нажмите <strong>Shift + A → Mesh → Cube</strong> → переместите его на крышу с помощью <strong>G</strong> → затем <strong>Z</strong> для подъема, <strong>X</strong> или <strong>Y</strong> для смещения в сторону.</td>
+                            <td><a href="{% static 'main/img/Pr6/step11.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr6/step11.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>Отредактировать форму дымохода</td>
+                            <td>Перейдите в <strong>Edit Mode</strong> для дымохода → выделите верхнюю грань → нажмите <strong>E</strong> и вытяните вверх.</td>
+                            <td><a href="{% static 'main/img/Pr6/step12.1.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr6/step12.1.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr6/step12.1.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr6/step12.2.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr6/step12.1.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr6/step12.3.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>Сохранить проект</td>
+                            <td>Перейдите во вкладку <strong>File</strong> в левом верхнем углу интерфейса → выберите <strong>Save As</strong> → в появившемся окне выберите место сохранения, введите имя файла: <strong>dom.blend</strong> → нажмите <strong>Save As Blender File</strong>.</td>
+                            <td><a href="{% static 'main/img/Pr6/step13.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr6/step13.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+             <div class="section">
+                <p><br><br>Ожидаемый результат:</p>
+                <ul>
+                    <li>Переключение между различными режимами выделения (вершины, рёбра, грани).</li>
+                    <li>Перемещение, масштабирование и вращение элементов меша.</li>
+                    <li>Использование инструментов Extrude, LoopCut</li>
                 </ul>
             </div>
 
             <!-- Additional Recommendations Section -->
             <div class="section">
-                <h2>Дополнительно (по желанию)</h2>
-                <ul>
-                    <li>Экспериментируйте с различными типами текстур (например, с нормальными картами или с картами отражений).</li>
-                    <li>Попробуйте изменить материалы объектов, чтобы увидеть, как влияет изменение различных настроек (например, металлическость или прозрачность).</li>
-                </ul>
+                <h3>Вопросы для самоконтроля:</h3>
+                <ol>
+                    <li>Что такое Extrude?</li>
+                    <li>Для чего нужен Extrude?</li>
+                    <li>Какие еще инструменты для моделирования обьекта вы знаете?</li>
+                </ol>
             </div>
         </div>
     </div>

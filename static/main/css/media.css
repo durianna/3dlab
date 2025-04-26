@@ -1,0 +1,55 @@
+.image1 {
+    display: block;
+    width: 45%;
+    border: 5px solid #4d4d4d;
+    margin: auto;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.image2 {
+    display: block;
+    width: 15%;
+    border: 5px solid #4d4d4d;
+    margin: auto;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.image3 {
+    display: block;
+    width: 50%;
+    border: 5px solid #4d4d4d;
+    margin: auto;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.pr4_final
+{
+    display: flex;
+}
+.imagemain {
+    display: block;
+    width: 70%;
+    border: 5px solid #4d4d4d;
+    margin: auto;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.video-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.content1
+{
+    width: 50%;
+    border: 5px solid #4d4d4d;
+}

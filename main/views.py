@@ -256,34 +256,42 @@ def splashscreen(request):
 
 @login_required
 def submit_result(request):
-    print("Request body:", request.body)
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
             result_type = data.get('type')
+
             if result_type == 'test':
-                test_id = int(data.get('test_id'))
-                score = int(data.get('score'))
+                test_id = data.get('test_id')
+                score = data.get('score')
+
+                if test_id is None or score is None:
+                    return JsonResponse({'error': 'Данные отсутствуют'}, status=400)
+
+                test_id = int(test_id)
+                score = int(score)
 
                 if not (1 <= test_id <= 15):
                     return JsonResponse({'error': 'Неверный номер теста'}, status=400)
 
                 test_results, created = TestResults.objects.get_or_create(user=request.user)
-                field_name = f'test{test_id}'
-                setattr(test_results, field_name, score)
+                setattr(test_results, f'test{test_id}', score)
                 test_results.save()
 
                 return JsonResponse({'message': 'Результат теста успешно сохранён!'})
 
             elif result_type == 'lesson':
-                lesson_id = int(data.get('lesson_id'))
+                lesson_id = data.get('lesson_id')
+                if lesson_id is None:
+                    return JsonResponse({'error': 'lesson_id отсутствует'}, status=400)
+
+                lesson_id = int(lesson_id)
 
                 if not (1 <= lesson_id <= 15):
                     return JsonResponse({'error': 'Неверный номер урока'}, status=400)
 
                 lesson_results, created = LessonResult.objects.get_or_create(user=request.user)
-                field_name = f'lesson{lesson_id}'
-                setattr(lesson_results, field_name, True)
+                setattr(lesson_results, f'lesson{lesson_id}', True)
                 lesson_results.save()
 
                 return JsonResponse({'message': 'Урок успешно отмечен как пройден!'})
@@ -292,10 +300,9 @@ def submit_result(request):
                 return JsonResponse({'error': 'Неверный тип результата'}, status=400)
 
         except Exception as e:
-            return JsonResponse({'error': str(e)}, status=400)
+            return JsonResponse({'error': str(e)}, status=500)
 
     return JsonResponse({'error': 'Только POST-запросы разрешены'}, status=405)
-
 
 @login_required
 def profile_edit(request):
