@@ -82,11 +82,11 @@ WSGI_APPLICATION = 'MyLesson.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'di',
-        'USER': 'postgres',
-        'PASSWORD': '852456159753',
+        'NAME': 'mysite-database',
+        'USER': 'admin',
+        'PASSWORD': 'Aa12345',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '5435',
         'OPTIONS': {
             'client_encoding': 'utf8',
         },
