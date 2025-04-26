@@ -4,9 +4,325 @@
 {% block title %}Практическая работа{% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="requirements-list1">
-        <p>Будет добавлено позже</p>
+    <div class="container">
+
+        <div class="requirements-list1">
+            <header class="text-center mb-4">
+                <h1>Практическая работа: Использование модификатора Mirror для моделирования симметричных объектов</h1>
+            </header>
+        </div>
+
+        <div class="requirements-list">
+            <div class="section">
+                <h2 class="text-center mb-2">Практическая работа №17</h2>
+                <h3>Цель работы</h3>
+                <p class="lead">Научиться моделировать симметричные объекты с помощью модификатора Mirror, используя симметрию по двум осям на примере крыльев бабочки.</p>
+                <h2 class="text-center mb-2">Задание</h2>
+                <p>Выполните следующие действия в среде Blender:</p>
+            </div>
+
+            <div class="student-table-wrapper">
+                <table class="student-table blender-style-table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Действие</th>
+                            <th>Метод выполнения (инструкционная карта)</th>
+                            <th>Изображение</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Создать новую сцену и добавить окружность</td>
+                            <td>Откройте Blender → File → New → General. Удалите куб выделив его и нажав X → Delete. Тело бабочки мы создадим из окружности - circle. Добавим окружность с помощью Shift + A → Mesh → Circle, в настройках Add Circle(F9) уменьшаем количество вершин окружности на 10 (чтобы создать более простую форму).</td>
+                            <td><a href="{% static 'main/img/Pr10/step1.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr10/step1.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr10/step1_1.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr10/step1_1.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr10/step1_2.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr10/step1_2.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Повернуть окружность. Перейти в режим редактирования</td>
+                            <td>Выделим окружность и развернем ее горизонтально, для этого нажмите <code>R</code> и с клавиатуры введите 90. После того как окрожность будет повернута перейдем в режим редактирования: выделите окружность → нажмите Tab для перехода в режим Edit Mode.</td>
+                            <td><a href="{% static 'main/img/Pr10/step2.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr10/step2.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Экструдировать окружность</td>
+                            <td> В режиме редактирования переключитесь на вид сверху клавишей 7 на Numpad. Выделите все вершины окружности и экструдируйте их по оси X вперед(E → X). Затем передвиньте обьект к центру выделив все вершины клавишей <code>A</code> и переместив с помощью  G → X.</td>
+                            <td><a href="{% static 'main/img/Pr10/step3.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr10/step3.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr10/step4.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr10/step4.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Переместить вершины к началу координат</td>
+                            <td>Включите режим Toggle X-ray чтобы видеть сквозь обьекты.</td>
+                            <td><a href="{% static 'main/img/Pr10/step5.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr10/step5.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Добавить модификатор Mirror</td>
+                            <td> В виде сверху и включенном X-ray выделите и экструдируйте вершины на конце, это будущая голова бабочки. Чтобы вершины экструдировались ровно после нажатия E(extrude) ограничте область координатой Х нажав на соответсвующую клавишу(E → X) </td>
+                            <td><a href="{% static 'main/img/Pr10/step6.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr10/step6.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td></td>
+                            <td>Добавим больше деталей с помощью инструмента LoopCut. Чтобы вызвать инструмент нажмите комбинацию клавиш CTRL + R. При наведении на обьект появится желтая линия, она разделит наш меш на несколько частей. Увеличьте количество разрезов до 2 колесиком мыши или + на клавиатуре, затем нажмите ЛКМ и зафиксируйте положение разрезов повторным нажатием ПКМ. </td>
+                            <td><a href="{% static 'main/img/Pr10/step7.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr10/step7.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td></td>
+                            <td>Чтобы сформировать голову бабочки выделяйте окружности и по очереди масштабируйте их клавишей S. Окружности на конце и у основания головы необходимо сделать меньше формируя "шею" бабочки.</td>
+                            <td><a href="{% static 'main/img/Pr10/step8.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr10/step8.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td></td>
+                            <td>Так как тело мы формируем из окружности, обьект является полым на концах как труба. Чтобы исправить это необходимо выделить самые крайние вершины и нажав правой кнопкой мыши вызвать "Контекстное меню". В меню выберите инструмент <code>New edge/face from vertices</code>. Этот инструмент создаст дополнительную грань из выделенных вершин</td>
+                            <td><a href="{% static 'main/img/Pr10/step9.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr10/step9.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td></td>
+                            <td>Аналогично 6 шагу разделим туловище бабочки на 7 равных частей с помощью инструмента <code>Loopcut(Ctrl + R)</code>. Полученные таким образом "разрезы" также необходимо масштабировать формируя тело бабочки. Заметьте, эти окружности можно не только расширять и уменьшать, но и передвигать с помощью G. Например ближайшую к "шее" окружность придвинем ближе с помощью G → X(чтобы двигать по оси), а затем масштабируем с помощью S.</td>
+                            <td><a href="{% static 'main/img/Pr10/step10.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr10/step10.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr10/step11.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr10/step11.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr10/step12.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr10/step12.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td></td>
+                            <td>Выделяя, двигая(G) и масшабируя(S) окружности по очереди создайте приблизительно следующую форму: </td>
+                            <td><a href="{% static 'main/img/Pr10/step13.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr10/step13.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td></td>
+                            <td>Выделив крайние вершины обьекта также закроем из гранью нажав ПКМ - <code>New edge/face from vertices</code>. На данном этапе результат должен выглядеть примерно так:</td>
+                            <td><a href="{% static 'main/img/Pr10/step14.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr10/step14.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr10/step15.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr10/step15.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td></td>
+                            <td>Теперь нам необходимо добавить детализации обьекту. Мы воспользуемся инструментом Bevel, изученном в прошлых уроках. Создавать "фаски" будем выборочно. Выделите окружность формирующую "шею", затем нажмите Ctrl + B и потяните немного в сторону, чтобы создать более плавный переход.</td>
+                            <td><a href="{% static 'main/img/Pr10/step16.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr10/step16.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td></td>
+                            <td>По очереди выделяя окружности в наиболее резких местах "тела" сгладим их с помощью Bevel</td>
+                            <td><a href="{% static 'main/img/Pr10/step17.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr10/step17.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td></td>
+                            <td>Перед тем как добавить крылья бабочки, нам нужно повернуть тело так, чтобы при переключении на вид сверку голова была сверху. Для этого выделим все вершины клавишей А, переключимся на вид сверху(7 на Numpud) и повернем их с помощью горячей клавиши Rotate - R на 90 градусов. Это значение можно ввести с клавиатуры или в параметрах инструмента после применения.</td>
+                            <td><a href="{% static 'main/img/Pr10/step18.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr10/step18.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td></td>
+                            <td>Вернемся в обьектный режим(Object mode) клавишей Tab. Как вы видите на примере, обьект находится не в центре, а немного правее него. Просто передвинуть его клавишей G будет неправильно, так как Origin обьекта находится в центре и будет смещаться вместе с обьектом. Как вы знаете с прошлого урока Origin очень важная часть модели, и должен находится в центре обьекта, для его корректного "зеркалирования" модификатором Mirror. Чтобы переместить геометрию модели к ее Origin в обьектном режиме выделите тело бабочки, затем нажмите на вкладку Object
+                            → Set Origin → Geometry to origin. После этого геометрия сместится ровно по центру точки Origin. Если origin не совпадает с центром осей выполните: Object → Set Origin → Origin to 3D cursor </td>
+                            <td><a href="{% static 'main/img/Pr10/step19.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr10/step19.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr10/step20.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr10/step20.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td></td>
+                            <td>Последним шагом в моделировании тела бабочки будет применение всех трансформаций. После того, как обьект будет перемещен выполните: Ctrl + A → All Transforms. Этот шаг позволит всем трансформациям стать частью геометрии обьекта, в N-panel после применения вы сможете увидеть как все параметры сбросились на 0 и 1.</td>
+                            <td>
+                                <a href="{% static 'main/img/Pr10/step21.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr10/step21.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr10/step22.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr10/step22.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td></td>
+                            <td>Приступим к моделированию крыльев бабочки. Для того, чтобы сделать максимально точную форму воспользуемся референсом. В Blender есть возможность добавления фотографий в качестве референса, за основу возьмем изображение бабочки. Вы можете скачать это изображение открыв его. Нажмите правой кнопкой мыши - сохранить изображение как:</td>
+                            <td>
+                                <a href="{% static 'main/img/Pr10/step23.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr10/step23.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>18</td>
+                            <td></td>
+                            <td>Добавим сохраненное изображение в Blender. Нажмите сочетание клавиш Shift + А → Image → Reference. В открывшемся окне выберите сохраненное изображение. После того как оно появится в окне Viewport вы можете масштабировать его как обьект. Откорректируйте размер и положение референса сделующим образом:</td>
+                            <td>
+                                <a href="{% static 'main/img/Pr10/step24.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr10/step24.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr10/step25.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr10/step25.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr10/step26.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr10/step26.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td></td>
+                            <td>Крылья бабочки создадим из плоскости, добавив как отдельный обьект. Нажмите сочетание клавиш Shift + А → Mesh → Plane</td>
+                            <td>
+                                <a href="{% static 'main/img/Pr10/step27.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr10/step27.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr10/step28.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr10/step28.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td></td>
+                            <td>Плоскость появилась внутри другого обьекта, так как они оба находятся в центре осей. Это может затруднить процесс моделирования, поэтому нам необходимо на время скрыть "тело" бабочки. В окне Outliner найдите обьект Circle и кликните на значок глазка справа, чтобы скрыть его.</td>
+                            <td>
+                                <a href="{% static 'main/img/Pr10/step29.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr10/step29.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>18</td>
+                            <td></td>
+                            <td>Приступим к моделированию крыльев. Выделите плоскость и перейдите в Edit mode клавишей Tab. Выделите все вершины с помощью A, затем правой кнопкой мыши по обьекту - Subdivide, чтобы разделить плоскость на 4 равные части.</td>
+                            <td>
+                                <a href="{% static 'main/img/Pr10/step30.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr10/step30.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td></td>
+                            <td>Переключитесь на вид сверху(7 на Numpad). Выделите левую половину плоскости и удалите 2 крайние грани с помощью Х → Faces. Левая половина обьекта должна изчезнуть.</td>
+                            <td>
+                                <a href="{% static 'main/img/Pr10/step31.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr10/step31.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td></td>
+                            <td>Добавим модификатор Mirror. Выделите все грани плоскости клавишей А. В окне свойств обьекта нажмите на значок шестеренки → Add Modifier → Generate → Mirror</td>
+                            <td>
+                                <a href="{% static 'main/img/Pr10/step32.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr10/step32.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>21</td>
+                            <td></td>
+                            <td>В настройках модификатора Mirror выбрать ось зеркалирования X, и поставить галочку на Clipping. Вторая половина плоскости отразится по выбранной оси и будет повторять все трансформации правой части обьекта. Саму "отзеркаленную" половину нельзя выделить или трансформировать. Обратите внимание, модификатор Mirror стоит применять только после всех трансформация.</td>
+                            <td>
+                                <a href="{% static 'main/img/Pr10/step33.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr10/step33.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>22</td>
+                            <td></td>
+                            <td>Выделите крайние вершины правой части плоскости и масштабируйте их с помощью S, подгоняя под размер крыла на референсе. </td>
+                            <td>
+                                <a href="{% static 'main/img/Pr10/step35.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr10/step35.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <a href="{% static 'main/img/Pr10/step21.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr10/step21.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <p><br><br>Ожидаемый результат:</p>
+                <ul>
+                    <li>Модель симметричных крыльев бабочки, созданная с помощью модификатора Mirror по двум осям.</li>
+                    <li>Навык работы с Extrude, Inset и модификатором симметрии.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3>Вопросы для самопроверки:</h3>
+                <ol>
+                    <li>Какие оси нужно включить в модификаторе Mirror для создания симметрии по четырём квадрантам?</li>
+                    <li>Что происходит при редактировании базовой четверти объекта?</li>
+                    <li>Как избежать появления разрывов на стыках отражения?</li>
+                </ol>
+            </div>
+        </div>
     </div>
-</div>
 {% endblock %}
