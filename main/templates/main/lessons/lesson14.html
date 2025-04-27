@@ -1,91 +1,195 @@
 {% extends 'main/layout.html' %}
 {% load static %}
 
-
-
-{% block title %}Контент первого урока{% endblock %}
+{% block title %}Источники света в Blender{% endblock %}
 
 {% block content %}
     <div class="container">
         <div class="requirements-list1">
-            <h1 class="text-center mb-2">Скелетная анимация: основы риггинга и движения персонажей</h1>
+            <h1 class="text-center mb-2">Источники света в Blender. Настройки мира</h1>
         </div>
 
         <div class="requirements-list" id="14" data-type="lesson">
-            <p>Скелетная анимация — это процесс создания движений персонажей или объектов в 3D-пространстве с использованием виртуального "скелета".
-                Она является важной частью разработки анимации для игр, фильмов и других проектов. Важнейшими этапами являются риггинг (создание скелета)
-                и последующая анимация модели. Рассмотрим основные принципы риггинга и способы анимации персонажей.</p>
+            <p>
+                Освещение играет важнейшую роль в создании реалистичных и выразительных 3D-сцен. Если удалить источник света на рендере мы получим черный экран. В Blender существует несколько типов источников света, каждый из которых имеет свои особенности и используется для разных задач.
+                В этом уроке мы изучим основные виды света и научимся их настраивать.
+            </p>
 
-            <h2>Риггинг: создание виртуального скелета</h2>
-            <p><strong>Риггинг</strong> — это процесс создания виртуального скелета (арматуры), который позволяет анимировать части модели независимо друг от друга.
-                Он особенно важен для персонажей и объектов с подвижными элементами.</p>
+            <a href="{% static 'main/img/light.gif' %}" data-lightbox="gallery">
+                <img class="image1" src="{% static 'main/img/light.gif' %}">
+            </a>
 
-            <h3>Зачем нужен риггинг?</h3>
+            <h2 class="text-center mb-2">Основные типы источников света</h2>
+
             <ul>
-                <li>Позволяет управлять движением различных частей модели (руки, ноги, пальцы, хвосты).</li>
-                <li>Обеспечивает реалистичное анимирование сложных движений, таких как ходьба, бег или мимика.</li>
-                <li>Создает гибкие и удобные в управлении модели.</li>
+                <li><strong>Point Light</strong> — точечный свет.</li>
+                <li><strong>Sun Light</strong> — имитация солнечного света.</li>
+                <li><strong>Spot Light</strong> — прожектор, направленный конусом.</li>
+                <li><strong>Area Light</strong> — свет, исходящий от поверхности.</li>
             </ul>
 
-            <h3>Основные этапы риггинга</h3>
-            <h4>Создание арматуры (Armature)</h4>
+            <a href="{% static 'main/img/light_example.png' %}" data-lightbox="gallery">
+                <img class="image1" src="{% static 'main/img/light_example.png' %}">
+            </a>
+
+            <h3 class="text-center mb-2">Point Light (Точечный свет)</h3>
+            <p>
+                <strong>Point Light</strong> испускает свет во всех направлениях из одной точки, подобно лампочке.
+                Он хорошо подходит для подсветки небольших объектов или создания атмосферных эффектов.
+            </p>
+
+            <a href="{% static 'main/img/point_light_example.png' %}" data-lightbox="gallery">
+                <img class="image1" src="{% static 'main/img/point_light_example.png' %}">
+            </a>
+
+            <h3 class="text-center mb-2">Sun Light (Солнечный свет)</h3>
+            <p>
+                <strong>Sun Light</strong> создаёт параллельные лучи света, как от солнца.
+                Он используется для освещения больших открытых сцен, где важна равномерность света и теней.
+            </p>
+
+            <a href="{% static 'main/img/sun_light_example.gif' %}" data-lightbox="gallery">
+                <img class="image1" src="{% static 'main/img/sun_light_example.gif' %}">
+            </a>
+
+            <h3 class="text-center mb-2">Spot Light (Прожектор)</h3>
+            <p>
+                <strong>Spot Light</strong> испускает свет в форме конуса.
+                Это отличный вариант для создания сценических эффектов или акцентного освещения.
+            </p>
+
+            <a href="{% static 'main/img/spot_light_example.png' %}" data-lightbox="gallery">
+                <img class="image1" src="{% static 'main/img/spot_light_example.png' %}">
+            </a>
+
+            <h3 class="text-center mb-2">Area Light (Плоский источник света)</h3>
+            <p>
+                <strong>Area Light</strong> излучает свет с заданной поверхности.
+                Он используется для мягкого равномерного освещения, например, имитации света от окна или студийного оборудования.
+            </p>
+
+            <a href="{% static 'main/img/area_light_example.gif' %}" data-lightbox="gallery">
+                <img class="image1" src="{% static 'main/img/area_light_example.gif' %}">
+            </a>
+
+            <h2 class="text-center mb-2">Как добавить источник света</h2>
+            <ol>
+                <li>Нажмите <code>Shift + A</code> → <strong>Light</strong>.</li>
+                <li>Выберите тип источника света из списка.</li>
+                <li>Переместите, поверните и настройте параметры в панели <strong>Properties → Object Data Properties</strong> (иконка лампочки).</li>
+            </ol>
+
+            <a href="{% static 'main/img/light_example.png' %}" data-lightbox="gallery">
+                <img class="image1" src="{% static 'main/img/light_example.png' %}">
+            </a>
+
+            <h3 class="text-center mb-2">Основные параметры света</h3>
             <ul>
-                <li>Арматура создается через <strong>Add > Armature</strong>.</li>
-                <li>Каждая кость отвечает за определенную часть модели (например, рука, нога, пальцы).</li>
+                <li><strong>Power</strong> — мощность света (измеряется в ваттах).</li>
+                <li><strong>Color</strong> — цвет освещения.</li>
+                <li><strong>Size / Radius</strong> — влияет на мягкость теней.</li>
+                <li><strong>Spot Size</strong> (для Spot Light) — угол распространения света.</li>
+                <li><strong>Strength</strong> (для Sun Light) — интенсивность света.</li>
+            </ul>
+            <a href="{% static 'main/img/light_example1.png' %}" data-lightbox="gallery">
+                <img class="image1" src="{% static 'main/img/light_example1.png' %}">
+            </a>
+            <h2 class="text-center mb-2">Практический пример освещения сцены</h2>
+            <ol>
+                <li>Создайте куб (<code>Shift + A → Mesh → Cube</code>).</li>
+                <li>Добавьте источник света <strong>Sun Light</strong>.</li>
+                <li>Настройте угол наклона источника, чтобы получить мягкие длинные тени.</li>
+                <li>Переключитесь в режим рендера (Render Preview) и сохраните результат.</li>
+            </ol>
+
+            <a href="{% static 'main/img/light_scene_example.png' %}" data-lightbox="gallery">
+                <img class="image1" src="{% static 'main/img/light_scene_example.png' %}">
+            </a>
+
+            <h3 class="text-center mb-2">Советы по работе со светом</h3>
+            <ul>
+                <li>Комбинируйте разные источники света для создания реалистичных сцен.</li>
+                <li>Регулируйте мощность и цвет света в зависимости от настроения сцены.</li>
+                <li>Для мягких теней увеличивайте размер источника.</li>
+                <li>Не забудьте про фон (World Settings), который тоже может давать свет.</li>
             </ul>
 
-            <h4>Привязка модели к арматуре</h4>
+            <p>
+                Окружающая среда (мир) в Blender задаёт фон сцены и влияет на общее освещение объектов.
+                Правильная настройка мира позволяет создать атмосферу сцены, добавить реалистичное освещение или установить фон для рендеринга.
+            </p>
+
+            <h2 class="text-center mb-2">Что такое мир?</h2>
+            <p>
+                <strong>Мир (World)</strong> в Blender — это глобальная настройка окружающей среды сцены.
+                Он определяет цвет фона, уровень фонового освещения, а также может содержать текстуры, такие как изображения неба (HDRI).
+            </p>
+
+            <p>
+                Мир влияет на объекты, даже если в сцене нет явных источников света: он создаёт базовое освещение, задающее общий тон сцены.
+            </p>
+
+            <h2 class="text-center mb-2">Где настраивается мир?</h2>
+            <p>
+                Все параметры окружающей среды находятся в панели <strong>World Properties</strong> (иконка планеты справа).
+            </p>
+
+            <a href="{% static 'main/img/world_properties_panel.png' %}" data-lightbox="gallery">
+                <img class="image1" src="{% static 'main/img/world_properties_panel.png' %}">
+            </a>
+
+            <h3 class="text-center mb-2">Основные параметры мира</h3>
             <ul>
-                <li>Модель связывается с арматурой через модификатор <strong>Armature</strong>.</li>
-                <li>Используются веса (Weights) для определения влияния костей на геометрию модели.</li>
-                <li>В Blender это можно сделать через <strong>Parent > With Automatic Weights</strong>.</li>
+                <li><strong>Color</strong> — цвет фона и базового освещения.</li>
+                <li><strong>Strength</strong> — интенсивность фонового освещения (особенно заметно в рендере).</li>
+                <li><strong>Surface</strong> — тип поверхности окружающей среды (обычно Background).</li>
             </ul>
 
-            <h4>Иерархия костей</h4>
-            <ul>
-                <li>Кости связываются между собой, создавая иерархию.</li>
-                <li>Движение одной кости влияет на её дочерние элементы (например, движение плеча двигает всю руку).</li>
-            </ul>
+            <p>
+                Вы можете задать простой цвет фона или использовать более сложные текстуры через ноды.
+            </p>
 
-            <h4>Добавление ограничений (Constraints)</h4>
-            <ul>
-                <li>Использование IK (Inverse Kinematics) для автоматического расчета движений конечностей.</li>
-                <li>Ограничения помогают создать более естественные движения.</li>
-            </ul>
+            <h2 class="text-center mb-2">Как изменить цвет фона сцены</h2>
+            <ol>
+                <li>Перейдите во вкладку <strong>World Properties</strong>.</li>
+                <li>Найдите параметр <strong>Color</strong> в разделе Surface.</li>
+                <li>Кликните на цветовую палитру и выберите нужный цвет.</li>
+            </ol>
 
-            <h2>Анимация персонажей</h2>
-            <p>После создания рига можно приступить к анимации модели, используя ключевые кадры и кинематику.</p>
+            <a href="{% static 'main/img/change_world_color.png' %}" data-lightbox="gallery">
+                <img class="image1" src="{% static 'main/img/change_world_color.png' %}">
+            </a>
 
-            <h3>Добавление ключевых кадров</h3>
-            <ul>
-                <li>Выберите арматуру и перейдите в <strong>Pose Mode</strong>.</li>
-                <li>Выберите нужный кадр на временной шкале.</li>
-                <li>Измените положение костей для создания позы.</li>
-                <li>Нажмите <strong>I</strong> и выберите <strong>Location/Rotation/Scale</strong> для записи ключевого кадра.</li>
-            </ul>
-            <p>Blender автоматически интерполирует движения между ключевыми кадрами, создавая плавную анимацию.</p>
+            <p>
+                Цвет фона отразится не только на заднем плане сцены, но и на общем освещении объектов.
+            </p>
 
-            <h3>Типы анимации</h3>
-            <h4>Прямая кинематика (Forward Kinematics, FK)</h4>
-            <ul>
-                <li>Каждая кость управляется вручную от основания к конечной точке.</li>
-                <li>Подходит для простых движений (например, наклоны туловища, повороты головы).</li>
-            </ul>
+            <a href="{% static 'main/img/world_scene_example.png' %}" data-lightbox="gallery">
+                <img class="image1" src="{% static 'main/img/world_scene_example.png' %}">
+            </a>
 
-            <h4>Обратная кинематика (Inverse Kinematics, IK)</h4>
-            <ul>
-                <li>Управление конечной точкой, а программа автоматически рассчитывает положение остальных костей.</li>
-                <li>Применяется для сложных движений, таких как ходьба и взаимодействие с объектами.</li>
-            </ul>
+            <h2 class="text-center mb-2">Использование HDRI-изображений</h2>
+            <p>
+                Для создания более реалистичного освещения можно использовать изображения неба высокого динамического диапазона — HDRI.
+            </p>
 
-            <h4>Динамическая анимация</h4>
-            <ul>
-                <li>Использует физические симуляции для создания реалистичных движений.</li>
-                <li>Применяется для анимации одежды, хвостов, волос и других гибких объектов.</li>
-            </ul>
+            <p>
+                Чтобы загрузить HDRI:
+            </p>
+            <ol>
+                <li>Перейдите в <strong>Shader Editor</strong>.</li>
+                <li>В верхнем левом углу выберите тип редактирования: <strong>World</strong>.</li>
+                <li>Добавьте ноду <strong>Environment Texture</strong> (<code>Shift + A → Texture → Environment Texture</code>).</li>
+                <li>Подключите её к входу Color ноды <strong>Background</strong>.</li>
+                <li>Нажмите <strong>Open</strong> и загрузите HDRI-файл.</li>
+            </ol>
 
-            <p>Скелетная анимация позволяет оживить персонажей, придавая им реалистичность. Риггинг создаёт основу для управления моделью,
-                а использование ключевых кадров, кинематики и физических эффектов помогает достичь плавных и выразительных движений.</p>
+            <a href="{% static 'main/img/world_scene_example2.png' %}" data-lightbox="gallery">
+                <img class="image1" src="{% static 'main/img/world_scene_example2.png' %}">
+            </a>
+
+
+
             <div class="text-center">
                 <button id="markLessonComplete" class="btn btn-success">Урок пройден</button>
                 <div id="lessonMessage" style="margin-top: 10px; color: lightgreen;"></div>
