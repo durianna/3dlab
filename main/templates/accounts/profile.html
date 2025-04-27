@@ -18,11 +18,6 @@
                 <p class="text-secondary">Электронная почта: {{ user.email }}</p>
                 <p class="text-secondary">ФИО: {{ user.surname }} {{ user.first_name }} {{ user.last_name }}</p>
             </div>
-            {% if user.role == "teacher" %}
-                <div class="text-center">
-                        <a class="btn btn-secondary" href="{% url 'teacher_dashboard' %}">Дашборд учителя</a>
-                </div>
-            {% endif %}
         </div>
         <div class="edit-profile-link">
             <h2><a class="profile-edit-link" href="{% url 'profile_edit' %}">Редактировать профиль</a></h2>

@@ -5,8 +5,128 @@
 
 {% block content %}
 <div class="container">
+
     <div class="requirements-list1">
-        <p>Будет добавлено позже</p>
+        <header class="text-center mb-4">
+            <h1>Практическая работа: Работа с текстурами и разверткой в Blender</h1>
+        </header>
+    </div>
+
+    <div class="requirements-list">
+        <div class="section">
+            <h2 class="text-center mb-2">Практическая работа №22</h2>
+            <h3>Цель работы</h3>
+            <p class="lead">Научиться использовать изображение в качестве текстуры для 3D-объекта и выполнять базовую UV-развёртку для правильного отображения текстуры на модели.</p>
+
+            <h2 class="text-center mb-2">Задание</h2>
+            <p>Выполните следующие действия в среде Blender:</p>
+        </div>
+
+        <div class="student-table-wrapper">
+            <table class="student-table blender-style-table">
+                <thead>
+                    <tr>
+                        <th>№</th>
+                        <th>Действие</th>
+                        <th>Метод выполнения (подробная инструкция)</th>
+                        <th>Изображение (место для вставки)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Создать новый проект</td>
+                        <td>File → New → General.</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Добавить новый куб</td>
+                        <td>Shift + A → Mesh → Cube если на стартовой сцене нет куба или он был удален</td>
+                        <td><a href="{% static 'main/img/Pr13/step2.png' %}" data-lightbox="gallery"><img class="image3" src="{% static 'main/img/Pr13/step2.png' %}"></a></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Перейти в режим Object Mode</td>
+                        <td>Убедитесь, что выбран режим Object Mode (Tab → Object Mode).</td>
+                        <td><a href="{% static 'main/img/Pr13/step3.png' %}" data-lightbox="gallery"><img class="image3" src="{% static 'main/img/Pr13/step3.png' %}"></a></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Добавить новый материал</td>
+                        <td>В панели Properties → вкладка Material Properties → нажать New.</td>
+                        <td><a href="{% static 'main/img/Pr13/step4.png' %}" data-lightbox="gallery"><img class="image3" src="{% static 'main/img/Pr13/step4.png' %}"></a></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Открыть Shader Editor</td>
+                        <td>Разделите окно интерфейса и в одном из окон выберите Shader Editor.</td>
+                        <td><a href="{% static 'main/img/Pr13/step5.png' %}" data-lightbox="gallery"><img class="image3" src="{% static 'main/img/Pr13/step5.png' %}"></a></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Добавить узел Image Texture</td>
+                        <td>В Shader Editor нажмите Shift + A → Texture → Image Texture. Подключите Color выхода Image Texture к Base Color шейдера Principled BSDF.</td>
+                        <td><a href="{% static 'main/img/Pr13/step6.png' %}" data-lightbox="gallery"><img class="image3" src="{% static 'main/img/Pr13/step6.png' %}"></a></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Выбрать текстуру Minecraft</td>
+                        <td>В узле Image Texture нажмите Open и выберите файл текстуры (например, grass_block.png или stone.png). Скачать пример развертки вы можете в шаге 12. Переключите вид обьекта на Rendered в левом верхнем углу или горячей клавишей Z.</td>
+                        <td><a href="{% static 'main/img/Pr13/step7.png' %}" data-lightbox="gallery"><img class="image3" src="{% static 'main/img/Pr13/step7.png' %}"></a></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Выполнить UV-развёртку</td>
+                        <td>Перейдите в Edit Mode (Tab), выделите весь куб (A). В левом окне откройте UV Editor</td>
+                        <td><a href="{% static 'main/img/Pr13/step8.png' %}" data-lightbox="gallery"><img class="image3" src="{% static 'main/img/Pr13/step8.png' %}"></a></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Проверить наложение текстуры</td>
+                        <td>Как вы видите на картинке грани куба не совпадают по размеру и положению с координатами UV-развертки, изза этого на самом обьекте появляются растяжения и пустые места. Чтобы это исправить необходимо в окне UV редактора отредактировать положение развернутых полигонов.</td>
+                        <td><a href="{% static 'main/img/Pr13/step9.png' %}" data-lightbox="gallery"><img class="image3" src="{% static 'main/img/Pr13/step9.png' %}"></a></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>При необходимости отрегулировать UV</td>
+                        <td>Масштабируйте (S), перемещайте (G) UV-развёртку для точной настройки текстуры. Вы также можете выделять точки как на самой развертке, так и в окне Viewport</td>
+                        <td><a href="{% static 'main/img/Pr13/step10.png' %}" data-lightbox="gallery"><img class="image3" src="{% static 'main/img/Pr13/step10.png' %}"></a></td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>Сделать рендер</td>
+                        <td>При необходимости поверните обьект во Viewport. Настройте камеру на куб, добавьте свет, настройте откружение → нажмите F12 для рендера итогового изображения.</td>
+                        <td><a href="{% static 'main/img/Pr13/step11.png' %}" data-lightbox="gallery"><img class="image3" src="{% static 'main/img/Pr13/step11.png' %}"></a></td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>Скачать развертку</td>
+                        <td>Вы можете скачать текстуры с этого сайта, открыв картинки в большом окне, нажав правой кнопкой мыши - сохранить изображение.</td>
+                        <td><a href="{% static 'main/img/Pr13/minecraft_dirt.png' %}" data-lightbox="gallery"><img class="image3" src="{% static 'main/img/Pr13/minecraft_dirt.png' %}"></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <p><br><br>Ожидаемый результат:</p>
+            <ul>
+                <li>Куб с аккуратно наложенной текстурой.</li>
+                <li>Ровная UV-развёртка без растяжений и ошибок.</li>
+                <li>Финальный красивый рендер.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Вопросы для самопроверки:</h3>
+            <ol>
+                <li>Что такое UV-развёртка в Blender?</li>
+                <li>Как подключить изображение к Base Color материала?</li>
+                <li>Для чего используется UV Editor?</li>
+            </ol>
+        </div>
+
     </div>
 </div>
 {% endblock %}

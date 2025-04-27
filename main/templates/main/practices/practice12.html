@@ -6,7 +6,295 @@
 {% block content %}
 <div class="container">
     <div class="requirements-list1">
-        <p>Будет добавлено позже</p>
+        <!-- Header Section -->
+        <header class="text-center mb-4">
+            <h1>Практическая работа: Создание базового материала в Blender</h1>
+        </header>
     </div>
+
+    <div class="requirements-list">
+        <!-- Objective Section -->
+        <div class="section">
+            <h2 class="text-center mb-2">Практическая работа №20</h2>
+            <h3>Цель работы</h3>
+            <p class="lead">Научиться создавать базовый материал для объекта, изменять его цвет, отражение и шероховатость в Blender.</p>
+        </div>
+
+        <!-- Task Section -->
+        <div class="section">
+            <h2 class="text-center mb-2">Задание</h2>
+            <p>Выполните следующие действия в среде Blender:</p>
+
+            <div class="student-table-wrapper">
+                <table class="student-table blender-style-table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Действие</th>
+                            <th>Метод выполнения</th>
+                            <th>Изображение</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Создать новый проект</td>
+                            <td>File → New → General. Удалить стартовый куб (X → Delete).</td>
+                            <td><a href="{% static 'main/img/Pr12/step1.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr12/step1.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Добавить новый объект</td>
+                            <td>Shift + A → Mesh → UV Sphere.</td>
+                            <td><a href="{% static 'main/img/Pr12/step2.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr12/step2.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Перейти в режим Object Mode</td>
+                            <td>Убедиться, что выбран режим Object Mode (Tab → Object Mode).</td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Открыть вкладку материалов</td>
+                            <td>В правой панели Properties нажать иконку шара (Material Properties).</td>
+                            <td><a href="{% static 'main/img/Pr12/step4.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr12/step4.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Добавить новый материал</td>
+                            <td>Нажать кнопку New. Появится новый базовый материал.</td>
+                            <td><a href="{% static 'main/img/Pr12/step5.png' %}" data-lightbox="gallery">
+                                    <img class="image2" src="{% static 'main/img/Pr12/step5.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Изменить цвет материала</td>
+                            <td>В параметре Base Color выбрать любой новый цвет.</td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Настроить отражение</td>
+                            <td>Параметр Metallic: установить значение 0.5 для среднего блеска.</td>
+                            <td><a href="{% static 'main/img/Pr12/step8.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr12/step8.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Настроить шероховатость</td>
+                            <td>Параметр Roughness: установить значение 0.3–0.4 для мягкого блеска.</td>
+                            <td><a href="{% static 'main/img/Pr12/step9.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr12/step9.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Переключиться на Rendered View</td>
+                            <td>В правом верхнем углу выбрать Rendered View (или нажать Z → Rendered).</td>
+                            <td><a href="{% static 'main/img/Pr12/step10.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr12/step10.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Изменить цвет фона сцены</td>
+                            <td>Вкладка World Properties → Color → выбрать подходящий фон.</td>
+                            <td><a href="{% static 'main/img/Pr12/step11.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr12/step11.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>Сделать рендер изображения</td>
+                            <td>Настроить камеру → нажать F12 для рендера сцены. Поэспериментрируйте с различными настройками и обьектами, сохранив несколько вариантов рендера</td>
+                            <td><a href="{% static 'main/img/Pr12/step12.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr12/step12.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr12/step13.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr12/step13.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Report Section -->
+        <div class="section">
+            <p><br><br>Ожидаемый результат:</p>
+            <ul>
+                <li>Объект окрашен в выбранный цвет.</li>
+                <li>Корректно настроены параметры блеска и шероховатости.</li>
+                <li>Создан финальный рендер с новым материалом.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Вопросы для самоконтроля:</h3>
+            <ol>
+                <li>Где в Blender создаются материалы для объектов?</li>
+                <li>Как изменить цвет объекта через Base Color?</li>
+                <li>Что регулируют параметры Specular и Roughness?</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="requirements-list">
+            <div class="section">
+                <h2 class="text-center mb-2">Практическая работа №21</h2>
+                <h3>Цель работы</h3>
+                <p class="lead">Научиться назначать материалы объектам в Blender и настраивать их цветовые характеристики для создания законченного 3D-моделя бабочки.</p>
+
+                <h2 class="text-center mb-2">Задание</h2>
+                <p>Продолжая работу над моделью бабочки, выполните следующие действия:</p>
+            </div>
+
+            <div class="student-table-wrapper">
+                <table class="student-table blender-style-table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Действие</th>
+                            <th>Метод выполнения (инструкционная карта)</th>
+                            <th>Изображение</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Выделить объект "Тело бабочки"</td>
+                            <td>Откройте сохраненный бленд файл с моделью бабочки: File - Open. Перейдите в Object Mode (Tab) и выделите тело бабочки (Circle) в окне 3D Viewport или в списке объектов (Outliner).</td>
+                            <td>
+                                <a href="{% static 'main/img/Pr12.1/step1.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr12.1/step1.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Открыть панель материалов</td>
+                            <td>Перейдите в правую панель "Properties" и выберите вкладку с иконкой шара — "Material Properties".</td>
+                            <td>
+                                <a href="{% static 'main/img/Pr12.1/step2.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr12.1/step2.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Создать новый материал</td>
+                            <td>Нажмите кнопку <code>New</code> для создания нового материала. Появится стандартный материал с базовыми настройками.</td>
+                            <td>
+                                <a href="{% static 'main/img/Pr12.1/step3.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr12.1/step3.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Настроить цвет материала</td>
+                            <td>В разделе "Base Color" нажмите на цветной прямоугольник и выберите подходящий цвет для тела бабочки. Например, насыщенный оранжевый или жёлтый.Чтобы увидеть материалы в реальном времени, переключитесь в режим отображения Rendered: в правом верхнем углу окна 3D Viewport выберите соответствующую иконку (или нажмите клавишу <code>Z → Rendered</code>).</td>
+                            <td>
+                                <a href="{% static 'main/img/Pr12.1/step4.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr12.1/step4.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Добавить материал крыльям</td>
+                            <td>Выделите объект крыльев в Object Mode. Повторите аналогичные действия: вкладка материалов → <code>New</code>. Перейдем в Shader Editor. Разделите окно на 2 части потянув за левый нижний угол. Выберите тип окна - Shader Editor. Если вы добавили материал, то в окне Шейдера будет 2 ноды.</td>
+                            <td>
+                                <a href="{% static 'main/img/Pr12.1/step5.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr12.1/step5.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Материал для крыльев</td>
+                            <td>В окне ShaderEditor добавим текстуру для градиета Shift + A → Texture → Gradient Texture. И ноду для смешивания цветов ColorRamp (Shift + A → Converter → ColorRamp). Соедини: Gradient Texture → ColorRamp → Base Color у материала. В ColorRamp задай свои цвета для градиента.</td>
+                            <td>
+                                <a href="{% static 'main/img/Pr12.1/step6.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr12.1/step6.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr12.1/step7.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr12.1/step7.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr12.1/step7_1.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr12.1/step7_1.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Материал для глаз и усиков</td>
+                            <td>Ананлогичным образом добавьте материал для глаз и усиков, по желанию добавьте изученный модификатор Subdivision Surface для сглаживания крыльев бабочки. Поменяйте яркость и цвет мира в соотвествующей вкладке</td>
+                            <td>
+                                <a href="{% static 'main/img/Pr12.1/step8.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr12.1/step8.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr12.1/step8_1.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr12.1/step8_1.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr12.1/step8_2.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr12.1/step8_2.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Финальный рендер</td>
+                            <td>Настройте освещение и камеру и выполните финальный рендер нажатием клавиши <code>F12</code>.</td>
+                            <td>
+                                <a href="{% static 'main/img/Pr12.1/step9.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr12.1/step9.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <p><br><br>Ожидаемый результат:</p>
+                <ul>
+                    <li>Тело бабочки окрашено в основной цвет.</li>
+                    <li>Крылья имеют собственный яркий материал.</li>
+                    <li>Глаза и усики отличаются своим цветом.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3>Вопросы для самопроверки:</h3>
+                <ol>
+                    <li>Как создать новый материал в Blender?</li>
+                    <li>Каким образом можно изменить цвет объекта?</li>
+                    <li>Как увидеть материал в окне 3D Viewport без рендера?</li>
+                </ol>
+            </div>
+    </div>
+
 </div>
+
 {% endblock %}

@@ -102,6 +102,78 @@
                 <li>Настройка материалов становится ещё мощнее при использовании <strong>Shader Editor</strong> и создания сложных узловых сетей.</li>
                 <li>Для прозрачных материалов нужно включать опцию <strong>Screen Space Refraction</strong> в настройках рендера.</li>
             </ul>
+
+            <h2 class="text-center mb-2">Что такое мир?</h2>
+            <p>
+                <strong>Мир (World)</strong> в Blender — это глобальная настройка окружающей среды сцены.
+                Он определяет цвет фона, уровень фонового освещения, а также может содержать текстуры, такие как изображения неба (HDRI).
+            </p>
+
+            <p>
+                Мир влияет на объекты, даже если в сцене нет явных источников света: он создаёт базовое освещение, задающее общий тон сцены.
+            </p>
+
+            <h2 class="text-center mb-2">Где настраивается мир?</h2>
+            <p>
+                Все параметры окружающей среды находятся в панели <strong>World Properties</strong> (иконка планеты справа).
+            </p>
+
+            <a href="{% static 'main/img/world_properties_panel.png' %}" data-lightbox="gallery">
+                <img class="image1" src="{% static 'main/img/world_properties_panel.png' %}">
+            </a>
+
+            <h3 class="text-center mb-2">Основные параметры мира</h3>
+            <ul>
+                <li><strong>Color</strong> — цвет фона и базового освещения.</li>
+                <li><strong>Strength</strong> — интенсивность фонового освещения (особенно заметно в рендере).</li>
+                <li><strong>Surface</strong> — тип поверхности окружающей среды (обычно Background).</li>
+            </ul>
+
+            <p>
+                Вы можете задать простой цвет фона или использовать более сложные текстуры через ноды.
+            </p>
+
+            <h2 class="text-center mb-2">Как изменить цвет фона сцены</h2>
+            <ol>
+                <li>Перейдите во вкладку <strong>World Properties</strong>.</li>
+                <li>Найдите параметр <strong>Color</strong> в разделе Surface.</li>
+                <li>Кликните на цветовую палитру и выберите нужный цвет.</li>
+            </ol>
+
+            <a href="{% static 'main/img/change_world_color.png' %}" data-lightbox="gallery">
+                <img class="image1" src="{% static 'main/img/change_world_color.png' %}">
+            </a>
+
+            <p>
+                Цвет фона отразится не только на заднем плане сцены, но и на общем освещении объектов.
+            </p>
+
+            <a href="{% static 'main/img/world_scene_example.png' %}" data-lightbox="gallery">
+                <img class="image1" src="{% static 'main/img/world_scene_example.png' %}">
+            </a>
+
+            <h2 class="text-center mb-2">Использование HDRI-изображений</h2>
+            <p>
+                Для создания более реалистичного освещения можно использовать изображения неба высокого динамического диапазона — HDRI.
+            </p>
+
+            <p>
+                Чтобы загрузить HDRI:
+            </p>
+            <ol>
+                <li>Перейдите в <strong>Shader Editor</strong>.</li>
+                <li>В верхнем левом углу выберите тип редактирования: <strong>World</strong>.</li>
+                <li>Добавьте ноду <strong>Environment Texture</strong> (<code>Shift + A → Texture → Environment Texture</code>).</li>
+                <li>Подключите её к входу Color ноды <strong>Background</strong>.</li>
+                <li>Нажмите <strong>Open</strong> и загрузите HDRI-файл.</li>
+            </ol>
+
+            <a href="{% static 'main/img/world_scene_example2.png' %}" data-lightbox="gallery">
+                <img class="image1" src="{% static 'main/img/world_scene_example2.png' %}">
+            </a>
+
+
+
             <div class="text-center">
                 <button id="markLessonComplete" class="btn btn-success">Урок пройден</button>
                 <div id="lessonMessage" style="margin-top: 10px; color: lightgreen;"></div>
