@@ -22,7 +22,153 @@
             <p>Выполните следующие действия в среде Blender:</p>
         </div>
 
-        <div class="student-table-wrapper">
+        {% if is_mobile %}
+            <div class="practice-carousel-container" data-steps="12">
+                <div class="carousel-step" id="step-1" style="display: none;">
+                    <h3>Создать новый проект</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <p class="step_description">File → New → General.</p>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+                </div>
+                <div class="carousel-step" id="step-2" style="display: none;">
+                    <h3>Добавить новый куб</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr13/step2.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr13/step2.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+
+                    <p class="step_description">Shift + A → Mesh → Cube если на стартовой сцене нет куба или он был удален</p>
+                </div>
+                <div class="carousel-step" id="step-3" style="display: none;">
+                    <h3>Перейти в режим Object Mode</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr13/step3.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr13/step3.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+
+                    <p class="step_description">Убедитесь, что выбран режим Object Mode (Tab → Object Mode).</p>
+                </div>
+                <div class="carousel-step" id="step-4" style="display: none;">
+                    <h3>Добавить новый материал</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr13/step4.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr13/step4.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+
+                    <p class="step_description">В панели Properties → вкладка Material Properties → нажать New.</p>
+                </div>
+                <div class="carousel-step" id="step-5" style="display: none;">
+                    <h3>Открыть Shader Editor</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr13/step5.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr13/step5.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+
+                    <p class="step_description">Разделите окно интерфейса и в одном из окон выберите Shader Editor.</p>
+                </div>
+                <div class="carousel-step" id="step-6" style="display: none;">
+                    <h3>Добавить узел Image Texture</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr13/step6.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr13/step6.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+
+                    <p class="step_description">В Shader Editor нажмите Shift + A → Texture → Image Texture. Подключите Color выхода Image Texture к Base Color шейдера Principled BSDF.</p>
+                </div>
+                <div class="carousel-step" id="step-7" style="display: none;">
+                    <h3>Выбрать текстуру Minecraft</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr13/step7.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr13/step7.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+
+                    <p class="step_description">В узле Image Texture нажмите Open и выберите файл текстуры (например, grass_block.png или stone.png). Скачать пример развертки вы можете в шаге 12. Переключите вид обьекта на Rendered в левом верхнем углу или горячей клавишей Z.</p>
+                </div>
+                <div class="carousel-step" id="step-8" style="display: none;">
+                    <h3>Выполнить UV-развёртку</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr13/step8.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr13/step8.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+
+                    <p class="step_description">Перейдите в Edit Mode (Tab), выделите весь куб (A). В левом окне откройте UV Editor</p>
+                </div>
+                <div class="carousel-step" id="step-9" style="display: none;">
+                    <h3>Проверить наложение текстуры</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr13/step9.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr13/step9.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+
+                    <p class="step_description">Как вы видите на картинке грани куба не совпадают по размеру и положению с координатами UV-развертки, изза этого на самом обьекте появляются растяжения и пустые места. Чтобы это исправить необходимо в окне UV редактора отредактировать положение развернутых полигонов.</p>
+                </div>
+                <div class="carousel-step" id="step-10" style="display: none;">
+                    <h3>При необходимости отрегулировать UV</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr13/step10.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr13/step10.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+
+                    <p class="step_description">Масштабируйте (S), перемещайте (G) UV-развёртку для точной настройки текстуры. Вы также можете выделять точки как на самой развертке, так и в окне Viewport</p>
+                </div>
+                <div class="carousel-step" id="step-11" style="display: none;">
+                    <h3>Сделать рендер</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr13/step11.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr13/step11.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+
+                    <p class="step_description">При необходимости поверните обьект во Viewport. Настройте камеру на куб, добавьте свет, настройте откружение → нажмите F12 для рендера итогового изображения.</p>
+                </div>
+                <div class="carousel-step" id="step-12" style="display: none;">
+                    <h3>Скачать развертку</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr13/minecraft_dirt.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr13/minecraft_dirt.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+
+                    <p class="step_description">Вы можете скачать текстуры с этого сайта, открыв картинки в большом окне, нажав правой кнопкой мыши - сохранить изображение.</p>
+                </div>
+
+                <span class="step-indicator" data-indicator></span>
+            </div>
+        {% else %}
+            <div class="student-table-wrapper">
             <table class="student-table blender-style-table">
                 <thead>
                     <tr>
@@ -108,6 +254,7 @@
                 </tbody>
             </table>
         </div>
+        {% endif %}
 
         <div class="section">
             <p><br><br>Ожидаемый результат:</p>

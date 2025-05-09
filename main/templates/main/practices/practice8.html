@@ -20,7 +20,187 @@
                 <p>Выполните следующие действия в среде Blender:</p>
             </div>
 
-            <div class="student-table-wrapper">
+            {% if is_mobile %}
+                <div class="practice-carousel-container" data-steps="13">
+                    <div class="carousel-step" id="step-1" style="display: none;">
+                        <h3>Добавить сферу</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr8/step1.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr8/step1.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Создайте новый проект с помощью File - New - General. Удалите куб. Добавьте сферу с помощью  Shift + A → Mesh → UV Sphere</p>
+                    </div>
+                    <div class="carousel-step" id="step-2" style="display: none;">
+                        <h3>Перейти в режим редактирования</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr8/step2.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr8/step2.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Выделите сферу → нажмите Tab чтобы перейти в режим редактирования обьектов</p>
+                    </div>
+                    <div class="carousel-step" id="step-3" style="display: none;">
+                        <h3>Применить Subdivide</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr8/step3.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr8/step3.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Выделите всю сферу (A) → ПКМ → Subdivide → в панели настроек увеличьте число разрезов (Number of Cuts) до 2–3</p>
+                    </div>
+                    <div class="carousel-step" id="step-4" style="display: none;">
+                        <h3>Сформировать углубление под черенок</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr8/step4.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr8/step4.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Для того, чтобы сделать углубление мы не будем вручную передвигать вершины, вместо этого воспользуемся инструментом <code>Proportional Editing</code>.Выделите верхнюю вершину → включите пропорциональное редактирование (английская буква O). После активации для удобства перейдите в вид спереди(1 на Numpud) и включите Toggle X-Ray. Чтобы переместить вершину вниз ровно нажмите G, а затем Z(чтобы зафиксировать перемещение по одной координате). Утопите вершину вниз с плавным переходом.</p>
+                    </div>
+                    <div class="carousel-step" id="step-5" style="display: none;">
+                        <h3>Сделать основание яблока</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr8/step5.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr8/step5.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Аналогично шагу 4: выделите нижнюю вершину → пропорциональное редактирование → утопите вверх</p>
+                    </div>
+                    <div class="carousel-step" id="step-6" style="display: none;">
+                        <h3>Добавить отверстие для черенка</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr8/step6.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr8/step6.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Выделите вершины в центре верхней части, и откорректировав область пропорционального редактирования(сделав ее меньше) сформируйте углубление под черенок(G → Z)</p>
+                    </div>
+                    <div class="carousel-step" id="step-7" style="display: none;">
+                        <h3>Добавить черенок</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr8/step7.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr8/step7.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Черенок сформируем из цилиндра. На этом этапе отключим пропорциональное редактирование повторным нажатием чтобы не задевать яблоко. Shift + A → Mesh → Cylinder. Включите Toggle X-ray или каркасный вид чтобы отредактировать размер и положение цилиндра.</p>
+                    </div>
+                    <div class="carousel-step" id="step-8" style="display: none;">
+                        <h3>Моделируем черенок</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr8/step8.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr8/step8.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Выделите верхние грани черенка, экстудируйте их так, чтобы получить изогнутую форму(E). Используя Scale измените толщину черенка чтобы он выглядел естесственно.</p>
+                    </div>
+                    <div class="carousel-step" id="step-9" style="display: none;">
+                        <h3>Моделируем лист</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr8/step9.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr8/step9.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Добавим плоскость для листа Shift + A → Mesh → Plane</p>
+                    </div>
+                    <div class="carousel-step" id="step-10" style="display: none;">
+                        <h3>Моделируем форму листа</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr8/step10.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr8/step10.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Выделите плоскость, разделите ее на большее количество полиготов с помощью ПКМ - Subdivide, измените количество разделений на 4 в параметрах.</p>
+                    </div>
+                    <div class="carousel-step" id="step-11" style="display: none;">
+                        <h3>Моделируем форму листа</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <div>
+                                <a href="{% static 'main/img/Pr8/step11.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr8/step11.png' %}">
+                                </a>
+                                <br>
+                                <a href="{% static 'main/img/Pr8/step12.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr8/step12.png' %}">
+                                </a>
+                            </div>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">С помощью Proportional Editing сформируйте форму листа и выгните его в разных местах.</p>
+                    </div>
+                    <div class="carousel-step" id="step-12" style="display: none;">
+                        <h3>Моделируем форму листа</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <div>
+                                <a href="{% static 'main/img/Pr8/step13.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr8/step13.png' %}">
+                                </a>
+                                <br>
+                                <a href="{% static 'main/img/Pr8/step14.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr8/step14.png' %}">
+                                </a>
+                            </div>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Переместите лист к основанию яблока. С помощью Proportional Editing придайте неровности яблоку, чтобы оно выглядело ествественней.</p>
+                    </div>
+                    <div class="carousel-step" id="step-13" style="display: none;">
+                        <h3>Финальный рендер</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <div>
+                                <a href="{% static 'main/img/Pr8/step15.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr8/step15.png' %}">
+                                </a>
+                                <br>
+                                <a href="{% static 'main/img/Pr8/step16.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr8/step16.png' %}">
+                                </a>
+                            </div>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Перейдите в обьектный режим(Tab). Переместите камеру и свет так, чтобы яблоко было хорошо видно в кадре. Нажмите правой кнопкой мыши по яблоку и выберите Shade Smooth для гладкого затенения. Нажмите F12 для рендера, сохраните результат.</p>
+                    </div>
+
+                    <span class="step-indicator" data-indicator></span>
+                </div>
+            {% else %}
+                <div class="student-table-wrapper">
                 <table class="student-table blender-style-table">
                     <thead>
                         <tr>
@@ -148,7 +328,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>14</td>
+                            <td>13</td>
                             <td>Финальный рендер</td>
                             <td>Перейдите в обьектный режим(Tab). Переместите камеру и свет так, чтобы яблоко было хорошо видно в кадре. Нажмите правой кнопкой мыши по яблоку и выберите Shade Smooth для гладкого затенения. Нажмите F12 для рендера, сохраните результат.</td>
                             <td><a href="{% static 'main/img/Pr8/step15.png' %}" data-lightbox="gallery">
@@ -162,6 +342,7 @@
                     </tbody>
                 </table>
             </div>
+            {% endif %}
 
             <div class="section">
                 <p><br><br>Ожидаемый результат:</p>

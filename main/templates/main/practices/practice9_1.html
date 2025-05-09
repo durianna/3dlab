@@ -1,0 +1,285 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}Практическая работа{% endblock %}
+
+{% block content %}
+    <div class="container">
+
+        <div class="requirements-list1">
+            <header class="text-center mb-4">
+                <h1>Практическая работа: Использование модификаторов для моделирования обьектов. Boolean</h1>
+            </header>
+        </div>
+
+        <div class="requirements-list">
+            <div class="section">
+                <h2 class="text-center mb-2">Практическая работа №14</h2>
+                <h3>Цель работы</h3>
+                <p class="lead">Создать объёмный треугольный кусок сыра с помощью базовых примитивов и вырезать в нём отверстия с помощью сфер и модификатора Boolean.</p>
+                <h2 class="text-center mb-2">Задание</h2>
+                <p>Выполните следующие действия в среде Blender:</p>
+            </div>
+
+            {% if is_mobile %}
+                <div class="practice-carousel-container" data-steps="10">
+                    <div class="carousel-step" id="step-1" style="display: none;">
+                        <h3>Добавить плоскость</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr9/step1.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr9/step1.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Создать новый проект, удалить стартовый куб и добавить плоскость. Shift + A → Mesh → Plane</p>
+                    </div>
+                    <div class="carousel-step" id="step-2" style="display: none;">
+                        <h3>Создать треугольник</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <div>
+                                <a href="{% static 'main/img/Pr9/step2.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr9/step2.png' %}">
+                                </a>
+                                <br>
+                                <a href="{% static 'main/img/Pr9/step2_1.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr9/step2_1.png' %}">
+                                </a>
+                            </div>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Перейти в Edit Mode(Tab) → выделите 1 вершину в режиме редактирования вершин → нажмите X → Delete Vertices чтобы удалить одну вершину.  Выделите две смежных вершины и обьекдините их с помощью Edge (F), чтобы получить треугольник.</p>
+                    </div>
+                    <div class="carousel-step" id="step-3" style="display: none;">
+                        <h3>Придать объём</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <div>
+                                <a href="{% static 'main/img/Pr9/step3.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr9/step3.png' %}">
+                                </a>
+                                <br>
+                                <a href="{% static 'main/img/Pr9/step3_1.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr9/step3_1.png' %}">
+                                </a>
+                                <br>
+                                <a href="{% static 'main/img/Pr9/step3_2.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr9/step3_2.png' %}">
+                                </a>
+                            </div>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Выделите все 3 точки, нажмите правой кнопкой мыши → New Edge/ Face from Vertices для того чтобы создать треугольную грань, затем вытяните ее чтобы сделать похожей по форме на кусочек сыра. Выделите грань → нажмите E → вытяните вверх (создаётся объём)</p>
+                    </div>
+                    <div class="carousel-step" id="step-4" style="display: none;">
+                        <h3>Придать объём</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr9/step3_3.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr9/step3_3.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Добавим фаски чтобы сыр выглядел более обьемно. В режиме редактирования выделите все вершины кнопкой A, затем нажмите CTRL + B чтобы активировать инструмент Bevel(колесиком добавьте 2-3 уровня), создайте небольшой скос на гранях</p>
+                    </div>
+                    <div class="carousel-step" id="step-5" style="display: none;">
+                        <h3>Добавить сферу для будущего отверстия</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr9/step4.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr9/step4.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Теперь нам необходимо добавить сферу, которой будем "вырезать" дырки для сыра. <strong>Сначала нам нужно перейти обратно в обьектный режим(Tab)</strong>. Добавляем сферу:  Shift + A → Mesh → UV Sphere → уменьшите масштаб → разместите частично внутри "сыра"</p>
+                    </div>
+                    <div class="carousel-step" id="step-6" style="display: none;">
+                        <h3>Скопировать сферу</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr9/step5.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr9/step5.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Выделите кусок сыра → в панели справа нажмите на иконку гаечного ключа и добавьте модификатор Boolean(Add modifier → Generate → Boolean). В настройках выберите Difference(разница) → В поле для второго обьекта выберите сферу → нажмите Apply или CTRL+A</p>
+                    </div>
+                    <div class="carousel-step" id="step-7" style="display: none;">
+                        <h3>Применить модификатор Boolean</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr9/step6.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr9/step6.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Переместите сферу на другое место, где хотите добавить отверстие и выполните аналогичные действия. Меняя положение и размер сферы добавьте несколько отверстий. Не забывайте, что модификатор Boolean в этом случае мы добавляем к модели сыра а не сферы.</p>
+                    </div>
+                    <div class="carousel-step" id="step-8" style="display: none;">
+                        <h3>Удалить сферы</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <p class="step_description">После применения Boolean удалите сферу (X → Delete)</p>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                    </div>
+                    <div class="carousel-step" id="step-9" style="display: none;">
+                        <h3>Сгладить объект</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr9/step7.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr9/step7.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">ПКМ по модели → Shade Smooth или Shade Auto Smooth.</p>
+                    </div>
+                    <div class="carousel-step" id="step-10" style="display: none;">
+                        <h3>Финальный рендер</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr9/step8.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr9/step8.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Откорректируйте положение камеры и света. Нажмите F12 и сохраните результат рендера.</p>
+                    </div>
+
+                    <span class="step-indicator" data-indicator></span>
+                </div>
+            {% else %}
+            <div class="student-table-wrapper">
+                <table class="student-table blender-style-table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Действие</th>
+                            <th>Метод выполнения (инструкционная карта)</th>
+                            <th>Изображение</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Добавить плоскость</td>
+                            <td>Создать новый проект, удалить стартовый куб и добавить плоскость. Shift + A → Mesh → Plane</td>
+                            <td><a href="{% static 'main/img/Pr9/step1.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr9/step1.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Создать треугольник</td>
+                            <td>Перейти в Edit Mode(Tab) → выделите 1 вершину в режиме редактирования вершин → нажмите X → Delete Vertices чтобы удалить одну вершину.  Выделите две смежных вершины и обьекдините их с помощью Edge (F), чтобы получить треугольник. </td>
+                            <td><a href="{% static 'main/img/Pr9/step2.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr9/step2.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr9/step2_1.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr9/step2_1.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Придать объём</td>
+                            <td>Выделите все 3 точки, нажмите правой кнопкой мыши → New Edge/ Face from Vertices для того чтобы создать треугольную грань, затем вытяните ее чтобы сделать похожей по форме на кусочек сыра. Выделите грань → нажмите E → вытяните вверх (создаётся объём)</td>
+                            <td><a href="{% static 'main/img/Pr9/step3.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr9/step3.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr9/step3_1.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr9/step3_1.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr9/step3_2.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr9/step3_2.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Придать объём</td>
+                            <td>Добавим фаски чтобы сыр выглядел более обьемно. В режиме редактирования выделите все вершины кнопкой A, затем нажмите CTRL + B чтобы активировать инструмент Bevel(колесиком добавьте 2-3 уровня), создайте небольшой скос на гранях</td>
+                            <td><a href="{% static 'main/img/Pr9/step3_4.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr9/step3_3.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Добавить сферу для будущего отверстия</td>
+                            <td>Теперь нам необходимо добавить сферу, которой будем "вырезать" дырки для сыра. <strong>Сначала нам нужно перейти обратно в обьектный режим(Tab)</strong>. Добавляем сферу:  Shift + A → Mesh → UV Sphere → уменьшите масштаб → разместите частично внутри "сыра"</td>
+                            <td><a href="{% static 'main/img/Pr9/step4.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr9/step4.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Скопировать сферу</td>
+                            <td>Выделите кусок сыра → в панели справа нажмите на иконку гаечного ключа и добавьте модификатор Boolean(Add modifier → Generate → Boolean). В настройках выберите Difference(разница) → В поле для второго обьекта выберите сферу → нажмите Apply или CTRL+A</td>
+                            <td><a href="{% static 'main/img/Pr9/step5.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr9/step5.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Применить модификатор Boolean</td>
+                            <td>Переместите сферу на другое место, где хотите добавить отверстие и выполните аналогичные действия. Меняя положение и размер сферы добавьте несколько отверстий. Не забывайте, что модификатор Boolean в этом случае мы добавляем к модели сыра а не сферы.</td>
+                            <td><a href="{% static 'main/img/Pr9/step6.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr9/step6.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Удалить сферы</td>
+                            <td>После применения Boolean удалите сферу (X → Delete)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Сгладить объект</td>
+                            <td>ПКМ по модели → Shade Smooth или Shade Auto Smooth. </td>
+                            <td><a href="{% static 'main/img/Pr9/step7.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr9/step7.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Финальный рендер</td>
+                            <td>Откорректируйте положение камеры и света. Нажмите F12 и сохраните результат рендера.</td>
+                            <td><a href="{% static 'main/img/Pr9/step8.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr9/step8.png' %}">
+                            </a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            {% endif %}
+
+            <div class="section">
+                <p><br><br>Ожидаемый результат:</p>
+                <ul>
+                    <li>Объёмный треугольный кусок сыра с вырезанными отверстиями.</li>
+                    <li>Использование Boolean Difference для вырезания с помощью сфер.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3>Вопросы для самоконтроля:</h3>
+                <ol>
+                    <li>Что делает модификатор Boolean в режиме Difference?</li>
+                    <li>Можно ли применить Boolean к нескольким объектам сразу?</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+{% endblock %}

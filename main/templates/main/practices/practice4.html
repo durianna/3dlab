@@ -17,149 +17,324 @@
                 <p class="lead">Научиться создавать базовую композицию сцены, настраивать рендер-движок, использовать и позиционировать камеру и источники света, а также получать изображения сцены с нескольких ракурсов..</p>
             </div>
 
-            <!-- Task Section -->
-            <div class="section">
-                <h2 class="text-center mb-2">Задание</h2>
-                <p>Выполните следующие действия в среде Blender:</p>
-
-                <div class="student-table-wrapper">
-                    <table class="student-table blender-style-table">
-                        <thead>
-                            <tr>
-                                <th>№</th>
-                                <th>Действие</th>
-                                <th>Метод выполнения</th>
-                                <th>Изображение</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Удалить куб из стартовой сцены</td>
-                                <td>Выделите стандартный куб (по умолчанию уже выделен) → нажмите X → выберите Delete.</td>
-                                <td><a href="{% static 'main/img/Pr4/step1.png' %}" data-lightbox="gallery">
-                                        <img class="image3" src="{% static 'main/img/Pr5/step1.png' %}">
+             {% if is_mobile %}
+                <div class="practice-carousel-container" data-steps="11">
+                    <div class="carousel-step" id="step-1" style="display: none;">
+                        <h3>Удалить куб из стартовой сцены</h3>
+                        <div>
+                            <div class="carousel-controls">
+                                <button onclick="prevStep()"> ❮ </button>
+                                <a href="{% static 'main/img/Pr4/step1.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr4/step1.png' %}">
+                                </a>
+                                <button onclick="nextStep()"> ❯ </button>
+                            </div>
+                        </div>
+                        <p class="step_description">Выделите стандартный куб (по умолчанию уже выделен) → нажмите X → выберите Delete.</p>
+                    </div>
+                    <div class="carousel-step" id="step-2" style="display: none;">
+                        <h3>Добавить объект "обезьяна" (Suzanne)</h3>
+                        <div>
+                            <div class="carousel-controls">
+                                <button onclick="prevStep()"> ❮ </button>
+                                <a href="{% static 'main/img/Pr4/step2.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr4/step2.png' %}">
+                                </a>
+                                <button onclick="nextStep()"> ❯ </button>
+                            </div>
+                        </div>
+                        <p class="step_description">Нажмите Shift + A → Mesh → Monkey → объект "Suzanne" появится в центре сцены.</p>
+                    </div>
+                    <div class="carousel-step" id="step-3" style="display: none;">
+                        <h3>Перейти в режим сглаживания для модели обезьяны</h3>
+                        <div>
+                            <div class="carousel-controls">
+                                <button onclick="prevStep()"> ❮ </button>
+                                <a href="{% static 'main/img/Pr4/step3.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr4/step3.png' %}">
+                                </a>
+                                <button onclick="nextStep()"> ❯ </button>
+                            </div>
+                        </div>
+                        <p class="step_description">Выделите объект Suzanne → правый клик мышью → выберите Shade Smooth.</p>
+                    </div>
+                    <div class="carousel-step" id="step-4" style="display: none;">
+                        <h3>Перейти в рендерный вид сцены</h3>
+                        <div>
+                            <div class="carousel-controls">
+                                <button onclick="prevStep()"> ❮ </button>
+                                <a href="{% static 'main/img/Pr4/step4.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr4/step4.png' %}">
+                                </a>
+                                <button onclick="nextStep()"> ❯ </button>
+                            </div>
+                        </div>
+                        <p class="step_description">В правом верхнем углу 3D Viewport нажмите иконку Rendered View (или клавиша Z → Rendered).</p>
+                    </div>
+                    <div class="carousel-step" id="step-5">
+                        <h3>Установить рендер-движок на Cycles</h3>
+                        <div>
+                            <div class="carousel-controls">
+                                <button onclick="prevStep()"> ❮ </button>
+                                <div>
+                                    <a href="{% static 'main/img/Pr4/step5.1.png' %}" data-lightbox="gallery">
+                                        <img class="image_pr_mobile" src="{% static 'main/img/Pr4/step5.1.png' %}">
                                     </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Добавить объект "обезьяна" (Suzanne)</td>
-                                <td>Нажмите Shift + A → Mesh → Monkey → объект "Suzanne" появится в центре сцены.</td>
-                                <td><a href="{% static 'main/img/Pr4/step2.png' %}" data-lightbox="gallery">
-                                        <img class="image3" src="{% static 'main/img/Pr4/step2.png' %}">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Перейти в режим сглаживания для модели обезьяны</td>
-                                <td>Выделите объект Suzanne → правый клик мышью → выберите Shade Smooth.</td>
-                                <td><a href="{% static 'main/img/Pr4/step3.png' %}" data-lightbox="gallery">
-                                        <img class="image3" src="{% static 'main/img/Pr4/step3.png' %}">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Перейти в рендерный вид сцены</td>
-                                <td>В правом верхнем углу 3D Viewport нажмите иконку Rendered View (или клавиша Z → Rendered).</td>
-                                <td><a href="{% static 'main/img/Pr4/step4.png' %}" data-lightbox="gallery">
-                                        <img class="image3" src="{% static 'main/img/Pr4/step4.png' %}">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Установить рендер-движок на Cycles</td>
-                                <td>Перейдите во вкладку Render Properties (значок камеры справа) → в поле Render Engine выберите Cycles (или Eevee для более быстрого рендера).</td>
-                                <td><a href="{% static 'main/img/Pr4/step5.1.png' %}" data-lightbox="gallery">
-                                        <img class="image3" src="{% static 'main/img/Pr4/step5.1.png' %}">
-                                    </a>
+                                    <br>
                                     <a href="{% static 'main/img/Pr4/step5.2.png' %}" data-lightbox="gallery">
-                                        <img class="image3" src="{% static 'main/img/Pr4/step5.2.png' %}">
+                                        <img class="image_pr_mobile" src="{% static 'main/img/Pr4/step5.2.png' %}">
                                     </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>Добавить источник света</td>
-                                <td>Light → переместите (G) и приподнимите свет над объектом (G → Z).</td>
-                                <td><a href="{% static 'main/img/Pr4/step6.png' %}" data-lightbox="gallery">
-                                        <img class="image3" src="{% static 'main/img/Pr4/step6.png' %}">
+                                </div>
+                                <button onclick="nextStep()"> ❯ </button>
+                            </div>
+                        </div>
+                        <p class="step_description">Перейдите во вкладку Render Properties (значок камеры справа) → в поле Render Engine выберите Cycles (или Eevee для более быстрого рендера).</p>
+                    </div>
+                    <div class="carousel-step" id="step-6" style="display: none;">
+                        <h3>Добавить источник света</h3>
+                        <div>
+                            <div class="carousel-controls">
+                                <button onclick="prevStep()"> ❮ </button>
+                                <a href="{% static 'main/img/Pr4/step6.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr4/step6.png' %}">
+                                </a>
+                                <button onclick="nextStep()"> ❯ </button>
+                            </div>
+                        </div>
+                        <p class="step_description">Light → переместите (G) и приподнимите свет над объектом (G → Z).</p>
+                    </div>
+                    <div class="carousel-step" id="step-7" style="display: none;">
+                        <h3>Установить первую камеру перед объектом</h3>
+                        <div>
+                            <div class="carousel-controls">
+                                <button onclick="prevStep()"> ❮ </button>
+                                <a href="{% static 'main/img/Pr4/step7.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr4/step7.png' %}">
+                                </a>
+                                <button onclick="nextStep()"> ❯ </button>
+                            </div>
+                        </div>
+                        <p class="step_description">Выделите камеру → нажмите Ctrl + Alt + Numpad 0, чтобы переместить её на текущий вид → G и R для точной настройки позиции и угла.</p>
+                    </div>
+                    <div class="carousel-step" id="step-8" style="display: none;">
+                        <h3>Сделать рендер первого ракурса</h3>
+                        <div>
+                            <div class="carousel-controls">
+                                <button onclick="prevStep()"> ❮ </button>
+                                <div>
+                                    <a href="{% static 'main/img/Pr4/step8.1.png' %}" data-lightbox="gallery">
+                                        <img class="image_pr_mobile" src="{% static 'main/img/Pr4/step8.1.png' %}">
                                     </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>Установить первую камеру перед объектом</td>
-                                <td>Выделите камеру → нажмите Ctrl + Alt + Numpad 0, чтобы переместить её на текущий вид → G и R для точной настройки позиции и угла.</td>
-                                <td><a href="{% static 'main/img/Pr4/step7.png' %}" data-lightbox="gallery">
-                                        <img class="image3" src="{% static 'main/img/Pr4/step7.png' %}">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-                                <td>Сделать рендер первого ракурса</td>
-                                <td>Нажмите F12 для рендеринга изображения. После завершения → Image → Save As, чтобы сохранить рендер.</td>
-                                <td><a href="{% static 'main/img/Pr4/step8.1.png' %}" data-lightbox="gallery">
-                                        <img class="image3" src="{% static 'main/img/Pr4/step8.1.png' %}">
-                                    </a>
+                                    <br>
                                     <a href="{% static 'main/img/Pr4/step8.2.png' %}" data-lightbox="gallery">
-                                        <img class="image3" src="{% static 'main/img/Pr4/step8.2.png' %}">
+                                        <img class="image_pr_mobile" src="{% static 'main/img/Pr4/step8.2.png' %}">
                                     </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>9</td>
-                                <td>Переустановить камеру для второго ракурса (сбоку)</td>
-                                <td>Переместите камеру сбоку от головы обезьяны (G → X или Y) → отрегулируйте угол обзора (R) → снова нажмите F12 для рендера второго изображения.</td>
-                                <td><a href="{% static 'main/img/Pr4/step9.1.png' %}" data-lightbox="gallery">
-                                        <img class="image3" src="{% static 'main/img/Pr4/step9.1.png' %}">
+                                </div>
+                                <button onclick="nextStep()"> ❯ </button>
+                            </div>
+                        </div>
+                        <p class="step_description">Нажмите F12 для рендеринга изображения. После завершения → Image → Save As, чтобы сохранить рендер.</p>
+                    </div>
+                    <div class="carousel-step" id="step-9" style="display: none;">
+                        <h3>Переустановить камеру для второго ракурса (сбоку)</h3>
+                        <div>
+                            <div class="carousel-controls">
+                                <button onclick="prevStep()"> ❮ </button>
+                                <div>
+                                    <a href="{% static 'main/img/Pr4/step9.1.png' %}" data-lightbox="gallery">
+                                        <img class="image_pr_mobile" src="{% static 'main/img/Pr4/step9.1.png' %}">
                                     </a>
+                                    <br>
                                     <a href="{% static 'main/img/Pr4/step9.2.png' %}" data-lightbox="gallery">
-                                        <img class="image3" src="{% static 'main/img/Pr4/step9.2.png' %}">
+                                        <img class="image_pr_mobile" src="{% static 'main/img/Pr4/step9.2.png' %}">
                                     </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>10</td>
-                                <td>Изменить освещение для третьего кадра</td>
-                                <td>Переместите свет вбок или сзади объекта.</td>
-                                <td><a href="{% static 'main/img/Pr4/step10.png' %}" data-lightbox="gallery">
-                                        <img class="image3" src="{% static 'main/img/Pr4/step10.png' %}">
+                                </div>
+                                <button onclick="nextStep()"> ❯ </button>
+                            </div>
+                        </div>
+                        <p class="step_description">Переместите камеру сбоку от головы обезьяны (G → X или Y) → отрегулируйте угол обзора (R) → снова нажмите F12 для рендера второго изображения.</p>
+                    </div>
+                    <div class="carousel-step" id="step-10" style="display: none;">
+                        <h3>Изменить освещение для третьего кадра</h3>
+                        <div>
+                            <div class="carousel-controls">
+                                <button onclick="prevStep()"> ❮ </button>
+                                <a href="{% static 'main/img/Pr4/step10.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr4/step10.png' %}">
+                                </a>
+                                <button onclick="nextStep()"> ❯ </button>
+                            </div>
+                        </div>
+                        <p class="step_description">Переместите свет вбок или сзади объекта.</p>
+                    </div>
+                    <div class="carousel-step" id="step-11" style="display: none;">
+                        <h3>Установить камеру для третьего ракурса (вид сверху или диагональный)</h3>
+                        <div>
+                            <div class="carousel-controls">
+                                <button onclick="prevStep()"> ❮ </button>
+                                <div>
+                                    <a href="{% static 'main/img/Pr4/step11.1.png' %}" data-lightbox="gallery">
+                                        <img class="image_pr_mobile" src="{% static 'main/img/Pr4/step11.1.png' %}">
                                     </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>11</td>
-                                <td>Установить камеру для третьего ракурса (вид сверху или диагональный)</td>
-                                <td>Переместите камеру в нужную позицию (например, под углом сверху) → скорректируйте вид → F12.</td>
-                                <td><a href="{% static 'main/img/Pr4/step11.1.png' %}" data-lightbox="gallery">
-                                        <img class="image3" src="{% static 'main/img/Pr4/step11.1.png' %}">
-                                    </a>
+                                    <br>
                                     <a href="{% static 'main/img/Pr4/step11.2.png' %}" data-lightbox="gallery">
-                                        <img class="image3" src="{% static 'main/img/Pr4/step11.2.png' %}">
+                                        <img class="image_pr_mobile" src="{% static 'main/img/Pr4/step11.2.png' %}">
                                     </a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                </div>
+                                <button onclick="nextStep()"> ❯ </button>
+                            </div>
+                        </div>
+                        <p class="step_description">Переместите камеру в нужную позицию (например, под углом сверху) → скорректируйте вид → F12.</p>
+                    </div>
 
-                    <div class="pr4_final">
-                        <a href="{% static 'main/img/Pr4/Img1.png' %}" data-lightbox="gallery">
-                            <img class="image3" src="{% static 'main/img/Pr4/Img1.png' %}">
-                        </a>
-                        <a href="{% static 'main/img/Pr4/Img2.png' %}" data-lightbox="gallery">
-                            <img class="image3" src="{% static 'main/img/Pr4/Img2.png' %}">
-                        </a>
-                        <a href="{% static 'main/img/Pr4/Img3.png' %}" data-lightbox="gallery">
-                            <img class="image3" src="{% static 'main/img/Pr4/Img3.png' %}">
-                        </a>
+                    <span class="step-indicator" data-indicator></span>
+                </div>
+             {% else %}
+                <!-- Task Section -->
+                <div class="section">
+                    <h2 class="text-center mb-2">Задание</h2>
+                    <p>Выполните следующие действия в среде Blender:</p>
+
+                    <div class="student-table-wrapper">
+                        <table class="student-table blender-style-table">
+                            <thead>
+                                <tr>
+                                    <th>№</th>
+                                    <th>Действие</th>
+                                    <th>Метод выполнения</th>
+                                    <th>Изображение</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Удалить куб из стартовой сцены</td>
+                                    <td>Выделите стандартный куб (по умолчанию уже выделен) → нажмите X → выберите Delete.</td>
+                                    <td><a href="{% static 'main/img/Pr4/step1.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr4/step1.png' %}">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Добавить объект "обезьяна" (Suzanne)</td>
+                                    <td>Нажмите Shift + A → Mesh → Monkey → объект "Suzanne" появится в центре сцены.</td>
+                                    <td><a href="{% static 'main/img/Pr4/step2.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr4/step2.png' %}">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Перейти в режим сглаживания для модели обезьяны</td>
+                                    <td>Выделите объект Suzanne → правый клик мышью → выберите Shade Smooth.</td>
+                                    <td><a href="{% static 'main/img/Pr4/step3.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr4/step3.png' %}">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Перейти в рендерный вид сцены</td>
+                                    <td>В правом верхнем углу 3D Viewport нажмите иконку Rendered View (или клавиша Z → Rendered).</td>
+                                    <td><a href="{% static 'main/img/Pr4/step4.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr4/step4.png' %}">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Установить рендер-движок на Cycles</td>
+                                    <td>Перейдите во вкладку Render Properties (значок камеры справа) → в поле Render Engine выберите Cycles (или Eevee для более быстрого рендера).</td>
+                                    <td><a href="{% static 'main/img/Pr4/step5.1.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr4/step5.1.png' %}">
+                                        </a>
+                                        <a href="{% static 'main/img/Pr4/step5.2.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr4/step5.2.png' %}">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Добавить источник света</td>
+                                    <td>Light → переместите (G) и приподнимите свет над объектом (G → Z).</td>
+                                    <td><a href="{% static 'main/img/Pr4/step6.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr4/step6.png' %}">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Установить первую камеру перед объектом</td>
+                                    <td>Выделите камеру → нажмите Ctrl + Alt + Numpad 0, чтобы переместить её на текущий вид → G и R для точной настройки позиции и угла.</td>
+                                    <td><a href="{% static 'main/img/Pr4/step7.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr4/step7.png' %}">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Сделать рендер первого ракурса</td>
+                                    <td>Нажмите F12 для рендеринга изображения. После завершения → Image → Save As, чтобы сохранить рендер.</td>
+                                    <td><a href="{% static 'main/img/Pr4/step8.1.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr4/step8.1.png' %}">
+                                        </a>
+                                        <a href="{% static 'main/img/Pr4/step8.2.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr4/step8.2.png' %}">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>Переустановить камеру для второго ракурса (сбоку)</td>
+                                    <td>Переместите камеру сбоку от головы обезьяны (G → X или Y) → отрегулируйте угол обзора (R) → снова нажмите F12 для рендера второго изображения.</td>
+                                    <td><a href="{% static 'main/img/Pr4/step9.1.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr4/step9.1.png' %}">
+                                        </a>
+                                        <a href="{% static 'main/img/Pr4/step9.2.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr4/step9.2.png' %}">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>Изменить освещение для третьего кадра</td>
+                                    <td>Переместите свет вбок или сзади объекта.</td>
+                                    <td><a href="{% static 'main/img/Pr4/step10.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr4/step10.png' %}">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>11</td>
+                                    <td>Установить камеру для третьего ракурса (вид сверху или диагональный)</td>
+                                    <td>Переместите камеру в нужную позицию (например, под углом сверху) → скорректируйте вид → F12.</td>
+                                    <td><a href="{% static 'main/img/Pr4/step11.1.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr4/step11.1.png' %}">
+                                        </a>
+                                        <a href="{% static 'main/img/Pr4/step11.2.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr4/step11.2.png' %}">
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="pr4_final">
+                            <a href="{% static 'main/img/Pr4/Img1.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr4/Img1.png' %}">
+                            </a>
+                            <a href="{% static 'main/img/Pr4/Img2.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr4/Img2.png' %}">
+                            </a>
+                            <a href="{% static 'main/img/Pr4/Img3.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr4/Img3.png' %}">
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            {% endif %}
+
             <div class="section">
                 <p>Ожидаемые результаты</p>
                 <ul>

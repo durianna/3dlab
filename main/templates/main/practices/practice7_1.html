@@ -1,0 +1,363 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}Практическая работа: Моделирование с использованием Extrude в Blender{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="requirements-list1">
+            <!-- Header Section -->
+            <header class="text-center mb-4">
+                <h1>Дополнительные инструменты редактирования в Blender</h1>
+            </header>
+        </div>
+        <div class="requirements-list">
+            <div class="section">
+                <h2 class="text-center mb-2">Практическая работа №10</h2>
+                <h3>Цель работы</h3>
+                <p class="lead">Научиться использовать различные инструменты редактирования при моделировании обьекта в Blender</p>
+                <h2 class="text-center mb-2">Задание</h2>
+                <p>Выполните следующие действия в среде Blender:</p>
+            </div>
+
+            {% if is_mobile %}
+            <div class="practice-carousel-container" data-steps="16">
+                <div class="carousel-step" id="step-1" style="display: none;">
+                    <h3>Удалить стартовый куб</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                            <p class="step_description">Выделите куб → нажмите <strong>X</strong> → выберите <strong>Delete</strong>.</p>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+                </div>
+                <div class="carousel-step" id="step-2" style="display: none;">
+                    <h3>Добавить плоскость</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr7/img1.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr7/img1.png' %}">
+                            </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+                    <p class="step_description"><strong>Shift + A</strong> → Mesh → Plane.</p>
+                </div>
+                <div class="carousel-step" id="step-3" style="display: none;">
+                    <h3>Перейти в режим редактирования</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <p class="step_description">Выделите плоскость → нажмите <strong>Tab</strong> → выберите <strong>Edit Mode</strong>.</p>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+                </div>
+                <div class="carousel-step" id="step-4" style="display: none;">
+                    <h3>Масштабировать плоскость</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr7/img2.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr7/img2.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+                    <p class="step_description">S → X → 2, затем S → Y → 1.5 — форма столешницы.</p>
+                </div>
+                <div class="carousel-step" id="step-5" style="display: none;">
+                    <h3>Сделать плоскость объёмной</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr7/img3.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr7/img3.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+                    <p class="step_description">A → E → вверх (например, на 0.2).</p>
+                </div>
+                <div class="carousel-step" id="step-6" style="display: none;">
+                    <h3>Разрезать по оси X</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr7/img4.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr7/img4.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+                    <p class="step_description">Ctrl + R → ЛКМ → сдвинуть к краям.</p>
+                </div>
+                <div class="carousel-step" id="step-7" style="display: none;">
+                    <h3>Разрезать по оси Y</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr7/img5.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr7/img5.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+                    <p class="step_description">Повторите шаг 6, но по оси Y.</p>
+                </div>
+                <div class="carousel-step" id="step-8" style="display: none;">
+                    <h3>Выделить угловые грани</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr7/img6.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr7/img6.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+                    <p class="step_description">Face Select (3) → Shift + клик по углам снизу.</p>
+                </div>
+                <div class="carousel-step" id="step-9" style="display: none;">
+                    <h3>Экструдировать ножки</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr7/img7.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr7/img7.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+                    <p class="step_description">Нажмите E → вниз.</p>
+                </div>
+                <div class="carousel-step" id="step-10" style="display: none;">
+                    <h3>Удалить лишние грани</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr7/img8.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr7/img8.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+                    <p class="step_description">Вид сверху → Dissolve Faces.</p>
+                </div>
+                <div class="carousel-step" id="step-11" style="display: none;">
+                    <h3>Выделить столешницу</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr7/img9.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr7/img9.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+                    <p class="step_description">Включите X-Ray → выделите верх.</p>
+                </div>
+                <div class="carousel-step" id="step-12" style="display: none;">
+                    <h3>Фаска (Bevel)</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr7/img10.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr7/img10.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+                    <p class="step_description">Ctrl + B → потянуть → колесо мыши.</p>
+                </div>
+                <div class="carousel-step" id="step-13" style="display: none;">
+                    <h3>Добавить объекты</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <p class="step_description">Добавьте кружки, тарелки на стол.</p>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+                </div>
+                <div class="carousel-step" id="step-14" style="display: none;">
+                    <h3>Перейти в рендеринг</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <p class="step_description">Z → Rendered или иконка шара.</p>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+                </div>
+                <div class="carousel-step" id="step-15" style="display: none;">
+                    <h3>Настроить камеру</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <p class="step_description">Shift + A → Camera → 0 → G и R для настройки.</p>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+                </div>
+                <div class="carousel-step" id="step-16" style="display: none;">
+                    <h3>Сохранить изображение</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr7/img11.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr7/img11.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+                    <p class="step_description">F12 → Image → Save As.</p>
+                </div>
+
+                <span class="step-indicator" data-indicator></span>
+            </div>
+        {% else %}
+            <div class="student-table-wrapper">
+                <table class="student-table blender-style-table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Действие</th>
+                            <th>Метод выполнения (инструкционная карта)</th>
+                            <th>Изображение</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Удалить стартовый куб</td>
+                            <td>Выделите куб → нажмите <strong>X</strong> → выберите <strong>Delete</strong>.</td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Добавить плоскость</td>
+                            <td><strong>Shift + A</strong> → Mesh → Plane.</td>
+                            <td><a href="{% static 'main/img/Pr7/img1.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7/img1.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Перейти в режим редактирования</td>
+                            <td>Выделите плоскость → нажмите <strong>Tab</strong> → выберите <strong>Edit Mode</strong>.</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Масштабировать плоскость</td>
+                            <td>Нажмите <strong>S</strong> → <strong>X</strong> → 2, затем <strong>S</strong> → <strong>Y</strong> → 1.5 — придайте плоскости форму столешницы.</td>
+                            <td><a href="{% static 'main/img/Pr7/img2.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7/img2.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Сделать плоскость объёмной</td>
+                            <td>Выделите всю плоскость (<strong>A</strong>) → нажмите <strong>E</strong> → потяните вверх (например, на 0.2).</td>
+                            <td><a href="{% static 'main/img/Pr7/img3.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7/img3.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Разрезать объект по оси X</td>
+                            <td>Используем инструмент Loop Cut для создания разрезов на гранях столешницы. <code>Ctrl + R</code> → наведите на ось → После того как появится желтая линия нажмите ЛКМ, затем двигайте линию ближе с краю столешницы, для формирования будущих ножек стола. Проделайте это с двух сторон. Для удобства переключитесь на вид сверху(7)</td>
+                            <td><a href="{% static 'main/img/Pr7/img4.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7/img4.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Разрезать объект по оси Y</td>
+                            <td>Повторите действия п.6, но разрезайте по другой оси.</td>
+                            <td><a href="{% static 'main/img/Pr7/img5.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7/img5.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Выделить угловые грани</td>
+                            <td>Переключитесь в <strong>Face Select (3)</strong> → выделите четыре угловые грани снизу с помощью Shift.</td>
+                            <td><a href="{% static 'main/img/Pr7/img6.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7/img6.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Экструдировать ножки вниз</td>
+                            <td>Нажмите <code>E</code> — вытяните ножки вниз.</td>
+                            <td><a href="{% static 'main/img/Pr7/img7.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7/img7.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9.1</td>
+                            <td>Удаляем лишние грани</td>
+                            <td>Переключитесь на вид сверху(7), выделите столешницу. Нажмите правую кнопку мыши - Dissolve Faces</td>
+                            <td><a href="{% static 'main/img/Pr7/img8.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7/img8.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>10</td>
+                            <td>Выделить столешницу</td>
+                            <td>Включите режим Toogle X-Ray в правой верхней части Viewport. Выделите верхнюю часть столешницы(режим отображения вершин)</td>
+                            <td><a href="{% static 'main/img/Pr7/img9.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7/img9.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>Применить фаску к краям (Bevel)</td>
+                            <td><strong>Ctrl + B</strong> → потяните мышью → прокрутите колесо мыши, чтобы добавить сегменты фаски.</td>
+                            <td><a href="{% static 'main/img/Pr7/img10.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7/img10.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>Добавить обьекты</td>
+                            <td>Добавьте на стол дополнительные обьекты, например тарелки или кружки из предыдущей практической работы</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>Переключиться в рендеринг</td>
+                            <td>В правом верхнем углу 3D Viewport нажмите <strong>Z</strong> → <strong>Rendered</strong>, либо выберите иконку шарика.</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>Настроить камеру</td>
+                            <td><strong>Shift + A</strong> → Camera, нажмите <strong>0</strong> на NumPad → <strong>G</strong> и <strong>R</strong> для позиционирования.</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>Сделать финальный рендер</td>
+                            <td>Нажмите <strong>F12</strong> для рендера сцены.</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>Сохранить изображение</td>
+                            <td>В окне рендера: <strong>Image → Save As</strong>.</td>
+                            <td><a href="{% static 'main/img/Pr7/img11.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7/img11.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="section">
+            <p><br><br>Ожидаемый результат:</p>
+            <ul>
+                <li>Переключение между различными режимами выделения (вершины, рёбра, грани).</li>
+                <li>Перемещение, масштабирование и вращение элементов меша.</li>
+                <li>Использование инструментов Extrude, LoopCut, Bevel</li>
+            </ul>
+        </div>
+
+        <!-- Additional Recommendations Section -->
+        <div class="section">
+            <h3>Вопросы для самоконтроля:</h3>
+            <ol>
+                <li>Что такое Extrude?</li>
+                <li>Для чего нужен Extrude?</li>
+                <li>Какие еще инструменты для моделирования обьекта вы знаете?</li>
+            </ol>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,326 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}Практическая работа{% endblock %}
+
+{% block content %}
+    <div class="container">
+
+        <div class="requirements-list1">
+            <header class="text-center mb-4">
+                <h1>Практическая работа: Использование модификаторов для моделирования обьектов. Boolean</h1>
+            </header>
+        </div>
+
+        <div class="requirements-list">
+            <div class="section">
+                <h2 class="text-center mb-2">Практическая работа №15</h2>
+                <h3>Цель работы</h3>
+                <p class="lead">Научиться моделировать полую лабораторную колбу с горлышком и носиком, используя редактирование меша, трансформации и модификатор Boolean.</p>
+                <h2 class="text-center mb-2">Задание</h2>
+                <p>Выполните следующие действия в Blender шаг за шагом:</p>
+            </div>
+
+            {% if is_mobile %}
+                <div class="practice-carousel-container" data-steps="9">
+                    <div class="carousel-step" id="step-1" style="display: none;">
+                        <h3>Удалить стартовый куб</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr9.1/step0.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr9.1/step0.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Выделите куб → нажмите <strong>X</strong> → <strong>Delete</strong>. Добавьте конус с помощью Shift + A → Mesh → Cone.</p>
+                    </div>
+                    <div class="carousel-step" id="step-2" style="display: none;">
+                        <h3>Редактировать конус (основание колбы)</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr9.1/step1.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr9.1/step1.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description"> В левом нижнем углу нажмите на всплывающее меню "Add Cone". Установите:
+                                <ul>
+                                    <li>Vertices: 64</li>
+                                    <li>Radius1: 1.2</li>
+                                    <li>Radius2: 0.3</li>
+                                    <li>Depth: 2.0</li>
+                                </ul>
+                                Если панель не появилась откройте ее с помощью F9. Затем нажмите <strong>S → Z → 0.7</strong> для вертикального сжатия формы.
+                            </p>
+                    </div>
+                    <div class="carousel-step" id="step-3" style="display: none;">
+                        <h3>Сделать форму полой</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <div>
+                                <a href="{% static 'main/img/Pr9.1/step2.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr9.1/step2.png' %}">
+                                </a>
+                                <br>
+                                <a href="{% static 'main/img/Pr9.1/step2_1.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr9.1/step2_1.png' %}">
+                                </a>
+                                <br>
+                                <a href="{% static 'main/img/Pr9.1/step2_2.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr9.1/step2_2.png' %}">
+                                </a>
+                            </div>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Чтобы сделать форму будущей колбы полой внутри воспользуемся модификатором Boolean. Создадим дубликат конуса с помощью Shift + D. Новую колбу сделаем чуть меньше основной и поместим внутрь основного конуса, ею мы будем "вырезать" полость. Выделите основную колбу, добавьте модификатор Boolean, выберите режим Difference. В качестве второго обьекта выберем Cone1(тот, что поменьше), в конце нажмите Apply и удалите второй конус.</p>
+                    </div>
+                    <div class="carousel-step" id="step-4" style="display: none;">
+                        <h3>Добавить цилиндр (горлышко)</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr9.1/step3.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr9.1/step3.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Добавим цилиндр для горлышка с помощью: Shift + A → Mesh → Cylinder. Затем масштабируем его с помощью <strong>S</strong> (масштаб) → <strong>0.3</strong> → <strong>S → Z → 2</strong> и переместим: <strong>G → Z</strong> → разместите сверху колбы. Конец должен частично входить в верхнюю часть колбы.</p>
+                    </div>
+                    <div class="carousel-step" id="step-5" style="display: none;">
+                        <h3>Сделать горлышко полым</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <div>
+                                <a href="{% static 'main/img/Pr9.1/step4.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr9.1/step4.png' %}">
+                                </a>
+                                <br>
+                                <a href="{% static 'main/img/Pr9.1/step4_1.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr9.1/step4_1.png' %}">
+                                </a>
+                                <br>
+                                <a href="{% static 'main/img/Pr9.1/step4_2.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr9.1/step4_2.png' %}">
+                                </a>
+                                <br>
+                                <a href="{% static 'main/img/Pr9.1/step4_3.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr9.1/step4_3.png' %}">
+                                </a>
+                            </div>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Перейдите в Edit Mode → выделите верхнюю грань цилиндра → нажмите <strong>I</strong> (Inset) → <strong>E</strong> → выдавите внутрь, создавая внутреннюю стенку. Включите Toogle X-Ray и переключайтесь между видами для удобства на Numpad. Затем удалите внутренние нижние стенки цилиндра чтобы получить полую трубку.</p>
+                    </div>
+                    <div class="carousel-step" id="step-6" style="display: none;">
+                        <h3>Объединить части</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr9.1/step5.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr9.1/step5.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Вернитесь в обьектный режим(Tab). Выделите основание колбы → добавьте модификатор Boolean → выберите тип <strong>Union</strong> → в поле Object выберите цилиндр → нажмите <strong>Apply</strong>.</p>
+                    </div>
+                    <div class="carousel-step" id="step-7" style="display: none;">
+                        <h3>Удалить объект-горлышко</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr9.1/step6.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr9.1/step6.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Выделите цилиндр → нажмите <strong>X</strong> → <strong>Delete</strong>. Останется объединённая полая форма.</p>
+                    </div>
+                    <div class="carousel-step" id="step-8" style="display: none;">
+                        <h3>Сгладить колбу</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <div>
+                                <a href="{% static 'main/img/Pr9.1/step7.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr9.1/step7.png' %}">
+                                </a>
+                                <br>
+                                <a href="{% static 'main/img/Pr9.1/step7_1.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr9.1/step7_1.png' %}">
+                                </a>
+                                <br>
+                                <a href="{% static 'main/img/Pr9.1/step7.1.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr9.1/step7.1.png' %}">
+                                </a>
+                                <br>
+                                <a href="{% static 'main/img/Pr9.1/step7_2.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr9.1/step7_2.png' %}">
+                                </a>
+                            </div>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">В режиме редактирования выделить донышко колбы и экструдировать его с помощью E. Затем добавьте фаски(Bevel) для обьема с помощью CTRL+B. Также эструдируйте горлышко колбы, полученные полигоны мастабируйте и сделайте чуть шире чем основание, чтобы добавить обьем. Вернитесь в обьектный режим. ПКМ по объекту → <strong>Shade Smooth</strong></p>
+                    </div>
+                    <div class="carousel-step" id="step-9" style="display: none;">
+                        <h3>Рендер</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr9.1/step8.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr9.1/step8.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Настройте камеру и свет, нажмите F12 для рендера и сохраните результат</p>
+                    </div>
+
+                    <span class="step-indicator" data-indicator></span>
+                </div>
+            {% else %}
+                <div class="student-table-wrapper">
+                <table class="student-table blender-style-table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Действие</th>
+                            <th>Метод выполнения (инструкционная карта)</th>
+                            <th>Изображение</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Удалить стартовый куб</td>
+                            <td>Выделите куб → нажмите <strong>X</strong> → <strong>Delete</strong>. Добавьте конус с помощью Shift + A → Mesh → Cone.</td>
+                            <td><a href="{% static 'main/img/Pr9.1/step0.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr9.1/step0.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Редактировать конус (основание колбы)</td>
+                            <td> В левом нижнем углу нажмите на всплывающее меню "Add Cone". Установите:
+                                <ul>
+                                    <li>Vertices: 64</li>
+                                    <li>Radius1: 1.2</li>
+                                    <li>Radius2: 0.3</li>
+                                    <li>Depth: 2.0</li>
+                                </ul>
+                                Если панель не появилась откройте ее с помощью F9. Затем нажмите <strong>S → Z → 0.7</strong> для вертикального сжатия формы.
+                            </td>
+                            <td><a href="{% static 'main/img/Pr9.1/step1.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr9.1/step1.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Сделать форму полой</td>
+                            <td>Чтобы сделать форму будущей колбы полой внутри воспользуемся модификатором Boolean. Создадим дубликат конуса с помощью Shift + D. Новую колбу сделаем чуть меньше основной и поместим внутрь основного конуса, ею мы будем "вырезать" полость. Выделите основную колбу, добавьте модификатор Boolean, выберите режим Difference. В качестве второго обьекта выберем Cone1(тот, что поменьше), в конце нажмите Apply и удалите второй конус.</td>
+                            <td><a href="{% static 'main/img/Pr9.1/step2.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr9.1/step2.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr9.1/step2_1.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr9.1/step2_1.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr9.1/step2_2.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr9.1/step2_2.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Добавить цилиндр (горлышко)</td>
+                            <td>Добавим цилиндр для горлышка с помощью: Shift + A → Mesh → Cylinder. Затем масштабируем его с помощью <strong>S</strong> (масштаб) → <strong>0.3</strong> → <strong>S → Z → 2</strong> и переместим: <strong>G → Z</strong> → разместите сверху колбы. Конец должен частично входить в верхнюю часть колбы.</td>
+                            <td><a href="{% static 'main/img/Pr9.1/step3.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr9.1/step3.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Сделать горлышко полым</td>
+                            <td>Перейдите в Edit Mode → выделите верхнюю грань цилиндра → нажмите <strong>I</strong> (Inset) → <strong>E</strong> → выдавите внутрь, создавая внутреннюю стенку. Включите Toogle X-Ray и переключайтесь между видами для удобства на Numpad. Затем удалите внутренние нижние стенки цилиндра чтобы получить полую трубку.</td>
+                            <td><a href="{% static 'main/img/Pr9.1/step4.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr9.1/step4.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr9.1/step4_1.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr9.1/step4_1.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr9.1/step4_2.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr9.1/step4_2.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr9.1/step4_3.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr9.1/step4_3.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Объединить части</td>
+                            <td>Вернитесь в обьектный режим(Tab). Выделите основание колбы → добавьте модификатор Boolean → выберите тип <strong>Union</strong> → в поле Object выберите цилиндр → нажмите <strong>Apply</strong>.</td>
+                            <td><a href="{% static 'main/img/Pr9.1/step5.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr9.1/step5.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Удалить объект-горлышко</td>
+                            <td>Выделите цилиндр → нажмите <strong>X</strong> → <strong>Delete</strong>. Останется объединённая полая форма. </td>
+                            <td><a href="{% static 'main/img/Pr9.1/step6.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr9.1/step6.png' %}">
+                            </a></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Сгладить колбу</td>
+                            <td>В режиме редактирования выделить донышко колбы и экструдировать его с помощью E. Затем добавьте фаски(Bevel) для обьема с помощью CTRL+B. Также эструдируйте горлышко колбы, полученные полигоны мастабируйте и сделайте чуть шире чем основание, чтобы добавить обьем. Вернитесь в обьектный режим. ПКМ по объекту → <strong>Shade Smooth</strong></td>
+                            <td><a href="{% static 'main/img/Pr9.1/step7.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr9.1/step7.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr9.1/step7.1.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr9.1/step7.1.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr9.1/step7_1.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr9.1/step7_1.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr9.1/step7_2.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr9.1/step7_2.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Рендер</td>
+                            <td>Настройте камеру и свет, нажмите F12 для рендера и сохраните результат</td>
+                            <td><a href="{% static 'main/img/Pr9.1/step8.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr9.1/step8.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            {% endif %}
+            <div class="section">
+                <p><br><br>Ожидаемый результат:</p>
+                <ul>
+                    <li>Полая лабораторная колба, объединённая из конуса и цилиндра.</li>
+                    <li>Внутренние стенки созданы с помощью Inset + Extrude.</li>
+                    <li>Финальная форма сглажена и готова для дальнейшего оформления.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3>Вопросы для самопроверки:</h3>
+                <ol>
+                    <li>Как сделать объект полым?</li>
+                    <li>Какие операции выполнялись для объединения объектов?</li>
+                    <li>Для чего используется модификатор Bevel?</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -23,142 +23,314 @@
                 Применить инструмент Gizmo для трансформаций объектов.</p>
         </div>
 
-        <!-- Task Section -->
-        <div class="section">
-            <h2 class="text-center mb-2">Задание</h2>
-            <p>Выполните следующие действия в среде Blender:</p>
+        {% if is_mobile %}
+            <div class="practice-carousel-container" data-steps="14">
+                <div class="carousel-step" id="step-1">
+                    <h3>Создание сцены</h3>
+                    <div>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr2/img1.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr2/img1.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                    </div>
+                    <p class="step_description">Создайте новый проект в Blender. Добавьте на сцену 4 объекта: куб, сферу, цилиндр и конус. Разместите их в разных местах сцены для удобства выделения. Используйте клавишу <strong>Shift + A</strong> для добавления объектов и клавишу <strong>G</strong> для перемещения.</p>
+                </div>
+                <div class="carousel-step" id="step-2" style="display: none;">
+                    <h3>Выделение объектов с помощью ЛКМ</h3>
+                    <div>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr2/img2.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr2/img2.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                    </div>
+                    <p class="step_description">Выделите куб, кликнув по нему левой кнопкой мыши. После этого выделите сферу, кликнув по ней. Все выделенные объекты подсветятся оранжевой рамкой.</p>
+                </div>
+                <div class="carousel-step" id="step-3" style="display: none;">
+                    <h3>Выделение объектов с помощью <strong>Shift + ЛКМ</strong></h3>
+                    <div>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr2/img3.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr2/img3.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                    </div>
+                    <p class="step_description">Удерживая клавишу <strong>Shift</strong>, выделите одновременно куб и цилиндр, кликнув по ним левой кнопкой мыши. Оба объекта должны быть подсвечены.</p>
+                </div>
+                <div class="carousel-step" id="step-4" style="display: none;">
+                    <h3>Выделение с помощью Box Select (<strong>B</strong>)</h3>
+                    <div>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <p class="step_description">Нажмите клавишу <strong>B</strong> для активации рамки выделения. Потяните рамку по объектам (например, кубу и сфере), чтобы выделить их.</p>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                    </div>
 
-            <div class="student-table-wrapper">
-                <table class="student-table blender-style-table">
-                    <thead>
-                        <tr>
-                            <th>№</th>
-                            <th>Действие</th>
-                            <th>Метод выполнения</th>
-                            <th>Изображение</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Создание сцены</td>
-                            <td>Создайте новый проект в Blender. Добавьте на сцену 4 объекта: куб, сферу, цилиндр и конус. Разместите их в разных местах сцены для удобства выделения. Используйте клавишу <strong>Shift + A</strong> для добавления объектов и клавишу <strong>G</strong> для перемещения.</td>
-                            <td>
-                                <a href="{% static 'main/img/Pr2/img1.png' %}" data-lightbox="gallery">
-                                    <img class="image3" src="{% static 'main/img/Pr2/img1.png' %}">
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Выделение объектов с помощью ЛКМ</td>
-                            <td>Выделите куб, кликнув по нему левой кнопкой мыши. После этого выделите сферу, кликнув по ней. Все выделенные объекты подсветятся оранжевой рамкой.</td>
-                            <td>
-                                <a href="{% static 'main/img/Pr2/img2.png' %}" data-lightbox="gallery">
-                                    <img class="image3" src="{% static 'main/img/Pr2/img2.png' %}">
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Выделение объектов с помощью <strong>Shift + ЛКМ</strong></td>
-                            <td>Удерживая клавишу <strong>Shift</strong>, выделите одновременно куб и цилиндр, кликнув по ним левой кнопкой мыши. Оба объекта должны быть подсвечены.</td>
-                            <td>
-                                <a href="{% static 'main/img/Pr2/img3.png' %}" data-lightbox="gallery">
-                                    <img class="image3" src="{% static 'main/img/Pr2/img3.png' %}">
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Выделение с помощью Box Select (<strong>B</strong>)</td>
-                            <td>Нажмите клавишу <strong>B</strong> для активации рамки выделения. Потяните рамку по объектам (например, кубу и сфере), чтобы выделить их.</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Выделение с помощью Circle Select (<strong>C</strong>)</td>
-                            <td>Нажмите клавишу <strong>C</strong> для активации кругового выделения. Используйте колесо мыши для изменения радиуса выделения и щелкайте по объектам, чтобы их выделить. Поверните выделенные обьекты нажав R. Выделенные обьекты поворачиваются так, будто это один обькт.</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>Выделение с помощью Lasso Select (<strong>Ctrl + ЛКМ</strong>)</td>
-                            <td>Удерживая клавишу <strong>Ctrl</strong>, выделите объекты с помощью левой кнопки мыши, рисуя произвольную область вокруг объектов. Увеличьте все обьекты одновременно, нажав S после выделения обьектов.</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>Работа с 3D-курсор: позиционирование</td>
-                            <td>Переместите 3D-курсор в центр группы обьектов с помощью комбинации  <code>Shift + ЛКМ</code>. Чтобы вернуть 3Д курсор в центр комбинация: <code>Shift + C</code>.</td>
-                            <td>
-                                <a href="{% static 'main/img/Pr2/img4.png' %}" data-lightbox="gallery">
-                                    <img class="image3" src="{% static 'main/img/Pr2/img4.png' %}">
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Перемещение объектов относительно 3D-курсона</td>
-                            <td>После того, как вы переместили 3Д курсор мы можем настроить PivotPoint так, чтобы обьекты трансформировались относительно 3Д курсора. Перейдите в настройки Pivot Point и выберите <strong>3D курсор</strong>.</td>
-                            <td>
-                                <a href="{% static 'main/img/Pr2/img5.png' %}" data-lightbox="gallery">
-                                    <img class="image3" src="{% static 'main/img/Pr2/img5.png' %}">
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>Работа с Pivot Point: использование 3D-курсона как PivotPoint</td>
-                            <td>Теперь все обьекты будут трансформироваться(например вращаться) вокруг нового пивота - 3D курсора. Проверьте это выделив обьект и нажав R.</td>
-                            <td>
-                                <a href="{% static 'main/img/Pr2/img6.png' %}" data-lightbox="gallery">
-                                    <img class="image3" src="{% static 'main/img/Pr2/img6.png' %}">
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>Изменение Pivot Point на "Individual Origins"</td>
-                            <td>Перейдите в настройки Pivot Point и выберите <strong>Individual Origins</strong>. Переместите объекты (например, куб и цилиндр), чтобы увидеть, как каждый из объектов будет вращаться вокруг своей оси.</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>11</td>
-                            <td>Возвращаем 3D курсор в центр</td>
-                            <td>Чтобы вернуть 3Д курсор в центр комбинация: <code>Shift + C</code></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>12</td>
-                            <td>Включаем Гизмо</td>
-                            <td>Если <strong>Gizmo</strong> не отображается, включите его вручную через настройки в панели <strong>3D Viewport</strong> (нажмите на иконку Gizmo в верхнем правом углу).</td>
-                            <td>
-                                <a href="{% static 'main/img/Pr2/img7.png' %}" data-lightbox="gallery">
-                                    <img class="image3" src="{% static 'main/img/Pr2/img7.png' %}">
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>13</td>
-                            <td>Трансформации обьекта с помощью Гизмо</td>
-                            <td>Потянув за оси Гизмо трансформируйте обьекты. Поверните их, масштабируйте</td>
-                            <td>
-                                <a href="{% static 'main/img/Pr2/img8.png' %}" data-lightbox="gallery">
-                                    <img class="image3" src="{% static 'main/img/Pr2/img8.png' %}">
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>14</td>
-                            <td>Сохранить проект</td>
-                            <td>После выполнения всех шагов сохраните проект. Перейдите в меню <strong>File → Save As</strong>, выберите имя для файла, например, <strong>Simple_Scene.blend</strong> и нажмите <strong>Save As Blender File</strong>.</td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
+                </div>
+                <div class="carousel-step" id="step-5" style="display: none;">
+                    <h3>Выделение с помощью Circle Select (<strong>C</strong>)</h3>
+                    <div>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <p class="step_description">Нажмите клавишу <strong>C</strong> для активации кругового выделения. Используйте колесо мыши для изменения радиуса выделения и щелкайте по объектам, чтобы их выделить. Поверните выделенные обьекты нажав R. Выделенные обьекты поворачиваются так, будто это один обькт.</p>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="carousel-step" id="step-6" style="display: none;">
+                    <h3>Выделение с помощью Lasso Select (<strong>Ctrl + ЛКМ</strong>)</h3>
+                    <div>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <p class="step_description">Удерживая клавишу <strong>Ctrl</strong>, выделите объекты с помощью левой кнопки мыши, рисуя произвольную область вокруг объектов. Увеличьте все обьекты одновременно, нажав S после выделения обьектов.</p>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-step" id="step-7" style="display: none;">
+                    <h3>Работа с 3D-курсор: позиционирование</h3>
+                    <div>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr2/img4.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr2/img4.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                    </div>
+                    <p class="step_description">Переместите 3D-курсор в центр группы обьектов с помощью комбинации  <code>Shift + ЛКМ</code>. Чтобы вернуть 3Д курсор в центр комбинация: <code>Shift + C</code>.</p>
+                </div>
+                <div class="carousel-step" id="step-8" style="display: none;">
+                    <h3>Перемещение объектов относительно 3D-курсора</h3>
+                    <div>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr2/img5.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr2/img5.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                    </div>
+                    <p class="step_description">После того, как вы переместили 3Д курсор мы можем настроить PivotPoint так, чтобы обьекты трансформировались относительно 3Д курсора. Перейдите в настройки Pivot Point и выберите <strong>3D курсор</strong>.</p>
+                </div>
+                <div class="carousel-step" id="step-9" style="display: none;">
+                    <h3>Работа с Pivot Point: использование 3D-курсора как PivotPoint</h3>
+                    <div>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr2/img6.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr2/img6.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                    </div>
+                    <p class="step_description">Теперь все обьекты будут трансформироваться(например вращаться) вокруг нового пивота - 3D курсора. Проверьте это выделив обьект и нажав R.</p>
+                </div>
+                <div class="carousel-step" id="step-10" style="display: none;">
+                    <h3>Изменение Pivot Point на "Individual Origins"</h3>
+                    <div>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <p class="step_description">Перейдите в настройки Pivot Point и выберите <strong>Individual Origins</strong>. Переместите объекты (например, куб и цилиндр), чтобы увидеть, как каждый из объектов будет вращаться вокруг своей оси.</p>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-step" id="step-11" style="display: none;">
+                    <h3>Возвращаем 3D курсор в центр</h3>
+                    <div>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <p class="step_description">Чтобы вернуть 3Д курсор в центр комбинация: <code>Shift + C</code></p>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-step" id="step-12" style="display: none;">
+                    <h3>Включаем Гизмо</h3>
+                    <div>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr2/img7.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr2/img7.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                    </div>
+                    <p class="step_description">Если <strong>Gizmo</strong> не отображается, включите его вручную через настройки в панели <strong>3D Viewport</strong> (нажмите на иконку Gizmo в верхнем правом углу).</p>
+                </div>
+                <div class="carousel-step" id="step-13" style="display: none;">
+                    <h3>Трансформации обьекта с помощью Гизмо</h3>
+                    <div>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr2/img8.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr2/img8.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                    </div>
+                    <p class="step_description">Потянув за оси Гизмо трансформируйте обьекты. Поверните их, масштабируйте.</p>
+                </div>
+                <div class="carousel-step" id="step-14" style="display: none;">
+                    <h3>Сохранить проект</h3>
+                    <div>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <p class="step_description">После выполнения всех шагов сохраните проект. Перейдите в меню <strong>File → Save As</strong>, выберите имя для файла, например, <strong>Simple_Scene.blend</strong> и нажмите <strong>Save As Blender File</strong>.</p>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                    </div>
+                </div>
+
+                <span class="step-indicator" data-indicator></span>
             </div>
+        {% else %}
+            <!-- Task Section -->
+            <div class="section">
+                <h2 class="text-center mb-2">Задание</h2>
+                <p>Выполните следующие действия в среде Blender:</p>
 
+                <div class="student-table-wrapper">
+                    <table class="student-table blender-style-table">
+                        <thead>
+                            <tr>
+                                <th>№</th>
+                                <th>Действие</th>
+                                <th>Метод выполнения</th>
+                                <th>Изображение</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Создание сцены</td>
+                                <td>Создайте новый проект в Blender. Добавьте на сцену 4 объекта: куб, сферу, цилиндр и конус. Разместите их в разных местах сцены для удобства выделения. Используйте клавишу <strong>Shift + A</strong> для добавления объектов и клавишу <strong>G</strong> для перемещения.</td>
+                                <td>
+                                    <a href="{% static 'main/img/Pr2/img1.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr2/img1.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Выделение объектов с помощью ЛКМ</td>
+                                <td>Выделите куб, кликнув по нему левой кнопкой мыши. После этого выделите сферу, кликнув по ней. Все выделенные объекты подсветятся оранжевой рамкой.</td>
+                                <td>
+                                    <a href="{% static 'main/img/Pr2/img2.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr2/img2.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Выделение объектов с помощью <strong>Shift + ЛКМ</strong></td>
+                                <td>Удерживая клавишу <strong>Shift</strong>, выделите одновременно куб и цилиндр, кликнув по ним левой кнопкой мыши. Оба объекта должны быть подсвечены.</td>
+                                <td>
+                                    <a href="{% static 'main/img/Pr2/img3.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr2/img3.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Выделение с помощью Box Select (<strong>B</strong>)</td>
+                                <td>Нажмите клавишу <strong>B</strong> для активации рамки выделения. Потяните рамку по объектам (например, кубу и сфере), чтобы выделить их.</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Выделение с помощью Circle Select (<strong>C</strong>)</td>
+                                <td>Нажмите клавишу <strong>C</strong> для активации кругового выделения. Используйте колесо мыши для изменения радиуса выделения и щелкайте по объектам, чтобы их выделить. Поверните выделенные обьекты нажав R. Выделенные обьекты поворачиваются так, будто это один обькт.</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Выделение с помощью Lasso Select (<strong>Ctrl + ЛКМ</strong>)</td>
+                                <td>Удерживая клавишу <strong>Ctrl</strong>, выделите объекты с помощью левой кнопки мыши, рисуя произвольную область вокруг объектов. Увеличьте все обьекты одновременно, нажав S после выделения обьектов.</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Работа с 3D-курсор: позиционирование</td>
+                                <td>Переместите 3D-курсор в центр группы обьектов с помощью комбинации  <code>Shift + ЛКМ</code>. Чтобы вернуть 3Д курсор в центр комбинация: <code>Shift + C</code>.</td>
+                                <td>
+                                    <a href="{% static 'main/img/Pr2/img4.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr2/img4.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Перемещение объектов относительно 3D-курсора</td>
+                                <td>После того, как вы переместили 3Д курсор мы можем настроить PivotPoint так, чтобы обьекты трансформировались относительно 3Д курсора. Перейдите в настройки Pivot Point и выберите <strong>3D курсор</strong>.</td>
+                                <td>
+                                    <a href="{% static 'main/img/Pr2/img5.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr2/img5.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>Работа с Pivot Point: использование 3D-курсора как PivotPoint</td>
+                                <td>Теперь все обьекты будут трансформироваться(например вращаться) вокруг нового пивота - 3D курсора. Проверьте это выделив обьект и нажав R.</td>
+                                <td>
+                                    <a href="{% static 'main/img/Pr2/img6.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr2/img6.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>Изменение Pivot Point на "Individual Origins"</td>
+                                <td>Перейдите в настройки Pivot Point и выберите <strong>Individual Origins</strong>. Переместите объекты (например, куб и цилиндр), чтобы увидеть, как каждый из объектов будет вращаться вокруг своей оси.</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>Возвращаем 3D курсор в центр</td>
+                                <td>Чтобы вернуть 3Д курсор в центр комбинация: <code>Shift + C</code></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>Включаем Гизмо</td>
+                                <td>Если <strong>Gizmo</strong> не отображается, включите его вручную через настройки в панели <strong>3D Viewport</strong> (нажмите на иконку Gizmo в верхнем правом углу).</td>
+                                <td>
+                                    <a href="{% static 'main/img/Pr2/img7.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr2/img7.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>Трансформации обьекта с помощью Гизмо</td>
+                                <td>Потянув за оси Гизмо трансформируйте обьекты. Поверните их, масштабируйте</td>
+                                <td>
+                                    <a href="{% static 'main/img/Pr2/img8.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr2/img8.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>Сохранить проект</td>
+                                <td>После выполнения всех шагов сохраните проект. Перейдите в меню <strong>File → Save As</strong>, выберите имя для файла, например, <strong>Simple_Scene.blend</strong> и нажмите <strong>Save As Blender File</strong>.</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        {% endif %}
 
         </div>
         <!-- Report Section -->

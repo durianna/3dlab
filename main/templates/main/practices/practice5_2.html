@@ -1,0 +1,322 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}Трансформации, структура меша и параметры объекта.{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="requirements-list1">
+            <!-- Header Section -->
+            <header class="text-center mb-4">
+                <h1 class="text-center mb-2">Трансформации, структура меша и параметры объекта.</h1>
+            </header>
+        </div>
+
+        <div class="requirements-list">
+            <!-- Objective Section -->
+            <div class="section">
+                <h2 class="text-center mb-2">Практическая работа №7</h2>
+                <h3>Цель работы</h3>
+                <p class="lead">Моделирование простого обьекта в режиме редактирования Blender</p>
+            </div>
+
+            {% if is_mobile %}
+                <div class="practice-carousel-container" data-steps="12">
+                    <div class="carousel-step" id="step-1" style="display: none;">
+                        <h3>Удалить все объекты из сцены</h3>
+                        <div>
+                            <div class="carousel-controls">
+                                <button onclick="prevStep()"> ❮ </button>
+                                <a href="{% static 'main/img/Pr5/step1.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr5/step1.png' %}">
+                                </a>
+                                <button onclick="nextStep()"> ❯ </button>
+                            </div>
+                        </div>
+                        <p class="step_description">Нажмите A, чтобы выделить все объекты → нажмите X → выберите Delete.</p>
+                    </div>
+                    <div class="carousel-step" id="step-2" style="display: none;">
+                        <h3>Добавить цилиндр в сцену</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr5/step2.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr5/step2.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">Нажмите Shift + A → Mesh → Cylinder.</p>
+                    </div>
+
+                    <div class="carousel-step" id="step-3" style="display: none;">
+                        <h3>Перейти в режим редактирования и выделить верхние вершины</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr5/step3.1.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr5/step3.1.png' %}">
+                            </a>
+                            <a href="{% static 'main/img/Pr5/step3.2.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr5/step3.2.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">Выделите цилиндр → Tab → Wireframe → Vertex Select → рамкой выделите верхние вершины цилиндра.</p>
+                    </div>
+
+                    <div class="carousel-step" id="step-4" style="display: none;">
+                        <h3>Вставить (Inset) верхнюю часть цилиндра</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr5/step4.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr5/step4.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">С выделенными вершинами нажмите I → переместите мышь к центру → ЛКМ для подтверждения.</p>
+                    </div>
+
+                    <div class="carousel-step" id="step-5" style="display: none;">
+                        <h3>Вытянуть внутрь для создания полости</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr5/step5.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr5/step5.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">Нажмите E → переместите мышь вниз по оси Z → ЛКМ для завершения.</p>
+                    </div>
+
+                    <div class="carousel-step" id="step-6" style="display: none;">
+                        <h3>Расширить верхние вершины цилиндра</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr5/step6.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr5/step6.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">Выделите вершины → нажмите S → переместите мышку → ЛКМ.</p>
+                    </div>
+
+                    <div class="carousel-step" id="step-7" style="display: none;">
+                        <h3>Добавить тор и повернуть его по оси Y</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr5/step7.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr5/step7.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">Shift + A → Mesh → Torus → R → Y → 90 → Enter.</p>
+                    </div>
+
+                    <div class="carousel-step" id="step-8" style="display: none;">
+                        <h3>Повернуть тор по оси Z на 90</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr5/step8.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr5/step8.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">R → Z → 90 → Enter.</p>
+                    </div>
+
+                    <div class="carousel-step" id="step-9" style="display: none;">
+                        <h3>Уменьшить тор и разместить его как ручку</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr5/step9.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr5/step9.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">S → уменьшите тор → G → переместите сбоку от цилиндра.</p>
+                    </div>
+
+                    <div class="carousel-step" id="step-10" style="display: none;">
+                        <h3>Удалить лишние вершины ручки</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr5/step10.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr5/step10.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">Edit Mode → Z → Wireframe → B → выделите лишние вершины → X → Vertices.</p>
+                    </div>
+
+                    <div class="carousel-step" id="step-11" style="display: none;">
+                        <h3>Удалить лишние грани ручки</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr5/step11.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr5/step11.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">Wireframe → выделите ненужные грани → X → Faces.</p>
+                    </div>
+
+                    <div class="carousel-step" id="step-12" style="display: none;">
+                        <h3>Применить сглаживание</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr5/step12.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr5/step12.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">Object Mode → A → ПКМ → Shade Smooth.</p>
+                    </div>
+
+                    <span class="step-indicator" data-indicator></span>
+                </div>
+            {% else %}
+                <!-- Task Section -->
+                <div class="section">
+                    <h2 class="text-center mb-2">Задание</h2>
+                    <p>Выполните следующие действия в среде Blender:</p>
+
+                    <div class="student-table-wrapper">
+                        <table class="student-table blender-style-table">
+                            <thead>
+                                <tr>
+                                    <th>№</th>
+                                    <th>Действие</th>
+                                    <th>Метод выполнения</th>
+                                    <th>Изображение</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Удалить все объекты из сцены</td>
+                                    <td>Нажмите A, чтобы выделить все объекты → нажмите X → выберите Delete.</td>
+                                    <td><a href="{% static 'main/img/Pr5/step1.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr5/step1.png' %}">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Добавить цилиндр в сцену</td>
+                                    <td>Нажмите Shift + A → Mesh → Cylinder.</td>
+                                    <td><a href="{% static 'main/img/Pr5/step2.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr5/step2.png' %}">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Перейти в режим редактирования и выделить верхние вершины</td>
+                                    <td>Выделите цилиндр → нажмите Tab для перехода в Edit Mode → нажмите Z или кликните по иконке Viewport Shading: Wireframe → включите режим выделения вершин (Vertex Select или клавиша 1) → выделите верхние вершины цилиндра рамкой.</td>
+                                    <td><a href="{% static 'main/img/Pr5/step3.1.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr5/step3.1.png' %}">
+                                        </a>
+                                        <a href="{% static 'main/img/Pr5/step3.2.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr5/step3.2.png' %}">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Вставить (Inset) верхнюю часть цилиндра</td>
+                                    <td>После выделения верхних вершин нажмите I (Inset) → переместите мышку, чтобы немного сместить вершины к центру → нажмите ЛКМ для подтверждения.</td>
+                                    <td><a href="{% static 'main/img/Pr5/step4.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr5/step4.png' %}">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Вытянуть внутрь для создания полости</td>
+                                    <td>С выделенной вставкой нажмите E (Extrude) → потяните мышку вниз по оси Z (или зажмите Z для ограничения по оси) → нажмите ЛКМ для завершения.</td>
+                                    <td><a href="{% static 'main/img/Pr5/step5.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr5/step5.png' %}">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Расширить верхние вершины цилиндра</td>
+                                    <td>Выделите все верхние вершины (рамкой или клавиша A в режиме вершинок) → нажмите S (Scale) → переместите мышку наружу для увеличения ширины верхней части цилиндра → ЛКМ для подтверждения.</td>
+                                    <td><a href="{% static 'main/img/Pr5/step6.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr5/step6.png' %}">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Добавить тор и повернуть его по оси Y</td>
+                                    <td>Нажмите Shift + A → Mesh → Torus → нажмите R, затем Y, затем введите 90 → нажмите Enter для поворота тора на 90° по оси Y.</td>
+                                    <td><a href="{% static 'main/img/Pr5/step7.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr5/step7.png' %}">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Повернуть тор по оси Z на 90</td>
+                                    <td>С выделенным тором нажмите R, затем Z, затем введите 90 → нажмите Enter для подтверждения поворота.</td>
+                                    <td><a href="{% static 'main/img/Pr5/step8.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr5/step8.png' %}">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>Уменьшить тор и разместить его как ручку</td>
+                                    <td>С выделенным тором нажмите S → уменьшите его размер → G для перемещения → переместите тор сбоку цилиндра, так чтобы он выглядел как ручка чашки → ЛКМ для фиксации.</td>
+                                    <td><a href="{% static 'main/img/Pr5/step9.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr5/step9.png' %}">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>Удалить лишние вершины ручки, выступающие за пределы чашки</td>
+                                    <td>Перейдите в Edit Mode у тора → включите Wireframe View (Z → Wireframe) → выделите все вершины ручки, которые находятся за пределами чашки, с помощью рамки (B) → нажмите X → выберите Vertices для удаления.</td>
+                                    <td><a href="{% static 'main/img/Pr5/step10.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr5/step10.png' %}">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>11</td>
+                                    <td>Удалить лишние грани ручки, выступающие за пределы чашки</td>
+                                    <td>В Edit Mode тора включите Wireframe View (Z → Wireframe) → выделите ненужные грани снаружи цилиндра → нажмите Delete (X) → выберите Faces для удаления выбранных граней.</td>
+                                    <td><a href="{% static 'main/img/Pr5/step11.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr5/step11.png' %}">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>12</td>
+                                    <td>Применить сглаживание к модели</td>
+                                    <td>Перейдите в Object Mode (Tab) → нажмите A, чтобы выделить все объекты → правый клик мышью → выберите Shade Smooth.</td>
+                                    <td><a href="{% static 'main/img/Pr5/step12.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr5/step12.png' %}">
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <a href="{% static 'main/img/Pr5/step9.png' %}" data-lightbox="gallery">
+                            <img class="image3" src="{% static 'main/img/Pr5/fnl.png' %}">
+                        </a>
+                    </div>
+                </div>
+            {% endif %}
+            <!-- Report Section -->
+            <div class="section">
+                <p><br> В отчёте учащийся должен:</p>
+                <ul>
+                    <li>Приложить скриншоты рендера объекта</li>
+                    <li>Описать шаги, которые были выполнены при моделировании.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

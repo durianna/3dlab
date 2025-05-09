@@ -1,0 +1,251 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}Практическая работа: Моделирование с использованием Extrude в Blender{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="requirements-list1">
+            <!-- Header Section -->
+            <header class="text-center mb-4">
+                <h1>Дополнительные инструменты редактирования в Blender</h1>
+            </header>
+        </div>
+
+        <div class="requirements-list">
+
+            <div class="section">
+                <h2 class="text-center mb-2">Практическая работа №11</h2>
+                <h3>Цель работы</h3>
+                <p class="lead">3D-модель карандаша, созданная с использованием цилиндра, инструментов Loop Cut, Extrude, Scale и Bevel.</p>
+                <h2 class="text-center mb-2">Задание</h2>
+                <p>Выполните следующие действия в среде Blender:</p>
+            </div>
+
+            {% if is_mobile %}
+                <div class="practice-carousel-container" data-steps="10">
+                    <div class="carousel-step" id="step-1" style="display: none;">
+                        <h3>Создайте новый проект и удалите куб</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                                <p class="step_description">Создайте новый файл: <strong>File → New → General</strong>. Удалите стартовый куб: выделите его → нажмите <strong>X</strong> → <strong>Delete</strong>.</p>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                    </div>
+                    <div class="carousel-step" id="step-2" style="display: none;">
+                        <h3>Добавьте цилиндр</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                                <a href="{% static 'main/img/Pr7.1/img1.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr7.1/img1.png' %}">
+                                </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description"><strong>Shift + A</strong> → Mesh → Cylinder.</p>
+                    </div>
+                    <div class="carousel-step" id="step-3" style="display: none;">
+                        <h3>Перейдите в режим редактирования</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                                <p class="step_description">Выделите цилиндр → нажмите клавишу <strong>Tab</strong> → <strong>Edit Mode</strong>.</p>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                    </div>
+                    <div class="carousel-step" id="step-4" style="display: none;">
+                        <h3>Масштабируйте цилиндр по длине</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                                <a href="{% static 'main/img/Pr7.1/img2.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr7.1/img2.png' %}">
+                                </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">Нажмите <strong>S</strong> → <strong>Z</strong> → 2 или 3, чтобы вытянуть цилиндр по вертикальной оси (основа карандаша).</p>
+                    </div>
+                    <div class="carousel-step" id="step-5" style="display: none;">
+                        <h3>Создайте Loop Cut на цилиндре</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                                <a href="{% static 'main/img/Pr7.1/img3.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr7.1/img3.png' %}">
+                                </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">Используйте инструмент Loop Cut (<strong>Ctrl + R</strong>). Наведите на цилиндр и прокрутите колесико мыши, чтобы создать несколько горизонтальных разрезов (3-4). Затем подтвердите разрезы кликом мыши (<strong>ЛКМ → ЛКМ</strong>).</p>
+                    </div>
+                    <div class="carousel-step" id="step-6" style="display: none;">
+                        <h3>Сформируйте наконечник карандаша</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                                <a href="{% static 'main/img/Pr7.1/img4.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr7.1/img4.png' %}">
+                                </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">Выделите верхнюю грань цилиндра (<strong>Face Select</strong> → выделите верхнюю грань). Нажмите <strong>E</strong> → вытяните немного вверх, затем нажмите <strong>S</strong> → уменьшите масштаб, формируя острую форму наконечника. Повторите эти действия несколько раз, постепенно уменьшая масштаб для создания заострённой формы.</p>
+                    </div>
+                    <div class="carousel-step" id="step-7" style="display: none;">
+                        <h3>Создайте сужение карандаша снизу</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                                <a href="{% static 'main/img/Pr7.1/img5.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr7.1/img5.png' %}">
+                                </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">Выделите нижнюю грань, нажмите <strong>E</strong> → вытяните вниз совсем немного, затем <strong>S</strong> → немного уменьшите масштаб, чтобы сформировать область стержня карандаша.</p>
+                    </div>
+                    <div class="carousel-step" id="step-8" style="display: none;">
+                        <h3>Создайте Bevel (скругление) рёбер</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                                <a href="{% static 'main/img/Pr7.1/img6.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr7.1/img6.png' %}">
+                                </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">Перейдите в режим выделения рёбер (<strong>Edge Select</strong>), нажмите Toggle X-Ray, выделите рёбра на гранях наконечника карандаша и нижнего края, затем нажмите <strong>Ctrl + B</strong> и аккуратно двигайте мышью для скругления. Подтвердите действие кликом (<strong>ЛКМ</strong>). По желанию добавьте детали, например - ластик</p>
+                    </div>
+                    <div class="carousel-step" id="step-9" style="display: none;">
+                        <h3>Настройте освещение сцены</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                                <p class="step_description">Выйдите из режима редактирования (<strong>Tab</strong>), добавьте источник света: <strong>Shift + A → Light → Point</strong>. Переместите источник света вверх и чуть в сторону, чтобы карандаш был хорошо освещён.</p>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                    </div>
+                    <div class="carousel-step" id="step-10" style="display: none;">
+                        <h3>Выполните рендер карандаша</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                                <a href="{% static 'main/img/Pr7.1/img7.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr7.1/img7.png' %}">
+                                </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">Перейдите во вкладку <strong>Render Properties</strong> и выберите движок рендера (Cycles или Eevee). Затем нажмите <strong>F12</strong> для запуска рендера. Сохраните результат: <strong>Image → Save As</strong>.</p>
+                    </div>
+
+                    <span class="step-indicator" data-indicator></span>
+                </div>
+            {% else %}
+            <div class="student-table-wrapper">
+                <table class="student-table blender-style-table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Действие</th>
+                            <th>Метод выполнения (инструкционная карта)</th>
+                            <th>Изображение</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Создайте новый проект и удалите куб</td>
+                            <td>Создайте новый файл: <strong>File → New → General</strong>. Удалите стартовый куб: выделите его → нажмите <strong>X</strong> → <strong>Delete</strong>.</td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Добавьте цилиндр</td>
+                            <td><strong>Shift + A</strong> → Mesh → Cylinder.</td>
+                            <td><a href="{% static 'main/img/Pr7.1/img1.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7.1/img1.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Перейдите в режим редактирования</td>
+                            <td>Выделите цилиндр → нажмите клавишу <strong>Tab</strong> → <strong>Edit Mode</strong>.</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Масштабируйте цилиндр по длине</td>
+                            <td>Нажмите <strong>S</strong> → <strong>Z</strong> → 2 или 3, чтобы вытянуть цилиндр по вертикальной оси (основа карандаша).</td>
+                            <td><a href="{% static 'main/img/Pr7.1/img2.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7.1/img2.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Создайте Loop Cut на цилиндре</td>
+                            <td>Используйте инструмент Loop Cut (<strong>Ctrl + R</strong>). Наведите на цилиндр и прокрутите колесико мыши, чтобы создать несколько горизонтальных разрезов (3-4). Затем подтвердите разрезы кликом мыши (<strong>ЛКМ → ЛКМ</strong>).</td>
+                            <td><a href="{% static 'main/img/Pr7.1/img3.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7.1/img3.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Сформируйте наконечник карандаша</td>
+                            <td>Выделите верхнюю грань цилиндра (<strong>Face Select</strong> → выделите верхнюю грань). Нажмите <strong>E</strong> → вытяните немного вверх, затем нажмите <strong>S</strong> → уменьшите масштаб, формируя острую форму наконечника. Повторите эти действия несколько раз, постепенно уменьшая масштаб для создания заострённой формы.</td>
+                            <td><a href="{% static 'main/img/Pr7.1/img4.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7.1/img4.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Создайте сужение карандаша снизу</td>
+                            <td>Выделите нижнюю грань, нажмите <strong>E</strong> → вытяните вниз совсем немного, затем <strong>S</strong> → немного уменьшите масштаб, чтобы сформировать область стержня карандаша.</td>
+                            <td><a href="{% static 'main/img/Pr7.1/img5.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7.1/img5.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Создайте Bevel (скругление) рёбер</td>
+                            <td>Перейдите в режим выделения рёбер (<strong>Edge Select</strong>), нажмите Toggle X-Ray, выделите рёбра на гранях наконечника карандаша и нижнего края, затем нажмите <strong>Ctrl + B</strong> и аккуратно двигайте мышью для скругления. Подтвердите действие кликом (<strong>ЛКМ</strong>). По желанию добавьте детали, например - ластик</td>
+                            <td><a href="{% static 'main/img/Pr7.1/img6.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7.1/img6.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Настройте освещение сцены</td>
+                            <td>Выйдите из режима редактирования (<strong>Tab</strong>), добавьте источник света: <strong>Shift + A → Light → Point</strong>. Переместите источник света вверх и чуть в сторону, чтобы карандаш был хорошо освещён.</td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Выполните рендер карандаша</td>
+                            <td>Перейдите во вкладку <strong>Render Properties</strong> и выберите движок рендера (Cycles или Eevee). Затем нажмите <strong>F12</strong> для запуска рендера. Сохраните результат: <strong>Image → Save As</strong>.</td>
+                            <td><a href="{% static 'main/img/Pr7.1/img7.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7.1/img7.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            {% endif %}
+             <div class="section">
+                <p><br><br>Ожидаемый результат:</p>
+                <ul>
+                    <li>3D-модель карандаша, созданная с использованием цилиндра, инструментов Loop Cut, Extrude, Scale и Bevel.</li>
+                </ul>
+            </div>
+
+            <!-- Additional Recommendations Section -->
+            <div class="section">
+                <h3>Вопросы для самоконтроля:</h3>
+                <ol>
+                    <li>Какой инструмент используется для создания дополнительных разрезов на объекте?</li>
+                    <li>С помощью какой комбинации клавиш можно выполнить скругление ребер модели?</li>
+                    <li>Как отменить последнее действие в Blender, если была допущена ошибка?</li>
+                    <li>Как изменить количество разрезов при использовании инструмента Loop Cut?</li>
+                </ol>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

@@ -168,20 +168,38 @@ def practice3(request):
 def practice4(request):
     return render(request, 'main/practices/practice4.html')
 
-def practice5(request):
-    return render(request, 'main/practices/practice5.html')
+def practice5_1(request):
+    return render(request, 'main/practices/practice5_1.html')
 
-def practice6(request):
-    return render(request, 'main/practices/practice6.html')
+def practice5_2(request):
+    return render(request, 'main/practices/practice5_2.html')
 
-def practice7(request):
-    return render(request, 'main/practices/practice7.html')
+def practice6_1(request):
+    return render(request, 'main/practices/practice6_1.html')
+
+def practice6_2(request):
+    return render(request, 'main/practices/practice6_2.html')
+
+def practice7_1(request):
+    return render(request, 'main/practices/practice7_1.html')
+
+def practice7_2(request):
+    return render(request, 'main/practices/practice7_2.html')
+
+def practice7_3(request):
+    return render(request, 'main/practices/practice7_3.html')
 
 def practice8(request):
     return render(request, 'main/practices/practice8.html')
 
-def practice9(request):
-    return render(request, 'main/practices/practice9.html')
+def practice9_1(request):
+    return render(request, 'main/practices/practice9_1.html')
+
+def practice9_2(request):
+    return render(request, 'main/practices/practice9_2.html')
+
+def practice9_3(request):
+    return render(request, 'main/practices/practice9_3.html')
 
 def practice10(request):
     return render(request, 'main/practices/practice10.html')
@@ -189,8 +207,11 @@ def practice10(request):
 def practice11(request):
     return render(request, 'main/practices/practice11.html')
 
-def practice12(request):
-    return render(request, 'main/practices/practice12.html')
+def practice12_1(request):
+    return render(request, 'main/practices/practice12_1.html')
+
+def practice12_2(request):
+    return render(request, 'main/practices/practice12_2.html')
 
 def practice13(request):
     return render(request, 'main/practices/practice13.html')

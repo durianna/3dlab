@@ -1,0 +1,50 @@
+.practice-carousel-container {
+    width: 100%;
+    text-align: center;
+    background-color: #353535;
+    padding-top: 2%;
+    border-radius: 8px;
+}
+
+.carousel-step {
+    display: none;
+}
+
+.carousel-step > h3 {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.carousel-controls button {
+    width: 20%;
+    font-size: 100%;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step_description
+{
+    font-size: 80%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.step-indicator
+{
+    font-size: 150%;
+    color: #FFB84D;
+}

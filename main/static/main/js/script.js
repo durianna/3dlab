@@ -573,6 +573,44 @@ function confirmLogout(event) {
     }
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+    const container = document.querySelector('.practice-carousel-container');
+    const totalSteps = parseInt(container.dataset.steps, 10);
+
+    let currentStep = 1;
+
+    function showStep(step) {
+        for (let i = 1; i <= totalSteps; i++) {
+            const el = document.getElementById(`step-${i}`);
+            if (el) el.style.display = (i === step ? 'block' : 'none');
+        }
+
+        const indicator = container.querySelector('[data-indicator]');
+            if (indicator) {
+                indicator.innerText = `${step} / ${totalSteps}`;
+            }
+    }
+
+    function nextStep() {
+        if (currentStep < totalSteps) {
+            currentStep++;
+            showStep(currentStep);
+        }
+    }
+
+    function prevStep() {
+        if (currentStep > 1) {
+            currentStep--;
+            showStep(currentStep);
+        }
+    }
+
+    window.nextStep = nextStep;
+    window.prevStep = prevStep;
+
+    showStep(currentStep);
+});
+
 const toggleBtn = document.getElementById('toggleMenu');
 const closeBtn = document.getElementById('closeMenu');
 

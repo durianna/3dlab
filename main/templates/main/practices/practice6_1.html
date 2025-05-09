@@ -1,0 +1,210 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}Практическая работа: Моделирование с использованием Extrude в Blender{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="requirements-list1">
+            <!-- Header Section -->
+            <header class="text-center mb-4">
+                <h1>Практическая работа: Моделирование простого объекта с использованием инструмента Extrude</h1>
+                <p class="lead">Освоение инструмента выдавливания (Extrude) для моделирования сложной геометрии из примитивов.</p>
+            </header>
+        </div>
+
+        <div class="requirements-list">
+            <div class="section">
+                <h2 class="text-center mb-2">Практическая работа №8</h2>
+                <h3>Цель работы</h3>
+                <p class="lead">Научиться моделировать простой контейнер с внутренним пространством и крышкой, используя выдавливание внутрь и точное позиционирование объектов.</p>
+                <h2 class="text-center mb-2">Задание</h2>
+                <p>Выполните следующие действия в среде Blender:</p>
+            </div>
+
+            {% if is_mobile %}
+                <div class="practice-carousel-container" data-steps="7">
+                    <div class="carousel-step" id="step-1" style="display: none;">
+                        <h3>Масштабировать куб (основа ящика)</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr7.3/step2.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr7.3/step2.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">Если куба на сцене нет — Shift + A → Mesh → Cube. Масштабируйте куб по оси Z на 0.5 единиц (S → Z → 0.5).</p>
+                    </div>
+
+                    <div class="carousel-step" id="step-2" style="display: none;">
+                        <h3>Войти в режим редактирования</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr7.3/step3.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr7.3/step3.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">Выделите куб → Tab → Edit Mode → включите режим выделения граней (Face Select → 3) → выберите верхнюю грань.</p>
+                    </div>
+
+                    <div class="carousel-step" id="step-3" style="display: none;">
+                        <h3>Inset верхней грани</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr7.3/step4.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr7.3/step4.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">Нажмите <code>I</code> (Inset) → переместите мышь внутрь, чтобы создать новую грань → ЛКМ для подтверждения.</p>
+                    </div>
+
+                    <div class="carousel-step" id="step-4" style="display: none;">
+                        <h3>Extrude внутрь</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr7.3/step5.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr7.3/step5.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">Нажмите E → потяните вниз, чтобы создать полость. Для удобства включите вид сбоку (Numpad 1) и режим X-Ray.</p>
+                    </div>
+
+                    <div class="carousel-step" id="step-5" style="display: none;">
+                        <h3>Сгладить края ящика</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr7.3/step6.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr7.3/step6.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">Выделите рёбра верхнего периметра → Ctrl + B → переместите мышь для фаски → ЛКМ для применения.</p>
+                    </div>
+
+                    <div class="carousel-step" id="step-6" style="display: none;">
+                        <h3>Создать крышку</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr7.3/step7.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr7.3/step7.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">Shift + A → Cube → масштабируйте по X/Y/Z → переместите G → Z → над ящиком. Вид сверху — Numpad 7.</p>
+                    </div>
+
+                    <div class="carousel-step" id="step-7" style="display: none;">
+                        <h3>Добавить ручку</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr7.3/step8.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr7.3/step8.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">Shift + A → Mesh → Cylinder → масштаб по Z и X → переместите ручку на центр крышки.</p>
+                    </div>
+
+                    <span class="step-indicator" data-indicator></span>
+                </div>
+            {% else %}
+                <div class="student-table-wrapper">
+                    <table class="student-table blender-style-table">
+                        <thead>
+                            <tr>
+                                <th>№</th>
+                                <th>Действие</th>
+                                <th>Метод выполнения (инструкционная карта)</th>
+                                <th>Изображение</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Создать новый проект</td>
+                                <td>File → <strong>New</strong>.</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Масштабировать куб(основа ящика</td>
+                                <td>Если куба на сцене нет - Shift + A → Mesh → Cube. Масштабируйте куб по оси Z на 0.5 единиц (S → Z → 0.5).</td>
+                                <td><a href="{% static 'main/img/Pr7.3/step2.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7.3/step2.png' %}">
+                                </a></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Войти в режим редактирования</td>
+                                <td>Выделите куб и перейдите в режим редактирования → Tab → Edit Mode → в режиме граней выберите верхнюю грань (Face Select → 3).</td>
+                                <td><a href="{% static 'main/img/Pr7.3/step3.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7.3/step3.png' %}">
+                                </a></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Inset верхней грани</td>
+                                <td>Нажмите <code>I</code>(Inset) → переместите мышь внутрь, чтобы создать внутреннюю грань.</td>
+                                <td><a href="{% static 'main/img/Pr7.3/step4.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7.3/step4.png' %}">
+                                </a></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Extrude внутрь</td>
+                                <td>Нажмите E и потяните вниз, чтобы создать полость внутри куба. Для удобства перейдите в вид сбоку(1 на Numpad) и включите Toogle X-Ray</td>
+                                <td><a href="{% static 'main/img/Pr7.3/step5.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7.3/step5.png' %}">
+                                </a></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Сгладить края ящика</td>
+                                <td>Выделите все рёбра верхнего периметра → Ctrl + B → фаска (Bevel).</td>
+                                <td><a href="{% static 'main/img/Pr7.3/step6.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7.3/step6.png' %}">
+                                </a></td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Создать крышку</td>
+                                <td>Shift + A → Cube → S по X и Y, Z → масштаб до толщины крышки → G → Z → разместите над ящиком. Поверните крышку в виде сверху(7 на Numpad) .</td>
+                                <td><a href="{% static 'main/img/Pr7.3/step7.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7.3/step7.png' %}">
+                                </a></td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Добавить ручку</td>
+                                <td>Shift + A → Cylinder → масштаб по Z и X → переместить на центр крышки.</td>
+                                <td><a href="{% static 'main/img/Pr7.3/step8.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7.3/step8.png' %}">
+                                </a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            {% endif %}
+
+            <div class="section">
+                <p><br><br>Ожидаемый результат:</p>
+                <ul>
+                    <li>Модель ящика с полостью и отдельной крышкой.</li>
+                    <li>Аккуратные фаски по краям, ручка на крышке.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3>Вопросы для самоконтроля:</h3>
+                <ol>
+                    <li>Чем отличается Inset от Extrude?</li>
+                    <li>Какие шаги нужны, чтобы создать полость в модели?</li>
+                    <li>Какие модификаторы или инструменты позволяют сделать сглаживание краёв?</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+{% endblock %}

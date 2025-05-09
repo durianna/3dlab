@@ -20,8 +20,195 @@
                 <p class="lead">Научиться создавать объекты методом вращения профиля (Spin) и сглаживать их с помощью модификатора Subdivision Surface.</p>
             </div>
 
+            {% if is_mobile %}
+                <div class="practice-carousel-container" data-steps="11">
+                    <div class="carousel-step" id="step-1" style="display: none;">
+                        <h3>Создать новый проект</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr11/step1.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr11/step1.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">File → New → General. Удалить стартовый куб (X → Delete).</p>
+                    </div>
+                    <div class="carousel-step" id="step-2" style="display: none;">
+                        <h3>Добавить плоскость и перейти в режим редактирования</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr11/step2.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr11/step2.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Добавить плоскость комбинацией клавиш Shift + A → Mesh → Plane. Выделить плоскость → Tab → Edit Mode, перейти в режим редактирования.</p>
+                    </div>
+                    <div class="carousel-step" id="step-3" style="display: none;">
+                        <h3>Удалить лишние вершины</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <div>
+                                <a href="{% static 'main/img/Pr11/step3.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr11/step3.png' %}">
+                                </a>
+                                <br>
+                                <a href="{% static 'main/img/Pr11/step3_1.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr11/step3_1.png' %}">
+                                </a>
+                            </div>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Переключитесь в режим выделения вершин (Vertex Select - иконка точки вверху или клавиша 1). Выделите три любые вершины → нажмите X → выберите Delete Vertices. Оставьте только одну вершину на сцене. Переместите вершину в центр оси координат изменив в N-panel(N) все параметры Transform на 0</p>
+                    </div>
+                    <div class="carousel-step" id="step-4" style="display: none;">
+                        <h3>Построить профиль пешки</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <div>
+                                <a href="{% static 'main/img/Pr11/step4.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr11/step4.png' %}">
+                                </a>
+                                <br>
+                                <a href="{% static 'main/img/Pr11/step4_1.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr11/step4_1.png' %}">
+                                </a>
+                            </div>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Выберите оставшуюся вершину → нажмите E (Extrude) → тяните мышкой вверх по оси Z и кликайте для подтверждения. Затем снова E, но немного в сторону для расширения. Постепенно стройте боковой профиль пешки: основание, туловище, голову (шарик). Форма должна быть приближённо похожа на половину разрезанной пешки.Чтобы лучше контролировать линии, переключитесь в вид спереди: нажмите 1 на цифровой клавиатуре (NumPad) или View → Viewpoint → Front. При необходимости перемещайте вершины G (Grab) для корректировки формы. 2 последние вершины обьедините с помощью New face/Egfe From Vertices, через контекстное меню</p>
+                    </div>
+                    <div class="carousel-step" id="step-5" style="display: none;">
+                        <h3>Настроить точку вращения</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr11/step5.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr11/step5.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Убедитесь, что основание профиля (нижняя точка) находится на оси, проходящей через центр (например, ось Y=0 или X=0). Иначе после вращения фигура будет кривой относительно центра. Выделите все вершины (A) → переместите G → X затем Y в центр осей.</p>
+                    </div>
+                    <div class="carousel-step" id="step-6" style="display: none;">
+                        <h3>Применить Spin</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <div>
+                                <a href="{% static 'main/img/Pr11/step6.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr11/step6.png' %}">
+                                </a>
+                                <br>
+                                <a href="{% static 'main/img/Pr11/step6_1.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr11/step6_1.png' %}">
+                                </a>
+                            </div>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">В режиме Edit Mode: выделите все вершины (A). Слева найдите панель Tool (если она скрыта, нажмите T). Выберите инструмент Spin. Настройки Spin:	- Ось вращения: Z (по умолчанию)<br>
+                                    - Угол: 360° (если не полный круг — поправить в панели параметров внизу слева).<br>
+                                    - Steps (шагов): 32.<br> Если иснтрумент не работает, выделите все вершины и прокрутите Spin повторно.
+                                </p>
+                    </div>
+                    <div class="carousel-step" id="step-7" style="display: none;">
+                        <h3>Удалить дублирующиеся вершины</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <div>
+                                <a href="{% static 'main/img/Pr11/step7.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr11/step7.png' %}">
+                                </a>
+                                <br>
+                                <a href="{% static 'main/img/Pr11/step7_1.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr11/step7_1.png' %}">
+                                </a>
+                                <br>
+                                <a href="{% static 'main/img/Pr11/step7_2.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr11/step7_2.png' %}">
+                                </a>
+                            </div>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">После вращения часто появляются наложенные вершины. Чтобы их убрать: нажмите A (выделить всё) → в верхнем меню выберите Mesh → Clean Up → Merge by Distance. В настройках Merge Distance(F9) оставить значение по 0.001 - 0.01 (очень маленькое).</p>
+                    </div>
+                    <div class="carousel-step" id="step-8" style="display: none;">
+                        <h3>Настроить нормали</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <div>
+                                <a href="{% static 'main/img/Pr11/step9.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr11/step9.png' %}">
+                                </a>
+                                <br>
+                                <a href="{% static 'main/img/Pr11/step9_1.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr11/step9_1.png' %}">
+                                </a>
+                                <br>
+                                <a href="{% static 'main/img/Pr11/step9_2.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr11/step9_2.png' %}">
+                                </a>
+                            </div>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Иногда после применения различных инструментов нормали полигонов обьекта отображаются некорректно. В прошлых уроках вы узнали, что с помощью нормалей Blender определяет где находится Внешняя сторона обьекта, а где внутренняя. Помимо этого нормали очень важны для операций затрагивающих геометрию обьекта. На примере вы видите что будет, если применить модификатор Subdivision Surface на обьекте с неправильными нормалями:<br>
+                                    Для того,чтобы проверить правильно ли определены нормали включим отображение ориентации полигонов(Face orientation) в окне Viewport: <br>
+                                    Для того чтобы исправить ошибки отображения нормалей в режиме редактирования выделите все полигоны - Alt + N - Recalculate Outside(Пересчитать наружу). После этого модель будет готова к дальнейшим трансформациям</td>
+                                </p>
+                    </div>
+                    <div class="carousel-step" id="step-9" style="display: none;">
+                        <h3>Добавить модификатор Subdivision Surface</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <div>
+                                <a href="{% static 'main/img/Pr11/step8.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr11/step8.png' %}">
+                                </a>
+                                <br>
+                                <a href="{% static 'main/img/Pr11/step8_1.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr11/step8_1.png' %}">
+                                </a>
+                            </div>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Перейдите в режим Object Mode (Tab). Убедитесь, что фигура выделена. Перейдите на панель справа (иконка гаечного ключа). Нажмите Add Modifier → Subdivision Surface.	В параметрах модификатора установите:<br>
+                                    Levels Viewport — 2 или 3 (чтобы увидеть сглаживание в окне).<br>
+                                    Render — 3 или 4 (для более качественного финального рендера) .
+                                </p>
+                    </div>
+                    <div class="carousel-step" id="step-10" style="display: none;">
+                        <h3>Применить сглаживание поверхности</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <p class="step_description">Правый клик по объекту → Shade Smooth.</p>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                    </div>
+                    <div class="carousel-step" id="step-11" style="display: none;">
+                        <h3>Сделать рендер</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr11/step10.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr11/step10.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Настройте удобный вид камеры. Нажмите Shift + ~ (свободное перемещение), или установите вручную через View → Viewpoint → Camera. Сделайте рендер сцены (F12).</p>
+                    </div>
+
+                    <span class="step-indicator" data-indicator></span>
+                </div>
+            {% else %}
             <!-- Task Section -->
-            <div class="section">
+                <div class="section">
                 <h2 class="text-center mb-2">Задание</h2>
                 <p>Выполните следующие действия в среде Blender:</p>
 
@@ -47,7 +234,7 @@
                             </tr>
                             <tr>
                                 <td>2</td>
-                                <td>Добавить плоскость и перейти в режим редактирования </td>
+                                <td>Добавить плоскость и перейти в режим редактирования</td>
                                 <td>Добавить плоскость комбинацией клавиш Shift + A → Mesh → Plane. Выделить плоскость → Tab → Edit Mode, перейти в режим редактирования.</td>
                                 <td><a href="{% static 'main/img/Pr11/step2.png' %}" data-lightbox="gallery">
                                         <img class="image3" src="{% static 'main/img/Pr11/step2.png' %}">
@@ -168,6 +355,8 @@
                 </div>
 
             </div>
+            {% endif %}
+
             <!-- Report Section -->
             <div class="section">
                 <p><br><br>Ожидаемый результат:</p>
@@ -188,6 +377,7 @@
                 </ol>
             </div>
         </div>
+
         <!--
         <div class="requirements-list">
             <div class="section">

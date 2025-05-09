@@ -1,0 +1,276 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}Практическая работа{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="requirements-list1">
+        <!-- Header Section -->
+        <header class="text-center mb-4">
+            <h1>Практическая работа: Создание базового материала в Blender</h1>
+        </header>
+    </div>
+
+    <div class="requirements-list">
+        <div class="section">
+            <h2 class="text-center mb-2">Практическая работа №21</h2>
+            <h3>Цель работы</h3>
+            <p class="lead">Научиться назначать материалы объектам в Blender и настраивать их цветовые характеристики для создания законченного 3D-моделя бабочки.</p>
+
+            <h2 class="text-center mb-2">Задание</h2>
+            <p>Продолжая работу над моделью бабочки, выполните следующие действия:</p>
+        </div>
+
+        {% if is_mobile %}
+            <div class="practice-carousel-container" data-steps="8">
+                <div class="carousel-step" id="step-1" style="display: none;">
+                    <h3>Выделить объект "Тело бабочки"</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr12.1/step1.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr12.1/step1.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+
+                    <p class="step_description">Откройте сохраненный бленд файл с моделью бабочки: File - Open. Перейдите в Object Mode (Tab) и выделите тело бабочки (Circle) в окне 3D Viewport или в списке объектов (Outliner).</p>
+                </div>
+                <div class="carousel-step" id="step-2" style="display: none;">
+                    <h3>Открыть панель материалов</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr12.1/step2.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr12.1/step2.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+
+                    <p class="step_description">Перейдите в правую панель "Properties" и выберите вкладку с иконкой шара — "Material Properties".</p>
+                </div>
+                <div class="carousel-step" id="step-3" style="display: none;">
+                    <h3>Создать новый материал</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr12.1/step3.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr12.1/step3.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+
+                    <p class="step_description">Нажмите кнопку <code>New</code> для создания нового материала. Появится стандартный материал с базовыми настройками.</p>
+                </div>
+                <div class="carousel-step" id="step-4" style="display: none;">
+                    <h3>Настроить цвет материала</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr12.1/step4.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr12.1/step4.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+
+                    <p class="step_description">В разделе "Base Color" нажмите на цветной прямоугольник и выберите подходящий цвет для тела бабочки. Например, насыщенный оранжевый или жёлтый.Чтобы увидеть материалы в реальном времени, переключитесь в режим отображения Rendered: в правом верхнем углу окна 3D Viewport выберите соответствующую иконку (или нажмите клавишу <code>Z → Rendered</code>).</p>
+                </div>
+                <div class="carousel-step" id="step-5" style="display: none;">
+                    <h3>Добавить материал крыльям</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr12.1/step5.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr12.1/step5.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+
+                    <p class="step_description">Выделите объект крыльев в Object Mode. Повторите аналогичные действия: вкладка материалов → <code>New</code>. Перейдем в Shader Editor. Разделите окно на 2 части потянув за левый нижний угол. Выберите тип окна - Shader Editor. Если вы добавили материал, то в окне Шейдера будет 2 ноды.</p>
+                </div>
+                <div class="carousel-step" id="step-6" style="display: none;">
+                    <h3>Материал для крыльев</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <div>
+                            <a href="{% static 'main/img/Pr12.1/step6.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr12.1/step6.png' %}">
+                            </a>
+                            <br>
+                            <a href="{% static 'main/img/Pr12.1/step7.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr12.1/step7.png' %}">
+                            </a>
+                            <br>
+                            <a href="{% static 'main/img/Pr12.1/step7_1.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr12.1/step7_1.png' %}">
+                            </a>
+                        </div>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+
+                    <p class="step_description">В окне ShaderEditor добавим текстуру для градиета Shift + A → Texture → Gradient Texture. И ноду для смешивания цветов ColorRamp (Shift + A → Converter → ColorRamp). Соедини: Gradient Texture → ColorRamp → Base Color у материала. В ColorRamp задай свои цвета для градиента.</p>
+                </div>
+                <div class="carousel-step" id="step-7" style="display: none;">
+                    <h3>Материал для глаз и усиков</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <div>
+                            <a href="{% static 'main/img/Pr12.1/step8.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr12.1/step8.png' %}">
+                            </a>
+                            <br>
+                            <a href="{% static 'main/img/Pr12.1/step8_1.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr12.1/step8_1.png' %}">
+                            </a>
+                            <br>
+                            <a href="{% static 'main/img/Pr12.1/step8_2.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr12.1/step8_2.png' %}">
+                            </a>
+                        </div>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+
+                    <p class="step_description">Ананлогичным образом добавьте материал для глаз и усиков, по желанию добавьте изученный модификатор Subdivision Surface для сглаживания крыльев бабочки. Поменяйте яркость и цвет мира в соотвествующей вкладке</p>
+                </div>
+                <div class="carousel-step" id="step-8" style="display: none;">
+                    <h3>Финальный рендер</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr12.1/step9.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr12.1/step9.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+
+                    <p class="step_description">Настройте освещение и камеру и выполните финальный рендер нажатием клавиши <code>F12</code>.</p>
+                </div>
+
+                <span class="step-indicator" data-indicator></span>
+            </div>
+        {% else %}
+            <div class="student-table-wrapper">
+            <table class="student-table blender-style-table">
+                <thead>
+                    <tr>
+                        <th>№</th>
+                        <th>Действие</th>
+                        <th>Метод выполнения (инструкционная карта)</th>
+                        <th>Изображение</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Выделить объект "Тело бабочки"</td>
+                        <td>Откройте сохраненный бленд файл с моделью бабочки: File - Open. Перейдите в Object Mode (Tab) и выделите тело бабочки (Circle) в окне 3D Viewport или в списке объектов (Outliner).</td>
+                        <td>
+                            <a href="{% static 'main/img/Pr12.1/step1.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr12.1/step1.png' %}">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Открыть панель материалов</td>
+                        <td>Перейдите в правую панель "Properties" и выберите вкладку с иконкой шара — "Material Properties".</td>
+                        <td>
+                            <a href="{% static 'main/img/Pr12.1/step2.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr12.1/step2.png' %}">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Создать новый материал</td>
+                        <td>Нажмите кнопку <code>New</code> для создания нового материала. Появится стандартный материал с базовыми настройками.</td>
+                        <td>
+                            <a href="{% static 'main/img/Pr12.1/step3.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr12.1/step3.png' %}">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Настроить цвет материала</td>
+                        <td>В разделе "Base Color" нажмите на цветной прямоугольник и выберите подходящий цвет для тела бабочки. Например, насыщенный оранжевый или жёлтый.Чтобы увидеть материалы в реальном времени, переключитесь в режим отображения Rendered: в правом верхнем углу окна 3D Viewport выберите соответствующую иконку (или нажмите клавишу <code>Z → Rendered</code>).</td>
+                        <td>
+                            <a href="{% static 'main/img/Pr12.1/step4.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr12.1/step4.png' %}">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Добавить материал крыльям</td>
+                        <td>Выделите объект крыльев в Object Mode. Повторите аналогичные действия: вкладка материалов → <code>New</code>. Перейдем в Shader Editor. Разделите окно на 2 части потянув за левый нижний угол. Выберите тип окна - Shader Editor. Если вы добавили материал, то в окне Шейдера будет 2 ноды.</td>
+                        <td>
+                            <a href="{% static 'main/img/Pr12.1/step5.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr12.1/step5.png' %}">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Материал для крыльев</td>
+                        <td>В окне ShaderEditor добавим текстуру для градиета Shift + A → Texture → Gradient Texture. И ноду для смешивания цветов ColorRamp (Shift + A → Converter → ColorRamp). Соедини: Gradient Texture → ColorRamp → Base Color у материала. В ColorRamp задай свои цвета для градиента.</td>
+                        <td>
+                            <a href="{% static 'main/img/Pr12.1/step6.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr12.1/step6.png' %}">
+                            </a>
+                            <a href="{% static 'main/img/Pr12.1/step7.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr12.1/step7.png' %}">
+                            </a>
+                            <a href="{% static 'main/img/Pr12.1/step7_1.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr12.1/step7_1.png' %}">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Материал для глаз и усиков</td>
+                        <td>Ананлогичным образом добавьте материал для глаз и усиков, по желанию добавьте изученный модификатор Subdivision Surface для сглаживания крыльев бабочки. Поменяйте яркость и цвет мира в соотвествующей вкладке</td>
+                        <td>
+                            <a href="{% static 'main/img/Pr12.1/step8.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr12.1/step8.png' %}">
+                            </a>
+                            <a href="{% static 'main/img/Pr12.1/step8_1.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr12.1/step8_1.png' %}">
+                            </a>
+                            <a href="{% static 'main/img/Pr12.1/step8_2.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr12.1/step8_2.png' %}">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Финальный рендер</td>
+                        <td>Настройте освещение и камеру и выполните финальный рендер нажатием клавиши <code>F12</code>.</td>
+                        <td>
+                            <a href="{% static 'main/img/Pr12.1/step9.png' %}" data-lightbox="gallery">
+                                <img class="image3" src="{% static 'main/img/Pr12.1/step9.png' %}">
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+
+        <div class="section">
+            <p><br><br>Ожидаемый результат:</p>
+            <ul>
+                <li>Тело бабочки окрашено в основной цвет.</li>
+                <li>Крылья имеют собственный яркий материал.</li>
+                <li>Глаза и усики отличаются своим цветом.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Вопросы для самопроверки:</h3>
+            <ol>
+                <li>Как создать новый материал в Blender?</li>
+                <li>Каким образом можно изменить цвет объекта?</li>
+                <li>Как увидеть материал в окне 3D Viewport без рендера?</li>
+            </ol>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

@@ -23,108 +23,221 @@
                     Применить инструмент Gizmo для трансформаций объектов.</p>
             </div>
 
-            <!-- Task Section -->
-            <div class="section">
-                <h2 class="text-center mb-2">Задание</h2>
-                <p>Выполните следующие действия в среде Blender:</p>
+            {% if is_mobile %}
+                <div class="practice-carousel-container" data-steps="8">
+                    <div class="carousel-step" id="step-1">
+                        <h3>Создание базовой сцены</h3>
+                        <div>
+                            <div class="carousel-controls">
+                                <button onclick="prevStep()"> ❮ </button>
+                                <a href="{% static 'main/img/Pr3/img1.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr3/img1.png' %}">
+                                </a>
+                                <button onclick="nextStep()"> ❯ </button>
+                            </div>
+                        </div>
+                        <p class="step_description">Создайте новый проект. Добавьте на сцену три объекта: куб, цилиндр и сферу, и расположите
+                                        их произвольно на сцене, используя изученные ранее методы трансформации (<strong>G</strong>
+                                        , <strong>R</strong>, <strong>S</strong>). Например: Куб по центру, цилиндр слева, сфера справа.</p>
+                    </div>
+                    <div class="carousel-step" id="step-2" style="display: none;">
+                        <h3>Позиционирование камеры</h3>
+                        <div>
+                            <div class="carousel-controls">
+                                <button onclick="prevStep()"> ❮ </button>
+                                <a href="{% static 'main/img/Pr3/img2.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr3/img2.png' %}">
+                                </a>
+                                <button onclick="nextStep()"> ❯ </button>
+                            </div>
+                        </div>
+                        <p class="step_description">В <code>N-panel</code> откройте вкладку <strong>Item</strong>. В разделе <strong>Location</strong>
+                                        установите следующие значения: <strong>Location X = 2.0</strong>, <strong>Location Y = -3.0</strong>,
+                                        <strong>Location Z = 1.0</strong>. Эти значения переместят куб в новые координаты в 3D-пространстве.</p>
+                    </div>
+                    <div class="carousel-step" id="step-3" style="display: none;">
+                        <h3>Изменить <strong>Rotation</strong> объекта через <code>N-panel</code></h3>
+                        <div>
+                            <div class="carousel-controls">
+                                <button onclick="prevStep()"> ❮ </button>
+                                <a href="{% static 'main/img/Pr3/img3.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr3/img3.png' %}">
+                                </a>
+                                <button onclick="nextStep()"> ❯ </button>
+                            </div>
+                        </div>
+                        <p class="step_description">Выделите камеру на сцене. Используя горячие клавиши перемещения (<code>G</code>) и вращения
+                                        (<code>R</code>), разместите камеру таким образом, чтобы в её поле зрения попадали все три
+                                        объекта одновременно. Воспользуйтесь комбинацией <code>0</code> (Numpad) для переключения вида из камеры.</p>
+                    </div>
+                    <div class="carousel-step" id="step-4" style="display: none;">
+                        <h3>Разделение рабочего пространства</h3>
+                        <div>
+                            <div class="carousel-controls">
+                                <button onclick="prevStep()"> ❮ </button>
+                                <a href="{% static 'main/img/Pr3/img4.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr3/img4.png' %}">
+                                </a>
+                                <button onclick="nextStep()"> ❯ </button>
+                            </div>
+                        </div>
+                        <p class="step_description">Разделите экран на три отдельных окна, потянув за угол окна Blender. Для этого наведите курсор в верхний правый угол экрана, пока не появится иконка для разделения, и перетащите её. Это создаст дополнительные окна для различных видов.</p>
+                    </div>
+                    <div class="carousel-step" id="step-5" style="display: none;">
+                        <h3>Управление несколькими окнами</h3>
+                        <div>
+                            <div class="carousel-controls">
+                                <button onclick="prevStep()"> ❮ </button>
+                                <a href="{% static 'main/img/Pr3/img5.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr3/img5.png' %}">
+                                </a>
+                                <button onclick="nextStep()"> ❯ </button>
+                            </div>
+                        </div>
+                        <p class="step_description">В каждом окне отдельно настройте масштаб и ракурс таким образом, чтобы удобно просматривать объекты сцены с разных точек. Например, в окне Top View настройте удобное отображение сцены сверху, а в камере и основном 3D-виде настройте обзор объектов спереди и сбоку. Чтобы вновь соединить окна в одно - ПКМ между двумя окнами - Join right/left</p>
+                    </div>
+                    <div class="carousel-step" id="step-6" style="display: none;">
+                        <h3>Создание дополнительной камеры</h3>
+                        <div>
+                            <div class="carousel-controls">
+                                <button onclick="prevStep()"> ❮ </button>
+                                <a href="{% static 'main/img/Pr3/img6.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr3/img6.png' %}">
+                                </a>
+                                <button onclick="nextStep()"> ❯ </button>
+                            </div>
+                        </div>
+                        <p class="step_description">Добавьте еще одну камеру (Shift+A → Camera). Разместите новую камеру с другого угла сцены, чтобы получать альтернативный ракурс. Не забудьте о смене PivotPoint c 3D курсoра на Median Point, чтобы обьект снова пращался относительно себя. Переключайтесь между камерами с помощью сочетания Ctrl + 0 (Numpad) для того, чтобы сделать камеру активной(сначала ЛКМ по нужной камере, после ctrl + 0).</p>
+                    </div>
+                    <div class="carousel-step" id="step-7" style="display: none;">
+                        <h3>Управление несколькими окнами</h3>
+                        <div>
+                            <div class="carousel-controls">
+                                <button onclick="prevStep()"> ❮ </button>
+                                <a href="{% static 'main/img/Pr3/img7.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr3/img7.png' %}">
+                                </a>
+                                <button onclick="nextStep()"> ❯ </button>
+                            </div>
+                        </div>
+                        <p class="step_description">Переключайтесь между двумя камерами (Ctrl + 0 (Numpad)) и убедитесь, что оба ракурса отображают разные перспективы сцены. Проверьте это во втором окне, настроенном на вид из камеры.</p>
+                    </div>
+                    <div class="carousel-step" id="step-8" style="display: none;">
+                        <h3>Сохранить проект</h3>
+                        <div>
+                            <div class="carousel-controls">
+                                <button onclick="prevStep()"> ❮ </button>
+                                <p class="step_description">После выполнения всех шагов сохраните проект. Перейдите в меню <strong>File → Save As</strong>, выберите имя для файла, например, <strong>Simple_Scene.blend</strong> и нажмите <strong>Save As Blender File</strong>.</p>
+                                <button onclick="nextStep()"> ❯ </button>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="student-table-wrapper">
-                    <table class="student-table blender-style-table">
-                        <thead>
-                            <tr>
-                                <th>№</th>
-                                <th>Действие</th>
-                                <th>Метод выполнения</th>
-                                <th>Изображение</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Создание базовой сцены</td>
-                                <td>Создайте новый проект. Добавьте на сцену три объекта: куб, цилиндр и сферу, и расположите
-                                    их произвольно на сцене, используя изученные ранее методы трансформации (<strong>G</strong>
-                                    , <strong>R</strong>, <strong>S</strong>). Например: Куб по центру, цилиндр слева, сфера справа.</td>
-                                <td>
-                                    <a href="{% static 'main/img/Pr3/img1.png' %}" data-lightbox="gallery">
-                                        <img class="image3" src="{% static 'main/img/Pr3/img1.png' %}">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Позиционирование камеры</td>
-                                <td>Выделите камеру на сцене. Используя горячие клавиши перемещения (<code>G</code>) и вращения
-                                    (<code>R</code>), разместите камеру таким образом, чтобы в её поле зрения попадали все три
-                                    объекта одновременно. Воспользуйтесь комбинацией <code>0</code> (Numpad) для переключения вида из камеры.</td>
-                                <td>
-                                    <a href="{% static 'main/img/Pr3/img2.png' %}" data-lightbox="gallery">
-                                        <img class="image3" src="{% static 'main/img/Pr3/img2.png' %}">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Дополнительное позиционирование камеры с помощью 3D-курсора</td>
-                                <td>Поместите 3D-курсор в центр сцены с помощью <strong>Shift + C</strong>. Используйте <code>Pivot Point → 3D Cursor</code>, чтобы привязать его к центру, а затем выделите камеру и поверните её (<strong>R</strong>) вокруг 3D-курсора, чтобы подобрать наилучший угол обзора сцены.</td>
-                                <td>
-                                    <a href="{% static 'main/img/Pr3/img3.png' %}" data-lightbox="gallery">
-                                        <img class="image3" src="{% static 'main/img/Pr3/img3.png' %}">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Разделение рабочего пространства</td>
-                                <td>Разделите экран на три отдельных окна, потянув за угол окна Blender. Для этого наведите курсор в верхний правый угол экрана, пока не появится иконка для разделения, и перетащите её. Это создаст дополнительные окна для различных видов.</td>
-                                <td>
-                                    <a href="{% static 'main/img/Pr3/img4.png' %}" data-lightbox="gallery">
-                                        <img class="image3" src="{% static 'main/img/Pr3/img4.png' %}">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Управление несколькими окнами</td>
-                                <td>В каждом окне отдельно настройте масштаб и ракурс таким образом, чтобы удобно просматривать объекты сцены с разных точек. Например, в окне Top View настройте удобное отображение сцены сверху, а в камере и основном 3D-виде настройте обзор объектов спереди и сбоку. Чтобы вновь соединить окна в одно - ПКМ между двумя окнами - Join right/left</td>
-                                <td>
-                                    <a href="{% static 'main/img/Pr3/img5.png' %}" data-lightbox="gallery">
-                                        <img class="image3" src="{% static 'main/img/Pr3/img5.png' %}">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>Создание дополнительной камеры </td>
-                                <td>Добавьте еще одну камеру (Shift+A → Camera). Разместите новую камеру с другого угла сцены, чтобы получать альтернативный ракурс. Не забудьте о смене PivotPoint c 3D курсoра на Median Point, чтобы обьект снова пращался относительно себя. Переключайтесь между камерами с помощью сочетания Ctrl + 0 (Numpad) для того, чтобы сделать камеру активной(сначала ЛКМ по нужной камере, после ctrl + 0).</td>
-                                <td>
-                                    <a href="{% static 'main/img/Pr3/img6.png' %}" data-lightbox="gallery">
-                                        <img class="image3" src="{% static 'main/img/Pr3/img6.png' %}">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>Управление несколькими окнами</td>
-                                <td>Переключайтесь между двумя камерами (Ctrl + 0 (Numpad)) и убедитесь, что оба ракурса отображают разные перспективы сцены. Проверьте это во втором окне, настроенном на вид из камеры.</td>
-                                <td>
-                                    <a href="{% static 'main/img/Pr3/img7.png' %}" data-lightbox="gallery">
-                                        <img class="image3" src="{% static 'main/img/Pr3/img7.png' %}">
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-                                <td>Сохранить проект</td>
-                                <td>После выполнения всех шагов сохраните проект. Перейдите в меню <strong>File → Save As</strong>, выберите имя для файла, например, <strong>Simple_Scene.blend</strong> и нажмите <strong>Save As Blender File</strong>.</td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <span class="step-indicator" data-indicator></span>
                 </div>
+            {% else %}
+                <!-- Task Section -->
+                <div class="section">
+                    <h2 class="text-center mb-2">Задание</h2>
+                    <p>Выполните следующие действия в среде Blender:</p>
 
+                    <div class="student-table-wrapper">
+                        <table class="student-table blender-style-table">
+                            <thead>
+                                <tr>
+                                    <th>№</th>
+                                    <th>Действие</th>
+                                    <th>Метод выполнения</th>
+                                    <th>Изображение</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Создание базовой сцены</td>
+                                    <td>Создайте новый проект. Добавьте на сцену три объекта: куб, цилиндр и сферу, и расположите
+                                        их произвольно на сцене, используя изученные ранее методы трансформации (<strong>G</strong>
+                                        , <strong>R</strong>, <strong>S</strong>). Например: Куб по центру, цилиндр слева, сфера справа.</td>
+                                    <td>
+                                        <a href="{% static 'main/img/Pr3/img1.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr3/img1.png' %}">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Позиционирование камеры</td>
+                                    <td>Выделите камеру на сцене. Используя горячие клавиши перемещения (<code>G</code>) и вращения
+                                        (<code>R</code>), разместите камеру таким образом, чтобы в её поле зрения попадали все три
+                                        объекта одновременно. Воспользуйтесь комбинацией <code>0</code> (Numpad) для переключения вида из камеры.</td>
+                                    <td>
+                                        <a href="{% static 'main/img/Pr3/img2.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr3/img2.png' %}">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Дополнительное позиционирование камеры с помощью 3D-курсора</td>
+                                    <td>Поместите 3D-курсор в центр сцены с помощью <strong>Shift + C</strong>. Используйте <code>Pivot Point → 3D Cursor</code>, чтобы привязать его к центру, а затем выделите камеру и поверните её (<strong>R</strong>) вокруг 3D-курсора, чтобы подобрать наилучший угол обзора сцены.</td>
+                                    <td>
+                                        <a href="{% static 'main/img/Pr3/img3.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr3/img3.png' %}">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Разделение рабочего пространства</td>
+                                    <td>Разделите экран на три отдельных окна, потянув за угол окна Blender. Для этого наведите курсор в верхний правый угол экрана, пока не появится иконка для разделения, и перетащите её. Это создаст дополнительные окна для различных видов.</td>
+                                    <td>
+                                        <a href="{% static 'main/img/Pr3/img4.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr3/img4.png' %}">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Управление несколькими окнами</td>
+                                    <td>В каждом окне отдельно настройте масштаб и ракурс таким образом, чтобы удобно просматривать объекты сцены с разных точек. Например, в окне Top View настройте удобное отображение сцены сверху, а в камере и основном 3D-виде настройте обзор объектов спереди и сбоку. Чтобы вновь соединить окна в одно - ПКМ между двумя окнами - Join right/left</td>
+                                    <td>
+                                        <a href="{% static 'main/img/Pr3/img5.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr3/img5.png' %}">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Создание дополнительной камеры</td>
+                                    <td>Добавьте еще одну камеру (Shift+A → Camera). Разместите новую камеру с другого угла сцены, чтобы получать альтернативный ракурс. Не забудьте о смене PivotPoint c 3D курсoра на Median Point, чтобы обьект снова пращался относительно себя. Переключайтесь между камерами с помощью сочетания Ctrl + 0 (Numpad) для того, чтобы сделать камеру активной(сначала ЛКМ по нужной камере, после ctrl + 0).</td>
+                                    <td>
+                                        <a href="{% static 'main/img/Pr3/img6.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr3/img6.png' %}">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Управление несколькими окнами</td>
+                                    <td>Переключайтесь между двумя камерами (Ctrl + 0 (Numpad)) и убедитесь, что оба ракурса отображают разные перспективы сцены. Проверьте это во втором окне, настроенном на вид из камеры.</td>
+                                    <td>
+                                        <a href="{% static 'main/img/Pr3/img7.png' %}" data-lightbox="gallery">
+                                            <img class="image3" src="{% static 'main/img/Pr3/img7.png' %}">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Сохранить проект</td>
+                                    <td>После выполнения всех шагов сохраните проект. Перейдите в меню <strong>File → Save As</strong>, выберите имя для файла, например, <strong>Simple_Scene.blend</strong> и нажмите <strong>Save As Blender File</strong>.</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            {% endif %}
 
-            </div>
             <!-- Report Section -->
             <div class="section">
                 <p><br><br>Ожидаемый результат:</p>

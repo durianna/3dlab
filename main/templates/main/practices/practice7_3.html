@@ -1,0 +1,344 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}Практическая работа: Моделирование с использованием Extrude в Blender{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="requirements-list1">
+            <!-- Header Section -->
+            <header class="text-center mb-4">
+                <h1>Дополнительные инструменты редактирования в Blender</h1>
+            </header>
+        </div>
+
+        <div class="requirements-list">
+            <div class="section">
+                <h2 class="text-center mb-2">Практическая работа №12</h2>
+                <h3>Цель работы</h3>
+                <p class="lead">Сформировать модель стула с использованием базовых инструментов редактирования меша и точного позиционирования элементов.</p>
+                <h2 class="text-center mb-2">Задание</h2>
+                <p>Выполните следующие действия в среде Blender:</p>
+            </div>
+            {% if is_mobile %}
+                <div class="practice-carousel-container" data-steps="13">
+                    <div class="carousel-step" id="step-1" style="display: none;">
+                        <h3>Удалить стартовый куб</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr7.2/step1.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr7.2/step1.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Выделите куб → нажмите <strong>X</strong> → выберите <strong>Delete</strong>.</p>
+                    </div>
+                    <div class="carousel-step" id="step-2" style="display: none;">
+                        <h3>Добавить плоскость (сидение)</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr7.2/step2.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr7.2/step2.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Добавить плоскость (сидение)</p>
+                    </div>
+                    <div class="carousel-step" id="step-3" style="display: none;">
+                        <h3>Придать объём сидушке</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr7.2/step3.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr7.2/step3.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Tab → Edit Mode → A → E → вытяните вверх на 0.1–0.2 ед.</p>
+                    </div>
+                    <div class="carousel-step" id="step-4" style="display: none;">
+                        <h3>Добавить разрез (Loop Cut)</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <div>
+                                <a href="{% static 'main/img/Pr7.2/step4.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr7.2/step4.png' %}">
+                                </a>
+                                <br>
+                                <a href="{% static 'main/img/Pr7.2/step4_1.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr7.2/step4_1.png' %}">
+                                </a>
+                            </div>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Ctrl + R → прокрутите колесо → создайте 1 разрез и переместите ближе к краю. Таким же образом сделайте еще 3 разреза, у вас должны появится 4 угловые грани для будущих ножек стула.</p>
+                    </div>
+                    <div class="carousel-step" id="step-5" style="display: none;">
+                        <h3>Выделить зоны для ножек</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr7.2/step5.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr7.2/step5.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Face Select (3) → выделите 4 угловые грани снизу</p>
+                    </div>
+                    <div class="carousel-step" id="step-6" style="display: none;">
+                        <h3>Экструдировать ножки</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr7.2/step6.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr7.2/step6.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">E → потянуть вниз на 1.5–2 ед.</p>
+                    </div>
+                    <div class="carousel-step" id="step-7" style="display: none;">
+                        <h3>Сделать фаски (Bevel)</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr7.2/step7.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr7.2/step7.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Выделите вертикальные грани ножек → Ctrl + B → двигайте мышь</p>
+                    </div>
+                    <div class="carousel-step" id="step-8" style="display: none;">
+                        <h3>Добавить перекладину между ножками</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <div>
+                                <a href="{% static 'main/img/Pr7.2/step8.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr7.2/step8.png' %}">
+                                </a>
+                                <br>
+                                <a href="{% static 'main/img/Pr7.2/step8_1.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr7.2/step8_1.png' %}">
+                                </a>
+                            </div>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Добавим новый обьект для перекладины. Shift + A → Add Cube. Затем масштабируем куб так чтобы он стал похож на перекладину стула с помощью → S, затем переместим его с помощью G → разместите между передними ножками</p>
+                    </div>
+                    <div class="carousel-step" id="step-9" style="display: none;">
+                        <h3>Включить Snap для выравнивания</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr7.2/step9.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr7.2/step9.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Включите значок Snap (магнит) → режим Face или Vertex → выровняйте. Если вы случайно потеряли выделение с добавленного обьекта вы можете вернуть его нажав <code>CTRL+Z</code>, выделение в Blender так же считается действием. После использования выключите Snap повторным нажатием на магнитик.</p>
+                    </div>
+                    <div class="carousel-step" id="step-10" style="display: none;">
+                        <h3>Добавить вторую перекладину</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr7.2/step10.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr7.2/step10.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Shift + D → переместить к задним ножкам</p>
+                    </div>
+                    <div class="carousel-step" id="step-11" style="display: none;">
+                        <h3>Создать спинку стула</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr7.2/step11.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr7.2/step11.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Выделите 2 угловые грани сидения сверху, затем экструдируйте их → E вверх, это будет основа для спинки</p>
+                    </div>
+                    <div class="carousel-step" id="step-12" style="display: none;">
+                        <h3>Добавить перекладины для спинки</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr7.2/step12.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr7.2/step12.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Shift + A → Cube → масштаб → переместить между опорами спинки, аналогично с перекладинами для ножек стула создайте перекладины для спинки. Здесь вы также можете использовать "магнит" для того, чтобы ровно разместить их.</p>
+                    </div>
+                    <div class="carousel-step" id="step-13" style="display: none;">
+                        <h3>Выполните рендер</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr7.2/step13.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr7.2/step13.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+
+                        <p class="step_description">Перейдите во вкладку <strong>Render Properties</strong> и выберите движок рендера (Cycles или Eevee). Затем нажмите <strong>F12</strong> для запуска рендера. Сохраните результат: <strong>Image → Save As</strong>.</p>
+                    </div>
+
+                    <span class="step-indicator" data-indicator></span>
+                </div>
+            {% else %}
+                <div class="student-table-wrapper">
+                    <table class="student-table blender-style-table">
+                        <thead>
+                            <tr>
+                                <th>№</th>
+                                <th>Действие</th>
+                                <th>Метод выполнения (инструкционная карта)</th>
+                                <th>Изображение</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Удалить стартовый куб</td>
+                                <td>Выделите куб → нажмите <strong>X</strong> → выберите <strong>Delete</strong>.</td>
+                                <td><a href="{% static 'main/img/Pr7.2/step1.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7.2/step1.png' %}">
+                                </a></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Добавить плоскость (сидение)</td>
+                                <td>Нажмите <strong>Shift + A → Mesh → Plane</strong>.</td>
+                                <td><a href="{% static 'main/img/Pr7.2/step2.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7.2/step2.png' %}">
+                                </a></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Придать объём сидушке</td>
+                                <td>Tab → Edit Mode → A → E → вытяните вверх на 0.1–0.2 ед.</td>
+                                <td><a href="{% static 'main/img/Pr7.2/step3.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7.2/step3.png' %}">
+                                </a></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Добавить разрез (Loop Cut)</td>
+                                <td>Ctrl + R → прокрутите колесо → создайте 1 разрез и переместите ближе к краю. Таким же образом сделайте еще 3 разреза, у вас должны появится 4 угловые грани для будущих ножек стула.</td>
+
+                                <td><a href="{% static 'main/img/Pr7.2/step4.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7.2/step4.png' %}">
+                                    </a>
+                                    <a href="{% static 'main/img/Pr7.2/step4_1.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr7.2/step4_1.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Выделить зоны для ножек</td>
+                                <td>Face Select (3) → выделите 4 угловые грани снизу</td>
+                                <td><a href="{% static 'main/img/Pr7.2/step5.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7.2/step5.png' %}">
+                                </a></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Экструдировать ножки</td>
+                                <td>E → потянуть вниз на 1.5–2 ед.</td>
+                                <td><a href="{% static 'main/img/Pr7.2/step6.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7.2/step6.png' %}">
+                                </a></td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Сделать фаски (Bevel)</td>
+                                <td>Выделите вертикальные грани ножек → Ctrl + B → двигайте мышь</td>
+                                <td><a href="{% static 'main/img/Pr7.2/step7.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7.2/step7.png' %}">
+                                </a></td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Добавить перекладину между ножками</td>
+                                <td>Добавим новый обьект для перекладины. Shift + A → Add Cube. Затем масштабируем куб так чтобы он стал похож на перекладину стула с помощью → S, затем переместим его с помощью G → разместите между передними ножками</td>
+                                <td><a href="{% static 'main/img/Pr7.2/step8.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr7.2/step8.png' %}">
+                                    </a>
+                                    <a href="{% static 'main/img/Pr7.2/step8.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr7.2/step8_1.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>Включить Snap для выравнивания</td>
+                                <td>Включите значок Snap (магнит) → режим Face или Vertex → выровняйте. Если вы случайно потеряли выделение с добавленного обьекта вы можете вернуть его нажав <code>CTRL+Z</code>, выделение в Blender так же считается действием. После использования выключите Snap повторным нажатием на магнитик.</td>
+                                <td><a href="{% static 'main/img/Pr7.2/step9.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7.2/step9.png' %}">
+                                </a></td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>Добавить вторую перекладину</td>
+                                <td>Shift + D → переместить к задним ножкам</td>
+                                <td><a href="{% static 'main/img/Pr7.2/step10.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7.2/step10.png' %}">
+                                </a></td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>Создать спинку стула</td>
+                                <td>Выделите 2 угловые грани сидения сверху, затем экструдируйте их → E вверх, это будет основа для спинки</td>
+                                <td><a href="{% static 'main/img/Pr7.2/step11.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7.2/step11.png' %}">
+                                </a></td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>Добавить перекладины для спинки</td>
+                                <td>Shift + A → Cube → масштаб → переместить между опорами спинки, аналогично с перекладинами для ножек стула создайте перекладины для спинки. Здесь вы также можете использовать "магнит" для того, чтобы ровно разместить их.</td>
+                                <td><a href="{% static 'main/img/Pr7.2/step12.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7.2/step12.png' %}">
+                                </a></td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>Выполните рендер</td>
+                                <td>Перейдите во вкладку <strong>Render Properties</strong> и выберите движок рендера (Cycles или Eevee). Затем нажмите <strong>F12</strong> для запуска рендера. Сохраните результат: <strong>Image → Save As</strong>.</td>
+                                <td><a href="{% static 'main/img/Pr7.2/step13.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr7.2/step13.png' %}">
+                                </a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            {% endif %}
+
+            <div class="section">
+                <p><br><br>Ожидаемый результат:</p>
+                <ul>
+                    <li>Модель стула с четырьмя ножками, двумя нижними перекладинами и спинкой.</li>
+                    <li>Применение Loop Cut, Extrude, Bevel и выравнивания через Snap.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3>Вопросы для самоконтроля:</h3>
+                <ol>
+                    <li>Для чего используется инструмент Bevel?</li>
+                    <li>Как включить режим выравнивания Snap и в чём его польза?</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

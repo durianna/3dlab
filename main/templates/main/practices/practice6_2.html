@@ -1,0 +1,382 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}Практическая работа: Моделирование с использованием Extrude в Blender{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="requirements-list1">
+            <!-- Header Section -->
+            <header class="text-center mb-4">
+                <h1>Практическая работа: Моделирование простого объекта с использованием инструмента Extrude</h1>
+                <p class="lead">Освоение инструмента выдавливания (Extrude) для моделирования сложной геометрии из примитивов.</p>
+            </header>
+        </div>
+
+        <div class="requirements-list">
+            <div class="section">
+                <h2 class="text-center mb-2">Практическая работа №9</h2>
+                <h3>Цель работы</h3>
+                <p class="lead">Научиться переходить в режим редактирования (Edit Mode), понимать строение меша и взаимодействовать с его базовыми компонентами: вершинами, рёбрами и полигонами.</p>
+                <h2 class="text-center mb-2">Задание</h2>
+                <p>Выполните следующие действия в среде Blender:</p>
+            </div>
+
+            {% if is_mobile %}
+                <div class="practice-carousel-container" data-steps="13">
+                    <div class="carousel-step" id="step-1" style="display: none;">
+                        <h3>Удалить стандартный куб</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr6/step1.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr6/step1.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">Выделите стандартный куб → нажмите <strong>X</strong> → <strong>Delete</strong>.</p>
+                    </div>
+
+                    <div class="carousel-step" id="step-2" style="display: none;">
+                        <h3>Добавить новый куб (основание дома)</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr6/step2.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr6/step2.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">Shift + A → Mesh → Cube.</p>
+                    </div>
+
+                    <div class="carousel-step" id="step-3" style="display: none;">
+                        <h3>Растянуть куб по оси Z</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr6/step3.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr6/step3.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">S → Z → потянуть мышь вверх → ЛКМ.</p>
+                    </div>
+
+                    <div class="carousel-step" id="step-4" style="display: none;">
+                        <h3>Войти в режим редактирования</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr6/step4.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr6/step4.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">Выделите куб → Tab → Edit Mode.</p>
+                    </div>
+
+                    <div class="carousel-step" id="step-5" style="display: none;">
+                        <h3>Включить режим выделения граней</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr6/step5.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr6/step5.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">Face Select → или клавиша 3.</p>
+                    </div>
+
+                    <div class="carousel-step" id="step-6" style="display: none;">
+                        <h3>Выделить верхнюю грань</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr6/step6.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr6/step6.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">Клик ЛКМ по верхней грани.</p>
+                    </div>
+
+                    <div class="carousel-step" id="step-7" style="display: none;">
+                        <h3>Вытянуть крышу (Extrude)</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <div>
+                                <a href="{% static 'main/img/Pr6/step7.1.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr6/step7.1.png' %}">
+                                </a>
+                                <br>
+                                <a href="{% static 'main/img/Pr6/step7.2.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr6/step7.2.png' %}">
+                                </a>
+                            </div>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">E → потянуть вверх → S → уменьшить масштаб → ЛКМ.</p>
+                    </div>
+
+                    <div class="carousel-step" id="step-8" style="display: none;">
+                        <h3>Сделать крышу треугольной (Merge)</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr6/step8.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr6/step8.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">1 → выбрать две вершины → M → At Center.</p>
+                    </div>
+
+                    <div class="carousel-step" id="step-9" style="display: none;">
+                        <h3>Создать дверь</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <div>
+                                <a href="{% static 'main/img/Pr6/step9.1.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr6/step9.1.png' %}">
+                                </a>
+                                <br>
+                                <a href="{% static 'main/img/Pr6/step9.2.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr6/step9.2.png' %}">
+                                </a>
+                            </div>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">Face Select → Ctrl + R → сделать разделения → выбрать центральную грань → E → внутрь.</p>
+                    </div>
+
+                    <div class="carousel-step" id="step-10" style="display: none;">
+                        <h3>Создать окно</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <div>
+                                <a href="{% static 'main/img/Pr6/step10.1.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr6/step10.1.png' %}">
+                                </a>
+                                <br>
+                                <a href="{% static 'main/img/Pr6/step10.2.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr6/step10.2.png' %}">
+                                </a>
+                            </div>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">Выделить другую грань → Ctrl + R → E → внутрь для окна.</p>
+                    </div>
+
+                    <div class="carousel-step" id="step-11" style="display: none;">
+                        <h3>Создать дымоход</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr6/step11.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr6/step11.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">Object Mode → Shift + A → Cube → G → переместить на крышу.</p>
+                    </div>
+
+                    <div class="carousel-step" id="step-12" style="display: none;">
+                        <h3>Отредактировать форму дымохода</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <div>
+                                <a href="{% static 'main/img/Pr6/step12.1.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr6/step12.1.png' %}">
+                                </a>
+                                <br>
+                                <a href="{% static 'main/img/Pr6/step12.2.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr6/step12.2.png' %}">
+                                </a>
+                                <br>
+                                <a href="{% static 'main/img/Pr6/step12.3.png' %}" data-lightbox="gallery">
+                                    <img class="image_pr_mobile" src="{% static 'main/img/Pr6/step12.3.png' %}">
+                                </a>
+                            </div>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">Edit Mode → выделить верхнюю грань → E → вверх.</p>
+                    </div>
+
+                    <div class="carousel-step" id="step-13" style="display: none;">
+                        <h3>Сохранить проект</h3>
+                        <div class="carousel-controls">
+                            <button onclick="prevStep()"> ❮ </button>
+                            <a href="{% static 'main/img/Pr6/step13.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr6/step13.png' %}">
+                            </a>
+                            <button onclick="nextStep()"> ❯ </button>
+                        </div>
+                        <p class="step_description">File → Save As → введите имя <strong>dom.blend</strong> → подтвердите.</p>
+                    </div>
+
+                    <span class="step-indicator" data-indicator></span>
+                </div>
+            {% else %}
+                <div class="student-table-wrapper">
+                    <table class="student-table blender-style-table">
+                        <thead>
+                            <tr>
+                                <th>№</th>
+                                <th>Действие</th>
+                                <th>Метод выполнения (инструкционная карта)</th>
+                                <th>Изображение</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Удалить стандартный куб</td>
+                                <td>При запуске Blender в сцене находится стандартный куб. Кликните по нему ЛКМ для выделения → нажмите клавишу <strong>X</strong> → выберите <strong>Delete</strong>.</td>
+                                <td><a href="{% static 'main/img/Pr6/step1.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr6/step1.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Добавить новый куб (основание дома)</td>
+                                <td>Нажмите <strong>Shift + A → Mesh → Cube</strong>. Новый куб появится в центре сцены.</td>
+                                <td><a href="{% static 'main/img/Pr6/step2.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr6/step2.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Растянуть куб по оси Z (высота дома)</td>
+                                <td>Выделите куб → нажмите <strong>S</strong> для масштабирования → затем <strong>Z</strong>, чтобы масштабировать только по вертикали → потяните мышь вверх (например, увеличьте в 2 раза) → щелкните ЛКМ для подтверждения.</td>
+                                <td><a href="{% static 'main/img/Pr6/step3.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr6/step3.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Войти в режим редактирования</td>
+                                <td>Убедитесь, что куб (дом) выделен → нажмите <strong>Tab</strong> → выберите <strong>Edit Mode</strong>.</td>
+                                <td><a href="{% static 'main/img/Pr6/step4.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr6/step4.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Включить режим выделения граней</td>
+                                <td>Вверху окна 3D Viewport нажмите значок с квадратом (<strong>Face Select</strong>) или нажмите клавишу <strong>3</strong> на клавиатуре.</td>
+                                <td><a href="{% static 'main/img/Pr6/step5.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr6/step5.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Выделить верхнюю грань</td>
+                                <td>Кликните по верхней грани дома ЛКМ, чтобы выделить её.</td>
+                                <td><a href="{% static 'main/img/Pr6/step6.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr6/step6.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Вытянуть крышу (Extrude)</td>
+                                <td>Нажмите <strong>E</strong>, потяните вверх для создания новой геометрии → затем нажмите <strong>S</strong> для масштабирования и уменьшите масштаб, создавая зауженную крышу → ЛКМ для подтверждения.</td>
+                                <td><a href="{% static 'main/img/Pr6/step7.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr6/step7.1.png' %}">
+                                    </a>
+                                    <a href="{% static 'main/img/Pr6/step7.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr6/step7.2.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Сделать крышу треугольной (Merge)</td>
+                                <td>Переключитесь в режим выделения вершин (<strong>1</strong>) → выделите две противоположные вершины по длинной стороне крыши → нажмите <strong>M</strong> → выберите <strong>At Center</strong>. Повторите с другой стороны, чтобы получить треугольную форму.</td>
+                                <td><a href="{% static 'main/img/Pr6/step8.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr6/step8.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>Создать дверь</td>
+                                <td>Перейдите в режим <strong>Face Select</strong> → выделите переднюю грань дома → нажмите <strong>Ctrl + R</strong>, прокрутите колесо мыши, чтобы сделать 2 loop cut'а (горизонтальный и вертикальный) → выделите одну из центральных граней, которая станет дверью → нажмите <strong>E</strong> → немного вытолкните грань внутрь.</td>
+                                <td><a href="{% static 'main/img/Pr6/step9.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr6/step9.1.png' %}">
+                                    </a>
+                                    <a href="{% static 'main/img/Pr6/step9.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr6/step9.2.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>Создать окно</td>
+                                <td>Аналогично шагу 9: выберите грань выше двери → создайте разделения с помощью <strong>Ctrl + R</strong> → выберите нужную часть → <strong>E</strong> → вытолкните внутрь для создания окна.</td>
+                                <td><a href="{% static 'main/img/Pr6/step10.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr6/step10.1.png' %}">
+                                    </a>
+                                    <a href="{% static 'main/img/Pr6/step10.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr6/step10.2.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>Создать дымоход</td>
+                                <td>Выйдите в <strong>Object Mode</strong> (Tab) → нажмите <strong>Shift + A → Mesh → Cube</strong> → переместите его на крышу с помощью <strong>G</strong> → затем <strong>Z</strong> для подъема, <strong>X</strong> или <strong>Y</strong> для смещения в сторону.</td>
+                                <td><a href="{% static 'main/img/Pr6/step11.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr6/step11.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>Отредактировать форму дымохода</td>
+                                <td>Перейдите в <strong>Edit Mode</strong> для дымохода → выделите верхнюю грань → нажмите <strong>E</strong> и вытяните вверх.</td>
+                                <td><a href="{% static 'main/img/Pr6/step12.1.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr6/step12.1.png' %}">
+                                    </a>
+                                    <a href="{% static 'main/img/Pr6/step12.1.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr6/step12.2.png' %}">
+                                    </a>
+                                    <a href="{% static 'main/img/Pr6/step12.1.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr6/step12.3.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>Сохранить проект</td>
+                                <td>Перейдите во вкладку <strong>File</strong> в левом верхнем углу интерфейса → выберите <strong>Save As</strong> → в появившемся окне выберите место сохранения, введите имя файла: <strong>dom.blend</strong> → нажмите <strong>Save As Blender File</strong>.</td>
+                                <td><a href="{% static 'main/img/Pr6/step13.png' %}" data-lightbox="gallery">
+                                        <img class="image3" src="{% static 'main/img/Pr6/step13.png' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            {% endif %}
+
+            <div class="section">
+                <p><br><br>Ожидаемый результат:</p>
+                <ul>
+                    <li>Переключение между различными режимами выделения (вершины, рёбра, грани).</li>
+                    <li>Перемещение, масштабирование и вращение элементов меша.</li>
+                    <li>Использование инструментов Extrude, LoopCut</li>
+                </ul>
+            </div>
+
+            <!-- Additional Recommendations Section -->
+            <div class="section">
+                <h3>Вопросы для самоконтроля:</h3>
+                <ol>
+                    <li>Что такое Extrude?</li>
+                    <li>Для чего нужен Extrude?</li>
+                    <li>Какие еще инструменты для моделирования обьекта вы знаете?</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+{% endblock %}

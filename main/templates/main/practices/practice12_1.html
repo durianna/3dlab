@@ -1,0 +1,301 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}Практическая работа{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="requirements-list1">
+        <!-- Header Section -->
+        <header class="text-center mb-4">
+            <h1>Практическая работа: Создание базового материала в Blender</h1>
+        </header>
+    </div>
+
+    <div class="requirements-list">
+        <!-- Objective Section -->
+        <div class="section">
+            <h2 class="text-center mb-2">Практическая работа №20</h2>
+            <h3>Цель работы</h3>
+            <p class="lead">Научиться создавать базовый материал для объекта, изменять его цвет, отражение и шероховатость в Blender.</p>
+        </div>
+
+        {% if is_mobile %}
+            <div class="practice-carousel-container" data-steps="11">
+                <div class="carousel-step" id="step-1" style="display: none;">
+                    <h3>Создать новый проект</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr12/step1.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr12/step1.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+
+                    <p class="step_description">File → New → General. Удалить стартовый куб (X → Delete).</p>
+                </div>
+                <div class="carousel-step" id="step-2" style="display: none;">
+                    <h3>Добавить новый объект</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr12/step2.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr12/step2.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+
+                    <p class="step_description">Shift + A → Mesh → UV Sphere.</p>
+                </div>
+                <div class="carousel-step" id="step-3" style="display: none;">
+                    <h3>Перейти в режим Object Mode</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <p class="step_description">Убедиться, что выбран режим Object Mode (Tab → Object Mode).</p>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+                </div>
+                <div class="carousel-step" id="step-4" style="display: none;">
+                    <h3>Открыть вкладку материалов</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr12/step4.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr12/step4.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+
+                    <p class="step_description">В правой панели Properties нажать иконку шара (Material Properties).</p>
+                </div>
+                <div class="carousel-step" id="step-5" style="display: none;">
+                    <h3>Добавить новый материал</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr12/step5.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr12/step5.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+
+                    <p class="step_description">Нажать кнопку New. Появится новый базовый материал.</p>
+                </div>
+                <div class="carousel-step" id="step-6" style="display: none;">
+                    <h3>Изменить цвет материала</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <p class="step_description">В параметре Base Color выбрать любой новый цвет.</p>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+                </div>
+                <div class="carousel-step" id="step-7" style="display: none;">
+                    <h3>Настроить отражение</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr12/step8.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr12/step8.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+
+                    <p class="step_description">Параметр Metallic: установить значение 0.5 для среднего блеска.</p>
+                </div>
+                <div class="carousel-step" id="step-8" style="display: none;">
+                    <h3>Настроить шероховатость</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr12/step9.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr12/step9.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+
+                    <p class="step_description">Параметр Roughness: установить значение 0.3–0.4 для мягкого блеска.</p>
+                </div>
+                <div class="carousel-step" id="step-9" style="display: none;">
+                    <h3>Переключиться на Rendered View</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr12/step10.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr12/step10.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+
+                    <p class="step_description">В правом верхнем углу выбрать Rendered View (или нажать Z → Rendered).</p>
+                </div>
+                <div class="carousel-step" id="step-10" style="display: none;">
+                    <h3>Изменить цвет фона сцены</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <a href="{% static 'main/img/Pr12/step11.png' %}" data-lightbox="gallery">
+                            <img class="image_pr_mobile" src="{% static 'main/img/Pr12/step11.png' %}">
+                        </a>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+
+                    <p class="step_description">Вкладка World Properties → Color → выбрать подходящий фон.</p>
+                </div>
+                <div class="carousel-step" id="step-11" style="display: none;">
+                    <h3>Сделать рендер изображения</h3>
+                    <div class="carousel-controls">
+                        <button onclick="prevStep()"> ❮ </button>
+                        <div>
+                            <a href="{% static 'main/img/Pr12/step12.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr12/step12.png' %}">
+                            </a>
+                            <br>
+                            <a href="{% static 'main/img/Pr12/step13.png' %}" data-lightbox="gallery">
+                                <img class="image_pr_mobile" src="{% static 'main/img/Pr12/step13.png' %}">
+                            </a>
+                        </div>
+                        <button onclick="nextStep()"> ❯ </button>
+                    </div>
+
+                    <p class="step_description">Настроить камеру → нажать F12 для рендера сцены. Поэспериментрируйте с различными настройками и обьектами, сохранив несколько вариантов рендера</p>
+                </div>
+
+                <span class="step-indicator" data-indicator></span>
+            </div>
+        {% else %}
+        <!-- Task Section -->
+        <div class="section">
+            <h2 class="text-center mb-2">Задание</h2>
+            <p>Выполните следующие действия в среде Blender:</p>
+
+            <div class="student-table-wrapper">
+                <table class="student-table blender-style-table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Действие</th>
+                            <th>Метод выполнения</th>
+                            <th>Изображение</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Создать новый проект</td>
+                            <td>File → New → General. Удалить стартовый куб (X → Delete).</td>
+                            <td><a href="{% static 'main/img/Pr12/step1.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr12/step1.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Добавить новый объект</td>
+                            <td>Shift + A → Mesh → UV Sphere.</td>
+                            <td><a href="{% static 'main/img/Pr12/step2.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr12/step2.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Перейти в режим Object Mode</td>
+                            <td>Убедиться, что выбран режим Object Mode (Tab → Object Mode).</td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Открыть вкладку материалов</td>
+                            <td>В правой панели Properties нажать иконку шара (Material Properties).</td>
+                            <td><a href="{% static 'main/img/Pr12/step4.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr12/step4.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Добавить новый материал</td>
+                            <td>Нажать кнопку New. Появится новый базовый материал.</td>
+                            <td><a href="{% static 'main/img/Pr12/step5.png' %}" data-lightbox="gallery">
+                                    <img class="image2" src="{% static 'main/img/Pr12/step5.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Изменить цвет материала</td>
+                            <td>В параметре Base Color выбрать любой новый цвет.</td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Настроить отражение</td>
+                            <td>Параметр Metallic: установить значение 0.5 для среднего блеска.</td>
+                            <td><a href="{% static 'main/img/Pr12/step8.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr12/step8.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Настроить шероховатость</td>
+                            <td>Параметр Roughness: установить значение 0.3–0.4 для мягкого блеска.</td>
+                            <td><a href="{% static 'main/img/Pr12/step9.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr12/step9.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Переключиться на Rendered View</td>
+                            <td>В правом верхнем углу выбрать Rendered View (или нажать Z → Rendered).</td>
+                            <td><a href="{% static 'main/img/Pr12/step10.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr12/step10.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Изменить цвет фона сцены</td>
+                            <td>Вкладка World Properties → Color → выбрать подходящий фон.</td>
+                            <td><a href="{% static 'main/img/Pr12/step11.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr12/step11.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>Сделать рендер изображения</td>
+                            <td>Настроить камеру → нажать F12 для рендера сцены. Поэспериментрируйте с различными настройками и обьектами, сохранив несколько вариантов рендера</td>
+                            <td><a href="{% static 'main/img/Pr12/step12.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr12/step12.png' %}">
+                                </a>
+                                <a href="{% static 'main/img/Pr12/step13.png' %}" data-lightbox="gallery">
+                                    <img class="image3" src="{% static 'main/img/Pr12/step13.png' %}">
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- Report Section -->
+        <div class="section">
+            <p><br><br>Ожидаемый результат:</p>
+            <ul>
+                <li>Объект окрашен в выбранный цвет.</li>
+                <li>Корректно настроены параметры блеска и шероховатости.</li>
+                <li>Создан финальный рендер с новым материалом.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Вопросы для самоконтроля:</h3>
+            <ol>
+                <li>Где в Blender создаются материалы для объектов?</li>
+                <li>Как изменить цвет объекта через Base Color?</li>
+                <li>Что регулируют параметры Specular и Roughness?</li>
+            </ol>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
