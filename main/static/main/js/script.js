@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Проверяем наличие необходимых элементов
     const quizElem = document.getElementById('quiz');
     const errorMessage = document.getElementById('error-message');
-    const requirementsList = document.querySelector('.requirements-list[data-type]');
+    const requirementsList = document.querySelector('.requirements-list_last[data-type]');
     const testId = requirementsList ? parseInt(requirementsList.id) : null;
     const contentType = requirementsList.dataset.type;  // 'lesson' или 'test'
     const contentId = parseInt(requirementsList.id);
