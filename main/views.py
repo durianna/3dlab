@@ -156,8 +156,11 @@ def lesson15(request):
 
 
 
-def practice1(request):
-    return render(request, 'main/practices/practice1.html')
+def practice1_1(request):
+    return render(request, 'main/practices/practice1_1.html')
+
+def practice1_2(request):
+    return render(request, 'main/practices/practice1_2.html')
 
 def practice2(request):
     return render(request, 'main/practices/practice2.html')
