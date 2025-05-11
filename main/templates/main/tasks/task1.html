@@ -6,27 +6,48 @@
 
 {% block content %}
     <div class="container">
-        <h1 class="text-center mb-4">Задание на соответствие</h1>
-        <div class="requirements-list">
+        <div class="requirements-list1">
+            <h1 class="text-center mb-4">Задание на соответствие</h1>
+        </div>
+
+        <div class="requirements-list_last">
+            <a href="{% static 'main/img/interfaceBlender.png' %}" data-lightbox="gallery">
+                <img class="image1" style="width: 80%;" src="{% static 'main/img/interfaceBlender.png' %}">
+            </a>
+
+            <h2 class="text-center mb-4">Задание №1: сопоставьте названия регионов с их расположением на изображении</h2>
+
             <div class="container_test">
                 <div class="list" id="left-list">
-                    <div data-id="1">Слон</div>
-                    <div data-id="2">Кошка</div>
-                    <div data-id="3">Собака</div>
-                    <div data-id="4">Собака</div>
+                    <div data-id="1">3D Viewport</div>
+                    <div data-id="2">Outliner</div>
+                    <div data-id="3">Properties Panel</div>
+                    <div data-id="4">Timeline</div>
+                    <div data-id="5">Tool Shelf</div>
+                    <div data-id="6">Node Editor</div>
+                    <div data-id="7">Viewport Shading</div>
+                    <div data-id="8">Header</div>
                 </div>
+
                 <svg id="svg-lines"></svg>
+
                 <div class="list" id="right-list">
-                    <div data-id="1">Elephant</div>
-                    <div data-id="3">Dog</div>
-                    <div data-id="2">Cat</div>
-                    <div data-id="4">Dog</div>
+                    <div data-id="8">1</div>
+                    <div data-id="6">2</div>
+                    <div data-id="5">4</div>
+                    <div data-id="1">5</div>
+                    <div data-id="7">6</div>
+                    <div data-id="2">8</div>
+                    <div data-id="3">9</div>
+                    <div data-id="4">10</div>
                 </div>
             </div>
             <div class="container_result">
                 <button class="submit-btn" id="submit-btn">Проверить</button>
-                <div class="result" id="result"></div>
+
             </div>
+
+            <div class="result" style="text-align: center;" id="result"></div>
         </div>
     </div>
 {% endblock %}

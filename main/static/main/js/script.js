@@ -186,6 +186,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const quizElem = document.getElementById('quiz');
     const errorMessage = document.getElementById('error-message');
     const requirementsList = document.querySelector('.requirements-list_last[data-type]');
+
+    if(!requirementsList) return;
+
     const testId = requirementsList ? parseInt(requirementsList.id) : null;
     const contentType = requirementsList.dataset.type;  // 'lesson' или 'test'
     const contentId = parseInt(requirementsList.id);
@@ -575,6 +578,8 @@ function confirmLogout(event) {
 
 document.addEventListener('DOMContentLoaded', function () {
     const container = document.querySelector('.practice-carousel-container');
+    if (!container) return;
+
     const totalSteps = parseInt(container.dataset.steps, 10);
 
     let currentStep = 1;
@@ -609,33 +614,6 @@ document.addEventListener('DOMContentLoaded', function () {
     window.prevStep = prevStep;
 
     showStep(currentStep);
-});
-
-const toggleBtn = document.getElementById('toggleMenu');
-const closeBtn = document.getElementById('closeMenu');
-
-const sidebarStrip = document.getElementById('sidebarStrip');
-const menu = document.getElementById('menu');
-
-toggleBtn.addEventListener('click', () => {
-    menu.classList.toggle('active');
-
-    toggleBtn.style.visibility = 'hidden';
-    sidebarStrip.style.visibility = 'hidden';
-
-    setTimeout(() => {
-        toggleBtn.classList.remove('visible');
-        sidebarStrip.classList.remove('visible');
-    }, 0);
-});
-
-closeBtn.addEventListener('click', () => {
-    menu.classList.toggle('active');
-
-    setTimeout(() => {
-        toggleBtn.classList.add('visible');
-        sidebarStrip.classList.add('visible');
-    }, 150);
 });
 
 
@@ -738,4 +716,31 @@ submitBtn.addEventListener('click', () => {
         resultDiv.textContent = 'Не все варианты отмечены';
         resultDiv.style.color = 'red';
     }
+});
+
+const toggleBtn = document.getElementById('toggleMenu');
+const closeBtn = document.getElementById('closeMenu');
+
+const sidebarStrip = document.getElementById('sidebarStrip');
+const menu = document.getElementById('menu');
+
+toggleBtn.addEventListener('click', () => {
+    menu.classList.toggle('active');
+
+    toggleBtn.style.visibility = 'hidden';
+    sidebarStrip.style.visibility = 'hidden';
+
+    setTimeout(() => {
+        toggleBtn.classList.remove('visible');
+        sidebarStrip.classList.remove('visible');
+    }, 0);
+});
+
+closeBtn.addEventListener('click', () => {
+    menu.classList.toggle('active');
+
+    setTimeout(() => {
+        toggleBtn.classList.add('visible');
+        sidebarStrip.classList.add('visible');
+    }, 150);
 });

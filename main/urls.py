@@ -75,6 +75,9 @@ urlpatterns = [
     path('test13', views.test13, name='test13'),
     path('test14', views.test14, name='test14'),
     path('test15', views.test15, name='test15'),
+
+    path('task1', views.task1, name='task1'),
+
     path('system', views.system, name='system'),
     path('splashscreen', views.splashscreen, name='splashscreen'),
 ]

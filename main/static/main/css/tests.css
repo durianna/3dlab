@@ -87,6 +87,13 @@
     display: flex;
     justify-content: space-around;
     margin: 20px;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+}
+
+.list > div
+{
+    border-radius: 10px;
 }
 
 .container_result {

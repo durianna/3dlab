@@ -271,6 +271,9 @@ def test14(request):
 def test15(request):
     return render(request, 'main/tests/test15.html')
 
+def task1(request):
+    return render(request, 'main/tasks/task1.html')
+
 def system(request):
     return render(request, 'main/system.html')
 
