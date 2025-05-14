@@ -5,10 +5,13 @@ from django.contrib.auth import views as auth_views
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.views import LogoutView
 from .views import CustomLoginView, profile_edit
-
-
+from django.conf.urls.i18n import i18n_patterns
 
 urlpatterns = [
+    path('i18n/', include('django.conf.urls.i18n')),
+]
+
+urlpatterns += i18n_patterns(
     path('', views.index, name='home'),
     path('about', views.about),
     path('admin/', admin.site.urls),
@@ -80,4 +83,4 @@ urlpatterns = [
 
     path('system', views.system, name='system'),
     path('splashscreen', views.splashscreen, name='splashscreen'),
-]
+)
