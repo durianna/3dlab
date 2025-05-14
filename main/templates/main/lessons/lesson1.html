@@ -1,6 +1,6 @@
 {% extends 'main/layout.html' %}
 {% load static %}
-
+{% load i18n %}
 
 
 {% block title %}Контент первого урока{% endblock %}
@@ -8,7 +8,7 @@
 {% block content %}
     <div class="container">
         <div class="requirements-list1">
-            <h1 class="text-center mb-2">Интерфейс Blender</h1>
+            <h1 class="text-center mb-2">{% trans "Интерфейс Blender" %}</h1>
         </div>
         <div class="requirements-list" id="1" data-type="lesson">
             <p> Blender — это мощный и бесплатный графический редактор для 3D моделирования, анимации, рендеринга и
