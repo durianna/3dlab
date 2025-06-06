@@ -13,3 +13,10 @@ def concat(val, arg):
 @register.filter
 def getattr_dynamic(obj, attr_name):
     return getattr(obj, attr_name, None)
+
+@register.filter
+def multiply(value, arg):
+    try:
+        return int(value) * int(arg)
+    except (ValueError, TypeError):
+        return ''

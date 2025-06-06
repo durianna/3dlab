@@ -345,24 +345,29 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 else if(quiz.questions[quiz.current].type == 2)
                 {
-                    let isCorrect = true;
+                    let countCorrectAnswerByUser = 0;
+                    let countCorrectAnswerQuestion = 0;
+
+                    quiz.questions[quiz.current].answers.forEach((answer) =>
+                    {
+                        if(answer.value > 0)
+                        {
+                            countCorrectAnswerQuestion++;
+                        }
+                    })
 
                     if(!isPressedNextButton)
                     {
                         for (let i = 0; i < btns.length; i++)
                         {
-                            if(btns[i].className == "button button_select" && quiz.questions[quiz.current].answers[i].value != 1)
+                            if(btns[i].className == "button button_select" && quiz.questions[quiz.current].answers[i].value > 0)
                             {
-                                isCorrect = false;
+                                countCorrectAnswerByUser++;
                             }
                         }
                     }
-                    else
-                    {
-                        isCorrect = false;
-                    }
 
-                    if(isCorrect)
+                    if(countCorrectAnswerQuestion == countCorrectAnswerByUser)
                     {
                         quiz.score += 1;
                         console.log("Correct");

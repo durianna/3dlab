@@ -63,7 +63,7 @@
                                         {% if entry.tests %}
                                             {% with "test"|concat:i as attr_name %}
                                                 {% if entry.tests|getattr_dynamic:attr_name %}
-                                                    {{ entry.tests|getattr_dynamic:attr_name }}
+                                                    {{ entry.tests|getattr_dynamic:attr_name|multiply:10 }}%
                                                 {% else %}
                                                     <span class="not-available">—</span>
                                                 {% endif %}
