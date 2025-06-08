@@ -2,25 +2,27 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% block content %}
+{% load i18n %}
+
     <div class="container profile-page">
         <div class="profile-header">
             {% if user.role == "teacher" %}
-                <h1 class="text-center mb-2">Личный кабинет учителя</h1>
+                <h1 class="text-center mb-2">{% trans "Личный кабинет учителя" %}</h1>
                 <!-- Кнопка перехода на страницу учителя -->
             {% else %}
-                <h1 class="text-center mb-2">Личный кабинет студента</h1>
+                <h1 class="text-center mb-2">{% trans "Личный кабинет студента" %}</h1>
             {% endif %}
         </div>
         <div class="media profile-container">
             <img class="rounded-circle account-img" src="{% static 'main/img/avatar_icon.jpg' %}" alt="Profile Image">
             <div class="media-body">
                 <h2 class="account-heading">{{ user.username }}</h2>
-                <p class="text-secondary">Электронная почта: {{ user.email }}</p>
+                <p class="text-secondary">{% trans "Электронная почта:" %} {{ user.email }}</p>
                 <p class="text-secondary">ФИО: {{ user.surname }} {{ user.first_name }} {{ user.last_name }}</p>
             </div>
         </div>
         <div class="edit-profile-link">
-            <h2><a class="profile-edit-link" href="{% url 'profile_edit' %}">Редактировать профиль</a></h2>
+            <h2><a class="profile-edit-link" href="{% url 'profile_edit' %}">{% trans "Редактировать профиль" %}</a></h2>
         </div>
 
     </div>

@@ -2,23 +2,25 @@
 {% load custom_tags %}
 {% load static %}
 {% block content %}
+{% load i18n %}
+
 <link rel="stylesheet" href="{% static 'main/css/profile.css' %}">
 
 <div class="teacher-dashboard">
-    <h2 class="text-center mb-4"><br>Журнал</h2>
+    <h2 class="text-center mb-4"><br>{% trans "Журнал" %}</h2>
 
     <div class="filters">
-        <input type="text" id="studentSearch" placeholder="Поиск по имени...">
+        <input type="text" id="studentSearch" placeholder="{% trans 'Поиск по имени...' %}">
         <select id="lessonFilter">
-            <option value="all">Все уроки</option>
+            <option value="all">{% trans "Все уроки" %}</option>
             {% for i in 1|to:15 %}
-                <option value="lesson{{ i }}">Урок {{ i }}</option>
+                <option value="lesson{{ i }}">{% trans "Урок" %} {{ i }}</option>
             {% endfor %}
         </select>
         <select id="testFilter">
-            <option value="all">Все тесты</option>
+            <option value="all">{% trans "Все тесты" %}</option>
             {% for i in 1|to:15 %}
-                <option value="test{{ i }}">Тест {{ i }}</option>
+                <option value="test{{ i }}">{% trans "Тест" %} {{ i }}</option>
             {% endfor %}
         </select>
     </div>
@@ -33,10 +35,10 @@
                         <thead>
                             <tr id="tableHeader">
                                 {% for i in 1|to:15 %}
-                                    <th class="lesson-col lesson{{ i }}">Ур. {{ i }}</th>
+                                    <th class="lesson-col lesson{{ i }}">{% trans "Ур." %} {{ i }}</th>
                                 {% endfor %}
                                 {% for i in 1|to:15 %}
-                                    <th class="test-col test{{ i }}">Тест {{ i }}</th>
+                                    <th class="test-col test{{ i }}">{% trans "Тест" %} {{ i }}</th>
                                 {% endfor %}
                             </tr>
                         </thead>
