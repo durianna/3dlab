@@ -26,12 +26,12 @@
                     {{ form|crispy }}
                 </fieldset>
                 <div class="form-group">
-                    <button class="btn btn-outline-info" type="submit">{% trans Войти %}</button>
+                    <button class="btn btn-outline-info" type="submit">{% trans "Войти" %}</button>
                 </div>
             </form>
             <div class="border-top pt-3">
                 <small class="text-muted">
-                    {% trans Нужен аккаунт? %} <a class="ml-2" href="{% url 'register' %}">{% trans Регистрация %}</a>
+                    {% trans "Нужен аккаунт?" %} <a class="ml-2" href="{% url 'register' %}">{% trans "Регистрация" %}</a>
                 </small>
             </div>
         </div>
