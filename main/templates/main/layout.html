@@ -1,4 +1,6 @@
 {% load static %}
+{% load i18n %}
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -31,21 +33,21 @@
             <img src="{% static 'main/img/logo.png' %}" alt="logo" >
             <span class="logo" >3DForge</span>
         </div>
-        <h3>Содержание</h3>
+        <h3>{% trans "Содержание" %}</h3>
         <ul class="aside_ul">
             <li class="aside_ul_li">
                 <a class="aside_ul_a" href="{% url 'home' %}">
-                    <i class="fa-solid fa-house"></i> Главная
+                    <i class="fa-solid fa-house"></i> {% trans "Главная" %}
                 </a>
             </li>
             <li class="aside_ul_li dropdown" data-id="1">
                 <a class="aside_ul_a">
-                    <i class="fa-solid fa-cube"></i> Введение
+                    <i class="fa-solid fa-cube"></i> {% trans "Введение" %}
                 </a>
                 <ul class="dropdown-content">
                         <li class="aside_ul_li">
                             <a class="aside_ul_a1" href="{% url 'system' %}">
-                                <i class="fa-solid fa-cube" ></i>Установка программы Blender. Системные требования.
+                                <i class="fa-solid fa-cube" ></i>{% trans "Установка программы Blender. Системные требования." %}
                             </a>
                         </li>
                 </ul>
@@ -53,54 +55,54 @@
 
             <li class="aside_ul_li dropdown" data-id="2">
                 <a class="aside_ul_a">
-                    <i class="fa-solid fa-cube"></i> Урок 1. Интерфейс программы Blender
+                    <i class="fa-solid fa-cube"></i> {% trans "Урок 1. Интерфейс программы Blender" %}
                 </a>
                 <ul class="dropdown-content">
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'lesson1' %}">
-                            <i class="fa-solid fa-cube" ></i> Теория
+                            <i class="fa-solid fa-cube" ></i> {% trans "Теория" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'practice1_1' %}">
-                            <i class="fa-solid fa-cube"></i> Практическая №1
+                            <i class="fa-solid fa-cube"></i> {% trans "Практическая №1" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'practice1_2' %}">
-                            <i class="fa-solid fa-cube"></i> Практическая №2
+                            <i class="fa-solid fa-cube"></i> {% trans "Практическая №2" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'task1' %}">
-                            <i class="fa-solid fa-cube"></i> Задание
+                            <i class="fa-solid fa-cube"></i> {% trans "Задание" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'test1' %}">
-                            <i class="fa-solid fa-cube"></i> Тестирование
+                            <i class="fa-solid fa-cube"></i> {% trans "Тестирование" %}
                         </a>
                     </li>
                 </ul>
             </li>
             <li class="aside_ul_li dropdown" data-id="3">
                 <a class="aside_ul_a">
-                    <i class="fa-solid fa-cube"></i> Урок 2. Выделение объектов сцены, настройки 3D-курсора
+                    <i class="fa-solid fa-cube"></i> {% trans "Урок 2. Выделение объектов сцены, настройки 3D-курсора" %}
                 </a>
                 <ul class="dropdown-content">
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'lesson2' %}">
-                            <i class="fa-solid fa-cube"></i> Теория
+                            <i class="fa-solid fa-cube"></i> {% trans "Теория" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'practice2' %}">
-                            <i class="fa-solid fa-cube"></i> Практическая
+                            <i class="fa-solid fa-cube"></i> {% trans "Практическая" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'test2' %}">
-                            <i class="fa-solid fa-cube"></i> Тестирование
+                            <i class="fa-solid fa-cube"></i> {% trans "Тестирование" %}
                         </a>
                     </li>
                 </ul>
@@ -108,22 +110,22 @@
 
             <li class="aside_ul_li dropdown" data-id="4">
                 <a class="aside_ul_a">
-                    <i class="fa-solid fa-cube"></i> Урок 3. Навигация в 3D-пространстве Blender. Работа с окнами
+                    <i class="fa-solid fa-cube"></i> {% trans "Урок 3. Навигация в 3D-пространстве Blender. Работа с окнами" %}
                 </a>
                 <ul class="dropdown-content">
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'lesson3' %}">
-                            <i class="fa-solid fa-cube"></i> Теория
+                            <i class="fa-solid fa-cube"></i> {% trans "Теория" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'practice3' %}">
-                            <i class="fa-solid fa-cube"></i> Практическая
+                            <i class="fa-solid fa-cube"></i> {% trans "Практическая" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'test3' %}">
-                            <i class="fa-solid fa-cube"></i> Тестирование
+                            <i class="fa-solid fa-cube"></i> {% trans "Тестирование" %}
                         </a>
                     </li>
                 </ul>
@@ -131,22 +133,22 @@
 
             <li class="aside_ul_li dropdown" data-id="5">
                 <a class="aside_ul_a">
-                    <i class="fa-solid fa-cube"></i> Урок 4. Рендеринг сцены и экспорт изображения
+                    <i class="fa-solid fa-cube"></i> {% trans "Урок 4. Рендеринг сцены и экспорт изображения" %}
                 </a>
                 <ul class="dropdown-content">
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'lesson4' %}">
-                            <i class="fa-solid fa-cube"></i> Теория
+                            <i class="fa-solid fa-cube"></i> {% trans "Теория" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'practice4' %}">
-                            <i class="fa-solid fa-cube"></i> Практическая
+                            <i class="fa-solid fa-cube"></i> {% trans "Практическая" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'test4' %}">
-                            <i class="fa-solid fa-cube"></i> Тестирование
+                            <i class="fa-solid fa-cube"></i> {% trans "Тестирование" %}
                         </a>
                     </li>
                 </ul>
@@ -154,27 +156,27 @@
 
             <li class="aside_ul_li dropdown" data-id="6">
                 <a class="aside_ul_a">
-                    <i class="fa-solid fa-cube"></i> Урок 5. Структура меша
+                    <i class="fa-solid fa-cube"></i> {% trans "Урок 5. Структура меша" %}
                 </a>
                 <ul class="dropdown-content">
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'lesson5' %}">
-                            <i class="fa-solid fa-cube"></i> Теория
+                            <i class="fa-solid fa-cube"></i> {% trans "Теория" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'practice5_1' %}">
-                            <i class="fa-solid fa-cube"></i> Практическая №1
+                            <i class="fa-solid fa-cube"></i> {% trans "Практическая №1" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'practice5_2' %}">
-                            <i class="fa-solid fa-cube"></i> Практическая №2
+                            <i class="fa-solid fa-cube"></i> {% trans "Практическая №2" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'test5' %}">
-                            <i class="fa-solid fa-cube"></i> Тестирование
+                            <i class="fa-solid fa-cube"></i> {% trans "Тестирование" %}
                         </a>
                     </li>
                 </ul>
@@ -182,27 +184,27 @@
 
             <li class="aside_ul_li dropdown" data-id="7">
                 <a class="aside_ul_a">
-                    <i class="fa-solid fa-cube"></i> Урок 6. Моделирование простого объекта с использованием инструмента Extrude, Inset Face, LoopCut
+                    <i class="fa-solid fa-cube"></i> {% trans "Урок 6. Моделирование простого объекта с использованием инструмента Extrude, Inset Face, LoopCut" %}
                 </a>
                 <ul class="dropdown-content">
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'lesson6' %}">
-                            <i class="fa-solid fa-cube"></i> Теория
+                            <i class="fa-solid fa-cube"></i> {% trans "Теория" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'practice6_1' %}">
-                            <i class="fa-solid fa-cube"></i> Практическая №1
+                            <i class="fa-solid fa-cube"></i> {% trans "Практическая №1" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'practice6_2' %}">
-                            <i class="fa-solid fa-cube"></i> Практическая №2
+                            <i class="fa-solid fa-cube"></i> {% trans "Практическая №2" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'test6' %}">
-                            <i class="fa-solid fa-cube"></i> Тестирование
+                            <i class="fa-solid fa-cube"></i> {% trans "Тестирование" %}
                         </a>
                     </li>
                 </ul>
@@ -210,32 +212,32 @@
 
             <li class="aside_ul_li dropdown" data-id="8">
                 <a class="aside_ul_a">
-                    <i class="fa-solid fa-cube"></i> Урок 7. Дополнительные инструменты редактирования - Knife, Merge
+                    <i class="fa-solid fa-cube"></i> {% trans "Урок 7. Дополнительные инструменты редактирования - Knife, Merge" %}
                 </a>
                 <ul class="dropdown-content">
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'lesson7' %}">
-                            <i class="fa-solid fa-cube"></i> Теория
+                            <i class="fa-solid fa-cube"></i> {% trans "Теория" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'practice7_1' %}">
-                            <i class="fa-solid fa-cube"></i> Практическая №1
+                            <i class="fa-solid fa-cube"></i> {% trans "Практическая №1" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'practice7_2' %}">
-                            <i class="fa-solid fa-cube"></i> Практическая №2
+                            <i class="fa-solid fa-cube"></i> {% trans "Практическая №2" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'practice7_3' %}">
-                            <i class="fa-solid fa-cube"></i> Практическая №3
+                            <i class="fa-solid fa-cube"></i> {% trans "Практическая №3" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'test7' %}">
-                            <i class="fa-solid fa-cube"></i> Тестирование
+                            <i class="fa-solid fa-cube"></i> {% trans "Тестирование" %}
                         </a>
                     </li>
                 </ul>
@@ -243,22 +245,22 @@
 
             <li class="aside_ul_li dropdown" data-id="9">
                 <a class="aside_ul_a">
-                    <i class="fa-solid fa-cube"></i> Урок 8.  Инструмент Subdivide в Blender
+                    <i class="fa-solid fa-cube"></i> {% trans "Урок 8.  Инструмент Subdivide в Blender" %}
                 </a>
                 <ul class="dropdown-content">
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'lesson8' %}">
-                            <i class="fa-solid fa-cube"></i> Теория
+                            <i class="fa-solid fa-cube"></i> {% trans "Теория" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'practice8' %}">
-                            <i class="fa-solid fa-cube"></i> Практическая
+                            <i class="fa-solid fa-cube"></i> {% trans "Практическая" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'test8' %}">
-                            <i class="fa-solid fa-cube"></i> Тестирование
+                            <i class="fa-solid fa-cube"></i> {% trans "Тестирование" %}
                         </a>
                     </li>
                 </ul>
@@ -266,32 +268,32 @@
 
             <li class="aside_ul_li dropdown" data-id="10">
                 <a class="aside_ul_a">
-                    <i class="fa-solid fa-cube"></i> Урок 9. Использование модификаторов для моделирования обьектов. Boolean
+                    <i class="fa-solid fa-cube"></i> {% trans "Урок 9. Использование модификаторов для моделирования обьектов. Boolean" %}
                 </a>
                 <ul class="dropdown-content">
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'lesson9' %}">
-                            <i class="fa-solid fa-cube"></i> Теория
+                            <i class="fa-solid fa-cube"></i> {% trans "Теория" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'practice9_1' %}">
-                            <i class="fa-solid fa-cube"></i> Практическая №1
+                            <i class="fa-solid fa-cube"></i> {% trans "Практическая №1" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'practice9_2' %}">
-                            <i class="fa-solid fa-cube"></i> Практическая №2
+                            <i class="fa-solid fa-cube"></i> {% trans "Практическая №2" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'practice9_3' %}">
-                            <i class="fa-solid fa-cube"></i> Практическая №3
+                            <i class="fa-solid fa-cube"></i> {% trans "Практическая №3" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'test9' %}">
-                            <i class="fa-solid fa-cube"></i> Тестирование
+                            <i class="fa-solid fa-cube"></i> {% trans "Тестирование" %}
                         </a>
                     </li>
                 </ul>
@@ -299,44 +301,44 @@
 
             <li class="aside_ul_li dropdown" data-id="11">
                 <a class="aside_ul_a">
-                    <i class="fa-solid fa-cube"></i> Урок 10. Модификатор Subdivision Surface
+                    <i class="fa-solid fa-cube"></i> {% trans "Урок 10. Модификатор Subdivision Surface" %}
                 </a>
                 <ul class="dropdown-content">
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'lesson10' %}">
-                            <i class="fa-solid fa-cube"></i> Теория
+                            <i class="fa-solid fa-cube"></i> {% trans "Теория" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'practice10' %}">
-                            <i class="fa-solid fa-cube"></i> Практическая
+                            <i class="fa-solid fa-cube"></i> {% trans "Практическая" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'test10' %}">
-                            <i class="fa-solid fa-cube"></i> Тестирование
+                            <i class="fa-solid fa-cube"></i> {% trans "Тестирование" %}
                         </a>
                     </li>
                 </ul>
             </li>
             <li class="aside_ul_li dropdown" data-id="12">
                 <a class="aside_ul_a">
-                    <i class="fa-solid fa-cube"></i> Урок 11. Модификатор Mirror
+                    <i class="fa-solid fa-cube"></i> {% trans "Урок 11. Модификатор Mirror" %}
                 </a>
                 <ul class="dropdown-content">
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'lesson11' %}">
-                            <i class="fa-solid fa-cube"></i> Теория
+                            <i class="fa-solid fa-cube"></i> {% trans "Теория" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'practice11' %}">
-                            <i class="fa-solid fa-cube"></i> Практическая
+                            <i class="fa-solid fa-cube"></i> {% trans "Практическая" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'test11' %}">
-                            <i class="fa-solid fa-cube"></i> Тестирование
+                            <i class="fa-solid fa-cube"></i> {% trans "Тестирование" %}
                         </a>
                     </li>
                 </ul>
@@ -344,27 +346,27 @@
 
             <li class="aside_ul_li dropdown" data-id="13">
                 <a class="aside_ul_a">
-                    <i class="fa-solid fa-cube"></i> Урок 12. Работа с материалами. Настройки мира
+                    <i class="fa-solid fa-cube"></i> {% trans "Урок 12. Работа с материалами. Настройки мира" %}
                 </a>
                 <ul class="dropdown-content">
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'lesson12' %}">
-                            <i class="fa-solid fa-cube"></i> Теория
+                            <i class="fa-solid fa-cube"></i> {% trans "Теория" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'practice12_1' %}">
-                            <i class="fa-solid fa-cube"></i> Практическая №1
+                            <i class="fa-solid fa-cube"></i> {% trans "Практическая №1" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'practice12_2' %}">
-                            <i class="fa-solid fa-cube"></i> Практическая №2
+                            <i class="fa-solid fa-cube"></i> {% trans "Практическая №2" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'test12' %}">
-                            <i class="fa-solid fa-cube"></i> Тестирование
+                            <i class="fa-solid fa-cube"></i> {% trans "Тестирование" %}
                         </a>
                     </li>
                 </ul>
@@ -372,22 +374,22 @@
 
             <li class="aside_ul_li dropdown" data-id="14">
                 <a class="aside_ul_a">
-                    <i class="fa-solid fa-cube"></i> Урок 13. Работа с текстурами
+                    <i class="fa-solid fa-cube"></i> {% trans "Урок 13. Работа с текстурами" %}
                 </a>
                 <ul class="dropdown-content">
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'lesson13' %}">
-                            <i class="fa-solid fa-cube"></i> Теория
+                            <i class="fa-solid fa-cube"></i> {% trans "Теория" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'practice13' %}">
-                            <i class="fa-solid fa-cube"></i> Практическая
+                            <i class="fa-solid fa-cube"></i> {% trans "Практическая" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'test13' %}">
-                            <i class="fa-solid fa-cube"></i> Тестирование
+                            <i class="fa-solid fa-cube"></i> {% trans "Тестирование" %}
                         </a>
                     </li>
                 </ul>
@@ -395,22 +397,22 @@
 
             <li class="aside_ul_li dropdown" data-id="15">
                 <a class="aside_ul_a">
-                    <i class="fa-solid fa-cube"></i> Урок 14. Источники света
+                    <i class="fa-solid fa-cube"></i> {% trans "Урок 14. Источники света" %}
                 </a>
                 <ul class="dropdown-content">
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'lesson14' %}">
-                            <i class="fa-solid fa-cube"></i> Теория
+                            <i class="fa-solid fa-cube"></i> {% trans "Теория" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'practice14' %}">
-                            <i class="fa-solid fa-cube"></i> Практическая
+                            <i class="fa-solid fa-cube"></i> {% trans "Практическая" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'test14' %}">
-                            <i class="fa-solid fa-cube"></i> Тестирование
+                            <i class="fa-solid fa-cube"></i> {% trans "Тестирование" %}
                         </a>
                     </li>
                 </ul>
@@ -418,22 +420,22 @@
 
             <li class="aside_ul_li dropdown" style="margin-bottom: 100px;" data-id="16">
                 <a class="aside_ul_a">
-                    <i class="fa-solid fa-cube"></i> Урок 15. Создание простой анимации
+                    <i class="fa-solid fa-cube"></i> {% trans "Урок 15. Создание простой анимации" %}
                 </a>
                 <ul class="dropdown-content">
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'lesson15' %}">
-                            <i class="fa-solid fa-cube"></i> Теория
+                            <i class="fa-solid fa-cube"></i> {% trans "Теория" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'practice15' %}">
-                            <i class="fa-solid fa-cube"></i> Практическая
+                            <i class="fa-solid fa-cube"></i> {% trans "Практическая" %}
                         </a>
                     </li>
                     <li class="aside_ul_li">
                         <a class="aside_ul_a1" href="{% url 'test15' %}">
-                            <i class="fa-solid fa-cube"></i> Тестирование
+                            <i class="fa-solid fa-cube"></i> {% trans "Тестирование" %}
                         </a>
                     </li>
                 </ul>
@@ -455,11 +457,11 @@
             <div class="navbar-buttons">
                 {% if user.role == "teacher" %}
                     <div class="text-center">
-                            <a class="btn btn-secondary" href="{% url 'teacher_dashboard' %}">Дашборд учителя</a>
+                            <a class="btn btn-secondary" href="{% url 'teacher_dashboard' %}">{% trans "Дашборд учителя" %}</a>
                     </div>
                 {% endif %}
                 {% if user.is_authenticated %}
-                    <a href="{% url 'profile' %}">Мой аккаунт</a>
+                    <a href="{% url 'profile' %}">{% trans "Мой аккаунт" %}</a>
                     <form method="post" action="{% url 'logout' %}" id="logout-form">
                         {% csrf_token %}
                         <button type="submit" onclick="confirmLogout(event)">
@@ -467,7 +469,7 @@
                         </button>
                     </form>
                 {% else %}
-                    <a class="ml-2" href="{% url 'login' %}">Войти</a>
+                    <a class="ml-2" href="{% url 'login' %}">{% trans "Войти" %}</a>
                 {% endif %}
             </div>
         </div>
