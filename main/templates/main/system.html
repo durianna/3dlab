@@ -1,65 +1,65 @@
 {% extends 'main/layout.html' %}
 {% load static %}
+{% load i18n %}
 
 
-
-{% block title %}Установка{% endblock %}
+{% block title %}{% trans "Установка" %}{% endblock %}
 
 {% block content %}
 <div class="container">
-        <h1 class="text-center section-header">Системные требования для Blender</h1>
+        <h1 class="text-center section-header">{% trans "Системные требования для Blender" %}</h1>
 
-        <h2>Минимальные системные требования</h2>
+        <h2>{% trans "Минимальные системные требования" %}</h2>
         <ul class="requirements-list">
-            <li><strong>Операционная система:</strong> Windows 8.1/10/11 (64-бит), macOS 10.15 или выше (64-бит), Linux (64-бит)</li>
-            <li><strong>Процессор:</strong> 64-битный двухъядерный процессор с тактовой частотой 2.5 GHz или выше</li>
-            <li><strong>Оперативная память:</strong> минимум 8 ГБ</li>
-            <li><strong>Видеокарта:</strong> Поддержка OpenGL 4.3, видеокарта с 2 ГБ видеопамяти</li>
-            <li><strong>Место на диске:</strong> минимум 500 МБ для установки программы</li>
+            <li>{% blocktrans %}<strong>Операционная система:</strong> Windows 8.1/10/11 (64-бит), macOS 10.15 или выше (64-бит), Linux (64-бит){% endblocktrans %}</li>
+            <li>{% blocktrans %}<strong>Процессор:</strong> 64-битный двухъядерный процессор с тактовой частотой 2.5 GHz или выше{% endblocktrans %}</li>
+            <li>{% blocktrans %}<strong>Оперативная память:</strong> минимум 8 ГБ{% endblocktrans %}</li>
+            <li>{% blocktrans %}<strong>Видеокарта:</strong> Поддержка OpenGL 4.3, видеокарта с 2 ГБ видеопамяти{% endblocktrans %}</li>
+            <li>{% blocktrans %}<strong>Место на диске:</strong> минимум 500 МБ для установки программы{% endblocktrans %}</li>
         </ul>
 
-        <h2>Рекомендуемые системные требования</h2>
+        <h2>{% trans "Рекомендуемые системные требования" %}</h2>
         <ul class="requirements-list">
-            <li><strong>Операционная система:</strong> Windows 10/11 (64-бит), macOS 11.0 (Big Sur) или выше (64-бит), Linux (64-бит)</li>
-            <li><strong>Процессор:</strong> 64-битный четырехъядерный процессор с тактовой частотой 3.0 GHz или выше</li>
-            <li><strong>Оперативная память:</strong> 16 ГБ или больше</li>
-            <li><strong>Видеокарта:</strong> Современная видеокарта с поддержкой CUDA или OpenCL, видеокарта с 4 ГБ видеопамяти или больше</li>
-            <li><strong>Место на диске:</strong> минимум 2-3 ГБ свободного места для установки и работы с проектами</li>
+            <li>{% blocktrans %}<strong>Операционная система:</strong> Windows 10/11 (64-бит), macOS 11.0 (Big Sur) или выше (64-бит), Linux (64-бит){% endblocktrans %}</li>
+            <li>{% blocktrans %}<strong>Процессор:</strong> 64-битный четырехъядерный процессор с тактовой частотой 3.0 GHz или выше{% endblocktrans %}</li>
+            <li>{% blocktrans %}<strong>Оперативная память:</strong> 16 ГБ или больше{% endblocktrans %}</li>
+            <li>{% blocktrans %}<strong>Видеокарта:</strong> Современная видеокарта с поддержкой CUDA или OpenCL, видеокарта с 4 ГБ видеопамяти или больше{% endblocktrans %}</li>
+            <li>{% blocktrans %}<strong>Место на диске:</strong> минимум 2-3 ГБ свободного места для установки и работы с проектами{% endblocktrans %}</li>
         </ul>
 
-        <h2>Особенности и рекомендации</h2>
+        <h2>{% trans "Особенности и рекомендации" %}</h2>
         <ul class="requirements-list">
-            <li>Для использования рендеринга с Cycles (встроенный движок рендеринга Blender), рекомендуется видеокарта с поддержкой CUDA (для NVIDIA) или OpenCL (для AMD)</li>
-            <li>Для сложных сцен и анимаций рекомендуется использовать более мощный процессор и видеокарту</li>
-            <li>Для оптимальной производительности при работе с большими 3D-проектами рекомендуется использовать SSD-диск для хранения Blender-файлов</li>
+            <li>{% blocktrans %}Для использования рендеринга с Cycles (встроенный движок рендеринга Blender), рекомендуется видеокарта с поддержкой CUDA (для NVIDIA) или OpenCL (для AMD){% endblocktrans %}</li>
+            <li>{% blocktrans %}Для сложных сцен и анимаций рекомендуется использовать более мощный процессор и видеокарту{% endblocktrans %}</li>
+            <li>{% blocktrans %}Для оптимальной производительности при работе с большими 3D-проектами рекомендуется использовать SSD-диск для хранения Blender-файлов{% endblocktrans %}</li>
         </ul>
     </div>
 
     <div class="container py-5">
-        <h1 class="text-center text-light mb-4">Инструкция по установке Blender</h1>
+        <h1 class="text-center text-light mb-4">{% trans "Инструкция по установке Blender" %}</h1>
 
         <div class="row">
             <!-- Установка на Windows -->
             <div class="col-lg-4 col-md-6 col-12">
                 <div class="card bg-dark text-light mb-3">
                     <div class="card-header bg-pink">
-                        <h3>Установка на Windows</h3>
+                        <h3>{% trans "Установка на Windows" %}</h3>
                     </div>
                     <div class="card-body">
                         <ol>
-                            <li>Перейдите на официальный сайт <a href="https://www.blender.org/download/" class="a_content">Blender</a>.</li>
-                            <li>Нажмите на кнопку <strong>Download Blender</strong>.</li>
-                            <li>На странице загрузки выберите версию для Windows.</li>
-                            <li>Скачайте установочный файл.</li>
-                            <li>После завершения загрузки откройте файл <strong>blender-installer.exe</strong>.</li>
-                            <li>Следуйте инструкциям установщика:
+                            <li>{% trans "Перейдите на официальный сайт" %} <a href="https://www.blender.org/download/" class="a_content">Blender</a>.</li>
+                            <li>{% trans "Нажмите на кнопку <strong>Download Blender</strong>." %}</li>
+                            <li>{% trans "На странице загрузки выберите версию для Windows." %}</li>
+                            <li>{% trans "Скачайте установочный файл." %}</li>
+                            <li>{% trans "После завершения загрузки откройте файл <strong>blender-installer.exe</strong>." %}</li>
+                            <li>{% trans "Следуйте инструкциям установщика:" %}
                                 <ul>
-                                    <li>Выберите директорию для установки.</li>
-                                    <li>Нажмите <strong>Install</strong>.</li>
+                                    <li>{% trans "Выберите директорию для установки." %}</li>
+                                    <li>{% trans "Нажмите <strong>Install</strong>." %}</li>
                                 </ul>
                             </li>
-                            <li>После завершения установки нажмите <strong>Finish</strong>.</li>
-                            <li>Запустите Blender через ярлык на рабочем столе или через меню "Пуск".</li>
+                            <li>{% trans "После завершения установки нажмите" %} <strong>Finish</strong>.</li>
+                            <li>{% trans "Запустите Blender через ярлык на рабочем столе или через меню "Пуск"." %}</li>
                         </ol>
                     </div>
                 </div>
@@ -69,17 +69,17 @@
             <div class="col-lg-4 col-md-6 col-12">
                 <div class="card bg-dark text-light mb-3">
                     <div class="card-header bg-pink">
-                        <h3>Установка на macOS</h3>
+                        <h3>{% trans "Установка на macOS" %}</h3>
                     </div>
                     <div class="card-body">
                         <ol>
-                            <li>Перейдите на официальный сайт <a href="https://www.blender.org/download/" class="a_content">Blender</a>.</li>
-                            <li>Нажмите <strong>Download Blender</strong>.</li>
-                            <li>На странице загрузки выберите версию для macOS.</li>
-                            <li>Скачайте файл <strong>.dmg</strong>.</li>
-                            <li>Дважды щелкните на загруженный файл для монтирования образа.</li>
-                            <li>Перетащите иконку Blender в папку <strong>Программы</strong>.</li>
-                            <li>Откройте папку <strong>Программы</strong> и запустите Blender.</li>
+                            <li>{% trans "Перейдите на официальный сайт" %} <a href="https://www.blender.org/download/" class="a_content">Blender</a>.</li>
+                            <li>{% trans "Нажмите <strong>Download Blender</strong>." %}</li>
+                            <li>{% trans "На странице загрузки выберите версию для macOS." %}</li>
+                            <li>{% trans "Скачайте файл <strong>.dmg</strong>." %}</li>
+                            <li>{% trans "Дважды щелкните на загруженный файл для монтирования образа." %}</li>
+                            <li>{% trans "Перетащите иконку Blender в папку <strong>Программы</strong>." %}</li>
+                            <li>{% trans "Откройте папку <strong>Программы</strong> и запустите Blender." %}</li>
                         </ol>
                     </div>
                 </div>
@@ -89,16 +89,16 @@
             <div class="col-lg-4 col-md-6 col-12">
                 <div class="card bg-dark text-light mb-3">
                     <div class="card-header bg-pink">
-                        <h3>Установка на Linux</h3>
+                        <h3>{% trans "Установка на Linux" %}</h3>
                     </div>
                     <div class="card-body">
                         <ol>
-                            <li>Перейдите на официальный сайт <a href="https://www.blender.org/download/" class="a_content">Blender</a>.</li>
-                            <li>Выберите версию для Linux.</li>
-                            <li>Скачайте архив с необходимой версией.</li>
-                            <li>Распакуйте архив в удобную директорию.</li>
-                            <li>Откройте терминал и перейдите в директорию, где вы распаковали Blender.</li>
-                            <li>Запустите Blender с помощью команды:
+                            <li>{% trans "Перейдите на официальный сайт" %} <a href="https://www.blender.org/download/" class="a_content">Blender</a>.</li>
+                            <li>{% trans "Выберите версию для Linux." %}</li>
+                            <li>{% trans "Скачайте архив с необходимой версией." %}</li>
+                            <li>{% trans "Распакуйте архив в удобную директорию." %}</li>
+                            <li>{% trans "Откройте терминал и перейдите в директорию, где вы распаковали Blender." %}</li>
+                            <li>{% trans "Запустите Blender с помощью команды:" %}
                                 <pre><code>./blender</code></pre>
                             </li>
                         </ol>
