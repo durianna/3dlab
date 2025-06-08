@@ -455,6 +455,10 @@
 
         <div class="navbar">
             <div class="navbar-buttons">
+                <a href="/ru">RU</a>
+                <a href="/kk">KK</a>
+            </div>
+            <div class="navbar-buttons">
                 {% if user.role == "teacher" %}
                     <div class="text-center">
                             <a class="btn btn-secondary" href="{% url 'teacher_dashboard' %}">{% trans "Дашборд учителя" %}</a>

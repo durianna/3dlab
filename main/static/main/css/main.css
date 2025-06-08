@@ -292,7 +292,7 @@ main::-webkit-scrollbar-thumb:hover {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 
     display: flex; /* Горизонтальное расположение */
-    justify-content: flex-end; /* Разделение кнопок по краям */
+    justify-content: space-between; /* Разделение кнопок по краям */
     align-items: center; /* Выравнивание по центру */
     background-color: #333; /* Темный фон */
     color: #fff; /* Белый текст */
