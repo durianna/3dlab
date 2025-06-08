@@ -465,7 +465,7 @@
                     <form method="post" action="{% url 'logout' %}" id="logout-form">
                         {% csrf_token %}
                         <button type="submit" onclick="confirmLogout(event)">
-                            Выйти
+                            {% trans "Выйти" %}
                         </button>
                     </form>
                 {% else %}
