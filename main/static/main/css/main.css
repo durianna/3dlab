@@ -301,7 +301,7 @@ main::-webkit-scrollbar-thumb:hover {
 
 @media (max-width: 800px) {
     .navbar {
-        padding: 0px;
+        padding: 10px 0px;
     }
 }
 
