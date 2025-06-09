@@ -459,7 +459,7 @@
                 <a href="/kk">KK</a>
             </div>
             <div class="navbar-buttons">
-                {% if user.role == "teacher" %}
+                {% if user.role == "teacher" and not is_mobile %}
                     <div class="text-center">
                             <a class="btn btn-secondary" href="{% url 'teacher_dashboard' %}">{% trans "Дашборд учителя" %}</a>
                     </div>

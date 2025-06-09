@@ -7,6 +7,11 @@
     <div class="container profile-page">
         <div class="profile-header">
             {% if user.role == "teacher" %}
+                {% if is_mobile %}
+                    <div class="text-center">
+                            <a class="btn btn-secondary" href="{% url 'teacher_dashboard' %}">{% trans "Дашборд учителя" %}</a>
+                    </div>
+                {% endif %}
                 <h1 class="text-center mb-2">{% trans "Личный кабинет учителя" %}</h1>
                 <!-- Кнопка перехода на страницу учителя -->
             {% else %}
