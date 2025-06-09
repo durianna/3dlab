@@ -299,6 +299,12 @@ main::-webkit-scrollbar-thumb:hover {
     padding: 10px 20px; /* Внутренние отступы */
 }
 
+@media (max-width: 800px) {
+    .navbar {
+        padding: 0px;
+    }
+}
+
 .sidebarToggle {
     position: fixed;
     top: 50%;
