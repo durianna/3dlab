@@ -33,7 +33,7 @@ export const questions1 =
 		new Answer("Properties", 0)
 	], 1),
 
-	new Question("2. Какое окно в Blender используется для управления слоями и объектами на сцене?",
+	new Question(gettext("2. Какое окно в Blender используется для управления слоями и объектами на сцене?"),
 	[
 		new Answer("Shader Editor", 0),
 		new Answer("Timeline", 0),
@@ -41,15 +41,15 @@ export const questions1 =
 		new Answer("UV Editor", 0)
 	], 1),
 
-	new Question("3. Какая комбинация клавиш в Blender позволяет увеличить или уменьшить масштаб в 3D Viewport?",
+	new Question(gettext("3. Какая комбинация клавиш в Blender позволяет увеличить или уменьшить масштаб в 3D Viewport?"),
 	[
 		new Answer("Shift + R", 0),
 		new Answer("Ctrl + Tab", 0),
 		new Answer("Shift + F", 0),
-		new Answer("Колесо мыши", 1)
+		new Answer(gettext("Колесо мыши"), 1)
 	], 1),
 
-	new Question("4. Где можно изменить настройки материала для объекта в Blender?",
+	new Question(gettext("4. Где можно изменить настройки материала для объекта в Blender?"),
 	[
 		new Answer("3D Viewport", 0),
 		new Answer("Properties", 1),
@@ -57,7 +57,7 @@ export const questions1 =
 		new Answer("Timeline", 0)
 	], 1),
 
-	new Question("5. Какое окно позволяет просматривать и редактировать анимационные ключи?",
+	new Question(gettext("5. Какое окно позволяет просматривать и редактировать анимационные ключи?"),
 	[
 		new Answer("Properties", 0),
 		new Answer("Timeline", 1),
@@ -65,7 +65,7 @@ export const questions1 =
 		new Answer("3D Viewport", 0)
 	], 1),
 
-	new Question("6. Какой инструмент используется для перемещения объектов на сцене в Blender?",
+	new Question(gettext("6. Какой инструмент используется для перемещения объектов на сцене в Blender?"),
 	[
 		new Answer("Scale", 0),
 		new Answer("Rotate", 0),
@@ -73,7 +73,7 @@ export const questions1 =
 		new Answer("Extrude", 0)
 	], 1),
 
-	new Question("7. Какой элемент интерфейса отвечает за рендеринг сцены в Blender?",
+	new Question(gettext("7. Какой элемент интерфейса отвечает за рендеринг сцены в Blender?"),
 	[
 		new Answer("Properties", 0),
 		new Answer("3D Viewport", 0),
@@ -81,15 +81,15 @@ export const questions1 =
 		new Answer("Outliner", 0)
 	], 1),
 
-	new Question("8. Как вызвать контекстное меню в 3D Viewport?",
+	new Question(gettext("8. Как вызвать контекстное меню в 3D Viewport?"),
 	[
-		new Answer("Левой кнопкой мыши", 0),
-		new Answer("Правой кнопкой мыши", 1),
-		new Answer("Клавишей Tab", 0),
-		new Answer("Средней кнопкой мыши", 0)
+		new Answer(gettext("Левой кнопкой мыши"), 0),
+		new Answer(gettext("Правой кнопкой мыши"), 1),
+		new Answer(gettext("Клавишей Tab"), 0),
+		new Answer(gettext("Средней кнопкой мыши"), 0)
 	], 1),
 
-	new Question("9. В каком окне можно настроить шейдеры для объектов?",
+	new Question(gettext("9. В каком окне можно настроить шейдеры для объектов?"),
 	[
 		new Answer("Outliner", 0),
 		new Answer("3D Viewport", 0),
@@ -97,7 +97,7 @@ export const questions1 =
 		new Answer("UV Editor", 0)
 	], 1),
 
-	new Question("10. Какая клавиша переключает между объектным и режимом редактирования?",
+	new Question(gettext("10. Какая клавиша переключает между объектным и режимом редактирования?"),
 	[
 		new Answer("Tab", 1),
 		new Answer("Ctrl + E", 0),
@@ -109,23 +109,23 @@ export const questions1 =
 
 export const questions2 =
 [
-    new Question("1. Какая кнопка мыши используется для выделения объектов по умолчанию в Blender?",
+    new Question(gettext("1. Какая кнопка мыши используется для выделения объектов по умолчанию в Blender?"),
     [
-        new Answer("Левая кнопка мыши", 1),
-        new Answer("Правая кнопка мыши", 0),
-        new Answer("Средняя кнопка мыши", 0),
-        new Answer("Колесико мыши", 0)
+        new Answer(gettext("Левая кнопка мыши"), 1),
+        new Answer(gettext("Правая кнопка мыши"), 0),
+        new Answer(gettext("Средняя кнопка мыши"), 0),
+        new Answer(gettext("Колесико мыши"), 0)
     ], 1),
 
-    new Question("2. Что происходит при сочетании клавиш Shift + ЛКМ в Blender?",
+    new Question(gettext("2. Что происходит при сочетании клавиш Shift + ЛКМ в Blender?"),
     [
-        new Answer("Удаление объекта", 0),
-        new Answer("Множественное выделение объектов", 1),
-        new Answer("Перемещение объекта", 0),
-        new Answer("Сброс выделения", 0)
+        new Answer(gettext("Удаление объекта"), 0),
+        new Answer(gettext("Множественное выделение объектов"), 1),
+        new Answer(gettext("Перемещение объекта"), 0),
+        new Answer(gettext("Сброс выделения"), 0)
     ], 1),
 
-    new Question("3. Какой клавишей вызывается рамочное выделение (Box Select)?",
+    new Question(gettext("3. Какой клавишей вызывается рамочное выделение (Box Select)?"),
     [
         new Answer("B", 1),
         new Answer("C", 0),
@@ -133,7 +133,7 @@ export const questions2 =
         new Answer("Ctrl", 0)
     ], 1),
 
-    new Question("4. Как активировать круговое выделение (Circle Select)?",
+    new Question(gettext("4. Как активировать круговое выделение (Circle Select)?"),
     [
         new Answer("Alt + B", 0),
         new Answer("C", 1),
@@ -141,7 +141,7 @@ export const questions2 =
         new Answer("Shift + B", 0)
     ], 1),
 
-    new Question("5. Как активировать лассо-выделение?",
+    new Question(gettext("5. Как активировать лассо-выделение?"),
     [
         new Answer("Alt + ЛКМ", 0),
         new Answer("Ctrl + ПКМ", 1),
@@ -149,7 +149,7 @@ export const questions2 =
         new Answer("Shift + C", 0)
     ], 1),
 
-    new Question("6. Какая комбинация используется для установки 3D-курсора в сцену (в последних версиях Blender)?",
+    new Question(gettext("6. Какая комбинация используется для установки 3D-курсора в сцену (в последних версиях Blender)?"),
     [
         new Answer("Shift + ПКМ", 0),
         new Answer("Ctrl + ЛКМ", 0),
@@ -157,7 +157,7 @@ export const questions2 =
         new Answer("Alt + ЛКМ", 0)
     ], 1),
 
-    new Question("7. Где можно вручную задать координаты 3D-курсора?",
+    new Question(gettext("7. Где можно вручную задать координаты 3D-курсора?"),
     [
         new Answer("Outliner", 0),
         new Answer("Shader Editor", 0),
@@ -165,23 +165,23 @@ export const questions2 =
         new Answer("Render Properties", 0)
     ], 1),
 
-    new Question("8. Что позволяет сделать команда Snap → Selection to Cursor?",
+    new Question(gettext("8. Что позволяет сделать команда Snap → Selection to Cursor?"),
     [
-        new Answer("Привязать объекты к 3D-курcору", 1),
-        new Answer("Отменить последнее действие", 0),
-        new Answer("Создать новую коллекцию", 0),
-        new Answer("Выделить объекты рамкой", 0)
+        new Answer(gettext("Привязать объекты к 3D-курcору"), 1),
+        new Answer(gettext("Отменить последнее действие"), 0),
+        new Answer(gettext("Создать новую коллекцию"), 0),
+        new Answer(gettext("Выделить объекты рамкой"), 0)
     ], 1),
 
-    new Question("9. Какие действия можно выполнять с помощью гизмо трансформации? (два правильных ответа)",
+    new Question(gettext("9. Какие действия можно выполнять с помощью гизмо трансформации? (два правильных ответа)"),
     [
-        new Answer("Масштабировать объекты", 1),
-        new Answer("Создавать текстуры", 0),
-        new Answer("Перемещать объекты", 1),
-        new Answer("Рендерить сцену", 0)
+        new Answer(gettext("Масштабировать объекты"), 1),
+        new Answer(gettext("Создавать текстуры"), 0),
+        new Answer(gettext("Перемещать объекты"), 1),
+        new Answer(gettext("Рендерить сцену"), 0)
     ], 2),
 
-    new Question("10. Какой режим Pivot Point позволяет вращать каждый объект вокруг собственной оси?",
+    new Question(gettext("10. Какой режим Pivot Point позволяет вращать каждый объект вокруг собственной оси?"),
     [
         new Answer("Active Element", 0),
         new Answer("Individual Origins", 1),
