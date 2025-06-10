@@ -1,13 +1,13 @@
 {% extends 'main/layout.html' %}
 {% load static %}
+{% load i18n %}
 
-
-{% block title %}Контент первого урока{% endblock %}
+{% block title %}{% trans "Контент первого урока" %}{% endblock %}
 
 {% block content %}
     <div class="container">
         <div class="requirements-list1">
-            <h1 class="text-center mb-4">Задание на соответствие</h1>
+            <h1 class="text-center mb-4">{% trans "Задание на соответствие" %}</h1>
         </div>
 
         <div class="requirements-list_last">
@@ -15,7 +15,7 @@
                 <img class="image1" style="width: 80%;" src="{% static 'main/img/interfaceBlender.png' %}">
             </a>
 
-            <h2 class="text-center mb-4">Задание №1: сопоставьте названия регионов с их расположением на изображении</h2>
+            <h2 class="text-center mb-4">{% trans "Задание №1: сопоставьте названия регионов с их расположением на изображении" %}</h2>
 
             <div class="container_test">
                 <div class="list" id="left-list">
@@ -43,7 +43,7 @@
                 </div>
             </div>
             <div class="container_result">
-                <button class="submit-btn" id="submit-btn">Проверить</button>
+                <button class="submit-btn" id="submit-btn">{% trans "Проверить" %}</button>
 
             </div>
 

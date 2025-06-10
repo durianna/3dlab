@@ -1,30 +1,31 @@
 {% extends 'main/layout.html' %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}Практическая работа: Базовые трансформации обьекта{% endblock %}
+{% block title %}{% trans "Практическая работа: Базовые трансформации обьекта" %}{% endblock %}
 
 {% block content %}
 <div class="container">
     <div class="requirements-list1">
         <!-- Header Section -->
         <header class="text-center mb-4">
-            <h1>Практическая работа: Базовые трансформации обьекта</h1>
+            <h1>{% trans "Практическая работа: Базовые трансформации обьекта" %}</h1>
         </header>
     </div>
 
     <div class="requirements-list_last">
         <!-- Objective Section -->
         <div class="section">
-            <h2 class="text-center mb-2">Практическая работа №2</h2>
-            <h3>Цель работы</h3>
-            <p class="lead">Научиться добавлять новые объекты в сцену, а также изменять их масштаб, поворот и положение
-                с помощью горячих клавиш S, R и G.</p>
+            <h2 class="text-center mb-2">{% trans "Практическая работа №2" %}</h2>
+            <h3>{% trans "Цель работы" %}</h3>
+            <p class="lead">{% blocktrans %}Научиться добавлять новые объекты в сцену, а также изменять их масштаб, поворот и положение
+                с помощью горячих клавиш S, R и G.{% endblocktrans %}</p>
         </div>
 
         {% if is_mobile %}
             <div class="practice-carousel-container" data-steps="9">
                 <div class="carousel-step" id="step-1">
-                    <h3>Создайте новый проект</h3>
+                    <h3>{% trans "Создайте новый проект" %}</h3>
                     <div>
                         <div class="carousel-controls">
                             <button onclick="prevStep()"> ❮ </button>
@@ -34,10 +35,10 @@
                             <button onclick="nextStep()"> ❯ </button>
                         </div>
                     </div>
-                    <p class="step_description">Перейдите во вкладку File - New - General чтобы создать новый проект</p>
+                    <p class="step_description">{% trans "Перейдите во вкладку File - New - General чтобы создать новый проект" %}</p>
                 </div>
                 <div class="carousel-step" id="step-2">
-                    <h3>Переместить куб с помощью клавиши <strong>G</strong></h3>
+                    <h3>{% trans "Переместить куб с помощью клавиши <strong>G</strong>" %}</h3>
                     <div>
                         <div class="carousel-controls">
                             <button onclick="prevStep()"> ❮ </button>
@@ -47,13 +48,13 @@
                             <button onclick="nextStep()"> ❯ </button>
                         </div>
                     </div>
-                    <p class="step_description">Выберите куб, нажмите <strong>G</strong> для активации инструмента перемещения. Переместите
+                    <p class="step_description">{% blocktrans %}Выберите куб, нажмите <strong>G</strong> для активации инструмента перемещения. Переместите
                                 куб по оси <strong>X</strong> на <strong>-3.0</strong>. <strong>Чтобы перемещать объект по
-                                    одной координате после нажатия G нажмите Х. Чтобы закрепить результат кликните ЛКМ.</strong>.</td>
+                                    одной координате после нажатия G нажмите Х. Чтобы закрепить результат кликните ЛКМ.</strong>.</td>{% endblocktrans %}
                             </p>
                 </div>
                 <div class="carousel-step" id="step-3">
-                    <h3>Добавить новый объект (сфера)</h3>
+                    <h3>{% trans "Добавить новый объект (сфера)" %}</h3>
                     <div>
                         <div class="carousel-controls">
                             <button onclick="prevStep()"> ❮ </button>
@@ -63,10 +64,10 @@
                             <button onclick="nextStep()"> ❯ </button>
                         </div>
                     </div>
-                    <p class="step_description">Для добавления новой сферы нажмите <strong>Shift + A</strong>, выберите <strong>Mesh → UV Sphere</strong>. Сфера появится рядом с кубом.</p>
+                    <p class="step_description">{% blocktrans %}Для добавления новой сферы нажмите <strong>Shift + A</strong>, выберите <strong>Mesh → UV Sphere</strong>. Сфера появится рядом с кубом.{% endblocktrans %}</p>
                 </div>
                 <div class="carousel-step" id="step-4">
-                    <h3>Масштабировать сферу с помощью клавиши <strong>S</strong></h3>
+                    <h3>{% trans "Масштабировать сферу с помощью клавиши <strong>S</strong>" %}</h3>
                     <div>
                         <div class="carousel-controls">
                             <button onclick="prevStep()"> ❮ </button>
@@ -76,10 +77,10 @@
                             <button onclick="nextStep()"> ❯ </button>
                         </div>
                     </div>
-                    <p class="step_description">Выберите сферу, нажмите <strong>S</strong> для активации инструмента масштабирования. Масштабируйте сферу на <strong>S, 1.5</strong>, чтобы она была на 1.5 раза больше по всем осям.</p>
+                    <p class="step_description">{% blocktrans %}Выберите сферу, нажмите <strong>S</strong> для активации инструмента масштабирования. Масштабируйте сферу на <strong>S, 1.5</strong>, чтобы она была на 1.5 раза больше по всем осям.{% endblocktrans %}</p>
                 </div>
                 <div class="carousel-step" id="step-5">
-                    <h3>Добавить новый объект (цилиндр)</h3>
+                    <h3>{% trans "Добавить новый объект (цилиндр)" %}</h3>
                     <div>
                         <div class="carousel-controls">
                             <button onclick="prevStep()"> ❮ </button>
@@ -89,10 +90,10 @@
                             <button onclick="nextStep()"> ❯ </button>
                         </div>
                     </div>
-                    <p class="step_description">Для добавления цилиндра нажмите <strong>Shift + A</strong>, выберите <strong>Mesh → Cylinder</strong>. Цилиндр появится в сцене.</p>
+                    <p class="step_description">{% blocktrans %}Для добавления цилиндра нажмите <strong>Shift + A</strong>, выберите <strong>Mesh → Cylinder</strong>. Цилиндр появится в сцене.{% endblocktrans %}</p>
                 </div>
                 <div class="carousel-step" id="step-6">
-                    <h3>Переместить цилиндр по оси <strong>Y</strong> на 3.0 с помощью <strong>G + Y</strong></h3>
+                    <h3>{% trans "Переместить цилиндр по оси <strong>Y</strong> на 3.0 с помощью <strong>G + Y</strong>" %}</h3>
                     <div>
                         <div class="carousel-controls">
                             <button onclick="prevStep()"> ❮ </button>
@@ -102,10 +103,10 @@
                             <button onclick="nextStep()"> ❯ </button>
                         </div>
                     </div>
-                    <p class="step_description">Выберите цилиндр, нажмите <strong>G + Y</strong> и переместите цилиндр по оси <strong>Y</strong> на <strong>3.0</strong>.</p>
+                    <p class="step_description">{% blocktrans %}Выберите цилиндр, нажмите <strong>G + Y</strong> и переместите цилиндр по оси <strong>Y</strong> на <strong>3.0</strong>.{% endblocktrans %}</p>
                 </div>
                 <div class="carousel-step" id="step-7">
-                    <h3>Повернуть куб с помощью клавиши <strong>R</strong></h3>
+                    <h3>{% trans "Повернуть куб с помощью клавиши <strong>R</strong>" %}</h3>
                     <div>
                         <div class="carousel-controls">
                             <button onclick="prevStep()"> ❮ </button>
@@ -115,10 +116,10 @@
                             <button onclick="nextStep()"> ❯ </button>
                         </div>
                     </div>
-                    <p class="step_description">Выберите куб, нажмите <strong>R</strong> для активации инструмента поворота. Поворачивать обьект можно как и Scale относительно конкретной оси, так же можно после нажатия R, S или G ввести необходимые значения с клавиатуры. Поверните куб на <strong>45°</strong> вокруг оси <strong>Z</strong> с помощью <strong>R - Z - 45</strong>.</p>
+                    <p class="step_description">{% blocktrans %}Выберите куб, нажмите <strong>R</strong> для активации инструмента поворота. Поворачивать обьект можно как и Scale относительно конкретной оси, так же можно после нажатия R, S или G ввести необходимые значения с клавиатуры. Поверните куб на <strong>45°</strong> вокруг оси <strong>Z</strong> с помощью <strong>R - Z - 45</strong>.{% endblocktrans %}</p>
                 </div>
                 <div class="carousel-step" id="step-8">
-                    <h3>Разместить сферу выше куба с помощью <strong>G + Z</strong></h3>
+                    <h3>{% trans "Разместить сферу выше куба с помощью <strong>G + Z</strong>" %}</h3>
                     <div>
                         <div class="carousel-controls">
                             <button onclick="prevStep()"> ❮ </button>
@@ -128,14 +129,14 @@
                             <button onclick="nextStep()"> ❯ </button>
                         </div>
                     </div>
-                    <p class="step_description">Выберите сферу, нажмите <strong>G + Z</strong> и переместите её вверх на <strong>2.0</strong>.</p>
+                    <p class="step_description">{% blocktrans %}Выберите сферу, нажмите <strong>G + Z</strong> и переместите её вверх на <strong>2.0</strong>.{% endblocktrans %}</p>
                 </div>
                 <div class="carousel-step" id="step-9">
-                    <h3>Сохранить проект</h3>
+                    <h3>{% trans "Сохранить проект" %}</h3>
                     <div>
                         <div class="carousel-controls">
                             <button onclick="prevStep()"> ❮ </button>
-                            <p class="step_description">После выполнения всех шагов сохраните проект. Перейдите в меню <strong>File → Save As</strong>, выберите имя для файла, например, <strong>Simple_Scene.blend</strong> и нажмите <strong>Save As Blender File</strong>.</p>
+                            <p class="step_description">{% blocktrans %}После выполнения всех шагов сохраните проект. Перейдите в меню <strong>File → Save As</strong>, выберите имя для файла, например, <strong>Simple_Scene.blend</strong> и нажмите <strong>Save As Blender File</strong>.{% endblocktrans %}</p>
                             <button onclick="nextStep()"> ❯ </button>
                         </div>
                     </div>
@@ -146,24 +147,24 @@
         {% else %}
         <!-- Task Section -->
             <div class="section">
-            <h2 class="text-center mb-2">Задание</h2>
-            <p>Выполните следующие действия в среде Blender:</p>
+            <h2 class="text-center mb-2">{% trans "Задание" %}</h2>
+            <p>{% trans "Выполните следующие действия в среде Blender:" %}</p>
 
             <div class="student-table-wrapper">
                 <table class="student-table blender-style-table">
                     <thead>
                         <tr>
                             <th>№</th>
-                            <th>Действие</th>
-                            <th>Метод выполнения</th>
-                            <th>Изображение</th>
+                            <th>{% trans "Действие" %}</th>
+                            <th>{% trans "Метод выполнения" %}</th>
+                            <th>{% trans "Изображение" %}</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>1</td>
-                            <td>Создайте новый проект</td>
-                            <td>Перейдите во вкладку File - New - General чтобы создать новый проект</td>
+                            <td>{% trans "Создайте новый проект" %}</td>
+                            <td>{% trans "Перейдите во вкладку File - New - General чтобы создать новый проект" %}</td>
                             <td>
                                 <a href="{% static 'main/img/Pr1_1/img1.png' %}" data-lightbox="gallery">
                                     <img class="image3" src="{% static 'main/img/Pr1_1/img1.png' %}">
@@ -172,10 +173,10 @@
                         </tr>
                         <tr>
                             <td>2</td>
-                            <td>Переместить куб с помощью клавиши <strong>G</strong></td>
-                            <td>Выберите куб, нажмите <strong>G</strong> для активации инструмента перемещения. Переместите
+                            <td>{% trans "Переместить куб с помощью клавиши <strong>G</strong>" %}</td>
+                            <td>{% blocktrans %}Выберите куб, нажмите <strong>G</strong> для активации инструмента перемещения. Переместите
                                 куб по оси <strong>X</strong> на <strong>-3.0</strong>. <strong>Чтобы перемещать объект по
-                                    одной координате после нажатия G нажмите Х. Чтобы закрепить результат кликните ЛКМ.</strong>.</td>
+                                    одной координате после нажатия G нажмите Х. Чтобы закрепить результат кликните ЛКМ.{% endblocktrans %}</strong>.</td>
                             <td>
                                 <a href="{% static 'main/img/Pr1_1/img2.png' %}" data-lightbox="gallery">
                                     <img class="image3" src="{% static 'main/img/Pr1_1/img2.png' %}">
@@ -184,8 +185,8 @@
                         </tr>
                         <tr>
                             <td>3</td>
-                            <td>Добавить новый объект (сфера)</td>
-                            <td>Для добавления новой сферы нажмите <strong>Shift + A</strong>, выберите <strong>Mesh → UV Sphere</strong>. Сфера появится рядом с кубом.</td>
+                            <td>{% trans "Добавить новый объект (сфера)" %}</td>
+                            <td>{% blocktrans %}Для добавления новой сферы нажмите <strong>Shift + A</strong>, выберите <strong>Mesh → UV Sphere</strong>. Сфера появится рядом с кубом.{% endblocktrans %}</td>
                             <td>
                                 <a href="{% static 'main/img/Pr1_1/img3.png' %}" data-lightbox="gallery">
                                     <img class="image3" src="{% static 'main/img/Pr1_1/img3.png' %}">
@@ -194,8 +195,8 @@
                         </tr>
                         <tr>
                             <td>4</td>
-                            <td>Масштабировать сферу с помощью клавиши <strong>S</strong></td>
-                            <td>Выберите сферу, нажмите <strong>S</strong> для активации инструмента масштабирования. Масштабируйте сферу на <strong>S, 1.5</strong>, чтобы она была на 1.5 раза больше по всем осям.</td>
+                            <td>{% trans "Масштабировать сферу с помощью клавиши <strong>S</strong>" %}</td>
+                            <td>{% blocktrans %}Выберите сферу, нажмите <strong>S</strong> для активации инструмента масштабирования. Масштабируйте сферу на <strong>S, 1.5</strong>, чтобы она была на 1.5 раза больше по всем осям.{% endblocktrans %}</td>
                             <td>
                                 <a href="{% static 'main/img/Pr1_1/img4.png' %}" data-lightbox="gallery">
                                     <img class="image3" src="{% static 'main/img/Pr1_1/img4.png' %}">
@@ -204,8 +205,8 @@
                         </tr>
                         <tr>
                             <td>5</td>
-                            <td>Добавить новый объект (цилиндр)</td>
-                            <td>Для добавления цилиндра нажмите <strong>Shift + A</strong>, выберите <strong>Mesh → Cylinder</strong>. Цилиндр появится в сцене.</td>
+                            <td>{% trans "Добавить новый объект (цилиндр)" %}</td>
+                            <td>{% blocktrans %}Для добавления цилиндра нажмите <strong>Shift + A</strong>, выберите <strong>Mesh → Cylinder</strong>. Цилиндр появится в сцене.{% endblocktrans %}</td>
                             <td>
                                 <a href="{% static 'main/img/Pr1_1/img5.png' %}" data-lightbox="gallery">
                                     <img class="image3" src="{% static 'main/img/Pr1_1/img5.png' %}">
@@ -214,8 +215,8 @@
                         </tr>
                         <tr>
                             <td>6</td>
-                            <td>Переместить цилиндр по оси <strong>Y</strong> на 3.0 с помощью <strong>G + Y</strong></td>
-                            <td>Выберите цилиндр, нажмите <strong>G + Y</strong> и переместите цилиндр по оси <strong>Y</strong> на <strong>3.0</strong>.</td>
+                            <td>{% trans "Переместить цилиндр по оси <strong>Y</strong> на 3.0 с помощью <strong>G + Y</strong>" %}</td>
+                            <td>{% blocktrans %}Выберите цилиндр, нажмите <strong>G + Y</strong> и переместите цилиндр по оси <strong>Y</strong> на <strong>3.0</strong>.{% endblocktrans %}</td>
                             <td>
                                 <a href="{% static 'main/img/Pr1_1/img6.png' %}" data-lightbox="gallery">
                                     <img class="image3" src="{% static 'main/img/Pr1_1/img6.png' %}">
@@ -224,8 +225,8 @@
                         </tr>
                         <tr>
                             <td>7</td>
-                            <td>Повернуть куб с помощью клавиши <strong>R</strong></td>
-                            <td>Выберите куб, нажмите <strong>R</strong> для активации инструмента поворота. Поворачивать обьект можно как и Scale относительно конкретной оси, так же можно после нажатия R, S или G ввести необходимые значения с клавиатуры. Поверните куб на <strong>45°</strong> вокруг оси <strong>Z</strong> с помощью <strong>R - Z - 45</strong>.</td>
+                            <td>{% trans "Повернуть куб с помощью клавиши <strong>R</strong>" %}</td>
+                            <td>{% blocktrans %}Выберите куб, нажмите <strong>R</strong> для активации инструмента поворота. Поворачивать обьект можно как и Scale относительно конкретной оси, так же можно после нажатия R, S или G ввести необходимые значения с клавиатуры. Поверните куб на <strong>45°</strong> вокруг оси <strong>Z</strong> с помощью <strong>R - Z - 45</strong>.{% endblocktrans %}</td>
                             <td>
                                 <a href="{% static 'main/img/Pr1_1/img7.png' %}" data-lightbox="gallery">
                                     <img class="image3" src="{% static 'main/img/Pr1_1/img7.png' %}">
@@ -234,8 +235,8 @@
                         </tr>
                         <tr>
                             <td>8</td>
-                            <td>Разместить сферу выше куба с помощью <strong>G + Z</strong></td>
-                            <td>Выберите сферу, нажмите <strong>G + Z</strong> и переместите её вверх на <strong>2.0</strong>.</td>
+                            <td>{% trans "Разместить сферу выше куба с помощью <strong>G + Z</strong>" %}</td>
+                            <td>{% blocktrans %}Выберите сферу, нажмите <strong>G + Z</strong> и переместите её вверх на <strong>2.0</strong>.{% endblocktrans %}</td>
                             <td>
                                 <a href="{% static 'main/img/Pr1_1/img8.png' %}" data-lightbox="gallery">
                                     <img class="image3" src="{% static 'main/img/Pr1_1/img8.png' %}">
@@ -244,8 +245,8 @@
                         </tr>
                         <tr>
                             <td>9</td>
-                            <td>Сохранить проект</td>
-                            <td>После выполнения всех шагов сохраните проект. Перейдите в меню <strong>File → Save As</strong>, выберите имя для файла, например, <strong>Simple_Scene.blend</strong> и нажмите <strong>Save As Blender File</strong>.</td>
+                            <td>{% trans "Сохранить проект" %}</td>
+                            <td>{% blocktrans %}После выполнения всех шагов сохраните проект. Перейдите в меню <strong>File → Save As</strong>, выберите имя для файла, например, <strong>Simple_Scene.blend</strong> и нажмите <strong>Save As Blender File</strong>.{% endblocktrans %}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -255,23 +256,23 @@
 
         <!-- Report Section -->
         <div class="section">
-            <p><br>Ожидаемый результат:</p>
+            <p><br>{% trans "Ожидаемый результат:" %}</p>
             <ul>
-                <li>В сцене будет создано три объекта: куб, сфера и цилиндр</li>
-                <li>Объекты будут масштабированы, перемещены и повернуты</li>
-                <li>Проект будет сохранён</li>
+                <li>{% trans "В сцене будет создано три объекта: куб, сфера и цилиндр" %}</li>
+                <li>{% trans "Объекты будут масштабированы, перемещены и повернуты" %}</li>
+                <li>{% trans "Проект будет сохранён" %}</li>
             </ul>
         </div>
 
         <!-- Additional Recommendations Section -->
         <div class="section">
-            <h3>Вопросы для самоконтроля:</h3>
+            <h3>{% trans "Вопросы для самоконтроля:" %}</h3>
             <ol>
-                <li>Как создать новый проект в Blender? Какие шаги нужно выполнить?</li>
-                <li>С помощью какой горячей клавиши можно переместить обьект? Как ограничить перемещение по одной оси?</li>
-                <li>Каким образом можно добавить новый объект в сцену?</li>
-                <li>С помощью какой горячей клавиши можно масштабировать обьект?</li>
-                <li>С помощью какой горячей клавиши можно повернуть обьект?</li>
+                <li>{% trans "Как создать новый проект в Blender? Какие шаги нужно выполнить?" %}</li>
+                <li>{% trans "С помощью какой горячей клавиши можно переместить обьект? Как ограничить перемещение по одной оси?" %}</li>
+                <li>{% trans "Каким образом можно добавить новый объект в сцену?" %}</li>
+                <li>{% trans "С помощью какой горячей клавиши можно масштабировать обьект?" %}</li>
+                <li>{% trans "С помощью какой горячей клавиши можно повернуть обьект?" %}</li>
             </ol>
         </div>
     </div>

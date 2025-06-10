@@ -1,28 +1,29 @@
 {% extends 'main/layout.html' %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}Практическая работа: Базовые трансформации обьекта{% endblock %}
+{% block title %}{% trans "Практическая работа: Базовые трансформации обьекта" %}{% endblock %}
 
 {% block content %}
 <div class="container">
     <div class="requirements-list1">
         <!-- Header Section -->
         <header class="text-center mb-4">
-            <h1>Практическая работа: Базовые трансформации обьекта</h1>
+            <h1>{% trans "Практическая работа: Базовые трансформации обьекта" %}</h1>
         </header>
     </div>
 
     <div class="requirements-list_last">
         <!-- Objective Section -->
         <div class="section">
-            <h2 class="text-center mb-2">Практическая работа №1</h2>
-            <h3>Цель работы</h3>
-            <p class="lead"> Научиться пользоваться интерфейсом Blender, изменять параметры Location, Rotation и Scale через N-panel, а также сохранить проект через меню File.</p>
+            <h2 class="text-center mb-2">{% trans "Практическая работа №1" %}</h2>
+            <h3>{% trans "Цель работы" %}</h3>
+            <p class="lead"> {% trans "Научиться пользоваться интерфейсом Blender, изменять параметры Location, Rotation и Scale через N-panel, а также сохранить проект через меню File." %}</p>
         </div>
         {% if is_mobile %}
             <div class="practice-carousel-container" data-steps="6">
                 <div class="carousel-step" id="step-1">
-                    <h3>Открыть <code>N-panel</code></h3>
+                    <h3>{% trans "Открыть <code>N-panel</code>" %}</h3>
                     <div>
                         <div class="carousel-controls">
                             <button onclick="prevStep()"> ❮ </button>
@@ -32,14 +33,14 @@
                             <button onclick="nextStep()"> ❯ </button>
                         </div>
                     </div>
-                    <p class="step_description">Щелкните по кубу левой кнопкой мыши, чтобы появилась возможность его редактировать. Куб подсветится желтой рамкой. Для работы с параметрами объекта откройте боковой регион <code>N-panel</code>. Для этого
+                    <p class="step_description">{% blocktrans %}Щелкните по кубу левой кнопкой мыши, чтобы появилась возможность его редактировать. Куб подсветится желтой рамкой. Для работы с параметрами объекта откройте боковой регион <code>N-panel</code>. Для этого
                                     нажмите клавишу <strong>N</strong> на клавиатуре. Панель появится справа от 3D-вьюпорта,
                                     где отображаются параметры объекта. В ней же,
                         используя значки "руки" или "лупы" можно приближать или отдалять камеру от
-                        объекта(или с помощью колеса мыши). Зажав колесико мыши можно вертеть камерой вокруг объекта.</p>
+                        объекта(или с помощью колеса мыши). Зажав колесико мыши можно вертеть камерой вокруг объекта.{% endblocktrans %}</p>
                 </div>
                 <div class="carousel-step" id="step-2" style="display: none;">
-                    <h3>Переместить объект в 3D-пространстве через <code>N-panel</code></h3>
+                    <h3>{% trans "Переместить объект в 3D-пространстве через <code>N-panel</code>" %}</h3>
                     <div>
                         <div class="carousel-controls">
                             <button onclick="prevStep()"> ❮ </button>
@@ -49,12 +50,12 @@
                             <button onclick="nextStep()"> ❯ </button>
                         </div>
                     </div>
-                    <p class="step_description">В <code>N-panel</code> откройте вкладку <strong>Item</strong>. В разделе <strong>Location</strong>
+                    <p class="step_description">{% blocktrans %}В <code>N-panel</code> откройте вкладку <strong>Item</strong>. В разделе <strong>Location</strong>
                                     установите следующие значения: <strong>Location X = 2.0</strong>, <strong>Location Y = -3.0</strong>,
-                                    <strong>Location Z = 1.0</strong>. Эти значения переместят куб в новые координаты в 3D-пространстве.</p>
+                                    <strong>Location Z = 1.0</strong>. Эти значения переместят куб в новые координаты в 3D-пространстве.{% endblocktrans %}</p>
                 </div>
                 <div class="carousel-step" id="step-3" style="display: none;">
-                    <h3>Изменить <strong>Rotation</strong> объекта через <code>N-panel</code></h3>
+                    <h3>{% trans "Изменить <strong>Rotation</strong> объекта через <code>N-panel</code>" %}</h3>
                     <div>
                         <div class="carousel-controls">
                             <button onclick="prevStep()"> ❮ </button>
@@ -64,10 +65,10 @@
                             <button onclick="nextStep()"> ❯ </button>
                         </div>
                     </div>
-                    <p class="step_description">В <code>N-panel</code> в разделе <strong>Rotation</strong> установите следующие углы поворота для объекта: <strong>Rotation X = 45°</strong>, <strong>Rotation Y = 30°</strong>, <strong>Rotation Z = 60°</strong>. Это изменит ориентацию куба в 3D-пространстве.</p>
+                    <p class="step_description">{% blocktrans %}В <code>N-panel</code> в разделе <strong>Rotation</strong> установите следующие углы поворота для объекта: <strong>Rotation X = 45°</strong>, <strong>Rotation Y = 30°</strong>, <strong>Rotation Z = 60°</strong>. Это изменит ориентацию куба в 3D-пространстве.{% endblocktrans %}</p>
                 </div>
                 <div class="carousel-step" id="step-4" style="display: none;">
-                    <h3>Изменить <strong>Scale</strong> объекта через <code>N-panel</code></h3>
+                    <h3>{% trans "Изменить <strong>Scale</strong> объекта через <code>N-panel</code>" %}</h3>
                     <div>
                         <div class="carousel-controls">
                             <button onclick="prevStep()"> ❮ </button>
@@ -77,10 +78,10 @@
                             <button onclick="nextStep()"> ❯ </button>
                         </div>
                     </div>
-                    <p class="step_description">В <code>N-panel</code> в разделе <strong>Scale</strong> установите следующие значения для масштаба объекта: <strong>Scale X = 2.0</strong>, <strong>Scale Y = 0.5</strong>, <strong>Scale Z = 1.5</strong>. Это изменит размеры куба: он станет в два раза шире по оси X, в два раза уже по оси Y и в 1.5 раза выше по оси Z.</p>
+                    <p class="step_description">{% blocktrans %}В <code>N-panel</code> в разделе <strong>Scale</strong> установите следующие значения для масштаба объекта: <strong>Scale X = 2.0</strong>, <strong>Scale Y = 0.5</strong>, <strong>Scale Z = 1.5</strong>. Это изменит размеры куба: он станет в два раза шире по оси X, в два раза уже по оси Y и в 1.5 раза выше по оси Z.{% endblocktrans %}</p>
                 </div>
                 <div class="carousel-step" id="step-5" style="display: none;">
-                    <h3>Переключиться между режимами отображения объекта через</h3>
+                    <h3>{% trans "Переключиться между режимами отображения объекта через" %}</h3>
                     <div>
                         <div class="carousel-controls">
                             <button onclick="prevStep()"> ❮ </button>
@@ -90,10 +91,10 @@
                             <button onclick="nextStep()"> ❯ </button>
                         </div>
                     </div>
-                    <p class="step_description">Для изменения режима отображения объекта используйте горячую клавишу <strong>Z</strong>. Выберите режим, который вам нужен, например, <strong>Wireframe</strong> (каркасное отображение), <strong>Solid</strong> (затенённое отображение), <strong>Material Preview</strong> (предварительный просмотр материалов) или <strong>Rendered</strong> (финальный рендер). Это поможет вам лучше видеть объект на разных этапах работы.</p>
+                    <p class="step_description">{% blocktrans %}Для изменения режима отображения объекта используйте горячую клавишу <strong>Z</strong>. Выберите режим, который вам нужен, например, <strong>Wireframe</strong> (каркасное отображение), <strong>Solid</strong> (затенённое отображение), <strong>Material Preview</strong> (предварительный просмотр материалов) или <strong>Rendered</strong> (финальный рендер). Это поможет вам лучше видеть объект на разных этапах работы.{% endblocktrans %}</p>
                 </div>
                 <div class="carousel-step" id="step-6" style="display: none;">
-                    <h3>Сохранить проект</h3>
+                    <h3>{% trans "Сохранить проект" %}</h3>
                     <div>
                         <div class="carousel-controls">
                             <button onclick="prevStep()"> ❮ </button>
@@ -103,7 +104,7 @@
                             <button onclick="nextStep()"> ❯ </button>
                         </div>
                     </div>
-                    <p class="step_description">После внесения всех изменений в <code>N-panel</code>, для сохранения работы перейдите в меню <em> File → Save As</em>. Введите имя файла и выберите папку для сохранения. Нажмите **Save As Blender File**. Для быстрого сохранения изменений используйте></emFile> <strong>Ctrl + S</strong>.</p>
+                    <p class="step_description">{% blocktrans %}После внесения всех изменений в <code>N-panel</code>, для сохранения работы перейдите в меню <em> File → Save As</em>. Введите имя файла и выберите папку для сохранения. Нажмите **Save As Blender File**. Для быстрого сохранения изменений используйте></emFile> <strong>Ctrl + S</strong>.{% endblocktrans %}</p>
                 </div>
 
 
@@ -112,22 +113,22 @@
         {% else %}
             <!-- Task Section -->
             <div class="section">
-                <h2 class="text-center mb-2">Задание</h2>
-                <p>Выполните следующие действия в среде Blender:</p>
+                <h2 class="text-center mb-2">{% trans "Задание" %}</h2>
+                <p>{% trans "Выполните следующие действия в среде Blender:" %}</p>
                 <div class="student-table-wrapper">
                     <table class="student-table blender-style-table">
                         <thead>
                             <tr>
                                 <th>№</th>
-                                <th>Действие</th>
-                                <th>Метод выполнения</th>
-                                <th>Изображение</th>
+                                <th>{% trans "Действие" %}</th>
+                                <th>{% trans "Метод выполнения" %}</th>
+                                <th>{% trans "Изображение" %}</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>Открыть <code>N-panel</code></td>
+                                <td>{% trans "Открыть <code>N-panel</code>" %}</td>
                                 <td>Щелкните по кубу левой кнопкой мыши, чтобы появилась возможность его редактировать. Куб подсветится желтой рамкой. Для работы с параметрами объекта откройте боковой регион <code>N-panel</code>. Для этого
                                     нажмите клавишу <strong>N</strong> на клавиатуре. Панель появится справа от 3D-вьюпорта,
                                     где отображаются параметры объекта. В ней же, используя значки "руки" или "лупы" можно приближать или отдалять камеру от объекта(или с помощью колеса мыши). Зажав колесико мыши можно вертеть камерой вокруг объекта.</td>
@@ -139,7 +140,7 @@
                             </tr>
                             <tr>
                                 <td>2</td>
-                                <td>Переместить объект в 3D-пространстве через <code>N-panel</code></td>
+                                <td>{% trans "Переместить объект в 3D-пространстве через <code>N-panel</code>" %}</td>
                                 <td>В <code>N-panel</code> откройте вкладку <strong>Item</strong>. В разделе <strong>Location</strong>
                                     установите следующие значения: <strong>Location X = 2.0</strong>, <strong>Location Y = -3.0</strong>,
                                     <strong>Location Z = 1.0</strong>. Эти значения переместят куб в новые координаты в 3D-пространстве.</td>
@@ -151,7 +152,7 @@
                             </tr>
                             <tr>
                                 <td>3</td>
-                                <td>Изменить <strong>Rotation</strong> объекта через <code>N-panel</code></td>
+                                <td>{% trans "Изменить <strong>Rotation</strong> объекта через <code>N-panel</code>" %}</td>
                                 <td>В <code>N-panel</code> в разделе <strong>Rotation</strong> установите следующие углы поворота для объекта: <strong>Rotation X = 45°</strong>, <strong>Rotation Y = 30°</strong>, <strong>Rotation Z = 60°</strong>. Это изменит ориентацию куба в 3D-пространстве.</td>
                                 <td>
                                     <a href="{% static 'main/img/Pr1/img3.png' %}" data-lightbox="gallery">
@@ -196,23 +197,23 @@
         {% endif %}
         <!-- Report Section -->
         <div class="section">
-            <p><br><br>Ожидаемый результат:</p>
+            <p><br><br>{% trans "Ожидаемый результат:" %}</p>
             <ul>
-                <li>Куб будет перемещён в заданные координаты: Location X = 2.0, Location Y = -3.0, Location Z = 1.0.</li>
-                <li>Куб будет повёрнут на углы: Rotation X = 45°, Rotation Y = 30°, Rotation Z = 60°.</li>
-                <li>Куб будет масштабирован по осям: Scale X = 2.0, Scale Y = 0.5, Scale Z = 1.5.</li>
-                <li>Проект будет сохранён с новыми настройками.</li>
+                <li>{% trans "Куб будет перемещён в заданные координаты: Location X = 2.0, Location Y = -3.0, Location Z = 1.0." %}</li>
+                <li>{% trans "Куб будет повёрнут на углы: Rotation X = 45°, Rotation Y = 30°, Rotation Z = 60°." %}</li>
+                <li>{% trans "Куб будет масштабирован по осям: Scale X = 2.0, Scale Y = 0.5, Scale Z = 1.5." %}</li>
+                <li>{% trans "Проект будет сохранён с новыми настройками." %}</li>
             </ul>
         </div>
 
         <!-- Additional Recommendations Section -->
         <div class="section">
-            <h3>Вопросы для самоконтроля:</h3>
+            <h3>{% trans "Вопросы для самоконтроля:" %}</h3>
             <ol>
-                <li>Что такое N-panel, и как его открыть в Blender?</li>
-                <li>Какие параметры можно редактировать через N-panel для объекта в 3D-пространстве?</li>
-                <li>Какие режимы отображения объекта доступны в Blender, и как переключаться между ними?</li>
-                <li>Как сохранить проект в Blender, и какие есть горячие клавиши для сохранения?</li>
+                <li>{% trans "Что такое N-panel, и как его открыть в Blender?" %}</li>
+                <li>{% trans "Какие параметры можно редактировать через N-panel для объекта в 3D-пространстве?" %}</li>
+                <li>{% trans "Какие режимы отображения объекта доступны в Blender, и как переключаться между ними?" %}</li>
+                <li>{% trans "Как сохранить проект в Blender, и какие есть горячие клавиши для сохранения?" %}</li>
             </ol>
         </div>
     </div>

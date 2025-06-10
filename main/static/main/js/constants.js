@@ -25,7 +25,7 @@ class Answer
 
 export const questions1 =
 [
-	new Question("Вопрос №1. Какое окно отображает трехмерную сцену в Blender?",
+	new Question(gettext("Вопрос №1. Какое окно отображает трехмерную сцену в Blender?"),
 	[
 		new Answer("Timeline", 0),
 		new Answer("3D Viewport", 1),
