@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure--c7=t9!bbnz_x@&w+o-i3z@wglejbxy&9(q_@4xck*gbk6-^nk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['3dforge.kz', 'www.3dforge.kz']
+ALLOWED_HOSTS = ['45.136.56.133']
 
 
 # Application definition
