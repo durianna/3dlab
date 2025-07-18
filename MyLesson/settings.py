@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['45.136.56.133', '3dforge.kz', 'www.3dforge.kz']
 
+CSRF_TRUSTED_ORIGINS = ['http://3dforge.kz', 'http://www.3dforge.kz', 'http://45.136.56.133']
+
 
 # Application definition
 
